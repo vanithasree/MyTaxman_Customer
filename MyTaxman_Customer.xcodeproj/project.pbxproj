@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
+		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
+		1888974124C7281C000DFAB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888974024C7281C000DFAB3 /* ViewController.swift */; };
+		1888974424C7281C000DFAB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888974224C7281C000DFAB3 /* Main.storyboard */; };
+		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
+		1888974924C7281F000DFAB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888974724C7281F000DFAB3 /* LaunchScreen.storyboard */; };
+		1888975424C72820000DFAB3 /* MyTaxman_CustomerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888975324C72820000DFAB3 /* MyTaxman_CustomerTests.swift */; };
+		1888975F24C72820000DFAB3 /* MyTaxman_CustomerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888975E24C72820000DFAB3 /* MyTaxman_CustomerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1888975024C72820000DFAB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1888973124C7281C000DFAB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1888973824C7281C000DFAB3;
+			remoteInfo = MyTaxman_Customer;
+		};
+		1888975B24C72820000DFAB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1888973124C7281C000DFAB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1888973824C7281C000DFAB3;
+			remoteInfo = MyTaxman_Customer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1888974024C7281C000DFAB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1888974324C7281C000DFAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1888974524C7281F000DFAB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1888974824C7281F000DFAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1888974A24C7281F000DFAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1888974F24C72820000DFAB3 /* MyTaxman_CustomerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTaxman_CustomerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1888975324C72820000DFAB3 /* MyTaxman_CustomerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxman_CustomerTests.swift; sourceTree = "<group>"; };
+		1888975524C72820000DFAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1888975A24C72820000DFAB3 /* MyTaxman_CustomerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTaxman_CustomerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1888975E24C72820000DFAB3 /* MyTaxman_CustomerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxman_CustomerUITests.swift; sourceTree = "<group>"; };
+		1888976024C72820000DFAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1888973624C7281C000DFAB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888974C24C72820000DFAB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888975724C72820000DFAB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1888973024C7281C000DFAB3 = {
+			isa = PBXGroup;
+			children = (
+				1888973B24C7281C000DFAB3 /* MyTaxman_Customer */,
+				1888975224C72820000DFAB3 /* MyTaxman_CustomerTests */,
+				1888975D24C72820000DFAB3 /* MyTaxman_CustomerUITests */,
+				1888973A24C7281C000DFAB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1888973A24C7281C000DFAB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */,
+				1888974F24C72820000DFAB3 /* MyTaxman_CustomerTests.xctest */,
+				1888975A24C72820000DFAB3 /* MyTaxman_CustomerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1888973B24C7281C000DFAB3 /* MyTaxman_Customer */ = {
+			isa = PBXGroup;
+			children = (
+				1888973C24C7281C000DFAB3 /* AppDelegate.swift */,
+				1888973E24C7281C000DFAB3 /* SceneDelegate.swift */,
+				1888974024C7281C000DFAB3 /* ViewController.swift */,
+				1888974224C7281C000DFAB3 /* Main.storyboard */,
+				1888974524C7281F000DFAB3 /* Assets.xcassets */,
+				1888974724C7281F000DFAB3 /* LaunchScreen.storyboard */,
+				1888974A24C7281F000DFAB3 /* Info.plist */,
+			);
+			path = MyTaxman_Customer;
+			sourceTree = "<group>";
+		};
+		1888975224C72820000DFAB3 /* MyTaxman_CustomerTests */ = {
+			isa = PBXGroup;
+			children = (
+				1888975324C72820000DFAB3 /* MyTaxman_CustomerTests.swift */,
+				1888975524C72820000DFAB3 /* Info.plist */,
+			);
+			path = MyTaxman_CustomerTests;
+			sourceTree = "<group>";
+		};
+		1888975D24C72820000DFAB3 /* MyTaxman_CustomerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1888975E24C72820000DFAB3 /* MyTaxman_CustomerUITests.swift */,
+				1888976024C72820000DFAB3 /* Info.plist */,
+			);
+			path = MyTaxman_CustomerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1888973824C7281C000DFAB3 /* MyTaxman_Customer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1888976324C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_Customer" */;
+			buildPhases = (
+				1888973524C7281C000DFAB3 /* Sources */,
+				1888973624C7281C000DFAB3 /* Frameworks */,
+				1888973724C7281C000DFAB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyTaxman_Customer;
+			productName = MyTaxman_Customer;
+			productReference = 1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1888974E24C72820000DFAB3 /* MyTaxman_CustomerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1888976624C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_CustomerTests" */;
+			buildPhases = (
+				1888974B24C72820000DFAB3 /* Sources */,
+				1888974C24C72820000DFAB3 /* Frameworks */,
+				1888974D24C72820000DFAB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1888975124C72820000DFAB3 /* PBXTargetDependency */,
+			);
+			name = MyTaxman_CustomerTests;
+			productName = MyTaxman_CustomerTests;
+			productReference = 1888974F24C72820000DFAB3 /* MyTaxman_CustomerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1888975924C72820000DFAB3 /* MyTaxman_CustomerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1888976924C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_CustomerUITests" */;
+			buildPhases = (
+				1888975624C72820000DFAB3 /* Sources */,
+				1888975724C72820000DFAB3 /* Frameworks */,
+				1888975824C72820000DFAB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1888975C24C72820000DFAB3 /* PBXTargetDependency */,
+			);
+			name = MyTaxman_CustomerUITests;
+			productName = MyTaxman_CustomerUITests;
+			productReference = 1888975A24C72820000DFAB3 /* MyTaxman_CustomerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1888973124C7281C000DFAB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					1888973824C7281C000DFAB3 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					1888974E24C72820000DFAB3 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1888973824C7281C000DFAB3;
+					};
+					1888975924C72820000DFAB3 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 1888973824C7281C000DFAB3;
+					};
+				};
+			};
+			buildConfigurationList = 1888973424C7281C000DFAB3 /* Build configuration list for PBXProject "MyTaxman_Customer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1888973024C7281C000DFAB3;
+			productRefGroup = 1888973A24C7281C000DFAB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1888973824C7281C000DFAB3 /* MyTaxman_Customer */,
+				1888974E24C72820000DFAB3 /* MyTaxman_CustomerTests */,
+				1888975924C72820000DFAB3 /* MyTaxman_CustomerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1888973724C7281C000DFAB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1888974924C7281F000DFAB3 /* LaunchScreen.storyboard in Resources */,
+				1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */,
+				1888974424C7281C000DFAB3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888974D24C72820000DFAB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888975824C72820000DFAB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1888973524C7281C000DFAB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1888974124C7281C000DFAB3 /* ViewController.swift in Sources */,
+				1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */,
+				1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888974B24C72820000DFAB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1888975424C72820000DFAB3 /* MyTaxman_CustomerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1888975624C72820000DFAB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1888975F24C72820000DFAB3 /* MyTaxman_CustomerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1888975124C72820000DFAB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1888973824C7281C000DFAB3 /* MyTaxman_Customer */;
+			targetProxy = 1888975024C72820000DFAB3 /* PBXContainerItemProxy */;
+		};
+		1888975C24C72820000DFAB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1888973824C7281C000DFAB3 /* MyTaxman_Customer */;
+			targetProxy = 1888975B24C72820000DFAB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1888974224C7281C000DFAB3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1888974324C7281C000DFAB3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1888974724C7281F000DFAB3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1888974824C7281F000DFAB3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1888976124C72820000DFAB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1888976224C72820000DFAB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1888976424C72820000DFAB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyTaxman_Customer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-Customer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1888976524C72820000DFAB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyTaxman_Customer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-Customer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1888976724C72820000DFAB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyTaxman_CustomerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-CustomerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTaxman_Customer.app/MyTaxman_Customer";
+			};
+			name = Debug;
+		};
+		1888976824C72820000DFAB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyTaxman_CustomerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-CustomerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyTaxman_Customer.app/MyTaxman_Customer";
+			};
+			name = Release;
+		};
+		1888976A24C72820000DFAB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyTaxman_CustomerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-CustomerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyTaxman_Customer;
+			};
+			name = Debug;
+		};
+		1888976B24C72820000DFAB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MyTaxman_CustomerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-CustomerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyTaxman_Customer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1888973424C7281C000DFAB3 /* Build configuration list for PBXProject "MyTaxman_Customer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1888976124C72820000DFAB3 /* Debug */,
+				1888976224C72820000DFAB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1888976324C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_Customer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1888976424C72820000DFAB3 /* Debug */,
+				1888976524C72820000DFAB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1888976624C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_CustomerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1888976724C72820000DFAB3 /* Debug */,
+				1888976824C72820000DFAB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1888976924C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_CustomerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1888976A24C72820000DFAB3 /* Debug */,
+				1888976B24C72820000DFAB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1888973124C7281C000DFAB3 /* Project object */;
+}

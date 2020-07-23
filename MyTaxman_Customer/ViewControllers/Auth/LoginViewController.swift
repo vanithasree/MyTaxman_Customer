@@ -11,6 +11,7 @@ import Alamofire
 import TweeTextField
 class LoginViewController: BaseViewController {
     
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var userNameTextField: TweeAttributedTextField!
     @IBOutlet var passwordTextField: TweeAttributedTextField!
     @IBOutlet var forgotButton: UIButton!
@@ -29,7 +30,7 @@ class LoginViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        isTransparent = true
+        isTransparent = false
         isHideNavigationBar = false
     }
     
@@ -38,26 +39,17 @@ class LoginViewController: BaseViewController {
         self.title = "Login"
         titleLabel.setMainTitle(label: titleLabel, titleText: "Login to view your job")
         userNameTextField.setTextFieldProperties(placeholderString:"Email/Mobile Number", isSecureText: false)
+        
         passwordTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
-        loginButton.setDarkGreenTheme(btn: loginButton, title: "LOGIN")
-        forgotButton.setButtonProperties(title: "FORGOT  YOUR PASSWORD?", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0)), titleColor: ColorManager.darkTheme.color)
-        accountLabel.text = "Don't have an account?"
-        accountLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
-        accountLabel.textColor = ColorManager.darkGrey.color
-        // accountLabel.setFooterTitle(label: accountLabel, titleText: "Don't have an account?")
-        
-        registerButton.setButtonProperties(title: "Register", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0)), titleColor: ColorManager.darkTheme.color)
-        registerButton.underline(text: "Register", color: ColorManager.darkTheme.color)
-        
-        
-        /*   let attributedString = NSAttributedString(string: NSLocalizedString("Register", comment: ""), attributes:[
-         NSAttributedString.Key.font :UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(12.0)) ?? UIFont.systemFont(ofSize: 16.0, weight: .medium),
-         NSAttributedString.Key.foregroundColor : ColorManager.darkTheme.color,
-         NSAttributedString.Key.underlineStyle:1.0
-         ])
-         
-         registerButton.setAttributedTitle(attributedString, for: .normal)*/
-        
+        let eyeShowButton = UIButton(type: .custom)
+        eyeShowButton.setImage(UIImage(named: "eyeShow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        eyeShowButton.setImage(UIImage(named: "eyeHide")?.withRenderingMode(.alwaysTemplate), for: .selected)
+        eyeShowButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        eyeShowButton.frame = CGRect(x: CGFloat(passwordTextField.frame.size.width - 30), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        eyeShowButton.addTarget(self, action: #selector(self.showOrHide), for: .touchUpInside)
+        eyeShowButton.tintColor = ColorManager.darkBGTheme.color
+        passwordTextField.rightView = eyeShowButton
+        passwordTextField.rightViewMode = .always
     }
     
     //MARK: - Button Actions
@@ -65,6 +57,15 @@ class LoginViewController: BaseViewController {
     @IBAction func didTapForgotPasswordAction(_ sender: Any) {
         redirectToForgotPasswordScreen()
     }
+    
+    @IBAction func showOrHide(_ sender: UIButton) {
+           if sender.isSelected == true {
+               sender.isSelected = false
+           }else {
+               sender.isSelected = true
+           }
+           passwordTextField.isSecureTextEntry.toggle()
+       }
     
     @IBAction func didTapLoginAction(_ sender: Any) {
         self.view.endEditing(true)

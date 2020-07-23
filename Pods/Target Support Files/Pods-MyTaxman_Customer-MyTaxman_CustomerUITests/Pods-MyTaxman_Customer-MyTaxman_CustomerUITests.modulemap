@@ -1,0 +1,6 @@
+framework module Pods_MyTaxman_Customer_MyTaxman_CustomerUITests {
+  umbrella header "Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

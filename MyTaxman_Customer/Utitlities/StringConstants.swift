@@ -8,6 +8,7 @@
 
 import Foundation
 
+let error = "Error"
 
 let logoHint = "Powering What Matters"
 let emailValidationMessage = "Please enter valid Email!" //"Invalid email"

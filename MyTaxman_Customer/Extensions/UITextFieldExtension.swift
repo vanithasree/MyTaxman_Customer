@@ -40,7 +40,16 @@ extension TweeAttributedTextField {
         
         //  textField.attributedPlaceholder = NSAttributedString(string: placeholderString, attributes: [NSAttributedString.Key.foregroundColor: ColorManager.lightText.color, NSAttributedString.Key.font :textField.infoLabel.font ?? userFont])
         
-        self.backgroundColor = ColorManager.white.color
+        self.backgroundColor = .clear
+        
+        self.activeLineColor = .systemBlue
+        self.activeLineWidth = 1
+        self.animationDuration = 0.3
+                
+        self.borderStyle = .none
+    
+        self.lineColor = .lightGray
+        self.lineWidth = 1
         
         if isFieldRequired {
             passwordAttriburedString.append(asterix)

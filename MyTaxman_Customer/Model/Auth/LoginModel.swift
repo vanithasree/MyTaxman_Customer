@@ -8,22 +8,19 @@
 
 import Foundation
 struct LoginBase : Codable {
-    let isSuccessful : Bool?
-    let statusCode : String?
-    let responseStatus : String?
+    let desc : String?
+    let code : String?
     
     enum CodingKeys: String, CodingKey {
         
-        case isSuccessful = "isSuccessful"
-        case statusCode = "statusCode"
-        case responseStatus = "responseStatus"
+        case desc = "desc"
+        case code = "code"
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        isSuccessful = try values.decodeIfPresent(Bool.self, forKey: .isSuccessful)
-        statusCode = try values.decodeIfPresent(String.self, forKey: .statusCode)
-        responseStatus = try values.decodeIfPresent(String.self, forKey: .responseStatus)
+        desc = try values.decodeIfPresent(String.self, forKey: .desc)
+        code = try values.decodeIfPresent(String.self, forKey: .code)
     }
     
 }

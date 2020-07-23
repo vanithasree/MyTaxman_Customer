@@ -9,12 +9,27 @@
 /* Begin PBXBuildFile section */
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
-		1888974124C7281C000DFAB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888974024C7281C000DFAB3 /* ViewController.swift */; };
-		1888974424C7281C000DFAB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888974224C7281C000DFAB3 /* Main.storyboard */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
 		1888974924C7281F000DFAB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888974724C7281F000DFAB3 /* LaunchScreen.storyboard */; };
 		1888975424C72820000DFAB3 /* MyTaxman_CustomerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888975324C72820000DFAB3 /* MyTaxman_CustomerTests.swift */; };
 		1888975F24C72820000DFAB3 /* MyTaxman_CustomerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888975E24C72820000DFAB3 /* MyTaxman_CustomerUITests.swift */; };
+		1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1888977524C728AD000DFAB3 /* Auth.storyboard */; };
+		1888977824C728C1000DFAB3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888977724C728C1000DFAB3 /* LoginViewController.swift */; };
+		1888977A24C728CC000DFAB3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888977924C728CC000DFAB3 /* RegisterViewController.swift */; };
+		1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888977B24C72919000DFAB3 /* GetStartedViewController.swift */; };
+		1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888977D24C73D6E000DFAB3 /* ForgotPasswordViewController.swift */; };
+		18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B2E61E24C8956D002A9CCE /* Leads.storyboard */; };
+		18B2E62124C89586002A9CCE /* LeadsDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62024C89586002A9CCE /* LeadsDashboardViewController.swift */; };
+		18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62224C89AA5002A9CCE /* AppStoryboards.swift */; };
+		18B2E62624C89B05002A9CCE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62524C89B05002A9CCE /* UIViewControllerExtensions.swift */; };
+		18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62A24C89D21002A9CCE /* LeadsCollectionViewCell.swift */; };
+		18B2E62D24C89D21002A9CCE /* LeadsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B2E62B24C89D21002A9CCE /* LeadsCollectionViewCell.xib */; };
+		18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62E24C8AB38002A9CCE /* PageOneViewController.swift */; };
+		18B2E63124C8AB46002A9CCE /* PageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63024C8AB46002A9CCE /* PageTwoViewController.swift */; };
+		18B2E63324C8AB50002A9CCE /* PageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63224C8AB50002A9CCE /* PageThreeViewController.swift */; };
+		18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63424C8AB5B002A9CCE /* PageFourViewController.swift */; };
+		18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */; };
+		18B2E63B24C8ABD8002A9CCE /* LeadsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +53,6 @@
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1888974024C7281C000DFAB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1888974324C7281C000DFAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1888974524C7281F000DFAB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1888974824C7281F000DFAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1888974A24C7281F000DFAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +62,26 @@
 		1888975A24C72820000DFAB3 /* MyTaxman_CustomerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyTaxman_CustomerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888975E24C72820000DFAB3 /* MyTaxman_CustomerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxman_CustomerUITests.swift; sourceTree = "<group>"; };
 		1888976024C72820000DFAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1888977524C728AD000DFAB3 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		1888977724C728C1000DFAB3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1888977924C728CC000DFAB3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1888977B24C72919000DFAB3 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		1888977D24C73D6E000DFAB3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		1888977F24C74CF6000DFAB3 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		1888978024C74CF6000DFAB3 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		1888978124C74CF6000DFAB3 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		18B2E61E24C8956D002A9CCE /* Leads.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Leads.storyboard; sourceTree = "<group>"; };
+		18B2E62024C89586002A9CCE /* LeadsDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsDashboardViewController.swift; sourceTree = "<group>"; };
+		18B2E62224C89AA5002A9CCE /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
+		18B2E62524C89B05002A9CCE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		18B2E62A24C89D21002A9CCE /* LeadsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsCollectionViewCell.swift; sourceTree = "<group>"; };
+		18B2E62B24C89D21002A9CCE /* LeadsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeadsCollectionViewCell.xib; sourceTree = "<group>"; };
+		18B2E62E24C8AB38002A9CCE /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
+		18B2E63024C8AB46002A9CCE /* PageTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTwoViewController.swift; sourceTree = "<group>"; };
+		18B2E63224C8AB50002A9CCE /* PageThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeViewController.swift; sourceTree = "<group>"; };
+		18B2E63424C8AB5B002A9CCE /* PageFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFourViewController.swift; sourceTree = "<group>"; };
+		18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFiveViewController.swift; sourceTree = "<group>"; };
+		18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +132,17 @@
 		1888973B24C7281C000DFAB3 /* MyTaxman_Customer */ = {
 			isa = PBXGroup;
 			children = (
+				18B2E62424C89ADF002A9CCE /* Extensions */,
+				1888977324C7286C000DFAB3 /* Libararies */,
+				1888977224C72866000DFAB3 /* Utitlities */,
+				1888977124C72860000DFAB3 /* ApiManagers */,
+				1888977024C7285A000DFAB3 /* ViewModels */,
+				1888976F24C72855000DFAB3 /* Views */,
+				1888976E24C7284A000DFAB3 /* Models */,
+				1888976D24C7283B000DFAB3 /* ViewControllers */,
+				1888976C24C72830000DFAB3 /* Storyboards */,
 				1888973C24C7281C000DFAB3 /* AppDelegate.swift */,
 				1888973E24C7281C000DFAB3 /* SceneDelegate.swift */,
-				1888974024C7281C000DFAB3 /* ViewController.swift */,
-				1888974224C7281C000DFAB3 /* Main.storyboard */,
 				1888974524C7281F000DFAB3 /* Assets.xcassets */,
 				1888974724C7281F000DFAB3 /* LaunchScreen.storyboard */,
 				1888974A24C7281F000DFAB3 /* Info.plist */,
@@ -126,6 +166,145 @@
 				1888976024C72820000DFAB3 /* Info.plist */,
 			);
 			path = MyTaxman_CustomerUITests;
+			sourceTree = "<group>";
+		};
+		1888976C24C72830000DFAB3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1888977524C728AD000DFAB3 /* Auth.storyboard */,
+				18B2E61E24C8956D002A9CCE /* Leads.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1888976D24C7283B000DFAB3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18B2E61D24C892CB002A9CCE /* Leads */,
+				18B2E61C24C892A2002A9CCE /* Auth */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1888976E24C7284A000DFAB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1888976F24C72855000DFAB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				18B2E62924C89D07002A9CCE /* UIViews */,
+				18B2E62824C89CFF002A9CCE /* TableViewCells */,
+				18B2E62724C89CF4002A9CCE /* CollectionViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1888977024C7285A000DFAB3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				18B2E63924C8ABC5002A9CCE /* LeadsManager */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1888977124C72860000DFAB3 /* ApiManagers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApiManagers;
+			sourceTree = "<group>";
+		};
+		1888977224C72866000DFAB3 /* Utitlities */ = {
+			isa = PBXGroup;
+			children = (
+				1888977424C72877000DFAB3 /* Font */,
+				18B2E62224C89AA5002A9CCE /* AppStoryboards.swift */,
+			);
+			path = Utitlities;
+			sourceTree = "<group>";
+		};
+		1888977324C7286C000DFAB3 /* Libararies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libararies;
+			sourceTree = "<group>";
+		};
+		1888977424C72877000DFAB3 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				1888978024C74CF6000DFAB3 /* Comfortaa-Bold.ttf */,
+				1888977F24C74CF6000DFAB3 /* Comfortaa-Light.ttf */,
+				1888978124C74CF6000DFAB3 /* Comfortaa-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		18B2E61C24C892A2002A9CCE /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1888977D24C73D6E000DFAB3 /* ForgotPasswordViewController.swift */,
+				1888977724C728C1000DFAB3 /* LoginViewController.swift */,
+				1888977924C728CC000DFAB3 /* RegisterViewController.swift */,
+				1888977B24C72919000DFAB3 /* GetStartedViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		18B2E61D24C892CB002A9CCE /* Leads */ = {
+			isa = PBXGroup;
+			children = (
+				18B2E62024C89586002A9CCE /* LeadsDashboardViewController.swift */,
+				18B2E62E24C8AB38002A9CCE /* PageOneViewController.swift */,
+				18B2E63024C8AB46002A9CCE /* PageTwoViewController.swift */,
+				18B2E63224C8AB50002A9CCE /* PageThreeViewController.swift */,
+				18B2E63424C8AB5B002A9CCE /* PageFourViewController.swift */,
+				18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */,
+			);
+			path = Leads;
+			sourceTree = "<group>";
+		};
+		18B2E62424C89ADF002A9CCE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18B2E62524C89B05002A9CCE /* UIViewControllerExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18B2E62724C89CF4002A9CCE /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				18B2E62A24C89D21002A9CCE /* LeadsCollectionViewCell.swift */,
+				18B2E62B24C89D21002A9CCE /* LeadsCollectionViewCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		18B2E62824C89CFF002A9CCE /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		18B2E62924C89D07002A9CCE /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		18B2E63924C8ABC5002A9CCE /* LeadsManager */ = {
+			isa = PBXGroup;
+			children = (
+				18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */,
+			);
+			path = LeadsManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +411,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
+				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,
+				18B2E62D24C89D21002A9CCE /* LeadsCollectionViewCell.xib in Resources */,
 				1888974924C7281F000DFAB3 /* LaunchScreen.storyboard in Resources */,
 				1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */,
-				1888974424C7281C000DFAB3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +440,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1888974124C7281C000DFAB3 /* ViewController.swift in Sources */,
+				18B2E62124C89586002A9CCE /* LeadsDashboardViewController.swift in Sources */,
+				18B2E63B24C8ABD8002A9CCE /* LeadsManager.swift in Sources */,
+				1888977824C728C1000DFAB3 /* LoginViewController.swift in Sources */,
 				1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */,
+				18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */,
+				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,
+				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,
+				18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */,
+				18B2E62624C89B05002A9CCE /* UIViewControllerExtensions.swift in Sources */,
+				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
 				1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */,
+				18B2E63124C8AB46002A9CCE /* PageTwoViewController.swift in Sources */,
+				1888977A24C728CC000DFAB3 /* RegisterViewController.swift in Sources */,
+				18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */,
+				1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */,
+				18B2E63324C8AB50002A9CCE /* PageThreeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +491,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1888974224C7281C000DFAB3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1888974324C7281C000DFAB3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1888974724C7281F000DFAB3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,6 +622,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyTaxman_Customer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,7 +630,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-Customer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -453,6 +640,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MyTaxman_Customer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,7 +648,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-Customer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

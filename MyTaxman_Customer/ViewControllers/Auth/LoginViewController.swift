@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import TweeTextField
 class LoginViewController: BaseViewController {
-
+    
     @IBOutlet var userNameTextField: TweeAttributedTextField!
     @IBOutlet var passwordTextField: TweeAttributedTextField!
     @IBOutlet var forgotButton: UIButton!
@@ -18,8 +18,9 @@ class LoginViewController: BaseViewController {
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var accountLabel: UILabel!
     
+    @IBOutlet weak var titleLabel: UILabel!
     private var authViewModel = AuthViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,13 +34,34 @@ class LoginViewController: BaseViewController {
     }
     
     func setupViews() {
+        
         self.title = "Login"
+        titleLabel.setMainTitle(label: titleLabel, titleText: "Login to view your job")
         userNameTextField.setTextFieldProperties(placeholderString:"Email/Mobile Number", isSecureText: false)
         passwordTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
+        loginButton.setDarkGreenTheme(btn: loginButton, title: "LOGIN")
+        forgotButton.setButtonProperties(title: "FORGOT  YOUR PASSWORD?", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0)), titleColor: ColorManager.darkTheme.color)
+        accountLabel.text = "Don't have an account?"
+        accountLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
+        accountLabel.textColor = ColorManager.darkGrey.color
+        // accountLabel.setFooterTitle(label: accountLabel, titleText: "Don't have an account?")
+        
+        registerButton.setButtonProperties(title: "Register", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0)), titleColor: ColorManager.darkTheme.color)
+        registerButton.underline(text: "Register", color: ColorManager.darkTheme.color)
+        
+        
+        /*   let attributedString = NSAttributedString(string: NSLocalizedString("Register", comment: ""), attributes:[
+         NSAttributedString.Key.font :UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(12.0)) ?? UIFont.systemFont(ofSize: 16.0, weight: .medium),
+         NSAttributedString.Key.foregroundColor : ColorManager.darkTheme.color,
+         NSAttributedString.Key.underlineStyle:1.0
+         ])
+         
+         registerButton.setAttributedTitle(attributedString, for: .normal)*/
+        
     }
     
     //MARK: - Button Actions
-
+    
     @IBAction func didTapForgotPasswordAction(_ sender: Any) {
         redirectToForgotPasswordScreen()
     }
@@ -77,19 +99,19 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func didTapRegisterAction(_ sender: Any) {
-        redirectToRegisterScreen()
+        redirectToContactRegisterInfoScreen()
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension LoginViewController {
@@ -101,6 +123,11 @@ extension LoginViewController {
     
     func redirectToRegisterScreen() {
         let registerVC = RegisterViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        self.navigationController?.pushViewController(registerVC, animated: true)
+    }
+    
+    func redirectToContactRegisterInfoScreen() {
+        let registerVC = ContactInfoViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
@@ -139,9 +166,9 @@ extension LoginViewController : UITextFieldDelegate {
                         return false
                     }
                 }
-//                guard let text = textField.text else { return false }
-//                let newString = (text as NSString).replacingCharacters(in: range, with: string)
-//                textField.text = ValidationManager().format(with: Constant.k_mobileFormat, phone: newString)
+                //                guard let text = textField.text else { return false }
+                //                let newString = (text as NSString).replacingCharacters(in: range, with: string)
+                //                textField.text = ValidationManager().format(with: Constant.k_mobileFormat, phone: newString)
                 return false
             } else if newText.isEmpty {
                 userNameTextField.rightViewMode = .always

@@ -28,6 +28,7 @@ class ForgotPasswordViewController: BaseViewController {
     func setupViews() {
         self.title = "Forgot Password"
         emailTextField.setTextFieldProperties(placeholderString:"Email", isSecureText: false)
+           resetButton.setDarkGreenTheme(btn: resetButton, title: "RESET PASSWORD")
     }
     
     //MARK: - Button Actions

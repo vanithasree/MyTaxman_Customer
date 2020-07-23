@@ -24,9 +24,16 @@ enum ColorManager {
     case borderColor
     
     case darkText
+    case darkGrey
+    case lightGrey
     case lightText
     case white
     case backgroundGrey
+    
+    case textThickDarkGreenColor
+    case textDarkGreenColor
+    case textLiteGreenColor
+    case textVeryLiteGreenColor
     
     
     case custom(hexString: String, alpha: Double)
@@ -56,6 +63,20 @@ extension ColorManager {
             instanceColor = UIColor(hexString: "#13B3C4")
             
             
+            
+            
+        case .textThickDarkGreenColor:
+            instanceColor = UIColor(hexString: "#0F2A31")
+        case .textDarkGreenColor:
+            instanceColor = UIColor(hexString: "#044657")
+        case .textLiteGreenColor:
+             instanceColor = UIColor(hexString: "#13B3C4")
+        case .textVeryLiteGreenColor:
+             instanceColor = UIColor(hexString: "#C4F9FF")
+            
+            
+            
+            
         case .darkText:
             instanceColor = UIColor(hexString: "#2d3958")
         case .lightText:
@@ -71,6 +92,12 @@ extension ColorManager {
             instanceColor = UIColor.lightGray.withAlphaComponent(0.7)
         case .white:
             instanceColor = UIColor.white
+            
+        case .darkGrey:
+            instanceColor = UIColor.darkGray
+            
+        case .lightGrey:
+            instanceColor = UIColor.lightGray
             
         case .custom(let hexValue, let opacity):
             instanceColor = UIColor(hexString: hexValue).withAlphaComponent(CGFloat(opacity))

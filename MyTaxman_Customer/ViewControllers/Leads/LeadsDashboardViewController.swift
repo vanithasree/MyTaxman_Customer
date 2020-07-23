@@ -10,8 +10,9 @@ import UIKit
 
 class LeadsDashboardViewController: BaseViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
     var serviceDataListArray : [ServicesList] = []
-        
+    
     @IBOutlet weak var leadsCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class LeadsDashboardViewController: BaseViewController {
         super.viewWillLayoutSubviews()
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: leadsCollectionView.frame.width / 2 , height: leadsCollectionView.frame.height / 5 )
+        layout.itemSize = CGSize(width: leadsCollectionView.frame.width / 2 , height: leadsCollectionView.frame.height / 4 )
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         leadsCollectionView!.collectionViewLayout = layout
@@ -42,14 +43,15 @@ class LeadsDashboardViewController: BaseViewController {
         leadsCollectionView.backgroundColor = .white
         
         
-        serviceDataListArray.append(ServicesList(imageName: "tax", title: "Tax Returns"))
-        serviceDataListArray.append(ServicesList(imageName: "tax", title: "Accounting"))
-        serviceDataListArray.append(ServicesList(imageName: "tax", title: "Financial Planning"))
-        serviceDataListArray.append(ServicesList(imageName: "tax", title: "Super Funds"))
-        serviceDataListArray.append(ServicesList(imageName: "tax", title: "Audit"))
-        serviceDataListArray.append(ServicesList(imageName: "tax", title: "Legal Advice"))
-        
-        
+        serviceDataListArray.append(ServicesList(imageName: "Tax", title: "Tax Returns"))
+        serviceDataListArray.append(ServicesList(imageName: "account", title: "Accounting"))
+        serviceDataListArray.append(ServicesList(imageName: "plan", title: "Financial Planning"))
+        serviceDataListArray.append(ServicesList(imageName: "fund", title: "Super Funds"))
+        serviceDataListArray.append(ServicesList(imageName: "Audit", title: "Audit"))
+        serviceDataListArray.append(ServicesList(imageName: "legal", title: "Legal Advice"))
+    
+        titleLabel.setLabelCustomProperties(label: titleLabel, titleText: "What are you looking for?", textColor: ColorManager.textDarkGreenColor.color, font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(20.0)), numberOfLines: 1, alignment: .center)
+     
         
     }
     
@@ -76,6 +78,20 @@ extension LeadsDashboardViewController : UICollectionViewDataSource, UICollectio
             return UICollectionViewCell()
         }
         
+        if !cell.isAnimated {
+               UIView.animate(withDuration: 0.5, delay: 0.5 * Double(indexPath.row), usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: indexPath.row % 2 == 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
+                
+                if indexPath.row % 2 == 0 {
+                    AnimationUtility.viewSlideInFromLeft(toRight: cell)
+                }
+                else {
+                    AnimationUtility.viewSlideInFromRight(toLeft: cell)
+                }
+                
+            }, completion: { (done) in
+                cell.isAnimated = true
+            })
+        }
         cell.setCellData(value: self.serviceDataListArray[indexPath.row])
         
         cell.backgroundColor = .clear

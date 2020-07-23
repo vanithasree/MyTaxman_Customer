@@ -29,17 +29,31 @@ class GetStartedViewController: BaseViewController {
     }
     
     func setupViews() {
+        
+        Utility.logAllAvailableFonts()
+        
         titleLabel.text = "Welcome to MyTaxman"
         titleLabel.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(20.0))
-
+        
         submitANewJobBtn.setButtonProperties(title: "SUBMIT A NEW JOB", font: UIFont(name:Font.FontName.PoppinsBold.rawValue, size: Utility.dynamicSize(18.0)), titleColor: ColorManager.darkText.color)
         submitANewJobBtn.backgroundColor = ColorManager.white.color
         
         loginButton.setButtonProperties(title: "LOGIN TO MY ACCOUNT", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(18.0)), titleColor: ColorManager.darkText.color)
-
+        
+        
+        
         doOnMain {
-            self.submitANewJobBtn.cornerRadius = 5
-            self.loginBgView.roundCorners(corners: [.topLeft , .topRight], radius: 15)
+            self.submitANewJobBtn.cornerRadius = 10
+            self.loginBgView.roundCorners(corners: [.topLeft , .topRight], radius: 20)
+            
+            let gradientLayer:CAGradientLayer = CAGradientLayer()
+            gradientLayer.frame.size = self.loginBgView.frame.size
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+            gradientLayer.colors =
+                [UIColor.white.cgColor,ColorManager.textVeryLiteGreenColor.color.cgColor]
+            self.loginBgView.layer.addSublayer(gradientLayer)
+            
         }
     }
     
@@ -62,6 +76,7 @@ class GetStartedViewController: BaseViewController {
      */
     
 }
+
 extension GetStartedViewController {
     
     func redirectToLeadCreateScreen() {

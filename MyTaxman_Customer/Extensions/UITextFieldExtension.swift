@@ -28,7 +28,7 @@ extension TweeAttributedTextField {
         
         self.infoLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(13.0))
         //        textField.tweePlaceholder = placeholderString
-        self.placeholderColor = .clear
+       // self.placeholderColor = .clear
         //        textField.placeholderLabel.backgroundColor = .cyan
         //textField.lineColor = Color.lightText.value
         self.font =  UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))

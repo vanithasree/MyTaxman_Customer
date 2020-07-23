@@ -39,7 +39,18 @@ extension UIButton {
             right: -imageTitlePadding
         )
     }
+    
+    func setDarkGreenTheme(btn:UIButton, title:String) {
         
+        btn.backgroundColor = ColorManager.darkTheme.color
+        btn.setTitle(title, for: .normal)
+        btn.setTitleColor(ColorManager.white.color, for: .normal)
+        btn.applyCornerRadius(amount: 5)
+        btn.titleLabel?.font =  UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(18.0))
+        btn.titleLabel?.adjustsFontForContentSizeCategory = false
+        
+    }
+    
     func setButtonProperties(title:String, font:UIFont?,titleColor:UIColor) {
         self.backgroundColor = .clear
         self.setTitle(title, for: .normal)
@@ -76,7 +87,7 @@ extension UIButton {
     }
     
     func underline(text: String, color : UIColor) {
-//        guard let text = self.titleLabel?.text else { return }
+        //        guard let text = self.titleLabel?.text else { return }
         let attributedString = NSMutableAttributedString(string: text)
         //NSAttributedStringKey.foregroundColor : UIColor.blue
         attributedString.addAttribute(NSAttributedString.Key.underlineColor, value: color, range: NSRange(location: 0, length: text.count))
@@ -84,5 +95,5 @@ extension UIButton {
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.thick.rawValue, range: NSRange(location: 0, length: text.count))
         self.setAttributedTitle(attributedString, for: .normal)
     }
-
+    
 }

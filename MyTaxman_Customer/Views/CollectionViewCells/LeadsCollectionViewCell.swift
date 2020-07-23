@@ -12,6 +12,7 @@ class LeadsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var serviceNameTitleLabel: UILabel!
     @IBOutlet weak var serviceImageView: UIImageView!
+    var isAnimated: Bool = false
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,7 +20,8 @@ class LeadsCollectionViewCell: UICollectionViewCell {
     }
     
     func setCellViewUI() {
-        
+        serviceNameTitleLabel.setPopupTitle(label: serviceNameTitleLabel, titleText: "")
+        serviceNameTitleLabel.textColor = ColorManager.textDarkGreenColor.color
     }
     
     func setCellData(value:ServicesList) {

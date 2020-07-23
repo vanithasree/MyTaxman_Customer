@@ -61,28 +61,34 @@ extension UILabel {
         label.adjustsFontForContentSizeCategory = false
     }
     
-    func setMainTitle(label:UILabel, titleText:String) {
-        //label.font = Utility().getScaledFont(forFont: Font.FontName.DMSansMedium.rawValue, textStyle: .footnote)
-        label.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(13.0))
+    func setHeaderTitle(label:UILabel, titleText:String) {
+        label.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(20.0))
         label.numberOfLines = 0
         label.text = titleText
         label.backgroundColor = .clear
-        label.textColor = ColorManager.darkText.color
+        label.textColor = .black
+        label.adjustsFontForContentSizeCategory = false
+    }
+    
+    func setMainTitle(label:UILabel, titleText:String) {
+        label.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(18.0))
+        label.numberOfLines = 0
+        label.text = titleText
+        label.backgroundColor = .clear
+        label.textColor = ColorManager.lightGrey.color
         label.adjustsFontForContentSizeCategory = false
     }
     
     func setFooterTitle(label:UILabel,titleText:String) {
-        //label.font = Utility().getScaledFont(forFont: Font.FontName.DMSansRegular.rawValue, textStyle: .caption1)
         label.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(12.0))
         label.numberOfLines = 0
         label.text = titleText
         label.backgroundColor = .clear
-        label.textColor = ColorManager.textColor.color
+        label.textColor = ColorManager.darkGrey.color
         label.adjustsFontForContentSizeCategory = false
     }
     
     func setCaptionTitle(label:UILabel,titleText:String) {
-        //label.font = Utility().getScaledFont(forFont: Font.FontName.DMSansRegular.rawValue, textStyle: .caption2)
         label.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(11.0))
         label.numberOfLines = 0
         label.text = titleText

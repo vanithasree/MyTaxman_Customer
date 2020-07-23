@@ -18,8 +18,6 @@ class LoginViewController: BaseViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var registerButton: UIButton!
     @IBOutlet var accountLabel: UILabel!
-    
-    @IBOutlet weak var titleLabel: UILabel!
     private var authViewModel = AuthViewModel()
     
     override func viewDidLoad() {
@@ -41,6 +39,17 @@ class LoginViewController: BaseViewController {
         userNameTextField.setTextFieldProperties(placeholderString:"Email/Mobile Number", isSecureText: false)
         
         passwordTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
+        titleLabel.setMainTitle(label: titleLabel, titleText: "Login to view your job")
+        
+        loginButton.setDarkGreenTheme(btn: loginButton, title: "LOGIN")
+        forgotButton.setButtonProperties(title: "FORGOT  YOUR PASSWORD?", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0)), titleColor: ColorManager.darkTheme.color)
+        accountLabel.text = "Don't have an account?"
+        accountLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
+        accountLabel.textColor = ColorManager.darkGrey.color
+      
+        
+        registerButton.setButtonProperties(title: "Register", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0)), titleColor: ColorManager.darkTheme.color)
+        registerButton.underline(text: "Register", color: ColorManager.darkTheme.color)
         let eyeShowButton = UIButton(type: .custom)
         eyeShowButton.setImage(UIImage(named: "eyeShow")?.withRenderingMode(.alwaysTemplate), for: .normal)
         eyeShowButton.setImage(UIImage(named: "eyeHide")?.withRenderingMode(.alwaysTemplate), for: .selected)

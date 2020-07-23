@@ -8,23 +8,48 @@
 
 import UIKit
 
-class GetStartedViewController: UIViewController {
+class GetStartedViewController: BaseViewController {
     //Outlets
     
     @IBOutlet weak var submitANewJobBtn: UIButton!
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var loginBgView: UIView!
+    @IBOutlet var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        setupViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        isTransparent = true
+        isHideNavigationBar = true
+    }
     
+    func setupViews() {
+        titleLabel.text = "Welcome to MyTaxman"
+        titleLabel.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(20.0))
+
+        submitANewJobBtn.setButtonProperties(title: "SUBMIT A NEW JOB", font: UIFont(name:Font.FontName.PoppinsBold.rawValue, size: Utility.dynamicSize(18.0)), titleColor: ColorManager.darkText.color)
+        submitANewJobBtn.backgroundColor = ColorManager.white.color
+        
+        loginButton.setButtonProperties(title: "LOGIN TO MY ACCOUNT", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(18.0)), titleColor: ColorManager.darkText.color)
+
+        doOnMain {
+            self.submitANewJobBtn.cornerRadius = 5
+            self.loginBgView.roundCorners(corners: [.topLeft , .topRight], radius: 15)
+        }
+    }
     
     //MARK: - Button Actions
-    
     @IBAction func didTapSubmitANewJobButton(_ sender: UIButton) {
-        self.redirectToLeadCreateScreen()
+        redirectToLeadCreateScreen()
+    }
+    
+    @IBAction func didTapLoginAction(_ sender: Any) {
+        redirectToLoginScreen()
     }
     /*
      // MARK: - Navigation
@@ -38,10 +63,14 @@ class GetStartedViewController: UIViewController {
     
 }
 extension GetStartedViewController {
+    
     func redirectToLeadCreateScreen() {
-        
         let submitANewJobVC = LeadsDashboardViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(submitANewJobVC, animated: true)
-        
+    }
+    
+    func redirectToLoginScreen() {
+        let loginVC = LoginViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        self.navigationController?.pushViewController(loginVC, animated: true)
     }
 }

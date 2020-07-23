@@ -8,20 +8,21 @@
 
 import UIKit
 
-class LeadsDashboardViewController: UIViewController {
-    
+class LeadsDashboardViewController: BaseViewController {
     
     var serviceDataListArray : [ServicesList] = []
-    
-    
-    
+        
     @IBOutlet weak var leadsCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpCollectionView()
-        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        isTransparent = true
+        isHideNavigationBar = false
     }
     
     override func viewWillLayoutSubviews() {

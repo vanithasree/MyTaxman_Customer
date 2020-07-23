@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B2E61E24C8956D002A9CCE /* Leads.storyboard */; };
 		18B2E62124C89586002A9CCE /* LeadsDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62024C89586002A9CCE /* LeadsDashboardViewController.swift */; };
 		18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62224C89AA5002A9CCE /* AppStoryboards.swift */; };
-		18B2E62624C89B05002A9CCE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62524C89B05002A9CCE /* UIViewControllerExtensions.swift */; };
 		18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62A24C89D21002A9CCE /* LeadsCollectionViewCell.swift */; };
 		18B2E62D24C89D21002A9CCE /* LeadsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B2E62B24C89D21002A9CCE /* LeadsCollectionViewCell.xib */; };
 		18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E62E24C8AB38002A9CCE /* PageOneViewController.swift */; };
@@ -30,6 +30,46 @@
 		18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63424C8AB5B002A9CCE /* PageFourViewController.swift */; };
 		18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */; };
 		18B2E63B24C8ABD8002A9CCE /* LeadsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */; };
+		3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */; };
+		3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */; };
+		3BF05BA724C95F0500E16081 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA624C95F0500E16081 /* Poppins-Regular.ttf */; };
+		3BF05BA924C95F1300E16081 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA824C95F1300E16081 /* Poppins-SemiBold.ttf */; };
+		3BF05BAB24C95F2600E16081 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BAA24C95F2600E16081 /* Poppins-Black.ttf */; };
+		3BF05BAD24C95F3400E16081 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BAC24C95F3400E16081 /* Poppins-Italic.ttf */; };
+		3BF05BAF24C95F4400E16081 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BAE24C95F4400E16081 /* Poppins-Thin.ttf */; };
+		3BF05BB124C95F4D00E16081 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BB024C95F4D00E16081 /* Poppins-ExtraLight.ttf */; };
+		3BF05BB324C9632300E16081 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BB224C9632300E16081 /* LoadingIndicator.swift */; };
+		3BF05BC524C9634600E16081 /* SliderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BB424C9634400E16081 /* SliderExtension.swift */; };
+		3BF05BC624C9634600E16081 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BB524C9634400E16081 /* UIImageExtension.swift */; };
+		3BF05BC724C9634600E16081 /* UIPageViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BB624C9634500E16081 /* UIPageViewControllerExtension.swift */; };
+		3BF05BC924C9634600E16081 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BB824C9634500E16081 /* UITextViewExtension.swift */; };
+		3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BB924C9634500E16081 /* ArrayExtension.swift */; };
+		3BF05BCB24C9634600E16081 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BBA24C9634500E16081 /* StringExtension.swift */; };
+		3BF05BCC24C9634600E16081 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BBB24C9634500E16081 /* UILabelExtension.swift */; };
+		3BF05BCD24C9634600E16081 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BBC24C9634500E16081 /* Validations.swift */; };
+		3BF05BCE24C9634600E16081 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BBD24C9634500E16081 /* UIButtonExtension.swift */; };
+		3BF05BCF24C9634600E16081 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BBE24C9634500E16081 /* DateExtension.swift */; };
+		3BF05BD024C9634600E16081 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BBF24C9634500E16081 /* NotificationExtension.swift */; };
+		3BF05BD224C9634600E16081 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BC124C9634500E16081 /* UITextFieldExtension.swift */; };
+		3BF05BD324C9634600E16081 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BC224C9634600E16081 /* UIViewControllerExtension.swift */; };
+		3BF05BD424C9634600E16081 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BC324C9634600E16081 /* UIDeviceExtension.swift */; };
+		3BF05BD524C9634600E16081 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BC424C9634600E16081 /* UIViewExtension.swift */; };
+		3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BD624C96AEC00E16081 /* CameraHandler.swift */; };
+		3BF05BE024C96AEC00E16081 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BD724C96AEC00E16081 /* StringConstants.swift */; };
+		3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BD824C96AEC00E16081 /* ImageManager.swift */; };
+		3BF05BE224C96AEC00E16081 /* GCDUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BD924C96AEC00E16081 /* GCDUtils.swift */; };
+		3BF05BE324C96AEC00E16081 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BDA24C96AEC00E16081 /* Config.swift */; };
+		3BF05BE424C96AEC00E16081 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BDB24C96AEC00E16081 /* NetworkManager.swift */; };
+		3BF05BE524C96AED00E16081 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BDC24C96AEC00E16081 /* FontManager.swift */; };
+		3BF05BE624C96AED00E16081 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BDD24C96AEC00E16081 /* UserDetails.swift */; };
+		3BF05BE724C96AED00E16081 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BDE24C96AEC00E16081 /* ColorManager.swift */; };
+		3BF05BEA24C96AFC00E16081 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BE924C96AFC00E16081 /* APIManager.swift */; };
+		3BF05BEF24C972F900E16081 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BEE24C972F900E16081 /* LoginModel.swift */; };
+		3BF05BF224C973E900E16081 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BF124C973E900E16081 /* BaseViewController.swift */; };
+		3BF05BF524C9920D00E16081 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BF424C9920D00E16081 /* AuthViewModel.swift */; };
+		3BF05BF824C9936400E16081 /* AuthApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BF724C9936400E16081 /* AuthApiManager.swift */; };
+		78B494BAE0D54EE19A125A1D /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DEF4EEFA743F15959C3A9CC /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework */; };
+		7B5C58902D8716F2B47499B1 /* Pods_MyTaxman_Customer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A808644CBE221222169888A /* Pods_MyTaxman_Customer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,13 +107,9 @@
 		1888977924C728CC000DFAB3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1888977B24C72919000DFAB3 /* GetStartedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		1888977D24C73D6E000DFAB3 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		1888977F24C74CF6000DFAB3 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
-		1888978024C74CF6000DFAB3 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
-		1888978124C74CF6000DFAB3 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		18B2E61E24C8956D002A9CCE /* Leads.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Leads.storyboard; sourceTree = "<group>"; };
 		18B2E62024C89586002A9CCE /* LeadsDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsDashboardViewController.swift; sourceTree = "<group>"; };
 		18B2E62224C89AA5002A9CCE /* AppStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboards.swift; sourceTree = "<group>"; };
-		18B2E62524C89B05002A9CCE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		18B2E62A24C89D21002A9CCE /* LeadsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsCollectionViewCell.swift; sourceTree = "<group>"; };
 		18B2E62B24C89D21002A9CCE /* LeadsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeadsCollectionViewCell.xib; sourceTree = "<group>"; };
 		18B2E62E24C8AB38002A9CCE /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +118,53 @@
 		18B2E63424C8AB5B002A9CCE /* PageFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFourViewController.swift; sourceTree = "<group>"; };
 		18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFiveViewController.swift; sourceTree = "<group>"; };
 		18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsManager.swift; sourceTree = "<group>"; };
+		1A808644CBE221222169888A /* Pods_MyTaxman_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxman_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.debug.xcconfig"; sourceTree = "<group>"; };
+		3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		3BF05BA624C95F0500E16081 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		3BF05BA824C95F1300E16081 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		3BF05BAA24C95F2600E16081 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		3BF05BAC24C95F3400E16081 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
+		3BF05BAE24C95F4400E16081 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		3BF05BB024C95F4D00E16081 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3BF05BB224C9632300E16081 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
+		3BF05BB424C9634400E16081 /* SliderExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderExtension.swift; sourceTree = "<group>"; };
+		3BF05BB524C9634400E16081 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		3BF05BB624C9634500E16081 /* UIPageViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerExtension.swift; sourceTree = "<group>"; };
+		3BF05BB824C9634500E16081 /* UITextViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
+		3BF05BB924C9634500E16081 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		3BF05BBA24C9634500E16081 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		3BF05BBB24C9634500E16081 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		3BF05BBC24C9634500E16081 /* Validations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		3BF05BBD24C9634500E16081 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		3BF05BBE24C9634500E16081 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		3BF05BBF24C9634500E16081 /* NotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		3BF05BC124C9634500E16081 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		3BF05BC224C9634600E16081 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		3BF05BC324C9634600E16081 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		3BF05BC424C9634600E16081 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		3BF05BD624C96AEC00E16081 /* CameraHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
+		3BF05BD724C96AEC00E16081 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		3BF05BD824C96AEC00E16081 /* ImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		3BF05BD924C96AEC00E16081 /* GCDUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDUtils.swift; sourceTree = "<group>"; };
+		3BF05BDA24C96AEC00E16081 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		3BF05BDB24C96AEC00E16081 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3BF05BDC24C96AEC00E16081 /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		3BF05BDD24C96AEC00E16081 /* UserDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		3BF05BDE24C96AEC00E16081 /* ColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		3BF05BE924C96AFC00E16081 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		3BF05BEE24C972F900E16081 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		3BF05BF124C973E900E16081 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3BF05BF424C9920D00E16081 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		3BF05BF724C9936400E16081 /* AuthApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthApiManager.swift; sourceTree = "<group>"; };
+		48619F62146DF708E2A60C90 /* Pods-MyTaxman_CustomerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_CustomerTests.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_CustomerTests/Pods-MyTaxman_CustomerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5DEF4EEFA743F15959C3A9CC /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EB8A480B1904D8FE5D8DEB4 /* Pods-MyTaxman_Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.release.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.release.xcconfig"; sourceTree = "<group>"; };
+		6839CD77AF4D3E5FF2B00B6B /* Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.release.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F208C929F9C720E52D1A3B0 /* Pods-MyTaxman_CustomerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_CustomerTests.release.xcconfig"; path = "Target Support Files/Pods-MyTaxman_CustomerTests/Pods-MyTaxman_CustomerTests.release.xcconfig"; sourceTree = "<group>"; };
+		C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxman_CustomerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21AB7BF2E21E2F4C5D61722 /* Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5C58902D8716F2B47499B1 /* Pods_MyTaxman_Customer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,12 +188,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78B494BAE0D54EE19A125A1D /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07C4425314996773865BA38C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A808644CBE221222169888A /* Pods_MyTaxman_Customer.framework */,
+				5DEF4EEFA743F15959C3A9CC /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework */,
+				C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1888973024C7281C000DFAB3 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +212,8 @@
 				1888975224C72820000DFAB3 /* MyTaxman_CustomerTests */,
 				1888975D24C72820000DFAB3 /* MyTaxman_CustomerUITests */,
 				1888973A24C7281C000DFAB3 /* Products */,
+				BC7A53FDFAC5A70E0B1B0D52 /* Pods */,
+				07C4425314996773865BA38C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,10 +234,10 @@
 				1888977324C7286C000DFAB3 /* Libararies */,
 				1888977224C72866000DFAB3 /* Utitlities */,
 				1888977124C72860000DFAB3 /* ApiManagers */,
-				1888977024C7285A000DFAB3 /* ViewModels */,
-				1888976F24C72855000DFAB3 /* Views */,
-				1888976E24C7284A000DFAB3 /* Models */,
 				1888976D24C7283B000DFAB3 /* ViewControllers */,
+				1888976F24C72855000DFAB3 /* Views */,
+				1888977024C7285A000DFAB3 /* ViewModels */,
+				3BF05BEC24C9707100E16081 /* Model */,
 				1888976C24C72830000DFAB3 /* Storyboards */,
 				1888973C24C7281C000DFAB3 /* AppDelegate.swift */,
 				1888973E24C7281C000DFAB3 /* SceneDelegate.swift */,
@@ -180,17 +278,11 @@
 		1888976D24C7283B000DFAB3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3BF05BF024C973D200E16081 /* Base */,
 				18B2E61D24C892CB002A9CCE /* Leads */,
 				18B2E61C24C892A2002A9CCE /* Auth */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		1888976E24C7284A000DFAB3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		1888976F24C72855000DFAB3 /* Views */ = {
@@ -206,6 +298,7 @@
 		1888977024C7285A000DFAB3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3BF05BF324C9920400E16081 /* Auth */,
 				18B2E63924C8ABC5002A9CCE /* LeadsManager */,
 			);
 			path = ViewModels;
@@ -214,6 +307,7 @@
 		1888977124C72860000DFAB3 /* ApiManagers */ = {
 			isa = PBXGroup;
 			children = (
+				3BF05BF624C9935800E16081 /* Auth */,
 			);
 			path = ApiManagers;
 			sourceTree = "<group>";
@@ -221,6 +315,16 @@
 		1888977224C72866000DFAB3 /* Utitlities */ = {
 			isa = PBXGroup;
 			children = (
+				3BF05BE824C96AF500E16081 /* WebServices */,
+				3BF05BD624C96AEC00E16081 /* CameraHandler.swift */,
+				3BF05BDE24C96AEC00E16081 /* ColorManager.swift */,
+				3BF05BDA24C96AEC00E16081 /* Config.swift */,
+				3BF05BDC24C96AEC00E16081 /* FontManager.swift */,
+				3BF05BD924C96AEC00E16081 /* GCDUtils.swift */,
+				3BF05BD824C96AEC00E16081 /* ImageManager.swift */,
+				3BF05BDB24C96AEC00E16081 /* NetworkManager.swift */,
+				3BF05BD724C96AEC00E16081 /* StringConstants.swift */,
+				3BF05BDD24C96AEC00E16081 /* UserDetails.swift */,
 				1888977424C72877000DFAB3 /* Font */,
 				18B2E62224C89AA5002A9CCE /* AppStoryboards.swift */,
 			);
@@ -230,6 +334,7 @@
 		1888977324C7286C000DFAB3 /* Libararies */ = {
 			isa = PBXGroup;
 			children = (
+				3BF05BB224C9632300E16081 /* LoadingIndicator.swift */,
 			);
 			path = Libararies;
 			sourceTree = "<group>";
@@ -237,9 +342,14 @@
 		1888977424C72877000DFAB3 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				1888978024C74CF6000DFAB3 /* Comfortaa-Bold.ttf */,
-				1888977F24C74CF6000DFAB3 /* Comfortaa-Light.ttf */,
-				1888978124C74CF6000DFAB3 /* Comfortaa-Regular.ttf */,
+				3BF05BAA24C95F2600E16081 /* Poppins-Black.ttf */,
+				3BF05BA824C95F1300E16081 /* Poppins-SemiBold.ttf */,
+				3BF05BAC24C95F3400E16081 /* Poppins-Italic.ttf */,
+				3BF05BA624C95F0500E16081 /* Poppins-Regular.ttf */,
+				3BF05BAE24C95F4400E16081 /* Poppins-Thin.ttf */,
+				3BF05BB024C95F4D00E16081 /* Poppins-ExtraLight.ttf */,
+				3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */,
+				3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -271,7 +381,21 @@
 		18B2E62424C89ADF002A9CCE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				18B2E62524C89B05002A9CCE /* UIViewControllerExtensions.swift */,
+				3BF05BB924C9634500E16081 /* ArrayExtension.swift */,
+				3BF05BBE24C9634500E16081 /* DateExtension.swift */,
+				3BF05BBF24C9634500E16081 /* NotificationExtension.swift */,
+				3BF05BB424C9634400E16081 /* SliderExtension.swift */,
+				3BF05BBA24C9634500E16081 /* StringExtension.swift */,
+				3BF05BBD24C9634500E16081 /* UIButtonExtension.swift */,
+				3BF05BC324C9634600E16081 /* UIDeviceExtension.swift */,
+				3BF05BB524C9634400E16081 /* UIImageExtension.swift */,
+				3BF05BBB24C9634500E16081 /* UILabelExtension.swift */,
+				3BF05BB624C9634500E16081 /* UIPageViewControllerExtension.swift */,
+				3BF05BC124C9634500E16081 /* UITextFieldExtension.swift */,
+				3BF05BB824C9634500E16081 /* UITextViewExtension.swift */,
+				3BF05BC224C9634600E16081 /* UIViewControllerExtension.swift */,
+				3BF05BC424C9634600E16081 /* UIViewExtension.swift */,
+				3BF05BBC24C9634500E16081 /* Validations.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -307,6 +431,67 @@
 			path = LeadsManager;
 			sourceTree = "<group>";
 		};
+		3BF05BE824C96AF500E16081 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				3BF05BE924C96AFC00E16081 /* APIManager.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		3BF05BEC24C9707100E16081 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BF05BED24C9708B00E16081 /* Auth */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3BF05BED24C9708B00E16081 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3BF05BEE24C972F900E16081 /* LoginModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3BF05BF024C973D200E16081 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3BF05BF124C973E900E16081 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3BF05BF324C9920400E16081 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3BF05BF424C9920D00E16081 /* AuthViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		3BF05BF624C9935800E16081 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				3BF05BF724C9936400E16081 /* AuthApiManager.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BC7A53FDFAC5A70E0B1B0D52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */,
+				5EB8A480B1904D8FE5D8DEB4 /* Pods-MyTaxman_Customer.release.xcconfig */,
+				F21AB7BF2E21E2F4C5D61722 /* Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.debug.xcconfig */,
+				6839CD77AF4D3E5FF2B00B6B /* Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.release.xcconfig */,
+				48619F62146DF708E2A60C90 /* Pods-MyTaxman_CustomerTests.debug.xcconfig */,
+				7F208C929F9C720E52D1A3B0 /* Pods-MyTaxman_CustomerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,9 +499,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1888976324C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_Customer" */;
 			buildPhases = (
+				3F3E3133F8405BD5D5C925AA /* [CP] Check Pods Manifest.lock */,
 				1888973524C7281C000DFAB3 /* Sources */,
 				1888973624C7281C000DFAB3 /* Frameworks */,
 				1888973724C7281C000DFAB3 /* Resources */,
+				CD472F8AA6B56F051E193AA8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,6 +518,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1888976624C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_CustomerTests" */;
 			buildPhases = (
+				DE3536624EDAB73B6D3E1967 /* [CP] Check Pods Manifest.lock */,
 				1888974B24C72820000DFAB3 /* Sources */,
 				1888974C24C72820000DFAB3 /* Frameworks */,
 				1888974D24C72820000DFAB3 /* Resources */,
@@ -349,9 +537,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1888976924C72820000DFAB3 /* Build configuration list for PBXNativeTarget "MyTaxman_CustomerUITests" */;
 			buildPhases = (
+				91A05F2CE4764FC59514A793 /* [CP] Check Pods Manifest.lock */,
 				1888975624C72820000DFAB3 /* Sources */,
 				1888975724C72820000DFAB3 /* Frameworks */,
 				1888975824C72820000DFAB3 /* Resources */,
+				0D6AF6ADDD548022671A1E64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,10 +602,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
+				3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */,
+				3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */,
 				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,
+				3BF05BAB24C95F2600E16081 /* Poppins-Black.ttf in Resources */,
 				18B2E62D24C89D21002A9CCE /* LeadsCollectionViewCell.xib in Resources */,
 				1888974924C7281F000DFAB3 /* LaunchScreen.storyboard in Resources */,
+				3BF05BAD24C95F3400E16081 /* Poppins-Italic.ttf in Resources */,
+				3BF05BA924C95F1300E16081 /* Poppins-SemiBold.ttf in Resources */,
+				3BF05BAF24C95F4400E16081 /* Poppins-Thin.ttf in Resources */,
 				1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */,
+				3BF05BA724C95F0500E16081 /* Poppins-Regular.ttf in Resources */,
+				3BF05BB124C95F4D00E16081 /* Poppins-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,25 +633,157 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D6AF6ADDD548022671A1E64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F3E3133F8405BD5D5C925AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTaxman_Customer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91A05F2CE4764FC59514A793 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD472F8AA6B56F051E193AA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE3536624EDAB73B6D3E1967 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyTaxman_CustomerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1888973524C7281C000DFAB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BF05BE424C96AEC00E16081 /* NetworkManager.swift in Sources */,
+				3BF05BEF24C972F900E16081 /* LoginModel.swift in Sources */,
+				3BF05BE024C96AEC00E16081 /* StringConstants.swift in Sources */,
+				3BF05BC524C9634600E16081 /* SliderExtension.swift in Sources */,
+				3BF05BCF24C9634600E16081 /* DateExtension.swift in Sources */,
 				18B2E62124C89586002A9CCE /* LeadsDashboardViewController.swift in Sources */,
 				18B2E63B24C8ABD8002A9CCE /* LeadsManager.swift in Sources */,
+				3BF05BEA24C96AFC00E16081 /* APIManager.swift in Sources */,
 				1888977824C728C1000DFAB3 /* LoginViewController.swift in Sources */,
+				3BF05BD424C9634600E16081 /* UIDeviceExtension.swift in Sources */,
 				1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */,
+				3BF05BE624C96AED00E16081 /* UserDetails.swift in Sources */,
+				3BF05BE724C96AED00E16081 /* ColorManager.swift in Sources */,
+				3BF05BD524C9634600E16081 /* UIViewExtension.swift in Sources */,
+				3BF05BE524C96AED00E16081 /* FontManager.swift in Sources */,
+				3BF05BF224C973E900E16081 /* BaseViewController.swift in Sources */,
+				3BF05BD224C9634600E16081 /* UITextFieldExtension.swift in Sources */,
+				3BF05BD024C9634600E16081 /* NotificationExtension.swift in Sources */,
 				18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */,
+				3BF05BC924C9634600E16081 /* UITextViewExtension.swift in Sources */,
+				3BF05BB324C9632300E16081 /* LoadingIndicator.swift in Sources */,
 				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,
+				3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */,
+				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,
+				3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */,
 				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,
+				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
 				18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */,
-				18B2E62624C89B05002A9CCE /* UIViewControllerExtensions.swift in Sources */,
 				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
+				3BF05BD324C9634600E16081 /* UIViewControllerExtension.swift in Sources */,
+				3BF05BE224C96AEC00E16081 /* GCDUtils.swift in Sources */,
+				3BF05BF824C9936400E16081 /* AuthApiManager.swift in Sources */,
 				1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */,
+				3BF05BC624C9634600E16081 /* UIImageExtension.swift in Sources */,
+				3BF05BCC24C9634600E16081 /* UILabelExtension.swift in Sources */,
 				18B2E63124C8AB46002A9CCE /* PageTwoViewController.swift in Sources */,
 				1888977A24C728CC000DFAB3 /* RegisterViewController.swift in Sources */,
 				18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */,
+				3BF05BCB24C9634600E16081 /* StringExtension.swift in Sources */,
+				3BF05BE324C96AEC00E16081 /* Config.swift in Sources */,
+				3BF05BCE24C9634600E16081 /* UIButtonExtension.swift in Sources */,
+				3BF05BF524C9920D00E16081 /* AuthViewModel.swift in Sources */,
+				3BF05BC724C9634600E16081 /* UIPageViewControllerExtension.swift in Sources */,
 				1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */,
 				18B2E63324C8AB50002A9CCE /* PageThreeViewController.swift in Sources */,
 			);
@@ -618,6 +948,7 @@
 		};
 		1888976424C72820000DFAB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -636,6 +967,7 @@
 		};
 		1888976524C72820000DFAB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB8A480B1904D8FE5D8DEB4 /* Pods-MyTaxman_Customer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -654,6 +986,7 @@
 		};
 		1888976724C72820000DFAB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48619F62146DF708E2A60C90 /* Pods-MyTaxman_CustomerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -675,6 +1008,7 @@
 		};
 		1888976824C72820000DFAB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F208C929F9C720E52D1A3B0 /* Pods-MyTaxman_CustomerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -696,6 +1030,7 @@
 		};
 		1888976A24C72820000DFAB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F21AB7BF2E21E2F4C5D61722 /* Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -715,6 +1050,7 @@
 		};
 		1888976B24C72820000DFAB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6839CD77AF4D3E5FF2B00B6B /* Pods-MyTaxman_Customer-MyTaxman_CustomerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

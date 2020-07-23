@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MyTaxman_Customer' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'Alamofire'
+  pod 'IQKeyboardManagerSwift'
+  pod 'NVActivityIndicatorView'
+  pod 'SDWebImage', '~> 4.0'
+  pod 'TweeTextField'
+  # Pods for MyTaxman_Customer
+
+  target 'MyTaxman_CustomerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MyTaxman_CustomerUITests' do
+    # Pods for testing
+  end
+
+end

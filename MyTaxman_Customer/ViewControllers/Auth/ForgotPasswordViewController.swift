@@ -7,16 +7,34 @@
 //
 
 import UIKit
+import TweeTextField
+class ForgotPasswordViewController: BaseViewController {
 
-class ForgotPasswordViewController: UIViewController {
-
+    @IBOutlet var emailTextField: TweeAttributedTextField!
+    @IBOutlet var resetButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        setupViews()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        isTransparent = true
+        isHideNavigationBar = false
+    }
+    
+    func setupViews() {
+        self.title = "Forgot Password"
+        emailTextField.setTextFieldProperties(placeholderString:"Email", isSecureText: false)
+    }
+    
+    //MARK: - Button Actions
+    @IBAction func didTapResetAction(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

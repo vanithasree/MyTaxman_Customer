@@ -9,7 +9,7 @@
 import UIKit
 import TweeTextField
 class ForgotPasswordViewController: BaseViewController {
-
+    
     @IBOutlet var emailTextField: TweeAttributedTextField!
     @IBOutlet var resetButton: UIButton!
     
@@ -21,13 +21,19 @@ class ForgotPasswordViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        isTransparent = true
+        isTransparent = false
         isHideNavigationBar = false
     }
     
     func setupViews() {
         self.title = "Forgot Password"
         emailTextField.setTextFieldProperties(placeholderString:"Email", isSecureText: false)
+        
+        resetButton.backgroundColor = ColorManager.mediumTheme.color
+        resetButton.setTitleColor(ColorManager.white.color, for: .normal)
+        resetButton.titleLabel?.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(18.0))
+        resetButton.cornerRadius = 5
+        resetButton.setTitle("RESET PASSWORD", for: .normal)
     }
     
     //MARK: - Button Actions
@@ -36,13 +42,13 @@ class ForgotPasswordViewController: BaseViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

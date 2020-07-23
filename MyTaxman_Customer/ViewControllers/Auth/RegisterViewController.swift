@@ -19,7 +19,7 @@ class RegisterViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        isTransparent = true
+        isTransparent = false
         isHideNavigationBar = false
     }
     

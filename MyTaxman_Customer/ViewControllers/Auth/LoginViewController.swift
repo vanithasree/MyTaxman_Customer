@@ -10,7 +10,8 @@ import UIKit
 import Alamofire
 import TweeTextField
 class LoginViewController: BaseViewController {
-
+    
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var userNameTextField: TweeAttributedTextField!
     @IBOutlet var passwordTextField: TweeAttributedTextField!
     @IBOutlet var forgotButton: UIButton!
@@ -19,7 +20,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet var accountLabel: UILabel!
     
     private var authViewModel = AuthViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,21 +29,60 @@ class LoginViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        isTransparent = true
+        isTransparent = false
         isHideNavigationBar = false
     }
     
     func setupViews() {
         self.title = "Login"
+        titleLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
+        titleLabel.text = "Login to view your job"
+        
+        accountLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
+        accountLabel.text = "Don't have an account?"
+        
+        forgotButton.setTitleColor(ColorManager.mediumTheme.color, for: .normal)
+        forgotButton.titleLabel?.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
+        forgotButton.setTitle("FORGOT YOUR PASSWORD?", for: .normal)
+        
+        registerButton.setTitleColor(ColorManager.mediumTheme.color, for: .normal)
+        registerButton.titleLabel?.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
+        registerButton.underline(text: "Register", color: ColorManager.mediumTheme.color)
+        
+        loginButton.backgroundColor = ColorManager.mediumTheme.color
+        loginButton.setTitleColor(ColorManager.white.color, for: .normal)
+        loginButton.titleLabel?.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(18.0))
+        loginButton.cornerRadius = 5
+        loginButton.setTitle("LOGIN", for: .normal)
+        
         userNameTextField.setTextFieldProperties(placeholderString:"Email/Mobile Number", isSecureText: false)
+        
         passwordTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
+        let eyeShowButton = UIButton(type: .custom)
+        eyeShowButton.setImage(UIImage(named: "eyeShow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        eyeShowButton.setImage(UIImage(named: "eyeHide")?.withRenderingMode(.alwaysTemplate), for: .selected)
+        eyeShowButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        eyeShowButton.frame = CGRect(x: CGFloat(passwordTextField.frame.size.width - 30), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        eyeShowButton.addTarget(self, action: #selector(self.showOrHide), for: .touchUpInside)
+        eyeShowButton.tintColor = ColorManager.darkBGTheme.color
+        passwordTextField.rightView = eyeShowButton
+        passwordTextField.rightViewMode = .always
     }
     
     //MARK: - Button Actions
-
+    
     @IBAction func didTapForgotPasswordAction(_ sender: Any) {
         redirectToForgotPasswordScreen()
     }
+    
+    @IBAction func showOrHide(_ sender: UIButton) {
+           if sender.isSelected == true {
+               sender.isSelected = false
+           }else {
+               sender.isSelected = true
+           }
+           passwordTextField.isSecureTextEntry.toggle()
+       }
     
     @IBAction func didTapLoginAction(_ sender: Any) {
         self.view.endEditing(true)
@@ -81,15 +121,15 @@ class LoginViewController: BaseViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension LoginViewController {
@@ -139,9 +179,9 @@ extension LoginViewController : UITextFieldDelegate {
                         return false
                     }
                 }
-//                guard let text = textField.text else { return false }
-//                let newString = (text as NSString).replacingCharacters(in: range, with: string)
-//                textField.text = ValidationManager().format(with: Constant.k_mobileFormat, phone: newString)
+                //                guard let text = textField.text else { return false }
+                //                let newString = (text as NSString).replacingCharacters(in: range, with: string)
+                //                textField.text = ValidationManager().format(with: Constant.k_mobileFormat, phone: newString)
                 return false
             } else if newText.isEmpty {
                 userNameTextField.rightViewMode = .always

@@ -35,11 +35,11 @@ class LoginViewController: BaseViewController {
     func setupViews() {
         
         self.title = "Login"
-        titleLabel.setMainTitle(label: titleLabel, titleText: "Login to view your job")
+        titleLabel.setMainTitle(titleText: "Login to view your job")
         userNameTextField.setTextFieldProperties(placeholderString:"Email/Mobile Number", isSecureText: false)
         
         passwordTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
-        titleLabel.setMainTitle(label: titleLabel, titleText: "Login to view your job")
+        titleLabel.setMainTitle(titleText: "Login to view your job")
         
         loginButton.setDarkGreenTheme(btn: loginButton, title: "LOGIN")
         forgotButton.setButtonProperties(title: "FORGOT  YOUR PASSWORD?", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0)), titleColor: ColorManager.darkTheme.color)
@@ -129,11 +129,6 @@ extension LoginViewController {
     func redirectToForgotPasswordScreen() {
         let forgotVC = ForgotPasswordViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
         self.navigationController?.pushViewController(forgotVC, animated: true)
-    }
-    
-    func redirectToRegisterScreen() {
-        let registerVC = RegisterViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
-        self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
     func redirectToContactRegisterInfoScreen() {

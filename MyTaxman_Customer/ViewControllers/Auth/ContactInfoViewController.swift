@@ -14,6 +14,7 @@ class ContactInfoViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contactBaseView: UIView!
     @IBOutlet weak var contactTitleLabel: UILabel!
+    @IBOutlet var contactSubTitleLabel: UILabel!
     @IBOutlet weak var mobileNumberTextField: TweeAttributedTextField!
     @IBOutlet weak var retypePasswordTextField: TweeAttributedTextField!
     @IBOutlet weak var passwordTextField: TweeAttributedTextField!
@@ -31,37 +32,34 @@ class ContactInfoViewController: UIViewController {
     }
     
     func setupViewUI() {
-        contactTitleLabel.setHeaderTitle(label: contactTitleLabel, titleText: "Your contact information")
+        contactTitleLabel.setHeaderTitle(titleText: "Your contact information")
+        contactSubTitleLabel.setFooterTitle(titleText: "This is where we will send you quotes")
+
         mobileNumberTextField.setTextFieldProperties(placeholderString:"Mobile Number", isSecureText: false)
         mobileNumberTextField.keyboardType = .numberPad
         
+//        self.setTextFieldPropertiesOnView(textField: fullnameTextField, placeHolder: "Full Name", isSecureText: false, keypadType: .default)
+//        self.setTextFieldPropertiesOnView(textField: emailTextField, placeHolder: "Email", isSecureText: false, keypadType: .emailAddress)
+//        self.setTextFieldPropertiesOnView(textField: passwordTextField, placeHolder: "Password", isSecureText: true, keypadType: .default)
+//        self.setTextFieldPropertiesOnView(textField: retypePasswordTextField, placeHolder: "Retype Password", isSecureText: true, keypadType: .default)
         
-        self.setTextFieldPropertiesOnView(textField: fullnameTextField, placeHolder: "Full Name", isSecureText: false, keypadType: .default)
-        
-        self.setTextFieldPropertiesOnView(textField: emailTextField, placeHolder: "Email", isSecureText: false, keypadType: .emailAddress)
-        
-        self.setTextFieldPropertiesOnView(textField: passwordTextField, placeHolder: "Password", isSecureText: true, keypadType: .default)
-        
-        self.setTextFieldPropertiesOnView(textField: retypePasswordTextField, placeHolder: "Retype Password", isSecureText: true, keypadType: .default)
-        submitBtn.setDarkGreenTheme(btn: submitBtn, title: "Submit")
-        
-        submitBtn.isHidden = !isAllConditionSatisfied
-        
+//        submitBtn.setDarkGreenTheme(btn: submitBtn, title: "Submit")
+//        submitBtn.isHidden = !isAllConditionSatisfied
     }
     
     
-    func setTextFieldPropertiesOnView(textField:TweeAttributedTextField, placeHolder:String, isSecureText:Bool, keypadType: UIKeyboardType) {
-        
-        textField.setTextFieldProperties(placeholderString:placeHolder, isSecureText: isSecureText)
-        textField.borderStyle = .none
-        textField.backgroundColor = .clear
-        textField.keyboardType = keypadType
-        //textField.delegate = self
-        //textField.text = "vanithasree@kuyatechnologies.com"
-        
-    }
+//    func setTextFieldPropertiesOnView(textField:TweeAttributedTextField, placeHolder:String, isSecureText:Bool, keypadType: UIKeyboardType) {
+//
+//        textField.setTextFieldProperties(placeholderString:placeHolder, isSecureText: isSecureText)
+//        textField.borderStyle = .none
+//        textField.backgroundColor = .clear
+//        textField.keyboardType = keypadType
+//        //textField.delegate = self
+//        //textField.text = "vanithasree@kuyatechnologies.com"
+//    }
     
     @IBAction func onTappedSubmitBtn(_ sender: UIButton) {
+        
     }
     /*
      // MARK: - Navigation

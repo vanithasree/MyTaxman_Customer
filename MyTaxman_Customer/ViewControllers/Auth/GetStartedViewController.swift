@@ -39,21 +39,18 @@ class GetStartedViewController: BaseViewController {
         submitANewJobBtn.backgroundColor = ColorManager.white.color
         
         loginButton.setButtonProperties(title: "LOGIN TO MY ACCOUNT", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(18.0)), titleColor: ColorManager.darkText.color)
-        
+        loginButton.backgroundColor = .clear
         
         
         doOnMain {
-            self.submitANewJobBtn.cornerRadius = 10
+            self.submitANewJobBtn.cornerRadius = 5
             self.loginBgView.roundCorners(corners: [.topLeft , .topRight], radius: 20)
             
             let gradientLayer:CAGradientLayer = CAGradientLayer()
-            gradientLayer.frame.size = self.loginBgView.frame.size
-            gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
-            gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-            gradientLayer.colors =
-                [UIColor.white.cgColor,ColorManager.textVeryLiteGreenColor.color.cgColor]
-            self.loginBgView.layer.addSublayer(gradientLayer)
-            
+            gradientLayer.frame.size = self.loginButton.frame.size
+            gradientLayer.locations = [0.0, 1.0]
+            gradientLayer.colors = [UIColor.white.cgColor,ColorManager.textVeryLiteGreenColor.color.cgColor]
+            self.loginButton.layer.insertSublayer(gradientLayer, below: self.loginButton.titleLabel?.layer)
         }
     }
     

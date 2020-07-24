@@ -50,7 +50,7 @@ class LeadsDashboardViewController: BaseViewController {
         serviceDataListArray.append(ServicesList(imageName: "Audit", title: "Audit"))
         serviceDataListArray.append(ServicesList(imageName: "legal", title: "Legal Advice"))
     
-        titleLabel.setLabelCustomProperties(label: titleLabel, titleText: "What are you looking for?", textColor: ColorManager.textDarkGreenColor.color, font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(20.0)), numberOfLines: 1, alignment: .center)
+        titleLabel.setLabelCustomProperties(titleText: "What are you looking for?", textColor: ColorManager.textDarkGreenColor.color, font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(20.0)), numberOfLines: 1, alignment: .center)
      
         
     }

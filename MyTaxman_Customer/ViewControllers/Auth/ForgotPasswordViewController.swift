@@ -12,7 +12,8 @@ class ForgotPasswordViewController: BaseViewController {
     
     @IBOutlet var emailTextField: TweeAttributedTextField!
     @IBOutlet var resetButton: UIButton!
-    
+    private var authViewModel = AuthViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,4 +47,53 @@ class ForgotPasswordViewController: BaseViewController {
      }
      */
     
+}
+
+extension ForgotPasswordViewController:UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            textField.hideInfo()
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let existText = textField.text,
+            let textRange = Range(range, in: existText) else { return false }
+        
+        let newText = existText.replacingCharacters(in: textRange, with: string)
+        
+        switch textField {
+        case emailTextField:
+            if newText.isEmpty {
+                emailTextField.rightViewMode = .always
+            } else {
+                emailTextField.rightViewMode = .never
+                return 40 >= newText.count ? true : false
+            }
+        default:
+            break
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            self.validateTextField(textField: textField)
+        }
+    }
+    
+    func validateTextField(textField:TweeAttributedTextField) {
+        if textField == emailTextField {
+            let nameValidation:ValidationMessage = authViewModel.validateEmailTextField(textField: emailTextField)
+            
+            if nameValidation.status == false {
+                textField.showInfo(nameValidation.errorMessage ?? "")
+                
+            } else {
+                textField.hideInfo()
+            }
+        }
+    }
 }

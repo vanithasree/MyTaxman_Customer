@@ -104,7 +104,7 @@ extension LeadsDashboardViewController : UICollectionViewDataSource, UICollectio
         switch selectedService {
         case ServiceListKeys.taxReturns.rawValue:
             LeadsManager.shared.choosenService = .taxReturns
-            redirectToNextScreen()
+            redirectToPageOne()
             break
             
         case ServiceListKeys.accounting.rawValue:
@@ -142,5 +142,10 @@ extension LeadsDashboardViewController : UICollectionViewDataSource, UICollectio
 extension LeadsDashboardViewController{
     func redirectToNextScreen() {
         
+    }
+    
+    func redirectToPageOne() {
+        let pageOneVC = PageOneViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
 }

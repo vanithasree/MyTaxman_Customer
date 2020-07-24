@@ -9,6 +9,8 @@ target 'MyTaxman_Customer' do
   pod 'NVActivityIndicatorView'
   pod 'SDWebImage', '~> 4.0'
   pod 'TweeTextField'
+  pod 'DLRadioButton'
+  
   # Pods for MyTaxman_Customer
 
   target 'MyTaxman_CustomerTests' do

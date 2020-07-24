@@ -46,7 +46,7 @@ class LoginViewController: BaseViewController {
         accountLabel.text = "Don't have an account?"
         accountLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
         accountLabel.textColor = ColorManager.darkGrey.color
-      
+        
         
         registerButton.setButtonProperties(title: "Register", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0)), titleColor: ColorManager.darkTheme.color)
         registerButton.underline(text: "Register", color: ColorManager.darkTheme.color)
@@ -68,13 +68,13 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func showOrHide(_ sender: UIButton) {
-           if sender.isSelected == true {
-               sender.isSelected = false
-           }else {
-               sender.isSelected = true
-           }
-           passwordTextField.isSecureTextEntry.toggle()
-       }
+        if sender.isSelected == true {
+            sender.isSelected = false
+        }else {
+            sender.isSelected = true
+        }
+        passwordTextField.isSecureTextEntry.toggle()
+    }
     
     @IBAction func didTapLoginAction(_ sender: Any) {
         self.view.endEditing(true)

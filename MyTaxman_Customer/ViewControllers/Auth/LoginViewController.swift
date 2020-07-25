@@ -165,10 +165,10 @@ extension LoginViewController {
     }
     
     func redirectToDashBoardScreen() {
-        let dashboardVC = LeadsDashboardViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        let navigationVC = UINavigationController(rootViewController: dashboardVC)
-        navigationVC.modalPresentationStyle = .fullScreen
-        self.present(navigationVC, animated: true) {}
+        let tabBar = TabBarViewController.instantiateFromAppStoryboard(appStoryboard: .Tabbar)
+        tabBar.modalPresentationStyle = .fullScreen
+        self.present(tabBar, animated: true) {
+        }
     }
 }
 

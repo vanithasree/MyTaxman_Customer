@@ -42,8 +42,8 @@ class OtpViewController: BaseViewController {
         pinview.style = .underline
 //        pinview.borderLineColor = .clear
 //        pinview.fieldCornerRadius = 0
-        pinview.activeBorderLineThickness = 1
-        pinview.borderLineColor = ColorManager.backgroundGrey.color
+        pinview.activeBorderLineThickness = 1.5
+        pinview.borderLineColor = ColorManager.darkText.color
         pinview.activeBorderLineColor = ColorManager.darkBGTheme.color
         //           pinview.fieldBackgroundColor = ColorManager.liteBlueTheme.color
         //           pinview.activeFieldBackgroundColor = ColorManager.liteBlueTheme.color
@@ -57,6 +57,10 @@ class OtpViewController: BaseViewController {
         pinview.textColor = ColorManager.darkText.color
         pinview.pinInputAccessoryView = UIView()
         pinview.becomeFirstResponderAtIndex = 0
+        pinview.didFinishCallback = { [weak self] pin in
+            print("The pin entered is \(pin)")
+            self?.sendOtpAction(token: pin)
+        }
     }
     /*
      // MARK: - Navigation
@@ -67,6 +71,29 @@ class OtpViewController: BaseViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    func sendOtpAction(token: String) {
+        let params: Parameters = [
+            "customerid": UserDetails.shared.userId,
+            "otp":token
+        ]
+        LoadingIndicator.shared.show(forView: self.view)
+        authViewModel.requestOtpVerification(input: params) { (result: ResendOtpBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                        self.redirectToDashBoardScreen()
+                    }
+                }else{
+                    print("No response found.")
+                    self.presentAlert(withTitle: error, message: result.desc ?? "")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
+    }
     
     
     @IBAction func didTapResendAction(_ sender: Any) {
@@ -87,6 +114,15 @@ class OtpViewController: BaseViewController {
             } else if let alert = alert {
                 self.presentAlert(withTitle: "", message: alert.errorMessage)
             }
+        }
+    }
+}
+
+extension OtpViewController {
+    func redirectToDashBoardScreen() {
+        let tabBar = TabBarViewController.instantiateFromAppStoryboard(appStoryboard: .Tabbar)
+        tabBar.modalPresentationStyle = .fullScreen
+        self.present(tabBar, animated: true) {
         }
     }
 }

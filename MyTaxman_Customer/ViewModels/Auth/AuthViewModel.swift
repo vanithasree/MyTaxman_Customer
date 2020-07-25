@@ -322,4 +322,10 @@ extension AuthViewModel {
     func requestResend(input: Parameters, handler: @escaping (_ user: ResendOtpBase?, _ error: AlertMessage?)->()) {
         AuthApiManager().requestResendOtp(input: input, handler: handler)
     }
+    
+    func requestOtpVerification(input: Parameters, handler: @escaping (_ user: ResendOtpBase?, _ error: AlertMessage?)->()) {
+        AuthApiManager().requestOtpVerification(input: input, handler: handler)
+    }
+    
 }
+

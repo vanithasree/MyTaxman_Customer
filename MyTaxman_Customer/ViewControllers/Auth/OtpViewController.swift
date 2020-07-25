@@ -78,7 +78,7 @@ class OtpViewController: BaseViewController {
             "otp":token
         ]
         LoadingIndicator.shared.show(forView: self.view)
-        authViewModel.requestOtpVerification(input: params) { (result: ResendOtpBase?, alert: AlertMessage?) in
+        authViewModel.requestOtpVerification(input: params) { (result: OtpVerifyBase?, alert: AlertMessage?) in
             LoadingIndicator.shared.hide()
             if let result = result {
                 if let success = result.code, success == "1" {

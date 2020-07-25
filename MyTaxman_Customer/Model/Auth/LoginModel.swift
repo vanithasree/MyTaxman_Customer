@@ -239,7 +239,7 @@ struct Customer : Codable {
 }
 
 
-// MARK: Forgot password base
+// MARK: Resend otp base
 struct ResendOtpBase : Codable {
     let desc : String?
     let code : String?
@@ -254,6 +254,28 @@ struct ResendOtpBase : Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         desc = try values.decodeIfPresent(String.self, forKey: .desc)
         code = try values.decodeIfPresent(String.self, forKey: .code)
+    }
+    
+}
+
+// MARK: Otp varification base
+struct OtpVerifyBase : Codable {
+    let desc : String?
+    let code : String?
+    let customerid : String?
+
+    enum CodingKeys: String, CodingKey {
+        
+        case desc = "desc"
+        case code = "code"
+        case customerid = "customerid"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        desc = try values.decodeIfPresent(String.self, forKey: .desc)
+        code = try values.decodeIfPresent(String.self, forKey: .code)
+        customerid = try values.decodeIfPresent(String.self, forKey: .customerid)
     }
     
 }

@@ -143,8 +143,8 @@ class AuthApiManager {
         }
     }
     
-    func requestOtpVerification(input: Parameters, handler: @escaping (_ result: ResendOtpBase?, _ error: AlertMessage?)->()) {
-        APIManager.shared().call(type: AuthApi.cus_otpverification, params: input) { (result: ResendOtpBase?, message: AlertMessage?) in
+    func requestOtpVerification(input: Parameters, handler: @escaping (_ result: OtpVerifyBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: AuthApi.cus_otpverification, params: input) { (result: OtpVerifyBase?, message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {

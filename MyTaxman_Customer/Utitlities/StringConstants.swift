@@ -89,9 +89,7 @@ let enterAmount = "Enter amount"
 
 
 let userNameRequired = "Please enter Email/Mobile number!" //"Email/Mobile number field is required"
-let firstNameRequired = "Please enter First name field!"// is required"
-let lastNameRequired = "Please enter Last name field!"// is required"
-let middleNameRequired = "Please enter Middle name!"// field is requied"
+let nameRequired = "Please enter Name field!"// is required"
 let mobileNumberRequired = "Please enter Mobile number!"// field is required"
 let phoneNumberIsEmpty = "Please enter Phone number!"// field is required"
 let emailRequired = "Please enter Email address!" //"Email field is required"

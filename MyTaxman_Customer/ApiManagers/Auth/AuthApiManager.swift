@@ -12,6 +12,8 @@ import Alamofire
 enum AuthApi {
     case login
     case signUp
+    case forgotPassword
+    case mobileemail_exist
 }
 
 // MARK: - EndPointType
@@ -38,6 +40,10 @@ extension AuthApi: EndPointType {
             return "/cuslogin"
         case .signUp:
             return "/customerregister"
+        case .forgotPassword:
+            return "/cusforgotpassword"
+        case .mobileemail_exist:
+            return "/mobileemail_exist"
         }
     }
     
@@ -84,6 +90,36 @@ class AuthApiManager {
     
     func requestLogIn(input: Parameters, handler: @escaping (_ result: LoginBase?, _ error: AlertMessage?)->()) {
         APIManager.shared().call(type: AuthApi.login, params: input) { (result: LoginBase?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+    
+    func requestSignup(input: Parameters, handler: @escaping (_ result: Register_Base?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: AuthApi.signUp, params: input) { (result: Register_Base?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+    
+    func requestForgotPassword(input: Parameters, handler: @escaping (_ result: ForgotPasswordBase?, _ error: AlertMessage?)->()) {
+         APIManager.shared().call(type: AuthApi.forgotPassword, params: input) { (result: ForgotPasswordBase?,message: AlertMessage?) in
+             if let result = result {
+                 handler(result, nil)
+             } else {
+                 handler(nil, message!)
+             }
+         }
+     }
+    
+    func requestCheckMobile(input: Parameters, handler: @escaping (_ result: CheckMobile_Base?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: AuthApi.mobileemail_exist, params: input) { (result: CheckMobile_Base?,message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {

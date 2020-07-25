@@ -69,30 +69,33 @@ class ValidationManager {
     
     func getLength(mobileNumber: String) -> Int {
         
-        var number = mobileNumber
-        number = number.replacingOccurrences(of: "(", with: "")
-        number = number.replacingOccurrences(of: ")", with: "")
-        number = number.replacingOccurrences(of: " ", with: "")
-        number = number.replacingOccurrences(of: "-", with: "")
-        number = number.replacingOccurrences(of: "+", with: "")
+//        var number = mobileNumber
+//        number = number.replacingOccurrences(of: "(", with: "")
+//        number = number.replacingOccurrences(of: ")", with: "")
+//        number = number.replacingOccurrences(of: " ", with: "")
+//        number = number.replacingOccurrences(of: "-", with: "")
+//        number = number.replacingOccurrences(of: "+", with: "")
         
-        let length = Int(number.count)
-        return length
+//        let length = Int(number.count)
+        let finalMobileString = mobileNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        return Int(finalMobileString.count)
         
     }
     
     func getMobileNumber(mobileNumber: String) -> String {
         
-        var number = mobileNumber
-        number = number.replacingOccurrences(of: "(", with: "")
-        number = number.replacingOccurrences(of: ")", with: "")
-        number = number.replacingOccurrences(of: " ", with: "")
-        number = number.replacingOccurrences(of: "-", with: "")
-        number = number.replacingOccurrences(of: "+", with: "")
-        
-        //            let length = Int(number.count)
-        //            return length
-        return number
+        let finalMobileString = mobileNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+
+//        var number = mobileNumber
+//        number = number.replacingOccurrences(of: "(", with: "")
+//        number = number.replacingOccurrences(of: ")", with: "")
+//        number = number.replacingOccurrences(of: " ", with: "")
+//        number = number.replacingOccurrences(of: "-", with: "")
+//        number = number.replacingOccurrences(of: "+", with: "")
+//        
+//        //            let length = Int(number.count)
+//        //            return length
+        return finalMobileString
     }
     
 }

@@ -50,6 +50,7 @@ class LoginViewController: BaseViewController {
         
         registerButton.setButtonProperties(title: "Register", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0)), titleColor: ColorManager.darkTheme.color)
         registerButton.underline(text: "Register", color: ColorManager.darkTheme.color)
+        
         let eyeShowButton = UIButton(type: .custom)
         eyeShowButton.setImage(UIImage(named: "eyeShow")?.withRenderingMode(.alwaysTemplate), for: .normal)
         eyeShowButton.setImage(UIImage(named: "eyeHide")?.withRenderingMode(.alwaysTemplate), for: .selected)
@@ -91,7 +92,7 @@ class LoginViewController: BaseViewController {
                 LoadingIndicator.shared.hide()
                 if let result = result {
                     if let success = result.code, success == "1" {
-                        UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result))
+                        UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
                         self.redirectToDashBoardScreen()
                     } else {
                         print("No response found.")

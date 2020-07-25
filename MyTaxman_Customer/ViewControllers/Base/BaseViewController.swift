@@ -24,11 +24,12 @@ class BaseViewController: UIViewController {
                 
                 self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
                 //self.navigationController!.navigationBar.topItem!.title = "";
+
             } else {
                 self.navigationController?.navigationBar.isTranslucent = !isTransparent
                 self.navigationController?.navigationBar.barTintColor = ColorManager.darkText.color
                 self.navigationController?.navigationBar.tintColor = ColorManager.darkTheme.color
-                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: ColorManager.darkText.color]
                 
                 //self.navigationController!.navigationBar.topItem!.title = "";
             }

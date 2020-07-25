@@ -29,9 +29,7 @@ class GetStartedViewController: BaseViewController {
     }
     
     func setupViews() {
-        
-        Utility.logAllAvailableFonts()
-        
+                
         titleLabel.text = "Welcome to MyTaxman"
         titleLabel.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(20.0))
         

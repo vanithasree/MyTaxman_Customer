@@ -9,7 +9,7 @@
 import UIKit
 import TweeTextField
 import Alamofire
-class ContactInfoViewController: UIViewController {
+class ContactInfoViewController: BaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contactBaseView: UIView!
@@ -40,8 +40,13 @@ class ContactInfoViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Register"
         // Do any additional setup after loading the view.
-
         setupViewUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        isTransparent = false
+        isHideNavigationBar = false
     }
     
     func showInformationView(isShow: Bool) {
@@ -161,7 +166,7 @@ class ContactInfoViewController: UIViewController {
                 if let result = result {
                     if let success = result.code, success == "1" {
                         UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
-                        self.redirectToDashBoardScreen()
+                        self.redirectToOtpScreen()
                     } else {
                         print("No response found.")
                         self.presentAlert(withTitle: error, message: result.desc ?? "")
@@ -191,11 +196,10 @@ class ContactInfoViewController: UIViewController {
     
 }
 extension ContactInfoViewController {
-    func redirectToDashBoardScreen() {
-        let dashboardVC = LeadsDashboardViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        let navigationVC = UINavigationController(rootViewController: dashboardVC)
-        navigationVC.modalPresentationStyle = .fullScreen
-        self.present(navigationVC, animated: true) {}
+    
+    func redirectToOtpScreen() {
+        let otpVC = OtpViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        self.navigationController?.pushViewController(otpVC, animated: true)
     }
     
     @objc func checkMobileExist() {

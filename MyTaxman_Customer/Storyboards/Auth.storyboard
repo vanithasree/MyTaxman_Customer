@@ -389,6 +389,60 @@
             </objects>
             <point key="canvasLocation" x="2486.9565217391305" y="122.54464285714285"/>
         </scene>
+        <!--Otp View Controller-->
+        <scene sceneID="2wl-by-IBK">
+            <objects>
+                <viewController storyboardIdentifier="OtpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YjW-Ok-Jvd" customClass="OtpViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mpg-dg-2Fv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwT-Rf-lN5" customClass="SVPinView" customModule="SVPinView">
+                                <rect key="frame" x="20" y="418" width="374" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="z4Q-F2-Ltc"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSU-On-to6">
+                                <rect key="frame" x="20" y="377" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuI-FV-Ocf">
+                                <rect key="frame" x="311" y="498" width="83" height="45"/>
+                                <state key="normal" title="Resend"/>
+                                <connections>
+                                    <action selector="didTapResendAction:" destination="YjW-Ok-Jvd" eventType="touchUpInside" id="k88-bh-taw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DSU-On-to6" firstAttribute="leading" secondItem="n29-3U-Z6T" secondAttribute="leading" constant="20" id="10a-1w-hti"/>
+                            <constraint firstItem="nwT-Rf-lN5" firstAttribute="leading" secondItem="n29-3U-Z6T" secondAttribute="leading" constant="20" id="9U6-kq-kmK"/>
+                            <constraint firstItem="OuI-FV-Ocf" firstAttribute="height" secondItem="Mpg-dg-2Fv" secondAttribute="height" multiplier="0.05" id="L6l-zg-2iA"/>
+                            <constraint firstItem="nwT-Rf-lN5" firstAttribute="centerY" secondItem="Mpg-dg-2Fv" secondAttribute="centerY" id="Lc4-sa-x5v"/>
+                            <constraint firstItem="OuI-FV-Ocf" firstAttribute="width" secondItem="Mpg-dg-2Fv" secondAttribute="width" multiplier="0.2" id="NGJ-Xm-p2C"/>
+                            <constraint firstItem="nwT-Rf-lN5" firstAttribute="top" secondItem="DSU-On-to6" secondAttribute="bottom" constant="20" id="NxI-8v-Kgv"/>
+                            <constraint firstItem="n29-3U-Z6T" firstAttribute="trailing" secondItem="OuI-FV-Ocf" secondAttribute="trailing" constant="20" id="T8r-Kq-hKg"/>
+                            <constraint firstItem="n29-3U-Z6T" firstAttribute="trailing" secondItem="DSU-On-to6" secondAttribute="trailing" constant="20" id="U1B-29-HG7"/>
+                            <constraint firstItem="n29-3U-Z6T" firstAttribute="trailing" secondItem="nwT-Rf-lN5" secondAttribute="trailing" constant="20" id="o6T-m7-ASh"/>
+                            <constraint firstItem="OuI-FV-Ocf" firstAttribute="top" secondItem="nwT-Rf-lN5" secondAttribute="bottom" constant="20" id="utQ-CF-SiX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="n29-3U-Z6T"/>
+                    </view>
+                    <connections>
+                        <outlet property="pinview" destination="nwT-Rf-lN5" id="atR-kL-hMa"/>
+                        <outlet property="resendButton" destination="OuI-FV-Ocf" id="cg5-P0-dm6"/>
+                        <outlet property="titleLabel" destination="DSU-On-to6" id="pkV-kk-74u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TjT-JF-hL1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3293" y="126"/>
+        </scene>
         <!--Get Started View Controller-->
         <scene sceneID="NBq-6s-bKA">
             <objects>

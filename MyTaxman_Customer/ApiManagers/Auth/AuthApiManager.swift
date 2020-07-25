@@ -14,6 +14,7 @@ enum AuthApi {
     case signUp
     case forgotPassword
     case mobileemail_exist
+    case resend_otp
 }
 
 // MARK: - EndPointType
@@ -44,6 +45,8 @@ extension AuthApi: EndPointType {
             return "/cusforgotpassword"
         case .mobileemail_exist:
             return "/mobileemail_exist"
+        case .resend_otp:
+            return "/resend_otp"
         }
     }
     
@@ -120,6 +123,15 @@ class AuthApiManager {
     
     func requestCheckMobile(input: Parameters, handler: @escaping (_ result: CheckMobile_Base?, _ error: AlertMessage?)->()) {
         APIManager.shared().call(type: AuthApi.mobileemail_exist, params: input) { (result: CheckMobile_Base?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+    func requestResendOtp(input: Parameters, handler: @escaping (_ result: ResendOtpBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: AuthApi.resend_otp, params: input) { (result: ResendOtpBase?, message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {

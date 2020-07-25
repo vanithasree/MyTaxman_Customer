@@ -10,7 +10,8 @@ target 'MyTaxman_Customer' do
   pod 'SDWebImage', '~> 4.0'
   pod 'TweeTextField'
   pod 'DLRadioButton'
-  
+  pod 'SVPinView', '~> 1.0'
+
   # Pods for MyTaxman_Customer
 
   target 'MyTaxman_CustomerTests' do

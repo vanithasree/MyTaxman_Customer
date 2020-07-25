@@ -60,6 +60,18 @@ extension UILabel {
         self.textColor = ColorManager.darkText.color
         self.adjustsFontForContentSizeCategory = false
     }
+
+    
+    func setTitleForPageScreenTitle(label:UILabel, titleText:String) {
+        label.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
+        label.numberOfLines = 0
+        label.text = titleText
+        label.backgroundColor = .clear
+        label.textColor = .black
+        label.textAlignment = .left
+        label.adjustsFontForContentSizeCategory = false
+    }
+    
     
     func setHeaderTitle(titleText:String) {
         self.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(20.0))

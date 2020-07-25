@@ -51,6 +51,16 @@ extension UIButton {
         
     }
     
+    func setOptionChooseTheme(btn:UIButton, title:String) {
+        
+        btn.backgroundColor = .white
+        btn.setTitle(title, for: .normal)
+        btn.setTitleColor(ColorManager.darkText.color, for: .normal)
+        btn.titleLabel?.font =  UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0))
+        btn.titleLabel?.adjustsFontForContentSizeCategory = false
+        
+    }
+    
     func setButtonProperties(title:String, font:UIFont?,titleColor:UIColor) {
         self.backgroundColor = .clear
         self.setTitle(title, for: .normal)

@@ -30,6 +30,7 @@
 		18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */; };
 		18B2E63B24C8ABD8002A9CCE /* LeadsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */; };
 		18F6AA5624CA0E63005F3855 /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA5524CA0E63005F3855 /* ContactInfoViewController.swift */; };
+		18F6AA5824CB4F62005F3855 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F6AA5724CB4F61005F3855 /* Poppins-Medium.ttf */; };
 		3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */; };
 		3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */; };
 		3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */; };
@@ -119,6 +120,7 @@
 		18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFiveViewController.swift; sourceTree = "<group>"; };
 		18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsManager.swift; sourceTree = "<group>"; };
 		18F6AA5524CA0E63005F3855 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
+		18F6AA5724CB4F61005F3855 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		1A808644CBE221222169888A /* Pods_MyTaxman_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxman_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				3BF05BAA24C95F2600E16081 /* Poppins-Black.ttf */,
+				18F6AA5724CB4F61005F3855 /* Poppins-Medium.ttf */,
 				3BF05BA824C95F1300E16081 /* Poppins-SemiBold.ttf */,
 				3BF05BAC24C95F3400E16081 /* Poppins-Italic.ttf */,
 				3BF05BA624C95F0500E16081 /* Poppins-Regular.ttf */,
@@ -605,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
+				18F6AA5824CB4F62005F3855 /* Poppins-Medium.ttf in Resources */,
 				3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */,
 				3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */,
 				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,

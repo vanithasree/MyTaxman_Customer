@@ -24,6 +24,7 @@ struct Font {
         case PoppinsLight = "Poppins-Light"
         case PoppinsExtraLight = "Poppins-ExtraLight"
         case PoppinsThin = "Poppins-Thin"
+        case PoppinsMedium = "Poppins-Medium"
     }
 }
 

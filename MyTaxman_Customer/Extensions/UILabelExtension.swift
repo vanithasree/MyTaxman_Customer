@@ -53,22 +53,14 @@ extension UILabel {
     }
     func setPopupTitle(titleText:String) {
         // label.font = Utility().getScaledFont(forFont: Font.FontName.DMSansRegular.rawValue, textStyle: .body)
-        label.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
-        label.numberOfLines = 0
-        label.text = titleText
-        label.backgroundColor = .clear
-        label.textColor = ColorManager.darkText.color
-        label.adjustsFontForContentSizeCategory = false
+        self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
+        self.numberOfLines = 0
+        self.text = titleText
+        self.backgroundColor = .clear
+        self.textColor = ColorManager.darkText.color
+        self.adjustsFontForContentSizeCategory = false
     }
-    
-    func setHeaderTitle(label:UILabel, titleText:String) {
-        label.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(20.0))
-        label.numberOfLines = 0
-        label.text = titleText
-        label.backgroundColor = .clear
-        label.textColor = .black
-        label.adjustsFontForContentSizeCategory = false
-    }
+
     
     func setTitleForPageScreenTitle(label:UILabel, titleText:String) {
         label.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
@@ -79,44 +71,7 @@ extension UILabel {
         label.textAlignment = .left
         label.adjustsFontForContentSizeCategory = false
     }
-     
     
-    
-    func setMainTitle(label:UILabel, titleText:String) {
-        label.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(18.0))
-        label.numberOfLines = 0
-        label.text = titleText
-        label.backgroundColor = .clear
-        label.textColor = ColorManager.lightGrey.color
-        label.adjustsFontForContentSizeCategory = false
-    }
-    
-    func setFooterTitle(label:UILabel,titleText:String) {
-        label.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(12.0))
-        label.numberOfLines = 0
-        label.text = titleText
-        label.backgroundColor = .clear
-        label.textColor = ColorManager.darkGrey.color
-        label.adjustsFontForContentSizeCategory = false
-    }
-    
-    func setCaptionTitle(label:UILabel,titleText:String) {
-        label.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(11.0))
-        label.numberOfLines = 0
-        label.text = titleText
-        label.backgroundColor = .clear
-        label.textColor = ColorManager.textColor.color
-        label.adjustsFontForContentSizeCategory = false
-    }
-    
-    func setLabelCustomProperties(label:UILabel, titleText:String, textColor:UIColor, font:UIFont?, numberOfLines:Int, alignment : NSTextAlignment)
-        self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
-        self.numberOfLines = 0
-        self.text = titleText
-        self.backgroundColor = .clear
-        self.textColor = ColorManager.darkText.color
-        self.adjustsFontForContentSizeCategory = false
-    }
     
     func setHeaderTitle(titleText:String) {
         self.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(20.0))

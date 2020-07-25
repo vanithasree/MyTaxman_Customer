@@ -187,6 +187,7 @@
                     <connections>
                         <outlet property="firstBtn" destination="i43-p1-Heb" id="Tk6-lR-feA"/>
                         <outlet property="nextBtn" destination="ONI-Yc-UFb" id="CTZ-SP-KYJ"/>
+                        <outlet property="nextBtnBaseView" destination="qf0-X4-rb1" id="xMh-hc-nA4"/>
                         <outlet property="titleLabel" destination="dT2-VY-5VN" id="ek2-Cs-1WP"/>
                     </connections>
                 </viewController>

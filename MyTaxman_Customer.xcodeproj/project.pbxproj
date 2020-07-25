@@ -32,6 +32,14 @@
 		18F6AA5624CA0E63005F3855 /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA5524CA0E63005F3855 /* ContactInfoViewController.swift */; };
 		18F6AA5824CB4F62005F3855 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F6AA5724CB4F61005F3855 /* Poppins-Medium.ttf */; };
 		18F6AA5A24CBFC84005F3855 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA5924CBFC84005F3855 /* OTPViewController.swift */; };
+		18F6AA5D24CC06FC005F3855 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F6AA5C24CC06FC005F3855 /* Tabbar.storyboard */; };
+		18F6AA5F24CC074B005F3855 /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F6AA5E24CC074B005F3855 /* Inbox.storyboard */; };
+		18F6AA6124CC0758005F3855 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F6AA6024CC0758005F3855 /* Settings.storyboard */; };
+		18F6AA6424CC0777005F3855 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA6324CC0777005F3855 /* ChatListViewController.swift */; };
+		18F6AA6724CC079B005F3855 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA6624CC079B005F3855 /* SettingsViewController.swift */; };
+		18F6AA6A24CC07C1005F3855 /* JobListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA6924CC07C1005F3855 /* JobListViewController.swift */; };
+		18F6AA6C24CC0819005F3855 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA6B24CC0819005F3855 /* TabBarViewController.swift */; };
+		18F6AA6E24CC085F005F3855 /* Jobs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F6AA6D24CC085F005F3855 /* Jobs.storyboard */; };
 		3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */; };
 		3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */; };
 		3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */; };
@@ -123,6 +131,14 @@
 		18F6AA5524CA0E63005F3855 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 		18F6AA5724CB4F61005F3855 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		18F6AA5924CBFC84005F3855 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		18F6AA5C24CC06FC005F3855 /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		18F6AA5E24CC074B005F3855 /* Inbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inbox.storyboard; sourceTree = "<group>"; };
+		18F6AA6024CC0758005F3855 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		18F6AA6324CC0777005F3855 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		18F6AA6624CC079B005F3855 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		18F6AA6924CC07C1005F3855 /* JobListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListViewController.swift; sourceTree = "<group>"; };
+		18F6AA6B24CC0819005F3855 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		18F6AA6D24CC085F005F3855 /* Jobs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Jobs.storyboard; sourceTree = "<group>"; };
 		1A808644CBE221222169888A /* Pods_MyTaxman_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxman_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
@@ -277,6 +293,10 @@
 			children = (
 				1888977524C728AD000DFAB3 /* Auth.storyboard */,
 				18B2E61E24C8956D002A9CCE /* Leads.storyboard */,
+				18F6AA5C24CC06FC005F3855 /* Tabbar.storyboard */,
+				18F6AA5E24CC074B005F3855 /* Inbox.storyboard */,
+				18F6AA6024CC0758005F3855 /* Settings.storyboard */,
+				18F6AA6D24CC085F005F3855 /* Jobs.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -284,9 +304,13 @@
 		1888976D24C7283B000DFAB3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				18F6AA6824CC07B2005F3855 /* Jobs */,
+				18F6AA6524CC0789005F3855 /* Settings */,
+				18F6AA6224CC0768005F3855 /* Chat */,
 				3BF05BF024C973D200E16081 /* Base */,
 				18B2E61D24C892CB002A9CCE /* Leads */,
 				18B2E61C24C892A2002A9CCE /* Auth */,
+				18F6AA6B24CC0819005F3855 /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -438,6 +462,30 @@
 				18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */,
 			);
 			path = LeadsManager;
+			sourceTree = "<group>";
+		};
+		18F6AA6224CC0768005F3855 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				18F6AA6324CC0777005F3855 /* ChatListViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		18F6AA6524CC0789005F3855 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				18F6AA6624CC079B005F3855 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		18F6AA6824CC07B2005F3855 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				18F6AA6924CC07C1005F3855 /* JobListViewController.swift */,
+			);
+			path = Jobs;
 			sourceTree = "<group>";
 		};
 		3BF05BE824C96AF500E16081 /* WebServices */ = {
@@ -610,12 +658,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F6AA5D24CC06FC005F3855 /* Tabbar.storyboard in Resources */,
+				18F6AA6124CC0758005F3855 /* Settings.storyboard in Resources */,
 				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
 				18F6AA5824CB4F62005F3855 /* Poppins-Medium.ttf in Resources */,
 				3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */,
 				3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */,
+				18F6AA6E24CC085F005F3855 /* Jobs.storyboard in Resources */,
 				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,
 				3BF05BAB24C95F2600E16081 /* Poppins-Black.ttf in Resources */,
+				18F6AA5F24CC074B005F3855 /* Inbox.storyboard in Resources */,
 				18B2E62D24C89D21002A9CCE /* LeadsCollectionViewCell.xib in Resources */,
 				1888974924C7281F000DFAB3 /* LaunchScreen.storyboard in Resources */,
 				3BF05BAD24C95F3400E16081 /* Poppins-Italic.ttf in Resources */,
@@ -753,6 +805,7 @@
 			files = (
 				3BF05BE424C96AEC00E16081 /* NetworkManager.swift in Sources */,
 				3BF05BEF24C972F900E16081 /* LoginModel.swift in Sources */,
+				18F6AA6A24CC07C1005F3855 /* JobListViewController.swift in Sources */,
 				3BF05BE024C96AEC00E16081 /* StringConstants.swift in Sources */,
 				3BF05BC524C9634600E16081 /* SliderExtension.swift in Sources */,
 				3BF05BCF24C9634600E16081 /* DateExtension.swift in Sources */,
@@ -769,6 +822,7 @@
 				3BF05BF224C973E900E16081 /* BaseViewController.swift in Sources */,
 				3BF05BD224C9634600E16081 /* UITextFieldExtension.swift in Sources */,
 				3BF05BD024C9634600E16081 /* NotificationExtension.swift in Sources */,
+				18F6AA6424CC0777005F3855 /* ChatListViewController.swift in Sources */,
 				18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */,
 				3BF05BC924C9634600E16081 /* UITextViewExtension.swift in Sources */,
 				3BF05BB324C9632300E16081 /* LoadingIndicator.swift in Sources */,
@@ -780,6 +834,7 @@
 				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
 				18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */,
 				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
+				18F6AA6724CC079B005F3855 /* SettingsViewController.swift in Sources */,
 				3BF05BD324C9634600E16081 /* UIViewControllerExtension.swift in Sources */,
 				3BF05BE224C96AEC00E16081 /* GCDUtils.swift in Sources */,
 				18F6AA5A24CBFC84005F3855 /* OTPViewController.swift in Sources */,
@@ -791,6 +846,7 @@
 				18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */,
 				3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */,
 				3BF05BCB24C9634600E16081 /* StringExtension.swift in Sources */,
+				18F6AA6C24CC0819005F3855 /* TabBarViewController.swift in Sources */,
 				3BF05BE324C96AEC00E16081 /* Config.swift in Sources */,
 				3BF05BCE24C9634600E16081 /* UIButtonExtension.swift in Sources */,
 				3BF05BF524C9920D00E16081 /* AuthViewModel.swift in Sources */,

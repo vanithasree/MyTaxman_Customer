@@ -93,8 +93,30 @@ class LoginViewController: BaseViewController {
                 if let result = result {
                     if let success = result.code, success == "1" {
                         UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
-                        self.redirectToDashBoardScreen()
-                    } else {
+                        if result.customerid?.first?.otp_verified ?? "" == "0"{
+                            self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                                self.redirectToOtpScreen()
+                            }
+                        }else {
+                            self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                                self.redirectToDashBoardScreen()
+                            }
+                        }
+                    } else if let success = result.code, success == "0" {
+                        if result.customerid?.first?.otp_verified ?? "" == "0"{
+                            self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                                self.redirectToOtpScreen()
+                            }
+                        }else {
+                            self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                                self.redirectToDashBoardScreen()
+                            }
+                        }
+                    } else if let success = result.code, success == "4" {
+                        self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                            self.redirectToContactRegisterInfoScreen()
+                        }
+                    }else{
                         print("No response found.")
                         self.presentAlert(withTitle: error, message: result.desc ?? "")
                     }
@@ -137,11 +159,16 @@ extension LoginViewController {
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
+    func redirectToOtpScreen() {
+        let otpVC = OtpViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        self.navigationController?.pushViewController(otpVC, animated: true)
+    }
+    
     func redirectToDashBoardScreen() {
-        let dashboardVC = LeadsDashboardViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        let navigationVC = UINavigationController(rootViewController: dashboardVC)
-        navigationVC.modalPresentationStyle = .fullScreen
-        self.present(navigationVC, animated: true) {}
+        let tabBar = TabBarViewController.instantiateFromAppStoryboard(appStoryboard: .Tabbar)
+        tabBar.modalPresentationStyle = .fullScreen
+        self.present(tabBar, animated: true) {
+        }
     }
 }
 
@@ -161,25 +188,25 @@ extension LoginViewController : UITextFieldDelegate {
         
         switch textField {
         case userNameTextField:
-            let textString = ValidationManager().getMobileNumber(mobileNumber: newText)
-            if textString.isNumber {
+//            let textString = ValidationManager().getMobileNumber(mobileNumber: newText)
+            if newText.isNumber {
                 //emailOrMobileTextField.rightViewMode = .always
-                //return 11 >= newText.count ? true : false
-                let length = Int(ValidationManager().getLength(mobileNumber: textField.text!))
-                
-                if length == 10 {
-                    if range.length == 0 {
-                        return false
-                    }
-                }
-                //                guard let text = textField.text else { return false }
-                //                let newString = (text as NSString).replacingCharacters(in: range, with: string)
-                //                textField.text = ValidationManager().format(with: Constant.k_mobileFormat, phone: newString)
-                return false
-            } else if newText.isEmpty {
-                userNameTextField.rightViewMode = .always
+                return 10 >= newText.count ? true : false
+//                let length = Int(ValidationManager().getLength(mobileNumber: textField.text!))
+//                if length == 10 {
+//                    if range.length == 0 {
+//                        return false
+//                    }
+//                }
+//                //                guard let text = textField.text else { return false }
+//                //                let newString = (text as NSString).replacingCharacters(in: range, with: string)
+//                //                textField.text = ValidationManager().format(with: Constant.k_mobileFormat, phone: newString)
+//                return false
+//            }
+//            else if newText.isEmpty {
+//                userNameTextField.rightViewMode = .always
             } else {
-                userNameTextField.rightViewMode = .never
+//                userNameTextField.rightViewMode = .never
                 return 40 >= newText.count ? true : false
             }
         default:

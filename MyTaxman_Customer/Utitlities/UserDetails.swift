@@ -34,7 +34,7 @@ struct UserDetails {
         }
     }
     
-    var userId: String? {
+    var userId: String {
         userLoginData?.customerid ?? ""
     }
     

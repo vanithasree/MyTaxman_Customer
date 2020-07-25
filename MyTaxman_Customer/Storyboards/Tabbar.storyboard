@@ -10,7 +10,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="bHP-sL-yhA">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarViewController" id="eqi-TB-HRW" customClass="TabBarViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="eqi-TB-HRW" customClass="TabBarViewController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F4L-3L-bgi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

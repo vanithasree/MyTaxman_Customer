@@ -8,13 +8,14 @@
 
 import UIKit
 import TweeTextField
-
+import Alamofire
 class ContactInfoViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contactBaseView: UIView!
     @IBOutlet weak var contactTitleLabel: UILabel!
     @IBOutlet var contactSubTitleLabel: UILabel!
+    @IBOutlet var contactInfoLabel: UILabel!
     @IBOutlet weak var mobileNumberTextField: TweeAttributedTextField!
     @IBOutlet weak var retypePasswordTextField: TweeAttributedTextField!
     @IBOutlet weak var passwordTextField: TweeAttributedTextField!
@@ -22,44 +23,161 @@ class ContactInfoViewController: UIViewController {
     @IBOutlet weak var fullnameTextField: TweeAttributedTextField!
     @IBOutlet weak var submitBtn: UIButton!
     
-    var isAllConditionSatisfied:Bool = false
+    @IBOutlet var bgInfoView: UIView!
+    @IBOutlet var contactViewHeightConstaints: NSLayoutConstraint!
+    
+    private var authViewModel = AuthViewModel()
+
+    var isAllConditionSatisfied:Bool = false {
+        didSet {
+            doOnMain {
+                self.submitBtn.isHidden = !self.isAllConditionSatisfied
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewUI()
-        
+        self.title = "Register"
         // Do any additional setup after loading the view.
+
+        setupViewUI()
+    }
+    
+    func showInformationView(isShow: Bool) {
+        if !isShow {
+            bgInfoView.isHidden = true
+            contactInfoLabel.isHidden = true
+            doOnMain {
+                self.contactViewHeightConstaints.constant = 220
+                self.contactViewHeightConstaints.isActive = true
+            }
+        }else {
+            bgInfoView.isHidden = false
+            contactInfoLabel.isHidden = false
+            doOnMain {
+                if UIDevice.current.screenType == .iPhones_5_5s_5c_SE  {
+                    self.contactViewHeightConstaints.constant = self.view.frame.size.height + 50
+                    self.contactViewHeightConstaints.isActive = true
+                }else {
+                    self.contactViewHeightConstaints.constant = self.view.frame.size.height
+                    self.contactViewHeightConstaints.isActive = true
+                }
+            }
+        }
     }
     
     func setupViewUI() {
         contactTitleLabel.setHeaderTitle(titleText: "Your contact information")
         contactSubTitleLabel.setFooterTitle(titleText: "This is where we will send you quotes")
-
+        
+        contactInfoLabel.setHeaderTitle(titleText: "Hello! Looks like you are new")
+        
+        showInformationView(isShow: false)
+        
+        contactInfoLabel.backgroundColor = ColorManager.backgroundGrey.color
+        doOnMain {
+            self.contactInfoLabel.cornerRadius = self.contactInfoLabel.frame.size.height / 2
+        }
+        
         mobileNumberTextField.setTextFieldProperties(placeholderString:"Mobile Number", isSecureText: false)
         mobileNumberTextField.keyboardType = .numberPad
         
-//        self.setTextFieldPropertiesOnView(textField: fullnameTextField, placeHolder: "Full Name", isSecureText: false, keypadType: .default)
-//        self.setTextFieldPropertiesOnView(textField: emailTextField, placeHolder: "Email", isSecureText: false, keypadType: .emailAddress)
-//        self.setTextFieldPropertiesOnView(textField: passwordTextField, placeHolder: "Password", isSecureText: true, keypadType: .default)
-//        self.setTextFieldPropertiesOnView(textField: retypePasswordTextField, placeHolder: "Retype Password", isSecureText: true, keypadType: .default)
+        fullnameTextField.setTextFieldProperties(placeholderString:"Full Name", isSecureText: false)
         
-//        submitBtn.setDarkGreenTheme(btn: submitBtn, title: "Submit")
-//        submitBtn.isHidden = !isAllConditionSatisfied
+        emailTextField.setTextFieldProperties(placeholderString:"Email", isSecureText: false)
+        emailTextField.keyboardType = .emailAddress
+        
+        passwordTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
+        retypePasswordTextField.setTextFieldProperties(placeholderString:"Retype Password", isSecureText: true)
+        submitBtn.setDarkGreenTheme(btn: submitBtn, title: "Submit")
+        submitBtn.applyCornerRadius(amount: 0)
+        
+        let eyeShowButton = UIButton(type: .custom)
+        eyeShowButton.setImage(UIImage(named: "eyeShow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        eyeShowButton.setImage(UIImage(named: "eyeHide")?.withRenderingMode(.alwaysTemplate), for: .selected)
+        eyeShowButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        eyeShowButton.frame = CGRect(x: CGFloat(passwordTextField.frame.size.width - 30), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        eyeShowButton.addTarget(self, action: #selector(self.showOrHide), for: .touchUpInside)
+        eyeShowButton.tintColor = ColorManager.darkBGTheme.color
+        passwordTextField.rightView = eyeShowButton
+        passwordTextField.rightViewMode = .always
+        
+        let eyeConfirmShowButton = UIButton(type: .custom)
+        eyeConfirmShowButton.setImage(UIImage(named: "eyeShow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        eyeConfirmShowButton.setImage(UIImage(named: "eyeHide")?.withRenderingMode(.alwaysTemplate), for: .selected)
+        eyeConfirmShowButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        eyeConfirmShowButton.frame = CGRect(x: CGFloat(retypePasswordTextField.frame.size.width - 30), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        eyeConfirmShowButton.addTarget(self, action: #selector(self.confirmShowOrHide), for: .touchUpInside)
+        eyeConfirmShowButton.tintColor = ColorManager.darkBGTheme.color
+        retypePasswordTextField.rightView = eyeConfirmShowButton
+        retypePasswordTextField.rightViewMode = .always
     }
     
+    @IBAction func showOrHide(_ sender: UIButton) {
+        if sender.isSelected == true {
+            sender.isSelected = false
+        }else {
+            sender.isSelected = true
+        }
+        passwordTextField.isSecureTextEntry.toggle()
+    }
     
-//    func setTextFieldPropertiesOnView(textField:TweeAttributedTextField, placeHolder:String, isSecureText:Bool, keypadType: UIKeyboardType) {
-//
-//        textField.setTextFieldProperties(placeholderString:placeHolder, isSecureText: isSecureText)
-//        textField.borderStyle = .none
-//        textField.backgroundColor = .clear
-//        textField.keyboardType = keypadType
-//        //textField.delegate = self
-//        //textField.text = "vanithasree@kuyatechnologies.com"
-//    }
+    @IBAction func confirmShowOrHide(_ sender: UIButton) {
+        if sender.isSelected == true {
+            sender.isSelected = false
+        }else {
+            sender.isSelected = true
+        }
+        retypePasswordTextField.isSecureTextEntry.toggle()
+    }
     
     @IBAction func onTappedSubmitBtn(_ sender: UIButton) {
+        self.view.endEditing(true)
         
+        let verifyMobile : ValidationMessage = authViewModel.validateMobile(mobileNumberTextField.text ?? "")
+
+        let verifyPassword : ValidationMessage = authViewModel.validatePasswordTextField(passwordTextField: passwordTextField)
+        
+        let verifyConfirmPassword : ValidationMessage = authViewModel.validateConfirmPassword(retypePasswordTextField.text ?? "", password: passwordTextField.text ?? "")
+
+        let verifyName : ValidationMessage = authViewModel.validateNameForSignup(fullnameTextField.text ?? "")
+        
+        let verifyEmail : ValidationMessage = authViewModel.validateEmailTextField(textField: emailTextField)
+        
+        if verifyName.status && verifyMobile.status && verifyEmail.status && verifyPassword.status && verifyConfirmPassword.status {
+            let params: Parameters = [
+                "customername": fullnameTextField.text ?? "",
+                "email": emailTextField.text ?? "",
+                "mobile": mobileNumberTextField.text ?? "",
+                "password": passwordTextField.text ?? "",
+                "city": "",
+                "postalcode": "",
+                "deviceid": ""
+            ]
+            LoadingIndicator.shared.show(forView: self.view)
+            authViewModel.requestSignup(input: params) { (result: Register_Base?, alert: AlertMessage?) in
+                LoadingIndicator.shared.hide()
+                if let result = result {
+                    if let success = result.code, success == "1" {
+                        UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
+                        self.redirectToDashBoardScreen()
+                    } else {
+                        print("No response found.")
+                        self.presentAlert(withTitle: error, message: result.desc ?? "")
+                    }
+                } else if let alert = alert {
+                    self.presentAlert(withTitle: "", message: alert.errorMessage)
+                }
+            }
+        }
+        else {
+            self.validateTextField(textField: fullnameTextField)
+            self.validateTextField(textField: mobileNumberTextField)
+            self.validateTextField(textField: emailTextField)
+            self.validateTextField(textField: passwordTextField)
+            self.validateTextField(textField: retypePasswordTextField)
+        }
     }
     /*
      // MARK: - Navigation
@@ -71,4 +189,139 @@ class ContactInfoViewController: UIViewController {
      }
      */
     
+}
+extension ContactInfoViewController {
+    func redirectToDashBoardScreen() {
+        let dashboardVC = LeadsDashboardViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        let navigationVC = UINavigationController(rootViewController: dashboardVC)
+        navigationVC.modalPresentationStyle = .fullScreen
+        self.present(navigationVC, animated: true) {}
+    }
+    
+    @objc func checkMobileExist() {
+        let verifyEmail : ValidationMessage = authViewModel.validateMobile(mobileNumberTextField.text ?? "")
+        if verifyEmail.status == false {
+            self.validateTextField(textField: emailTextField)
+        } else {
+            let params: Parameters = [
+                "cusemailmobile": mobileNumberTextField.text ?? ""
+            ]
+            LoadingIndicator.shared.show(forView: self.view)
+            authViewModel.requestCheckMobile(input: params) { (result: CheckMobile_Base?, alert: AlertMessage?) in
+                LoadingIndicator.shared.hide()
+                if let result = result {
+                    if let success = result.code, success == "0" {
+                        self.showInformationView(isShow: true)
+                    } else {
+                        self.presentAlert(withTitle: error, message: result.desc ?? "")
+                    }
+                } else if let alert = alert {
+                    print(alert.statusCode)
+                    self.presentAlert(withTitle: "", message: alert.errorMessage)
+                }
+            }
+        }
+    }
+}
+
+extension ContactInfoViewController : UITextFieldDelegate {
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let field = textField as? TweeAttributedTextField {
+            field.hideInfo()
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let existText = textField.text,
+            let textRange = Range(range, in: existText) else { return false }
+        
+        let newText = existText.replacingCharacters(in: textRange, with: string)
+        
+        switch textField {
+        case emailTextField:
+            return 40 >= newText.count ? true : false
+        case mobileNumberTextField:
+            return 10 >= newText.count ? true : false
+        case passwordTextField, retypePasswordTextField:
+            return 30 >= newText.count ? true : false
+        default:
+            break
+        }
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if let field = textField as? TweeAttributedTextField {
+            var errorMessage = ""
+            
+            switch field  {
+                
+            case fullnameTextField:
+                errorMessage = authViewModel.validateNameForSignup(field.text).errorMessage ?? ""
+            case mobileNumberTextField:
+                errorMessage = authViewModel.validateMobile(field.text).errorMessage ?? ""
+            case emailTextField:
+                errorMessage = authViewModel.validateEmail(field.text).errorMessage ?? ""
+            case passwordTextField:
+                errorMessage = authViewModel.validatePassword(field.text).errorMessage ?? ""
+            case retypePasswordTextField:
+                errorMessage = authViewModel.validateConfirmPassword(field.text, password: passwordTextField.text).errorMessage ?? ""
+            default:
+                break
+            }
+            
+            if errorMessage == "" {
+                if textField == mobileNumberTextField {
+                    self.perform(#selector(checkMobileExist), with: nil, with: 0.1)
+                }
+                field.hideInfo()
+                return
+            }
+            field.showInfo(errorMessage)
+        }
+    }
+    
+    func validateTextField(textField:TweeAttributedTextField) {
+        if textField == fullnameTextField {
+            let passwordValidation:ValidationMessage = authViewModel.validateNameForSignup(textField.text)
+            if passwordValidation.status == false {
+                textField.showInfo(passwordValidation.errorMessage ?? "")
+            } else {
+                textField.hideInfo()
+            }
+        }else if textField == mobileNumberTextField {
+            let mobileValidation:ValidationMessage = authViewModel.validateMobile(textField.text ?? "")
+            if mobileValidation.status == false {
+                textField.showInfo(mobileValidation.errorMessage ?? "")
+            } else {
+                textField.hideInfo()
+            }
+        } else if textField == passwordTextField {
+            let passwordValidation:ValidationMessage = authViewModel.validatePasswordTextField(passwordTextField: passwordTextField)
+            if passwordValidation.status == false {
+                textField.showInfo(passwordValidation.errorMessage ?? "")
+                
+            } else {
+                textField.hideInfo()
+            }
+        }else if textField == retypePasswordTextField {
+            let passwordValidation:ValidationMessage = authViewModel.validateConfirmPassword(textField.text, password: passwordTextField.text)
+            if passwordValidation.status == false {
+                textField.showInfo(passwordValidation.errorMessage ?? "")
+                
+            } else {
+                textField.hideInfo()
+            }
+        }else if textField == emailTextField {
+            let passwordValidation:ValidationMessage = authViewModel.validateEmail(textField.text ?? "")
+            if passwordValidation.status == false {
+                textField.showInfo(passwordValidation.errorMessage ?? "")
+                
+            } else {
+                textField.hideInfo()
+            }
+        }
+    }
 }

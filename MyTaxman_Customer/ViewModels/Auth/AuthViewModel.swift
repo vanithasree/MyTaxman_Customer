@@ -71,16 +71,16 @@ class AuthViewModel {
     }
     
     
-    func validateFirstNameForSignup(_ name: String?) -> ValidationMessage {
+    func validateNameForSignup(_ name: String?) -> ValidationMessage {
         guard let name = name, !name.isBlank else {
-            return (ValidationMessage(status: false, errorMessage:firstNameRequired, tag:1))
+            return (ValidationMessage(status: false, errorMessage:nameRequired, tag:1))
         }
         
         if name.count  >= 2 {
             return (ValidationMessage(status: true, errorMessage: "", tag: 1))
         }
         else {
-            return (ValidationMessage(status: false, errorMessage: "First name should be greater than 2 characters", tag: 1))
+            return (ValidationMessage(status: false, errorMessage: "Name should be greater than 2 characters", tag: 1))
         }
         
         /* if name.isName {
@@ -91,15 +91,15 @@ class AuthViewModel {
     }
     
     
-    func validateFirstName(_ name: String?) -> ValidationMessage {
+    func validateName(_ name: String?) -> ValidationMessage {
         guard let name = name, !name.isBlank else {
-            return (ValidationMessage(status: false, errorMessage:firstNameRequired, tag:1))
+            return (ValidationMessage(status: false, errorMessage:nameRequired, tag:1))
         }
         if name.count  >= 2 {
             return (ValidationMessage(status: true, errorMessage: "", tag: 1))
         }
         else {
-            return (ValidationMessage(status: false, errorMessage: "First name should be greater than 2 characters", tag: 1))
+            return (ValidationMessage(status: false, errorMessage: "Name should be greater than 2 characters", tag: 1))
         }
         
         //        return (ValidationMessage(status: true, errorMessage: "", tag: 1))
@@ -124,37 +124,6 @@ class AuthViewModel {
          return (ValidationMessage(status: false, errorMessage: "First name length should be 3 to 32", tag: 1))
          }*/
         
-        
-    }
-    
-    func validateLastName(_ name: String?) -> ValidationMessage {
-        guard let name = name, !name.isBlank else {
-            return (ValidationMessage(status: false, errorMessage: lastNameRequired, tag:2))
-        }
-        /* if name.isName {
-         return (ValidationMessage(status: true, errorMessage: "", tag: 2))
-         } else {
-         return (ValidationMessage(status: false, errorMessage: "Last name length should be 3 to 32", tag: 2))
-         }*/
-        if name.count  >= 2 {
-            return (ValidationMessage(status: true, errorMessage: "", tag: 1))
-        }
-        else {
-            return (ValidationMessage(status: false, errorMessage: "Last name should be greater than 2 characters", tag: 1))
-        }
-        //        return (ValidationMessage(status: true, errorMessage: "", tag: 2))
-    }
-    
-    func validateMiddleName(_ name: String?) -> ValidationMessage {
-        guard let name = name, !name.isBlank else {
-            return (ValidationMessage(status: true, errorMessage: middleNameRequired, tag:200))
-        }
-        /* if name.isName {
-         return (ValidationMessage(status: true, errorMessage: "", tag: 100))
-         } else {
-         return (ValidationMessage(status: false, errorMessage: "Middle name length should be 3 to 32", tag: 100))
-         }*/
-        return (ValidationMessage(status: true, errorMessage: "", tag: 200))
     }
     
     func validateOtherMobile(_ number: String?) -> ValidationMessage {
@@ -336,4 +305,18 @@ extension AuthViewModel {
     func requestLogin(input: Parameters, handler: @escaping (_ user: LoginBase?, _ error: AlertMessage?)->()) {
         AuthApiManager().requestLogIn(input: input, handler: handler)
     }
+    
+    func requestSignup(input: Parameters, handler: @escaping (_ user: Register_Base?, _ error: AlertMessage?)->()) {
+        AuthApiManager().requestSignup(input: input, handler: handler)
+    }
+    
+    func requestForgotPasswordCode(email: String, handler: @escaping (_ user: ForgotPasswordBase?, _ error: AlertMessage?)->()) {
+        let params: Parameters = ["cusemail": email]
+        AuthApiManager().requestForgotPassword(input: params, handler: handler)
+    }
+    
+    func requestCheckMobile(input: Parameters, handler: @escaping (_ user: CheckMobile_Base?, _ error: AlertMessage?)->()) {
+        AuthApiManager().requestCheckMobile(input: input, handler: handler)
+    }
+    
 }

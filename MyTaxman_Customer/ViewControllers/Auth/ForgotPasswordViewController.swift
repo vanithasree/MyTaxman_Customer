@@ -34,7 +34,27 @@ class ForgotPasswordViewController: BaseViewController {
     
     //MARK: - Button Actions
     @IBAction func didTapResetAction(_ sender: Any) {
-        
+        let verifyEmail : ValidationMessage = authViewModel.validateEmailTextField(textField: emailTextField)
+        if verifyEmail.status == false {
+            self.validateTextField(textField: emailTextField)
+        } else {
+            LoadingIndicator.shared.show(forView: self.view)
+            authViewModel.requestForgotPasswordCode(email: emailTextField.text ?? "") { (result: ForgotPasswordBase?, alert: AlertMessage?) in
+                LoadingIndicator.shared.hide()
+                if let result = result {
+                    if let success = result.code, success == "1" {
+                        self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    } else {
+                        self.presentAlert(withTitle: error, message: result.desc ?? "")
+                    }
+                } else if let alert = alert {
+                    print(alert.statusCode)
+                    self.presentAlert(withTitle: "", message: alert.errorMessage)
+                }
+            }
+        }
     }
     
     /*

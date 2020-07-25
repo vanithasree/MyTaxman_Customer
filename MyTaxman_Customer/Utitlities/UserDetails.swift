@@ -20,10 +20,10 @@ struct UserDetails {
         UserDefaults.standard.synchronize()
     }
     
-    var userLoginData: LoginBase? {
+    var userLoginData: Customerid? {
         if let loginData = UserDefaults.standard.data(forKey: "user_login") {
             do {
-                let loginDetail = try JSONDecoder().decode(LoginBase.self, from: loginData)
+                let loginDetail = try JSONDecoder().decode(Customerid.self, from: loginData)
                 return loginDetail
             } catch _ {
                 return nil
@@ -34,9 +34,8 @@ struct UserDetails {
         }
     }
     
-    var userId: Int? {
-//        userLoginData?.result?.userId
-        2
+    var userId: String? {
+        userLoginData?.customerid ?? ""
     }
     
     var accessToken: String {

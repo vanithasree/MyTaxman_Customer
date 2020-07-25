@@ -45,7 +45,7 @@ extension UIButton {
         btn.backgroundColor = ColorManager.darkTheme.color
         btn.setTitle(title, for: .normal)
         btn.setTitleColor(ColorManager.white.color, for: .normal)
-        btn.applyCornerRadius(amount: 5)
+//        btn.applyCornerRadius(amount: 5)
         btn.titleLabel?.font =  UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(18.0))
         btn.titleLabel?.adjustsFontForContentSizeCategory = false
         
@@ -58,6 +58,16 @@ extension UIButton {
         btn.setTitleColor(ColorManager.darkText.color, for: .normal)
         btn.titleLabel?.font =  UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0))
         btn.titleLabel?.adjustsFontForContentSizeCategory = false
+        
+    }
+    
+    func setFooterTitle(title:String) {
+        
+        self.backgroundColor = .white
+        self.setTitle(title, for: .normal)
+        self.setTitleColor(ColorManager.darkGrey.color, for: .normal)
+        self.titleLabel?.font =  UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
+        self.titleLabel?.adjustsFontForContentSizeCategory = false
         
     }
     

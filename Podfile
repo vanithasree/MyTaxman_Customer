@@ -11,6 +11,7 @@ target 'MyTaxman_Customer' do
   pod 'TweeTextField'
   pod 'DLRadioButton'
   pod 'SVPinView', '~> 1.0'
+  pod 'GooglePlaces'
 
   # Pods for MyTaxman_Customer
 

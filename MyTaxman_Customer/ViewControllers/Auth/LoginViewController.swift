@@ -30,6 +30,12 @@ class LoginViewController: BaseViewController {
         super.viewWillAppear(true)
         isTransparent = false
         isHideNavigationBar = false
+        resetTextFields()
+    }
+    
+    func resetTextFields() {
+        self.userNameTextField.text = ""
+        self.passwordTextField.text = ""
     }
     
     func setupViews() {

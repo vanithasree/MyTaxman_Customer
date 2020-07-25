@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */; };
+		1826253024CCA41F00DF7A4B /* PageSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */; };
+		1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */; };
+		1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */; };
+		1826253724CCBB4E00DF7A4B /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1826253524CCBB4E00DF7A4B /* AddressTableViewCell.xib */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
@@ -101,6 +105,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSixViewController.swift; sourceTree = "<group>"; };
+		1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesViewController.swift; sourceTree = "<group>"; };
+		1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		1826253524CCBB4E00DF7A4B /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +233,15 @@
 				C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1826253324CCBB3100DF7A4B /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */,
+				1826253524CCBB4E00DF7A4B /* AddressTableViewCell.xib */,
+			);
+			path = Jobs;
 			sourceTree = "<group>";
 		};
 		1888973024C7281C000DFAB3 = {
@@ -407,6 +424,8 @@
 				18B2E63224C8AB50002A9CCE /* PageThreeViewController.swift */,
 				18B2E63424C8AB5B002A9CCE /* PageFourViewController.swift */,
 				18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */,
+				1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */,
+				1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */,
 			);
 			path = Leads;
 			sourceTree = "<group>";
@@ -446,6 +465,7 @@
 		18B2E62824C89CFF002A9CCE /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				1826253324CCBB3100DF7A4B /* Jobs */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -569,6 +589,7 @@
 				1888973624C7281C000DFAB3 /* Frameworks */,
 				1888973724C7281C000DFAB3 /* Resources */,
 				CD472F8AA6B56F051E193AA8 /* [CP] Embed Pods Frameworks */,
+				9DAA66DA8D8666EE0122852F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -607,6 +628,7 @@
 				1888975724C72820000DFAB3 /* Frameworks */,
 				1888975824C72820000DFAB3 /* Resources */,
 				0D6AF6ADDD548022671A1E64 /* [CP] Embed Pods Frameworks */,
+				399F12F9F99A2A68CEA96761 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -682,6 +704,7 @@
 				3BF05BA924C95F1300E16081 /* Poppins-SemiBold.ttf in Resources */,
 				3BF05BAF24C95F4400E16081 /* Poppins-Thin.ttf in Resources */,
 				1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */,
+				1826253724CCBB4E00DF7A4B /* AddressTableViewCell.xib in Resources */,
 				3BF05BA724C95F0500E16081 /* Poppins-Regular.ttf in Resources */,
 				3BF05BB124C95F4D00E16081 /* Poppins-ExtraLight.ttf in Resources */,
 			);
@@ -719,6 +742,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		399F12F9F99A2A68CEA96761 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests/Pods-MyTaxman_Customer-MyTaxman_CustomerUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3F3E3133F8405BD5D5C925AA /* [CP] Check Pods Manifest.lock */ = {
@@ -763,6 +803,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DAA66DA8D8666EE0122852F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD472F8AA6B56F051E193AA8 /* [CP] Embed Pods Frameworks */ = {
@@ -813,9 +870,11 @@
 			files = (
 				3BF05BE424C96AEC00E16081 /* NetworkManager.swift in Sources */,
 				3BF05BEF24C972F900E16081 /* LoginModel.swift in Sources */,
+				1826253024CCA41F00DF7A4B /* PageSixViewController.swift in Sources */,
 				18F6AA6A24CC07C1005F3855 /* JobListViewController.swift in Sources */,
 				3BF05BE024C96AEC00E16081 /* StringConstants.swift in Sources */,
 				3BF05BC524C9634600E16081 /* SliderExtension.swift in Sources */,
+				1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */,
 				3BF05BCF24C9634600E16081 /* DateExtension.swift in Sources */,
 				18B2E62124C89586002A9CCE /* LeadsDashboardViewController.swift in Sources */,
 				18B2E63B24C8ABD8002A9CCE /* LeadsManager.swift in Sources */,
@@ -852,6 +911,7 @@
 				18B2E63124C8AB46002A9CCE /* PageTwoViewController.swift in Sources */,
 				18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */,
 				3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */,
+				1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */,
 				3BF05BCB24C9634600E16081 /* StringExtension.swift in Sources */,
 				3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */,
 				3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */,

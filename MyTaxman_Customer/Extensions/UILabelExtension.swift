@@ -53,7 +53,7 @@ extension UILabel {
     }
     func setPopupTitle(titleText:String) {
         // label.font = Utility().getScaledFont(forFont: Font.FontName.DMSansRegular.rawValue, textStyle: .body)
-        self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
+        self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(15.0))
         self.numberOfLines = 0
         self.text = titleText
         self.backgroundColor = .clear

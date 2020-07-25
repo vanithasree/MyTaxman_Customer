@@ -31,6 +31,7 @@
 		18B2E63B24C8ABD8002A9CCE /* LeadsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */; };
 		18F6AA5624CA0E63005F3855 /* ContactInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA5524CA0E63005F3855 /* ContactInfoViewController.swift */; };
 		18F6AA5824CB4F62005F3855 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18F6AA5724CB4F61005F3855 /* Poppins-Medium.ttf */; };
+		18F6AA5A24CBFC84005F3855 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA5924CBFC84005F3855 /* OTPViewController.swift */; };
 		3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */; };
 		3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */; };
 		3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */; };
@@ -121,6 +122,7 @@
 		18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsManager.swift; sourceTree = "<group>"; };
 		18F6AA5524CA0E63005F3855 /* ContactInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoViewController.swift; sourceTree = "<group>"; };
 		18F6AA5724CB4F61005F3855 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		18F6AA5924CBFC84005F3855 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1A808644CBE221222169888A /* Pods_MyTaxman_Customer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxman_Customer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				1888977724C728C1000DFAB3 /* LoginViewController.swift */,
 				1888977B24C72919000DFAB3 /* GetStartedViewController.swift */,
 				18F6AA5524CA0E63005F3855 /* ContactInfoViewController.swift */,
+				18F6AA5924CBFC84005F3855 /* OTPViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
 				3BF05BD324C9634600E16081 /* UIViewControllerExtension.swift in Sources */,
 				3BF05BE224C96AEC00E16081 /* GCDUtils.swift in Sources */,
+				18F6AA5A24CBFC84005F3855 /* OTPViewController.swift in Sources */,
 				3BF05BF824C9936400E16081 /* AuthApiManager.swift in Sources */,
 				1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */,
 				3BF05BC624C9634600E16081 /* UIImageExtension.swift in Sources */,

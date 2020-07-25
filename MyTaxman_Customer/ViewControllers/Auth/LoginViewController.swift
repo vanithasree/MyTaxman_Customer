@@ -36,10 +36,10 @@ class LoginViewController: BaseViewController {
         
         self.title = "Login"
         titleLabel.setMainTitle(titleText: "Login to view your job")
+        titleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(20.0))
         userNameTextField.setTextFieldProperties(placeholderString:"Email/Mobile Number", isSecureText: false)
         
         passwordTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
-        titleLabel.setMainTitle(titleText: "Login to view your job")
         
         loginButton.setDarkGreenTheme(btn: loginButton, title: "LOGIN")
         forgotButton.setButtonProperties(title: "FORGOT YOUR PASSWORD?", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0)), titleColor: ColorManager.darkTheme.color)
@@ -152,7 +152,7 @@ extension LoginViewController : UITextFieldDelegate {
         }
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+   /* func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard let existText = textField.text,
             let textRange = Range(range, in: existText) else { return false }
@@ -186,7 +186,8 @@ extension LoginViewController : UITextFieldDelegate {
             break
         }
         return true
-    }
+    }*/
+    
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let textField = textField as? TweeAttributedTextField {

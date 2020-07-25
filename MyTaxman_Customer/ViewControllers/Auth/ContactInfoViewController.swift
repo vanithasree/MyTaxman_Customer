@@ -71,7 +71,7 @@ class ContactInfoViewController: UIViewController {
         contactTitleLabel.setHeaderTitle(titleText: "Your contact information")
         contactSubTitleLabel.setFooterTitle(titleText: "This is where we will send you quotes")
         
-        contactInfoLabel.setHeaderTitle(titleText: "Hello! Looks like you are new")
+        contactInfoLabel.setHeaderTitle(titleText: "Hello! Looks like you are new.")
         
         showInformationView(isShow: false)
         

@@ -30,7 +30,7 @@ class LeadsDashboardViewController: BaseViewController {
         super.viewWillLayoutSubviews()
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: leadsCollectionView.frame.width / 2 , height: leadsCollectionView.frame.height / 4 )
+        layout.itemSize = CGSize(width: leadsCollectionView.frame.width / 2 , height: leadsCollectionView.frame.height / 5 )
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         leadsCollectionView!.collectionViewLayout = layout

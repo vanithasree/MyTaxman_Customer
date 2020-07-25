@@ -12,8 +12,12 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.tabBar.tintColor = ColorManager.textDarkGreenColor.color
+        
+        let appearance = UITabBarItem.appearance(whenContainedInInstancesOf: [TabBarViewController.self])
+        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: ColorManager.darkText.color], for: .normal)
+        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: ColorManager.textDarkGreenColor.color], for: .selected)
     }
     
 

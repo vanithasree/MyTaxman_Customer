@@ -112,7 +112,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VX-rt-u14">
-                                        <rect key="frame" x="30" y="124.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="123" width="354" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-lt-hr9" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="8" width="344" height="34"/>
@@ -165,7 +165,7 @@
                                     <constraint firstItem="dT2-VY-5VN" firstAttribute="top" secondItem="5be-Qp-f2K" secondAttribute="top" id="CId-7K-3Fk"/>
                                     <constraint firstAttribute="trailing" secondItem="dT2-VY-5VN" secondAttribute="trailing" constant="30" id="HAe-ot-jXH"/>
                                     <constraint firstAttribute="trailing" secondItem="qf0-X4-rb1" secondAttribute="trailing" id="Iit-oU-gXG"/>
-                                    <constraint firstItem="2VX-rt-u14" firstAttribute="top" secondItem="zZW-O5-jt5" secondAttribute="bottom" multiplier="1.1" id="KN4-eU-p77"/>
+                                    <constraint firstItem="2VX-rt-u14" firstAttribute="top" secondItem="zZW-O5-jt5" secondAttribute="bottom" constant="10" id="KN4-eU-p77"/>
                                     <constraint firstItem="zZW-O5-jt5" firstAttribute="trailing" secondItem="2VX-rt-u14" secondAttribute="trailing" id="Pfp-BJ-h6l"/>
                                     <constraint firstItem="dT2-VY-5VN" firstAttribute="trailing" secondItem="zZW-O5-jt5" secondAttribute="trailing" id="Vr8-59-dJU"/>
                                     <constraint firstItem="qf0-X4-rb1" firstAttribute="height" secondItem="5be-Qp-f2K" secondAttribute="height" multiplier="0.09" id="Yu4-Ln-ehW"/>
@@ -218,13 +218,14 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-yj-ISn" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="8" width="344" height="34"/>
-                                                <state key="normal" title="individual">
+                                                <state key="normal" title="Sole trade">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="logSelectedButtonForPageTwoWithRadioButton:" destination="n9y-3y-HKb" eventType="touchUpInside" id="Haz-AD-obC"/>
                                                     <outletCollection property="otherButtons" destination="zf1-uV-2tz" id="Qla-52-1Pn"/>
                                                     <outletCollection property="otherButtons" destination="aKv-cz-AbP" id="Xkx-IH-GQn"/>
+                                                    <outletCollection property="otherButtons" destination="aqg-Vu-H4W" id="gDM-Jy-DGt"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -237,17 +238,18 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4B-E0-KkT">
-                                        <rect key="frame" x="30" y="122.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="121.5" width="354" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf1-uV-2tz" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="8" width="344" height="34"/>
-                                                <state key="normal" title="Business">
+                                                <state key="normal" title="Partnership">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="logSelectedButtonForPageTwoWithRadioButton:" destination="n9y-3y-HKb" eventType="touchUpInside" id="grs-JP-O4Q"/>
                                                     <outletCollection property="otherButtons" destination="aMZ-yj-ISn" id="gXG-1w-idZ"/>
                                                     <outletCollection property="otherButtons" destination="aKv-cz-AbP" id="drp-DH-KsN"/>
+                                                    <outletCollection property="otherButtons" destination="aqg-Vu-H4W" id="zI9-o8-NHC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -278,35 +280,19 @@
                                             <constraint firstAttribute="bottom" secondItem="huM-I7-UOc" secondAttribute="bottom" id="wlo-Ro-KtJ"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVe-aZ-fpl">
-                                        <rect key="frame" x="30" y="282" width="354" height="57"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MdE-T6-kYf" customClass="TweeAttributedTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="57"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="MdE-T6-kYf" firstAttribute="leading" secondItem="LVe-aZ-fpl" secondAttribute="leading" id="81I-Ry-Waz"/>
-                                            <constraint firstItem="MdE-T6-kYf" firstAttribute="top" secondItem="LVe-aZ-fpl" secondAttribute="top" id="Bk4-jq-esj"/>
-                                            <constraint firstAttribute="bottom" secondItem="MdE-T6-kYf" secondAttribute="bottom" id="iBC-fO-m6Z"/>
-                                            <constraint firstAttribute="trailing" secondItem="MdE-T6-kYf" secondAttribute="trailing" id="nTi-Mq-5zY"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoT-MZ-yxj">
-                                        <rect key="frame" x="30" y="185" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="181.5" width="354" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-cz-AbP" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="8" width="344" height="34"/>
-                                                <state key="normal" title="Others (Please Specify)">
+                                                <state key="normal" title="Company">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="logSelectedButtonForPageTwoWithRadioButton:" destination="n9y-3y-HKb" eventType="touchUpInside" id="7TG-gR-zMH"/>
                                                     <outletCollection property="otherButtons" destination="aMZ-yj-ISn" id="A0o-3Y-1Us"/>
                                                     <outletCollection property="otherButtons" destination="zf1-uV-2tz" id="mVf-xu-ItQ"/>
+                                                    <outletCollection property="otherButtons" destination="aqg-Vu-H4W" id="xNF-Iw-JGf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -318,10 +304,32 @@
                                             <constraint firstItem="aKv-cz-AbP" firstAttribute="centerY" secondItem="MoT-MZ-yxj" secondAttribute="centerY" id="Ygg-Ui-bIZ"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVX-Bc-jTC">
+                                        <rect key="frame" x="30" y="241.5" width="354" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqg-Vu-H4W" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <state key="normal" title="Trust">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logSelectedButtonForPageTwoWithRadioButton:" destination="n9y-3y-HKb" eventType="touchUpInside" id="FKa-PV-ceJ"/>
+                                                    <outletCollection property="otherButtons" destination="aMZ-yj-ISn" id="XS5-wb-Edl"/>
+                                                    <outletCollection property="otherButtons" destination="aKv-cz-AbP" id="nL5-Yy-rkh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="aqg-Vu-H4W" secondAttribute="trailing" constant="10" id="bVA-fJ-c7K"/>
+                                            <constraint firstAttribute="height" constant="50" id="eSF-Lj-XMs"/>
+                                            <constraint firstItem="aqg-Vu-H4W" firstAttribute="centerY" secondItem="TVX-Bc-jTC" secondAttribute="centerY" id="uzq-e8-d4m"/>
+                                            <constraint firstItem="aqg-Vu-H4W" firstAttribute="leading" secondItem="TVX-Bc-jTC" secondAttribute="leading" id="vIU-hL-9hf"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="MoT-MZ-yxj" firstAttribute="leading" secondItem="LVe-aZ-fpl" secondAttribute="leading" id="58j-IS-i2J"/>
                                     <constraint firstItem="T4B-E0-KkT" firstAttribute="leading" secondItem="MoT-MZ-yxj" secondAttribute="leading" id="7fm-7i-MtZ"/>
                                     <constraint firstItem="cZs-ib-nkg" firstAttribute="leading" secondItem="zVW-23-AA5" secondAttribute="leading" id="86E-PE-aqp"/>
                                     <constraint firstAttribute="bottom" secondItem="JSJ-hY-L09" secondAttribute="bottom" id="8sT-6o-h9e"/>
@@ -332,17 +340,18 @@
                                     <constraint firstItem="JSJ-hY-L09" firstAttribute="leading" secondItem="goB-bL-hgN" secondAttribute="leading" id="JjQ-cI-IMs"/>
                                     <constraint firstItem="zVW-23-AA5" firstAttribute="height" secondItem="T4B-E0-KkT" secondAttribute="height" id="Od0-z8-ngk"/>
                                     <constraint firstAttribute="trailing" secondItem="cZs-ib-nkg" secondAttribute="trailing" constant="30" id="Ovy-Vm-QW5"/>
+                                    <constraint firstItem="MoT-MZ-yxj" firstAttribute="height" secondItem="TVX-Bc-jTC" secondAttribute="height" id="SMn-PQ-x6b"/>
                                     <constraint firstItem="zVW-23-AA5" firstAttribute="leading" secondItem="T4B-E0-KkT" secondAttribute="leading" id="UfU-1K-gwb"/>
                                     <constraint firstItem="cZs-ib-nkg" firstAttribute="leading" secondItem="goB-bL-hgN" secondAttribute="leading" constant="30" id="YDF-ED-HL8"/>
-                                    <constraint firstItem="T4B-E0-KkT" firstAttribute="top" secondItem="zVW-23-AA5" secondAttribute="bottom" multiplier="1.1" id="cyt-n8-bfW"/>
-                                    <constraint firstItem="LVe-aZ-fpl" firstAttribute="top" secondItem="MoT-MZ-yxj" secondAttribute="bottom" multiplier="1.2" id="e77-fn-nNc"/>
+                                    <constraint firstItem="T4B-E0-KkT" firstAttribute="top" secondItem="zVW-23-AA5" secondAttribute="bottom" constant="10" id="cyt-n8-bfW"/>
                                     <constraint firstItem="T4B-E0-KkT" firstAttribute="trailing" secondItem="MoT-MZ-yxj" secondAttribute="trailing" id="fUi-3g-LMH"/>
-                                    <constraint firstItem="LVe-aZ-fpl" firstAttribute="height" secondItem="goB-bL-hgN" secondAttribute="height" multiplier="0.07" id="gS3-BE-YXC"/>
                                     <constraint firstAttribute="trailing" secondItem="JSJ-hY-L09" secondAttribute="trailing" id="glK-s7-w2p"/>
-                                    <constraint firstItem="MoT-MZ-yxj" firstAttribute="top" secondItem="T4B-E0-KkT" secondAttribute="bottom" multiplier="1.1" constant="-5" id="has-GK-7eQ"/>
+                                    <constraint firstItem="MoT-MZ-yxj" firstAttribute="leading" secondItem="TVX-Bc-jTC" secondAttribute="leading" id="gq8-ZT-ps8"/>
+                                    <constraint firstItem="MoT-MZ-yxj" firstAttribute="top" secondItem="T4B-E0-KkT" secondAttribute="bottom" constant="10" id="has-GK-7eQ"/>
                                     <constraint firstItem="cZs-ib-nkg" firstAttribute="trailing" secondItem="zVW-23-AA5" secondAttribute="trailing" id="kS5-bG-mg3"/>
                                     <constraint firstItem="T4B-E0-KkT" firstAttribute="height" secondItem="MoT-MZ-yxj" secondAttribute="height" id="lQh-b6-DIb"/>
-                                    <constraint firstItem="MoT-MZ-yxj" firstAttribute="trailing" secondItem="LVe-aZ-fpl" secondAttribute="trailing" id="pU7-JI-Skh"/>
+                                    <constraint firstItem="MoT-MZ-yxj" firstAttribute="trailing" secondItem="TVX-Bc-jTC" secondAttribute="trailing" id="nG3-LN-Q8a"/>
+                                    <constraint firstItem="TVX-Bc-jTC" firstAttribute="top" secondItem="MoT-MZ-yxj" secondAttribute="bottom" constant="10" id="xdT-nv-vjy"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -357,10 +366,9 @@
                     </view>
                     <connections>
                         <outlet property="firstBtn" destination="aMZ-yj-ISn" id="dd0-Zr-Ib5"/>
+                        <outlet property="fourthBtn" destination="aKv-cz-AbP" id="Ymu-kl-xWl"/>
                         <outlet property="nextBtn" destination="huM-I7-UOc" id="dZM-fZ-YHh"/>
                         <outlet property="nextView" destination="JSJ-hY-L09" id="O9Q-nI-j4c"/>
-                        <outlet property="otherTextField" destination="MdE-T6-kYf" id="AUs-Dh-xEJ"/>
-                        <outlet property="otherView" destination="LVe-aZ-fpl" id="u5J-aG-TmG"/>
                         <outlet property="secondBtn" destination="zf1-uV-2tz" id="O7I-tx-yph"/>
                         <outlet property="thirdBtn" destination="aKv-cz-AbP" id="Bfl-2O-5tk"/>
                         <outlet property="titleLabel" destination="cZs-ib-nkg" id="ro9-hv-SVE"/>

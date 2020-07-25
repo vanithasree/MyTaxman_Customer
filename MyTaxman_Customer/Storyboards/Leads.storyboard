@@ -114,7 +114,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2VX-rt-u14">
                                         <rect key="frame" x="30" y="124.5" width="354" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-lt-hr9" customClass="DLRadioButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kib-lt-hr9" customClass="DLRadioButton">
                                                 <rect key="frame" x="0.0" y="8" width="344" height="34"/>
                                                 <state key="normal" title="Business">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -188,6 +188,7 @@
                         <outlet property="firstBtn" destination="i43-p1-Heb" id="Tk6-lR-feA"/>
                         <outlet property="nextBtn" destination="ONI-Yc-UFb" id="CTZ-SP-KYJ"/>
                         <outlet property="nextBtnBaseView" destination="qf0-X4-rb1" id="xMh-hc-nA4"/>
+                        <outlet property="secondBtn" destination="Kib-lt-hr9" id="6AL-VW-OjL"/>
                         <outlet property="titleLabel" destination="dT2-VY-5VN" id="ek2-Cs-1WP"/>
                     </connections>
                 </viewController>
@@ -215,53 +216,47 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVW-23-AA5">
                                         <rect key="frame" x="30" y="61.5" width="354" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAT-OV-gSg">
-                                                <rect key="frame" x="5" y="10" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="jsQ-dd-Be4"/>
-                                                    <constraint firstAttribute="width" constant="30" id="tJK-if-g8T"/>
-                                                </constraints>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-yj-ISn">
-                                                <rect key="frame" x="55" y="9" width="72" height="32"/>
-                                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
-                                                <state key="normal" title="individual"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMZ-yj-ISn" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <state key="normal" title="individual">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logSelectedButtonForPageTwoWithRadioButton:" destination="n9y-3y-HKb" eventType="touchUpInside" id="Haz-AD-obC"/>
+                                                    <outletCollection property="otherButtons" destination="zf1-uV-2tz" id="Qla-52-1Pn"/>
+                                                    <outletCollection property="otherButtons" destination="aKv-cz-AbP" id="Xkx-IH-GQn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="QAT-OV-gSg" firstAttribute="centerY" secondItem="zVW-23-AA5" secondAttribute="centerY" id="1Lk-TP-GYP"/>
                                             <constraint firstItem="aMZ-yj-ISn" firstAttribute="centerY" secondItem="zVW-23-AA5" secondAttribute="centerY" id="9JU-7X-zhk"/>
-                                            <constraint firstItem="QAT-OV-gSg" firstAttribute="leading" secondItem="zVW-23-AA5" secondAttribute="leading" constant="5" id="Gu8-23-RQe"/>
+                                            <constraint firstItem="aMZ-yj-ISn" firstAttribute="leading" secondItem="zVW-23-AA5" secondAttribute="leading" id="E2c-4V-wkF"/>
                                             <constraint firstAttribute="height" constant="50" id="c1n-SU-hv8"/>
-                                            <constraint firstItem="aMZ-yj-ISn" firstAttribute="leading" secondItem="QAT-OV-gSg" secondAttribute="trailing" constant="20" id="ccv-hn-ek3"/>
+                                            <constraint firstAttribute="trailing" secondItem="aMZ-yj-ISn" secondAttribute="trailing" constant="10" id="v6G-Nj-m7l"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4B-E0-KkT">
                                         <rect key="frame" x="30" y="122.5" width="354" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgf-bX-riY">
-                                                <rect key="frame" x="5" y="10" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="30k-Vv-ukq"/>
-                                                    <constraint firstAttribute="height" constant="30" id="hmx-TE-WSQ"/>
-                                                </constraints>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf1-uV-2tz">
-                                                <rect key="frame" x="55" y="9" width="69" height="32"/>
-                                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
-                                                <state key="normal" title="Business"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf1-uV-2tz" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <state key="normal" title="Business">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logSelectedButtonForPageTwoWithRadioButton:" destination="n9y-3y-HKb" eventType="touchUpInside" id="grs-JP-O4Q"/>
+                                                    <outletCollection property="otherButtons" destination="aMZ-yj-ISn" id="gXG-1w-idZ"/>
+                                                    <outletCollection property="otherButtons" destination="aKv-cz-AbP" id="drp-DH-KsN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="bgf-bX-riY" firstAttribute="centerY" secondItem="T4B-E0-KkT" secondAttribute="centerY" id="4e4-fq-kCp"/>
                                             <constraint firstAttribute="height" constant="50" id="CaC-A7-0FS"/>
                                             <constraint firstItem="zf1-uV-2tz" firstAttribute="centerY" secondItem="T4B-E0-KkT" secondAttribute="centerY" id="Uhp-Pm-i91"/>
-                                            <constraint firstItem="zf1-uV-2tz" firstAttribute="leading" secondItem="bgf-bX-riY" secondAttribute="trailing" constant="20" id="ccw-Aa-khM"/>
-                                            <constraint firstItem="bgf-bX-riY" firstAttribute="leading" secondItem="T4B-E0-KkT" secondAttribute="leading" constant="5" id="hhC-nk-x8j"/>
+                                            <constraint firstItem="zf1-uV-2tz" firstAttribute="leading" secondItem="T4B-E0-KkT" secondAttribute="leading" id="c3o-ic-6DL"/>
+                                            <constraint firstAttribute="trailing" secondItem="zf1-uV-2tz" secondAttribute="trailing" constant="10" id="pIy-HH-6ZL"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSJ-hY-L09">
@@ -286,7 +281,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVe-aZ-fpl">
                                         <rect key="frame" x="30" y="282" width="354" height="57"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MdE-T6-kYf">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MdE-T6-kYf" customClass="TweeAttributedTextField">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="57"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -303,31 +298,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoT-MZ-yxj">
                                         <rect key="frame" x="30" y="185" width="354" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ae-gS-GG6">
-                                                <rect key="frame" x="5" y="10" width="30" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="G1N-lm-gaJ"/>
-                                                    <constraint firstAttribute="height" constant="30" id="m4n-TU-Fry"/>
-                                                </constraints>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-cz-AbP">
-                                                <rect key="frame" x="55" y="9" width="177" height="32"/>
-                                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
-                                                <state key="normal" title="Others (Please Specify)"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKv-cz-AbP" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <state key="normal" title="Others (Please Specify)">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logSelectedButtonForPageTwoWithRadioButton:" destination="n9y-3y-HKb" eventType="touchUpInside" id="7TG-gR-zMH"/>
+                                                    <outletCollection property="otherButtons" destination="aMZ-yj-ISn" id="A0o-3Y-1Us"/>
+                                                    <outletCollection property="otherButtons" destination="zf1-uV-2tz" id="mVf-xu-ItQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6cV-hc-r1C"/>
-                                            <constraint firstItem="aKv-cz-AbP" firstAttribute="leading" secondItem="9Ae-gS-GG6" secondAttribute="trailing" constant="20" id="WVY-ow-jwH"/>
+                                            <constraint firstItem="aKv-cz-AbP" firstAttribute="leading" secondItem="MoT-MZ-yxj" secondAttribute="leading" id="OdB-7k-lfk"/>
+                                            <constraint firstAttribute="trailing" secondItem="aKv-cz-AbP" secondAttribute="trailing" constant="10" id="TE2-cp-77j"/>
                                             <constraint firstItem="aKv-cz-AbP" firstAttribute="centerY" secondItem="MoT-MZ-yxj" secondAttribute="centerY" id="Ygg-Ui-bIZ"/>
-                                            <constraint firstItem="9Ae-gS-GG6" firstAttribute="centerY" secondItem="MoT-MZ-yxj" secondAttribute="centerY" id="dK2-5h-MlQ"/>
-                                            <constraint firstItem="9Ae-gS-GG6" firstAttribute="leading" secondItem="MoT-MZ-yxj" secondAttribute="leading" constant="5" id="g6c-Hr-JAC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="MoT-MZ-yxj" firstAttribute="leading" secondItem="LVe-aZ-fpl" secondAttribute="leading" id="58j-IS-i2J"/>
                                     <constraint firstItem="T4B-E0-KkT" firstAttribute="leading" secondItem="MoT-MZ-yxj" secondAttribute="leading" id="7fm-7i-MtZ"/>
@@ -363,6 +355,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iw1-zH-LOo"/>
                     </view>
+                    <connections>
+                        <outlet property="firstBtn" destination="aMZ-yj-ISn" id="dd0-Zr-Ib5"/>
+                        <outlet property="nextBtn" destination="huM-I7-UOc" id="dZM-fZ-YHh"/>
+                        <outlet property="nextView" destination="JSJ-hY-L09" id="O9Q-nI-j4c"/>
+                        <outlet property="otherTextField" destination="MdE-T6-kYf" id="AUs-Dh-xEJ"/>
+                        <outlet property="otherView" destination="LVe-aZ-fpl" id="u5J-aG-TmG"/>
+                        <outlet property="secondBtn" destination="zf1-uV-2tz" id="O7I-tx-yph"/>
+                        <outlet property="thirdBtn" destination="aKv-cz-AbP" id="Bfl-2O-5tk"/>
+                        <outlet property="titleLabel" destination="cZs-ib-nkg" id="ro9-hv-SVE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHu-E9-56P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

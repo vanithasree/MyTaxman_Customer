@@ -42,7 +42,7 @@ class LoginViewController: BaseViewController {
         titleLabel.setMainTitle(titleText: "Login to view your job")
         
         loginButton.setDarkGreenTheme(btn: loginButton, title: "LOGIN")
-        forgotButton.setButtonProperties(title: "FORGOT  YOUR PASSWORD?", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0)), titleColor: ColorManager.darkTheme.color)
+        forgotButton.setButtonProperties(title: "FORGOT YOUR PASSWORD?", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0)), titleColor: ColorManager.darkTheme.color)
         accountLabel.text = "Don't have an account?"
         accountLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
         accountLabel.textColor = ColorManager.darkGrey.color

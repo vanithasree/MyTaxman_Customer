@@ -60,7 +60,7 @@
         <scene sceneID="eLA-IV-xeE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N3F-kA-pgI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Jobs" id="0cS-Uy-sIQ"/>
+                    <tabBarItem key="tabBarItem" title="Jobs" image="jobs" id="0cS-Uy-sIQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kdp-rN-RkU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -73,13 +73,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgs-vh-bGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-594" y="-629"/>
+            <point key="canvasLocation" x="984" y="-443"/>
         </scene>
         <!--Inbox-->
         <scene sceneID="wtw-lJ-V1i">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HC8-BU-Spv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Inbox" id="ey5-Eo-O36"/>
+                    <tabBarItem key="tabBarItem" title="Inbox" image="inbox" id="ey5-Eo-O36"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jfu-Ju-HKQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -98,7 +98,7 @@
         <scene sceneID="WNb-6R-cfk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5cs-IF-Gwh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="qzh-QW-TTm"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="qzh-QW-TTm"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wQU-3j-6Yc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -114,4 +114,9 @@
             <point key="canvasLocation" x="1247.8260869565217" y="683.70535714285711"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="inbox" width="25" height="25"/>
+        <image name="jobs" width="25" height="25"/>
+        <image name="profile" width="25" height="25"/>
+    </resources>
 </document>

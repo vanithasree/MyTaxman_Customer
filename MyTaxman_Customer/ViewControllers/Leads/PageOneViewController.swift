@@ -11,6 +11,7 @@ import DLRadioButton
 
 class PageOneViewController: UIViewController {
     
+    @IBOutlet weak var secondBtn: DLRadioButton!
     @IBOutlet weak var nextBtnBaseView: UIView!
     @IBOutlet weak var firstBtn: DLRadioButton!
     @IBOutlet weak var nextBtn: UIButton!
@@ -20,18 +21,14 @@ class PageOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
-    
     }
     
     func setViewUI() {
         
-        firstBtn.setOptionChooseTheme(btn: firstBtn, title: "Individual")
-        firstBtn.marginWidth = 10.0
-        firstBtn.isIconSquare = false
-        firstBtn.icon = UIImage(named: "Radio")!
-        firstBtn.iconSelected = UIImage(named: "RadioSelected")!
-        
+        self.setRadioButtonProperties(radioBtn: firstBtn, titleString: "Individual")
+        self.setRadioButtonProperties(radioBtn: secondBtn, titleString: "Business")
+        titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText: "Do you need this service for a\nbusiness or an individual?")
+        nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
         self.checkIsValueChoosen()
         
     }
@@ -42,6 +39,14 @@ class PageOneViewController: UIViewController {
         
     }
     
+    func setRadioButtonProperties(radioBtn : DLRadioButton, titleString : String) {
+        radioBtn.setOptionChooseTheme(btn: radioBtn, title:titleString)
+        radioBtn.marginWidth = 10.0
+        radioBtn.isIconSquare = false
+        radioBtn.icon = UIImage(named: "Radio")!
+        radioBtn.iconSelected = UIImage(named: "RadioSelected")!
+    }
+    
     func checkIsValueChoosen() {
         if self.pageOneValue.isEmpty {
             nextBtnBaseView.isHidden = true
@@ -50,28 +55,27 @@ class PageOneViewController: UIViewController {
             nextBtnBaseView.isHidden = false
         }
     }
-    
-    /*func setViewUI(){
-     
-     titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText: "Do you need this service for a\nbusiness or an individual?")
-     individualBtn.setOptionChooseTheme(btn: individualBtn, title: "Individual")
-     businessBtn.setOptionChooseTheme(btn: businessBtn, title: "Business")
-     nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
-     
-     }*/
-    
+
     @objc @IBAction private func logSelectedButton(radioButton : DLRadioButton) {
         if (radioButton.isMultipleSelectionEnabled) {
             for button in radioButton.selectedButtons() {
                 print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
             }
         } else {
+            self.pageOneValue = radioButton.selected()?.titleLabel?.text ?? ""
+            self.checkIsValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
     
+    func redirecToPageTwoVC() {
+        let pageTwoVC = PageTwoViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageTwoVC, animated: true)
+    }
+    
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
+        self.redirecToPageTwoVC()
     }
     
     /*

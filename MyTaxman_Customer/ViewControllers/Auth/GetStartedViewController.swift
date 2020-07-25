@@ -31,12 +31,12 @@ class GetStartedViewController: BaseViewController {
     func setupViews() {
                 
         titleLabel.text = "Welcome to MyTaxman"
-        titleLabel.font = UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(20.0))
+        titleLabel.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(20.0))
         
         submitANewJobBtn.setButtonProperties(title: "SUBMIT A NEW JOB", font: UIFont(name:Font.FontName.PoppinsBold.rawValue, size: Utility.dynamicSize(18.0)), titleColor: ColorManager.darkText.color)
         submitANewJobBtn.backgroundColor = ColorManager.white.color
         
-        loginButton.setButtonProperties(title: "LOGIN TO MY ACCOUNT", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(18.0)), titleColor: ColorManager.darkText.color)
+        loginButton.setButtonProperties(title: "LOGIN TO MY ACCOUNT", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(20.0)), titleColor: ColorManager.darkText.color)
         loginButton.backgroundColor = .clear
         
         

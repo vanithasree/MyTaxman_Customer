@@ -19,6 +19,10 @@ extension TweeAttributedTextField {
         self.isSecureTextEntry = isSecureText
         self.infoTextColor = UIColor.red //Color.theme.value
         self.textColor = ColorManager.darkText.color
+        self.lineColor = ColorManager.lightGrey.color
+        
+        self.lineWidth = 1.0
+        self.activeLineWidth = 1.0
         
         let userFont = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .footnote)
         //        let pointSize = 13.0
@@ -28,7 +32,7 @@ extension TweeAttributedTextField {
         
         self.infoLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(13.0))
         //        textField.tweePlaceholder = placeholderString
-       // self.placeholderColor = .clear
+        // self.placeholderColor = .clear
         //        textField.placeholderLabel.backgroundColor = .cyan
         //textField.lineColor = Color.lightText.value
         self.font =  UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
@@ -41,15 +45,14 @@ extension TweeAttributedTextField {
         //  textField.attributedPlaceholder = NSAttributedString(string: placeholderString, attributes: [NSAttributedString.Key.foregroundColor: ColorManager.lightText.color, NSAttributedString.Key.font :textField.infoLabel.font ?? userFont])
         
         self.backgroundColor = .clear
-        
-        self.activeLineColor = .systemBlue
-        self.activeLineWidth = 1
-        self.animationDuration = 0.3
-                
-        self.borderStyle = .none
-    
+        self.activeLineColor = ColorManager.textDarkGreenColor.color
         self.lineColor = .lightGray
+        self.activeLineWidth = 1
         self.lineWidth = 1
+        self.animationDuration = 0.3
+        self.borderStyle = .none
+        self.tintColor = ColorManager.textDarkGreenColor.color
+        
         
         if isFieldRequired {
             passwordAttriburedString.append(asterix)

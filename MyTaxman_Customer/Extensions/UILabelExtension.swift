@@ -30,7 +30,7 @@ extension UILabel {
         
         self.attributedText = attributedString
     }
-   
+    
     
     func underLine(color: UIColor){
         if let text = self.text{
@@ -53,14 +53,14 @@ extension UILabel {
     }
     func setPopupTitle(titleText:String) {
         // label.font = Utility().getScaledFont(forFont: Font.FontName.DMSansRegular.rawValue, textStyle: .body)
-        self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
+        self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(15.0))
         self.numberOfLines = 0
         self.text = titleText
         self.backgroundColor = .clear
         self.textColor = ColorManager.darkText.color
         self.adjustsFontForContentSizeCategory = false
     }
-
+    
     
     func setTitleForPageScreenTitle(label:UILabel, titleText:String) {
         label.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
@@ -150,20 +150,20 @@ extension UITapGestureRecognizer {
         guard let attrString = label.attributedText else {
             return false
         }
-
+        
         let layoutManager = NSLayoutManager()
         let textContainer = NSTextContainer(size: .zero)
         let textStorage = NSTextStorage(attributedString: attrString)
-
+        
         layoutManager.addTextContainer(textContainer)
         textStorage.addLayoutManager(layoutManager)
-
+        
         textContainer.lineFragmentPadding = 0
         textContainer.lineBreakMode = label.lineBreakMode
         textContainer.maximumNumberOfLines = label.numberOfLines
         let labelSize = label.bounds.size
         textContainer.size = labelSize
-
+        
         let locationOfTouchInLabel = self.location(in: label)
         let textBoundingBox = layoutManager.usedRect(for: textContainer)
         let textContainerOffset = CGPoint(x: (labelSize.width - textBoundingBox.size.width) * 0.5 - textBoundingBox.origin.x, y: (labelSize.height - textBoundingBox.size.height) * 0.5 - textBoundingBox.origin.y)

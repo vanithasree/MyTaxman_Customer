@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="bHP-sL-yhA">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" id="eqi-TB-HRW" customClass="TabBarViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F4L-3L-bgi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="N3F-kA-pgI" kind="relationship" relationship="viewControllers" id="lem-lG-aBD"/>
+                        <segue destination="HC8-BU-Spv" kind="relationship" relationship="viewControllers" id="tv6-0i-xY1"/>
+                        <segue destination="5cs-IF-Gwh" kind="relationship" relationship="viewControllers" id="z4o-2a-ZMh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TCo-5v-dBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="406"/>
+        </scene>
+        <!--JobListViewController-->
+        <scene sceneID="M5Z-Ui-zUN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Jobs" referencedIdentifier="JobListViewController" id="EYn-Qm-OIu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SRM-eV-ylJ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7qU-TY-6J9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939.8550724637682" y="324.77678571428572"/>
+        </scene>
+        <!--ChatListViewController-->
+        <scene sceneID="ui4-C2-SLb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Inbox" referencedIdentifier="ChatListViewController" id="wR8-Wd-JPX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hHx-V7-OfB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fjn-Y2-ucy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2013.7681159420292" y="424.55357142857139"/>
+        </scene>
+        <!--SettingsViewController-->
+        <scene sceneID="8X7-wg-Ttb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingsViewController" id="Avr-cR-IUf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xTZ-pd-eMd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PPV-Zg-j14" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158.695652173913" y="683.70535714285711"/>
+        </scene>
+        <!--Jobs-->
+        <scene sceneID="eLA-IV-xeE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N3F-kA-pgI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Jobs" id="0cS-Uy-sIQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kdp-rN-RkU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EYn-Qm-OIu" kind="relationship" relationship="rootViewController" id="a4E-X9-eLl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xgs-vh-bGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-594" y="-629"/>
+        </scene>
+        <!--Inbox-->
+        <scene sceneID="wtw-lJ-V1i">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HC8-BU-Spv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Inbox" id="ey5-Eo-O36"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jfu-Ju-HKQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wR8-Wd-JPX" kind="relationship" relationship="rootViewController" id="KX6-Or-oTx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ugd-96-Cvi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2190" y="-443"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="WNb-6R-cfk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5cs-IF-Gwh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="qzh-QW-TTm"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wQU-3j-6Yc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Avr-cR-IUf" kind="relationship" relationship="rootViewController" id="7Q3-LD-4jD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kl1-6E-9Vh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247.8260869565217" y="683.70535714285711"/>
+        </scene>
+    </scenes>
+</document>

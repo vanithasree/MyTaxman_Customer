@@ -11,7 +11,7 @@ import DLRadioButton
 import TweeTextField
 
 class FinancialServiceViewController: UIViewController {
-
+    
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var nextView: UIView!
     @IBOutlet weak var otherTextField: TweeAttributedTextField!
@@ -28,7 +28,7 @@ class FinancialServiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViewUI()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -80,34 +80,35 @@ class FinancialServiceViewController: UIViewController {
             
             if radioButton.selected()?.tag == 5 {
                 self.otherView.isHidden = false
-                    self.financialServiceValue = radioButton.selected()!.titleLabel!.text ?? ""
+                self.financialServiceValue = radioButton.selected()!.titleLabel!.text ?? ""
             }
             else {
                 self.otherView.isHidden = true
-                    self.financialServiceValue = radioButton.selected()!.titleLabel!.text ?? ""
+                self.financialServiceValue = radioButton.selected()!.titleLabel!.text ?? ""
             }
-    
+            LeadsManager.shared.postJobsParams?.page1 = self.financialServiceValue
             self.checkIsFinancialServiceIsChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     func redirectToPageThreeScreen() {
-           let pageThreeVC = PageThreeViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-           self.navigationController?.pushViewController(pageThreeVC, animated: true)
-       }
-
-    @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        self.redirectToPageThreeScreen()
+        let pageThreeVC = PageThreeViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageThreeVC, animated: true)
     }
     
+    @IBAction func onTappedNextBtn(_ sender: UIButton) {
+        if let value = LeadsManager.shared.postJobsParams?.page1, !value.isEmpty {
+            self.redirectToPageThreeScreen()
+        }
+    }
 }

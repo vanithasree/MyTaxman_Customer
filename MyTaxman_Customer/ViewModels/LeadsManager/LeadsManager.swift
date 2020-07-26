@@ -15,7 +15,6 @@ class LeadsManager {
     
     var choosenService : ServiceListKeys = .taxReturns
     var postJobsParams: JobsParams?
-
     
     private init() {
         

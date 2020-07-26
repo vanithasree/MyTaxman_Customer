@@ -58,6 +58,7 @@ class AuditServiceViewController: UIViewController {
             }
         } else {
             self.auditService = radioButton.selected()!.titleLabel!.text ?? ""
+            LeadsManager.shared.postJobsParams?.page1 = self.auditService
             self.checkIsAuditServiceValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
@@ -68,7 +69,10 @@ class AuditServiceViewController: UIViewController {
         self.navigationController?.pushViewController(pageThreeVC, animated: true)
     }
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        redirectToPageThreeScreenFromAudit()
+        
+        if let value = LeadsManager.shared.postJobsParams?.page1, !value.isEmpty {
+            redirectToPageThreeScreenFromAudit()
+        }
     }
     
     /*

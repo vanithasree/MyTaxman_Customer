@@ -88,21 +88,15 @@ class PageThreeViewController: UIViewController {
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        
-        if LeadsManager.shared.choosenService == .taxReturns {
-            if let value = LeadsManager.shared.postJobsParams?.page4 {
-                print(value)
-                 print(LeadsManager.shared.postJobsParams)
-                self.redirectToPageFourthScreen()
-                
-            }
-            else {
-                self.showToast(message: "Please check the values entered")
-            }
+        if let value = LeadsManager.shared.postJobsParams?.page4 {
+            print(value)
+            print(LeadsManager.shared.postJobsParams)
+            self.redirectToPageFourthScreen()
+            
         }
-        
-        
-        
+        else {
+            self.showToast(message: "Please check the values entered")
+        }
     }
     
     func redirectToPageFourthScreen() {

@@ -81,17 +81,16 @@ class PageTwoViewController: UIViewController {
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
         
-        if LeadsManager.shared.choosenService == .taxReturns {
-            if let value = LeadsManager.shared.postJobsParams?.page2 {
-                 print(LeadsManager.shared.postJobsParams)
-                print(value)
-                self.redirectToPageThreeScreen()
-                LeadsManager.shared.postJobsParams?.page3 = ""
-            }
-            else {
-                self.showToast(message: "Please check the values entered")
-            }
+        if let value = LeadsManager.shared.postJobsParams?.page2 {
+            print(LeadsManager.shared.postJobsParams)
+            print(value)
+            self.redirectToPageThreeScreen()
+            LeadsManager.shared.postJobsParams?.page3 = ""
         }
+        else {
+            self.showToast(message: "Please check the values entered")
+        }
+        
     }
     
     func redirectToPageThreeScreen() {

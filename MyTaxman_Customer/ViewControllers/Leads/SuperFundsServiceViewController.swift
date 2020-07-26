@@ -62,6 +62,7 @@ class SuperFundsServiceViewController: UIViewController {
                }
            } else {
                self.superFundValue = radioButton.selected()!.titleLabel!.text ?? ""
+            LeadsManager.shared.postJobsParams?.page1 = self.superFundValue
                self.checkIsSuperFundValueChoosen()
                print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
            }
@@ -74,7 +75,10 @@ class SuperFundsServiceViewController: UIViewController {
       
 
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        redirectToPageThreeScreenFromSuperAudit()
+        
+        if let value = LeadsManager.shared.postJobsParams?.page1, !value.isEmpty {
+              redirectToPageThreeScreenFromSuperAudit()
+        }
     }
     /*
     // MARK: - Navigation

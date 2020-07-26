@@ -40,9 +40,9 @@ class PageFiveViewController: UIViewController {
     }
     
     func redirectToPageSixScreen() {
-           let pageSixVC = PageSixViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-           self.navigationController?.pushViewController(pageSixVC, animated: true)
-       }
+        let pageSixVC = PageSixViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageSixVC, animated: true)
+    }
     /*
      // MARK: - Navigation
      
@@ -54,7 +54,7 @@ class PageFiveViewController: UIViewController {
      */
     
     @IBAction func onTappedNextBt(_ sender: UIButton) {
-         print(LeadsManager.shared.postJobsParams)
+        print(LeadsManager.shared.postJobsParams)
         redirectToPageSixScreen()
     }
 }

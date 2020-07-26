@@ -103,14 +103,11 @@ class PageFourViewController: UIViewController {
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        if LeadsManager.shared.choosenService == .taxReturns {
+       
             if let value = LeadsManager.shared.postJobsParams?.page5, !value.isEmpty {
                  print(LeadsManager.shared.postJobsParams)
                 self.redirectToPageFiveScreen()
             }
-        }
-        
-        
     }
     
     func redirectToPageFiveScreen() {

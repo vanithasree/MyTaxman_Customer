@@ -323,6 +323,33 @@
                                                             <constraint firstAttribute="bottom" secondItem="Utu-oo-Bz8" secondAttribute="bottom" id="qC3-HH-a4k"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvE-AP-u3X">
+                                                        <rect key="frame" x="0.0" y="220" width="414" height="580"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7d8-CM-X5P" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                                                <rect key="frame" x="20" y="40" width="374" height="53"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFE-6z-HoZ">
+                                                                <rect key="frame" x="20" y="123" width="374" height="61.5"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <connections>
+                                                                    <action selector="didTapPasswordAction:" destination="0Xx-A1-tjl" eventType="touchUpInside" id="cmh-1h-F6X"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="RFE-6z-HoZ" firstAttribute="top" secondItem="7d8-CM-X5P" secondAttribute="bottom" constant="30" id="9sv-Ye-Tmx"/>
+                                                            <constraint firstItem="RFE-6z-HoZ" firstAttribute="leading" secondItem="kvE-AP-u3X" secondAttribute="leading" constant="20" id="Gv7-VP-klL"/>
+                                                            <constraint firstAttribute="trailing" secondItem="RFE-6z-HoZ" secondAttribute="trailing" constant="20" id="SkC-En-lSU"/>
+                                                            <constraint firstItem="7d8-CM-X5P" firstAttribute="leading" secondItem="kvE-AP-u3X" secondAttribute="leading" constant="20" id="UIN-BQ-bVb"/>
+                                                            <constraint firstItem="RFE-6z-HoZ" firstAttribute="firstBaseline" secondItem="7d8-CM-X5P" secondAttribute="baseline" constant="20" symbolType="layoutAnchor" id="WnY-Po-5HI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="7d8-CM-X5P" secondAttribute="trailing" constant="20" id="YKW-TX-bFP"/>
+                                                            <constraint firstItem="7d8-CM-X5P" firstAttribute="top" secondItem="kvE-AP-u3X" secondAttribute="top" constant="40" id="nWV-90-vDb"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
@@ -331,9 +358,13 @@
                                                     <constraint firstItem="Xjt-n9-Umi" firstAttribute="leading" secondItem="4b7-iY-eEa" secondAttribute="leading" id="EX3-E9-PkB"/>
                                                     <constraint firstAttribute="trailing" secondItem="Xjt-n9-Umi" secondAttribute="trailing" id="Oju-Fz-HCe"/>
                                                     <constraint firstAttribute="trailing" secondItem="5m9-rO-hp8" secondAttribute="trailing" id="Ovv-eR-Ftn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kvE-AP-u3X" secondAttribute="trailing" id="SYh-eX-4nb"/>
+                                                    <constraint firstItem="kvE-AP-u3X" firstAttribute="top" secondItem="Xjt-n9-Umi" secondAttribute="bottom" id="WoL-Rg-KE6"/>
+                                                    <constraint firstItem="kvE-AP-u3X" firstAttribute="leading" secondItem="4b7-iY-eEa" secondAttribute="leading" id="f0w-qs-D7X"/>
                                                     <constraint firstItem="Xjt-n9-Umi" firstAttribute="top" secondItem="4b7-iY-eEa" secondAttribute="top" id="irF-2u-eiz"/>
                                                     <constraint firstItem="5m9-rO-hp8" firstAttribute="leading" secondItem="4b7-iY-eEa" secondAttribute="leading" id="jpi-Dh-9S0"/>
                                                     <constraint firstItem="5m9-rO-hp8" firstAttribute="top" secondItem="Xjt-n9-Umi" secondAttribute="bottom" id="s5k-6T-ztI"/>
+                                                    <constraint firstAttribute="bottom" secondItem="kvE-AP-u3X" secondAttribute="bottom" id="xdH-h4-u7G"/>
                                                     <constraint firstAttribute="bottom" secondItem="5m9-rO-hp8" secondAttribute="bottom" id="xev-RH-fwh"/>
                                                 </constraints>
                                             </view>
@@ -351,7 +382,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="RFE-6z-HoZ" firstAttribute="height" secondItem="yz4-2z-tRo" secondAttribute="height" multiplier="0.075" id="6Kv-zV-626"/>
                                     <constraint firstAttribute="bottom" secondItem="AI2-FD-7IA" secondAttribute="bottom" id="9dQ-wd-TAd"/>
+                                    <constraint firstItem="7d8-CM-X5P" firstAttribute="height" secondItem="yz4-2z-tRo" secondAttribute="height" multiplier="0.065" id="KdS-zs-KU8"/>
                                     <constraint firstItem="AI2-FD-7IA" firstAttribute="top" secondItem="yz4-2z-tRo" secondAttribute="top" id="OlN-NX-JHs"/>
                                     <constraint firstItem="Utu-oo-Bz8" firstAttribute="height" secondItem="yz4-2z-tRo" secondAttribute="height" multiplier="0.075" id="V8G-c5-0Wu"/>
                                     <constraint firstItem="AI2-FD-7IA" firstAttribute="leading" secondItem="yz4-2z-tRo" secondAttribute="leading" id="iyZ-3N-afU"/>
@@ -371,6 +404,7 @@
                     </view>
                     <connections>
                         <outlet property="bgInfoView" destination="5m9-rO-hp8" id="JZD-Yv-vO5"/>
+                        <outlet property="bgPasswordView" destination="kvE-AP-u3X" id="UcZ-z2-86I"/>
                         <outlet property="contactBaseView" destination="Xjt-n9-Umi" id="QDL-5A-iOj"/>
                         <outlet property="contactInfoLabel" destination="Z4J-CA-7FF" id="RQK-r9-4cF"/>
                         <outlet property="contactSubTitleLabel" destination="cOX-7K-E0m" id="9Xe-oq-dxb"/>
@@ -380,9 +414,11 @@
                         <outlet property="fullnameTextField" destination="dci-zH-uAE" id="D4e-z5-JBO"/>
                         <outlet property="mobileNumberTextField" destination="CX2-bw-QKv" id="zas-2a-THo"/>
                         <outlet property="passwordTextField" destination="w5a-oX-3Yl" id="0Wy-ab-wK6"/>
+                        <outlet property="pwdTextField" destination="7d8-CM-X5P" id="O5R-XG-c4Y"/>
                         <outlet property="retypePasswordTextField" destination="843-u9-OIA" id="nOq-es-rY4"/>
                         <outlet property="scrollView" destination="AI2-FD-7IA" id="O7B-5p-0Tq"/>
                         <outlet property="submitBtn" destination="Utu-oo-Bz8" id="0hg-Cs-r6b"/>
+                        <outlet property="submitPasswordButton" destination="RFE-6z-HoZ" id="Jbn-bw-Z50"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUo-aJ-tvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

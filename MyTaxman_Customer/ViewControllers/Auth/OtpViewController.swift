@@ -15,7 +15,7 @@ class OtpViewController: BaseViewController {
     @IBOutlet weak var pinview: SVPinView!
     @IBOutlet var resendButton: UIButton!
     private var authViewModel = AuthViewModel()
-
+    var customerid : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,16 +38,10 @@ class OtpViewController: BaseViewController {
     }
     
     func pinViewSetup() {
-        //Setup Pinview
         pinview.style = .underline
-//        pinview.borderLineColor = .clear
-//        pinview.fieldCornerRadius = 0
         pinview.activeBorderLineThickness = 1.5
         pinview.borderLineColor = ColorManager.darkText.color
         pinview.activeBorderLineColor = ColorManager.darkBGTheme.color
-        //           pinview.fieldBackgroundColor = ColorManager.liteBlueTheme.color
-        //           pinview.activeFieldBackgroundColor = ColorManager.liteBlueTheme.color
-//        pinview.activeFieldCornerRadius = 0
         pinview.backgroundColor = ColorManager.white.color
         pinview.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(20.0))!
         pinview.pinLength = 4
@@ -74,7 +68,7 @@ class OtpViewController: BaseViewController {
     
     func sendOtpAction(token: String) {
         let params: Parameters = [
-            "customerid": UserDetails.shared.userId,
+            "customerid": customerid,
             "otp":token
         ]
         LoadingIndicator.shared.show(forView: self.view)
@@ -82,9 +76,10 @@ class OtpViewController: BaseViewController {
             LoadingIndicator.shared.hide()
             if let result = result {
                 if let success = result.code, success == "1" {
-                    self.presentAlert(withTitle: "", message: result.desc ?? "") {
-                        self.redirectToDashBoardScreen()
-                    }
+                    //self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                    //UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
+                    self.redirectToDashBoardScreen()
+                    //}
                 }else{
                     print("No response found.")
                     self.presentAlert(withTitle: error, message: result.desc ?? "")
@@ -95,18 +90,16 @@ class OtpViewController: BaseViewController {
         }
     }
     
-    
     @IBAction func didTapResendAction(_ sender: Any) {
         let params: Parameters = [
-            "customerid": UserDetails.shared.userId,
+            "customerid": customerid,
         ]
         LoadingIndicator.shared.show(forView: self.view)
         authViewModel.requestResend(input: params) { (result: ResendOtpBase?, alert: AlertMessage?) in
             LoadingIndicator.shared.hide()
             if let result = result {
                 if let success = result.code, success == "1" {
-                    self.presentAlert(withTitle: "", message: result.desc ?? "") {
-                    }
+                    self.presentAlert(withTitle: "", message: result.desc ?? "") {}
                 }else{
                     print("No response found.")
                     self.presentAlert(withTitle: error, message: result.desc ?? "")
@@ -122,7 +115,6 @@ extension OtpViewController {
     func redirectToDashBoardScreen() {
         let tabBar = TabBarViewController.instantiateFromAppStoryboard(appStoryboard: .Tabbar)
         tabBar.modalPresentationStyle = .fullScreen
-        self.present(tabBar, animated: true) {
-        }
+        self.present(tabBar, animated: true) {}
     }
 }

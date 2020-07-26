@@ -98,26 +98,30 @@ class LoginViewController: BaseViewController {
                 LoadingIndicator.shared.hide()
                 if let result = result {
                     if let success = result.code, success == "1" {
-                        UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
                         if result.customerid?.first?.otp_verified ?? "" == "0"{
                             self.presentAlert(withTitle: "", message: result.desc ?? "") {
-                                self.redirectToOtpScreen()
+                                self.redirectToOtpScreen(customerid: result.customerid?.first?.customerid ?? "")
                             }
                         }else {
-                            self.presentAlert(withTitle: "", message: result.desc ?? "") {
-                                self.redirectToDashBoardScreen()
-                            }
+                            //self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                            UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
+                            self.redirectToDashBoardScreen()
+                            //                            }
                         }
                     } else if let success = result.code, success == "0" {
                         if result.customerid?.first?.otp_verified ?? "" == "0"{
                             self.presentAlert(withTitle: "", message: result.desc ?? "") {
-                                self.redirectToOtpScreen()
+                                self.redirectToOtpScreen(customerid: result.customerid?.first?.customerid ?? "")
                             }
                         }else {
-                            self.presentAlert(withTitle: "", message: result.desc ?? "") {
-                                self.redirectToDashBoardScreen()
-                            }
+                            self.presentAlert(withTitle: "", message: result.desc ?? "") {}
                         }
+//                        else {
+//                            //self.presentAlert(withTitle: "", message: result.desc ?? "") {
+//                            UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
+//                            self.redirectToDashBoardScreen()
+//                            //                            }
+//                        }
                     } else if let success = result.code, success == "4" {
                         self.presentAlert(withTitle: "", message: result.desc ?? "") {
                             self.redirectToContactRegisterInfoScreen()
@@ -162,11 +166,13 @@ extension LoginViewController {
     
     func redirectToContactRegisterInfoScreen() {
         let registerVC = ContactInfoViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        registerVC.getPageType = .register
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
-    func redirectToOtpScreen() {
+    func redirectToOtpScreen(customerid : String) {
         let otpVC = OtpViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        otpVC.customerid = customerid
         self.navigationController?.pushViewController(otpVC, animated: true)
     }
     

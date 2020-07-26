@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSPlacesClient.provideAPIKey("AIzaSyBXugsG-nxQoQMEbIUAEaspFtS7-4rnOFk")
         
-        
         if UserDetails.shared.isLoggedIn {
             redirectToHomePage()
         } else {

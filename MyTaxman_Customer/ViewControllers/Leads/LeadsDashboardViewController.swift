@@ -49,9 +49,9 @@ class LeadsDashboardViewController: BaseViewController {
         serviceDataListArray.append(ServicesList(imageName: "fund", title: "Super Funds"))
         serviceDataListArray.append(ServicesList(imageName: "Audit", title: "Audit"))
         serviceDataListArray.append(ServicesList(imageName: "legal", title: "Legal Advice"))
-    
+        
         titleLabel.setLabelCustomProperties(titleText: "What are you looking for?", textColor: ColorManager.textDarkGreenColor.color, font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(20.0)), numberOfLines: 1, alignment: .center)
-     
+        
         
     }
     
@@ -79,7 +79,7 @@ extension LeadsDashboardViewController : UICollectionViewDataSource, UICollectio
         }
         
         if !cell.isAnimated {
-               UIView.animate(withDuration: 0.5, delay: 0.5 * Double(indexPath.row), usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: indexPath.row % 2 == 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0.5 * Double(indexPath.row), usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: indexPath.row % 2 == 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
                 
                 if indexPath.row % 2 == 0 {
                     AnimationUtility.viewSlideInFromLeft(toRight: cell)
@@ -109,28 +109,28 @@ extension LeadsDashboardViewController : UICollectionViewDataSource, UICollectio
             
         case ServiceListKeys.accounting.rawValue:
             LeadsManager.shared.choosenService = .accounting
-            redirectToNextScreen()
+            redirectToPageOneForAccountService()
             break
             
         case ServiceListKeys.financialPlanning.rawValue:
             LeadsManager.shared.choosenService = .financialPlanning
-            redirectToNextScreen()
+            redirectToPageOneForFinancialService()
             break
             
         case ServiceListKeys.superFunds.rawValue:
             LeadsManager.shared.choosenService = .superFunds
-            redirectToNextScreen()
+            redirectToPageOneForSuperFundsService()
             break
             
             
         case ServiceListKeys.audit.rawValue:
             LeadsManager.shared.choosenService = .audit
-            redirectToNextScreen()
+            redirectToPageOneForAuditService()
             break
             
         case ServiceListKeys.legalAdvice.rawValue:
             LeadsManager.shared.choosenService = .legalAdvice
-            redirectToNextScreen()
+            redirectToPageOneForLegalservice()
             break
             
         default: break
@@ -140,12 +140,28 @@ extension LeadsDashboardViewController : UICollectionViewDataSource, UICollectio
 }
 
 extension LeadsDashboardViewController{
-    func redirectToNextScreen() {
-        
-    }
-    
     func redirectToPageOne() {
         let pageOneVC = PageOneViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
+    func redirectToPageOneForAccountService() {
+        let pageOneVC = AccountServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageOneVC, animated: true)
+    }
+    func redirectToPageOneForFinancialService() {
+        let pageOneVC = FinancialServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageOneVC, animated: true)
+    }
+    func redirectToPageOneForSuperFundsService() {
+        let pageOneVC = SuperFundsServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageOneVC, animated: true)
+    }
+    func redirectToPageOneForAuditService() {
+        let pageOneVC = AuditServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageOneVC, animated: true)
+    }
+    func redirectToPageOneForLegalservice() {
+           let pageOneVC = LegalAdviceServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+           self.navigationController?.pushViewController(pageOneVC, animated: true)
+       }
 }

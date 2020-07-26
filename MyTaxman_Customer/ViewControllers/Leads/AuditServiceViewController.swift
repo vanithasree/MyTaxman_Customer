@@ -1,16 +1,15 @@
 //
-//  PageTwoViewController.swift
+//  AuditServiceViewController.swift
 //  MyTaxman_Customer
 //
-//  Created by Apple on 22/07/20.
+//  Created by Apple on 26/07/20.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
 import UIKit
-import TweeTextField
 import DLRadioButton
 
-class PageTwoViewController: UIViewController {
+class AuditServiceViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var firstBtn: DLRadioButton!
@@ -19,45 +18,32 @@ class PageTwoViewController: UIViewController {
     @IBOutlet weak var nextView: UIView!
     @IBOutlet weak var nextBtn: UIButton!
     
-    @IBOutlet weak var fourthBtn: DLRadioButton!
-    
-    var pageTwoValue : String = ""
+    var auditService : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          self.setViewUIProperties()
+        setViewUI()
         
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-      
-        
+    func setViewUI() {
+        titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText:"Which service do you need?")
+        self.setRadioButtonPropertiesForAudit(radioBtn: firstBtn, titleString: "Not for Profit", tag: 1)
+        self.setRadioButtonPropertiesForAudit(radioBtn: secondBtn, titleString: "Corporate", tag: 2)
+        self.setRadioButtonPropertiesForAudit(radioBtn: thirdBtn, titleString: "Self Managed Super Fund", tag: 3)
+        nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
+        checkIsAuditServiceValueChoosen()
     }
-    
-    
-    func checkIsPageTwoValueChoosen() {
+    func checkIsAuditServiceValueChoosen() {
         
-        if self.pageTwoValue.isEmpty {
+        if self.auditService.isEmpty {
             self.nextView.isHidden = true
         }
         else {
             self.nextView.isHidden = false
         }
     }
-    
-    func setViewUIProperties() {
-        
-        self.setRadioButtonPropertiesForPageTwo(radioBtn: firstBtn, titleString: "Sole trade", tag: 1)
-        self.setRadioButtonPropertiesForPageTwo(radioBtn: secondBtn, titleString: "Partnership", tag: 2)
-        self.setRadioButtonPropertiesForPageTwo(radioBtn: thirdBtn, titleString: "Company", tag: 3)
-         self.setRadioButtonPropertiesForPageTwo(radioBtn: fourthBtn, titleString: "Trust", tag: 4)
-        titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText:"What is your business\nstructure?")
-        nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
-        checkIsPageTwoValueChoosen()
-    }
-    
-    func setRadioButtonPropertiesForPageTwo(radioBtn : DLRadioButton, titleString : String, tag:Int) {
+    func setRadioButtonPropertiesForAudit(radioBtn : DLRadioButton, titleString : String, tag:Int) {
         radioBtn.setOptionChooseTheme(btn: radioBtn, title:titleString)
         radioBtn.marginWidth = 10.0
         radioBtn.isMultipleSelectionEnabled = false
@@ -65,26 +51,26 @@ class PageTwoViewController: UIViewController {
         radioBtn.icon = UIImage(named: "Radio")!
         radioBtn.iconSelected = UIImage(named: "RadioSelected")!
     }
-    
-    @objc @IBAction private func logSelectedButtonForPageTwo(radioButton : DLRadioButton) {
+    @objc @IBAction private func logSelectedButtonForAudit(radioButton : DLRadioButton) {
         if (radioButton.isMultipleSelectionEnabled) {
             for button in radioButton.selectedButtons() {
                 print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
             }
         } else {
-            self.pageTwoValue = radioButton.selected()!.titleLabel!.text ?? ""
-            self.checkIsPageTwoValueChoosen()
+            self.auditService = radioButton.selected()!.titleLabel!.text ?? ""
+            self.checkIsAuditServiceValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
     
-    @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        self.redirectToPageThreeScreen()
-    }
-    func redirectToPageThreeScreen() {
+    func redirectToPageThreeScreenFromAudit() {
         let pageThreeVC = PageThreeViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(pageThreeVC, animated: true)
     }
+    @IBAction func onTappedNextBtn(_ sender: UIButton) {
+        redirectToPageThreeScreenFromAudit()
+    }
+    
     /*
      // MARK: - Navigation
      

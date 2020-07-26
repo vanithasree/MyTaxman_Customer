@@ -12,6 +12,11 @@
 		1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */; };
 		1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */; };
 		1826253724CCBB4E00DF7A4B /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1826253524CCBB4E00DF7A4B /* AddressTableViewCell.xib */; };
+		1826253924CD362A00DF7A4B /* AccountServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253824CD362A00DF7A4B /* AccountServiceViewController.swift */; };
+		1826253B24CD414C00DF7A4B /* FinancialServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253A24CD414C00DF7A4B /* FinancialServiceViewController.swift */; };
+		1826253D24CD450E00DF7A4B /* SuperFundsServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253C24CD450E00DF7A4B /* SuperFundsServiceViewController.swift */; };
+		1826253F24CD481100DF7A4B /* AuditServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253E24CD481100DF7A4B /* AuditServiceViewController.swift */; };
+		1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
@@ -109,6 +114,11 @@
 		1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesViewController.swift; sourceTree = "<group>"; };
 		1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		1826253524CCBB4E00DF7A4B /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		1826253824CD362A00DF7A4B /* AccountServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServiceViewController.swift; sourceTree = "<group>"; };
+		1826253A24CD414C00DF7A4B /* FinancialServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialServiceViewController.swift; sourceTree = "<group>"; };
+		1826253C24CD450E00DF7A4B /* SuperFundsServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperFundsServiceViewController.swift; sourceTree = "<group>"; };
+		1826253E24CD481100DF7A4B /* AuditServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditServiceViewController.swift; sourceTree = "<group>"; };
+		1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalAdviceServiceViewController.swift; sourceTree = "<group>"; };
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -426,6 +436,11 @@
 				18B2E63724C8AB71002A9CCE /* PageFiveViewController.swift */,
 				1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */,
 				1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */,
+				1826253824CD362A00DF7A4B /* AccountServiceViewController.swift */,
+				1826253A24CD414C00DF7A4B /* FinancialServiceViewController.swift */,
+				1826253C24CD450E00DF7A4B /* SuperFundsServiceViewController.swift */,
+				1826253E24CD481100DF7A4B /* AuditServiceViewController.swift */,
+				1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */,
 			);
 			path = Leads;
 			sourceTree = "<group>";
@@ -888,6 +903,7 @@
 				3BF05BE524C96AED00E16081 /* FontManager.swift in Sources */,
 				3BF05BF224C973E900E16081 /* BaseViewController.swift in Sources */,
 				3BF05BD224C9634600E16081 /* UITextFieldExtension.swift in Sources */,
+				1826253D24CD450E00DF7A4B /* SuperFundsServiceViewController.swift in Sources */,
 				3BF05BD024C9634600E16081 /* NotificationExtension.swift in Sources */,
 				18F6AA6424CC0777005F3855 /* ChatListViewController.swift in Sources */,
 				18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */,
@@ -896,6 +912,7 @@
 				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,
 				3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */,
 				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,
+				1826253B24CD414C00DF7A4B /* FinancialServiceViewController.swift in Sources */,
 				3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */,
 				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,
 				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
@@ -916,11 +933,14 @@
 				3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */,
 				3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */,
 				3BF05BE324C96AEC00E16081 /* Config.swift in Sources */,
+				1826253F24CD481100DF7A4B /* AuditServiceViewController.swift in Sources */,
 				3BF05BCE24C9634600E16081 /* UIButtonExtension.swift in Sources */,
 				3BF05BF524C9920D00E16081 /* AuthViewModel.swift in Sources */,
 				3BF05BC724C9634600E16081 /* UIPageViewControllerExtension.swift in Sources */,
 				18F6AA5624CA0E63005F3855 /* ContactInfoViewController.swift in Sources */,
 				1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */,
+				1826253924CD362A00DF7A4B /* AccountServiceViewController.swift in Sources */,
+				1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */,
 				18B2E63324C8AB50002A9CCE /* PageThreeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,10 @@ struct ServicesList {
     var imageName : String
     var title : String
 }
+enum ContactInfo : Int {
+    case isFromRegisterAccount = 1
+    case isFromJob = 2
+}
 
 enum ServiceListKeys : String {
     case taxReturns = "Tax Returns"
@@ -28,7 +32,7 @@ class LeadsManager {
     
     var choosenService : ServiceListKeys = .taxReturns
     
-
+    
     
     private init() {
         

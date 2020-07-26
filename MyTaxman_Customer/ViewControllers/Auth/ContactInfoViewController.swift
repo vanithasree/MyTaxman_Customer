@@ -22,11 +22,12 @@ class ContactInfoViewController: BaseViewController {
     @IBOutlet weak var emailTextField: TweeAttributedTextField!
     @IBOutlet weak var fullnameTextField: TweeAttributedTextField!
     @IBOutlet weak var submitBtn: UIButton!
-    
     @IBOutlet var bgInfoView: UIView!
     @IBOutlet var contactViewHeightConstaints: NSLayoutConstraint!
     
     private var authViewModel = AuthViewModel()
+    
+    var fromVCID : Int = 0
 
     var isAllConditionSatisfied:Bool = false {
         didSet {

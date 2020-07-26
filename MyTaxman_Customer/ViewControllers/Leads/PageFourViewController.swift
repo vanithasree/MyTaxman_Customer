@@ -96,14 +96,21 @@ class PageFourViewController: UIViewController {
                 self.pageFourValue = radioButton.selected()!.titleLabel!.text ?? ""
                 self.checkIsPageFourValueChoosen()
             }
-            
+            LeadsManager.shared.postJobsParams?.page5 = self.pageFourValue
             
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        self.redirectToPageFiveScreen()
+        if LeadsManager.shared.choosenService == .taxReturns {
+            if let value = LeadsManager.shared.postJobsParams?.page5, !value.isEmpty {
+                 print(LeadsManager.shared.postJobsParams)
+                self.redirectToPageFiveScreen()
+            }
+        }
+        
+        
     }
     
     func redirectToPageFiveScreen() {

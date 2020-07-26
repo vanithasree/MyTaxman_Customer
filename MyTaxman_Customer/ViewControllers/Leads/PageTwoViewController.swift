@@ -73,14 +73,27 @@ class PageTwoViewController: UIViewController {
             }
         } else {
             self.pageTwoValue = radioButton.selected()!.titleLabel!.text ?? ""
+            LeadsManager.shared.postJobsParams?.page2 = self.pageTwoValue
             self.checkIsPageTwoValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        self.redirectToPageThreeScreen()
+        
+        if LeadsManager.shared.choosenService == .taxReturns {
+            if let value = LeadsManager.shared.postJobsParams?.page2 {
+                 print(LeadsManager.shared.postJobsParams)
+                print(value)
+                self.redirectToPageThreeScreen()
+                LeadsManager.shared.postJobsParams?.page3 = ""
+            }
+            else {
+                self.showToast(message: "Please check the values entered")
+            }
+        }
     }
+    
     func redirectToPageThreeScreen() {
         let pageThreeVC = PageThreeViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(pageThreeVC, animated: true)

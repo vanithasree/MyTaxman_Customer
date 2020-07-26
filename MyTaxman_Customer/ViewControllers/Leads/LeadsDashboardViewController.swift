@@ -142,26 +142,79 @@ extension LeadsDashboardViewController : UICollectionViewDataSource, UICollectio
 extension LeadsDashboardViewController{
     func redirectToPageOne() {
         let pageOneVC = PageOneViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.initJobPostParameters()
         self.navigationController?.pushViewController(pageOneVC, animated: true)
+        
     }
     func redirectToPageOneForAccountService() {
         let pageOneVC = AccountServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.initJobPostParameters()
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     func redirectToPageOneForFinancialService() {
         let pageOneVC = FinancialServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.initJobPostParameters()
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     func redirectToPageOneForSuperFundsService() {
         let pageOneVC = SuperFundsServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.initJobPostParameters()
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     func redirectToPageOneForAuditService() {
         let pageOneVC = AuditServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.initJobPostParameters()
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     func redirectToPageOneForLegalservice() {
-           let pageOneVC = LegalAdviceServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-           self.navigationController?.pushViewController(pageOneVC, animated: true)
-       }
+        let pageOneVC = LegalAdviceServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.initJobPostParameters()
+        self.navigationController?.pushViewController(pageOneVC, animated: true)
+    }
+    
+    
+    func initJobPostParameters() {
+        let data = """
+{
+                                   "customername":"",
+                                   "email":"",
+                                   "mobile":"",
+                                   "password":"",
+                                   "deviceid":"",
+                                   "device_currentdatetime":"",
+                                   "category":"",
+                                   "page1":"",
+                                   "page2":"",
+                                   "page3":"",
+                                   "page4":"",
+                                   "page5":"",
+                                   "page6":"",
+                                   "page7":"",
+                                   "device_token":"",
+                                   "description":"",
+                                   "service_location":"",
+                                   "lattitude": 0.000,
+                                   "longtitude":0.000
+                               
+ }
+""".data(using: .utf8)!
+        
+        
+        let decoder = JSONDecoder()
+        do {
+            let jobsParams = try decoder.decode(JobsParams.self, from: data)
+            
+            LeadsManager.shared.postJobsParams = jobsParams
+            
+            LeadsManager.shared.postJobsParams?.page2 = "Test"
+            LeadsManager.shared.postJobsParams?.page1 = "Vanithasree"
+            
+            
+            print(LeadsManager.shared.postJobsParams)
+            
+        } catch {
+            debugPrint(error)
+        }
+    }
+    
 }

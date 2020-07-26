@@ -26,6 +26,7 @@ class PageFiveViewController: UIViewController {
     func setUpViewUI() {
         titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText:"Any further details")
         detailTextField.setTextFieldProperties(placeholderString: "Details", isSecureText: false)
+        detailTextField.delegate = self
         nothingToAddBtn.setFooterTitle(title: "I have nothing to add")
         nothingToAddBtn.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         imageBtn.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
@@ -53,6 +54,20 @@ class PageFiveViewController: UIViewController {
      */
     
     @IBAction func onTappedNextBt(_ sender: UIButton) {
+         print(LeadsManager.shared.postJobsParams)
         redirectToPageSixScreen()
+    }
+}
+extension PageFiveViewController : UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            LeadsManager.shared.postJobsParams?.page6 = textField.text
+            textField.hideInfo()
+        }
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            LeadsManager.shared.postJobsParams?.page6 = textField.text
+        }
     }
 }

@@ -21,6 +21,8 @@ class PageOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         print(LeadsManager.shared.postJobsParams)
+        
     }
     
     func setViewUI() {
@@ -63,19 +65,39 @@ class PageOneViewController: UIViewController {
             }
         } else {
             self.pageOneValue = radioButton.selected()?.titleLabel?.text ?? ""
+            LeadsManager.shared.postJobsParams?.page1 = self.pageOneValue ?? ""
             self.checkIsValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
     
     func redirecToPageTwoVC() {
+      
         let pageTwoVC = PageTwoViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(pageTwoVC, animated: true)
     }
     
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        self.redirecToPageTwoVC()
+        
+        if let value = LeadsManager.shared.postJobsParams?.page1 {
+             print(LeadsManager.shared.postJobsParams)
+            switch value.lowercased() {
+            case firstBtn.titleLabel?.text?.lowercased():
+                break
+            case secondBtn.titleLabel?.text?.lowercased():
+                self.redirecToPageTwoVC()
+                break
+                
+            default:
+                break
+            }
+            
+        }
+        else {
+            self.showToast(message: "Please check the values entered")
+        }
+        
     }
     
     /*

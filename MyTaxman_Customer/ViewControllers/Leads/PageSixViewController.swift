@@ -67,20 +67,28 @@ class PageSixViewController: UIViewController {
             }
         } else {
             self.pageSixValue = radioButton.selected()!.titleLabel!.text ?? ""
+            LeadsManager.shared.postJobsParams?.page7 = self.pageSixValue
             self.checkIsPageSixValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        self.redirectToGetLocationVC()
+        if let value = LeadsManager.shared.postJobsParams?.page7, !value.isEmpty {
+            print(value)
+            print(LeadsManager.shared.postJobsParams)
+            self.redirectToGetLocationVC()
+        }
+        else {
+            
+        }
     }
     
     func redirectToGetLocationVC() {
         let locationVC = GetPlacesViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(locationVC, animated: true)
     }
-
+    
     
     /*
      // MARK: - Navigation

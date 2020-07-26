@@ -81,13 +81,28 @@ class PageThreeViewController: UIViewController {
             }
         } else {
             self.pageThreeValue = radioButton.selected()!.titleLabel!.text ?? ""
+            LeadsManager.shared.postJobsParams?.page4 = self.pageThreeValue
             self.checkIsPageThreeValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        self.redirectToPageFourthScreen()
+        
+        if LeadsManager.shared.choosenService == .taxReturns {
+            if let value = LeadsManager.shared.postJobsParams?.page4 {
+                print(value)
+                 print(LeadsManager.shared.postJobsParams)
+                self.redirectToPageFourthScreen()
+                
+            }
+            else {
+                self.showToast(message: "Please check the values entered")
+            }
+        }
+        
+        
+        
     }
     
     func redirectToPageFourthScreen() {

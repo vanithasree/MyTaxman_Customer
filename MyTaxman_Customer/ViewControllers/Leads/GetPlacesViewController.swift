@@ -52,7 +52,7 @@ class GetPlacesViewController: UIViewController {
         self.addressTableView.delegate = self
         self.addressTableView.dataSource = self
         self.addressTableView.register(AddressTableViewCell.nib, forCellReuseIdentifier: AddressTableViewCell.identifier)
-    
+        
         self.addressTableView.separatorStyle = .none
         self.addressTableView.backgroundColor = .clear
         self.addressTableView.estimatedRowHeight = 200
@@ -76,7 +76,7 @@ class GetPlacesViewController: UIViewController {
     
     func showOrHideTableView() {
         self.addressTableView.isHidden = self.addressArray.count > 0 ? false : true
-
+        
     }
     
     func checkifLocationChoosen() {
@@ -106,12 +106,23 @@ class GetPlacesViewController: UIViewController {
     
     func redirectToContactInfoScreen() {
         let contactInfoVC = ContactInfoViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        contactInfoVC.getPageType = .contact
         self.navigationController?.pushViewController(contactInfoVC, animated: true)
     }
     
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        self.redirectToContactInfoScreen()
+        LeadsManager.shared.postJobsParams?.service_location = self.locationAddress
+        print(LeadsManager.shared.postJobsParams)
+        if UserDetails.shared.isLoggedIn {
+         
+        }
+        else {
+            self.redirectToContactInfoScreen()
+        }
+        
+        
+       
     }
 }
 
@@ -120,7 +131,7 @@ extension GetPlacesViewController: GMSAutocompleteFetcherDelegate {
         let resultsStr = NSMutableString()
         self.addressArray.removeAll()
         for prediction in predictions {
-            if !prediction.attributedFullText.string.isEmpty {
+            if !prediction.attributedPrimaryText.string.isEmpty {
                 resultsStr.appendFormat("%@", prediction.attributedFullText.string)
             }
             //resultsStr.appendFormat("Place ID: %@\n", prediction.placeID)
@@ -162,6 +173,7 @@ extension GetPlacesViewController : UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.locationAddress = self.addressArray[indexPath.row]
+        self.addressTextField.text = self.locationAddress
         self.checkifLocationChoosen()
     }
 }

@@ -106,6 +106,7 @@ class ContactInfoViewController: BaseViewController {
         contactInfoLabel.setHeaderTitle(titleText: "Hello! Looks like you are new.")
         
         if getPageType == .register {
+            
             bgPasswordView.isHidden = true
             showRegisterInfoView(isShow: false)
         }else if getPageType == .contact {
@@ -240,6 +241,10 @@ class ContactInfoViewController: BaseViewController {
             self.validateTextField(textField: retypePasswordTextField)
         }
     }
+    
+    func postTask() {
+        
+    }
     /*
      // MARK: - Navigation
      
@@ -272,9 +277,12 @@ extension ContactInfoViewController {
                 if let result = result {
                     if let success = result.code, success == "0" {
                         self.showRegisterInfoView(isShow: true)
+                        self.showPasswordInfoView(isShow: false)
                     } else if let success = result.code, success == "1" {
-                        if result.customer.otp_verified ?? "" == "1"{
+                        if result.customer?.first?.otp_verified ?? "" == "1"{
                             self.showPasswordInfoView(isShow: true)
+                            self.showRegisterInfoView(isShow: false)
+                            
                         }
                     }else {
                         self.presentAlert(withTitle: error, message: result.desc ?? "")

@@ -40,6 +40,8 @@ class ContactInfoViewController: BaseViewController {
     var getPageType : pageType = .none
 
     private var authViewModel = AuthViewModel()
+    private var leadViewModel = LeadViewModel()
+    
     var isAllConditionSatisfied:Bool = false {
         didSet {
             doOnMain {
@@ -386,6 +388,34 @@ extension ContactInfoViewController : UITextFieldDelegate {
                 textField.showInfo(passwordValidation.errorMessage ?? "")
             } else {
                 textField.hideInfo()
+            }
+        }
+    }
+}
+
+extension ContactInfoViewController {
+    func postTaskForLoggedInCustomer() {
+    
+        // let input : Parameters = LeadApiManager.shared.j?.toJSONForTransferService ?? [:]
+        
+    }
+    func postTaskForNewCustomer() {
+        LeadsManager.shared.postJobsParams?.device_currentdatetime = Date().dateAndTimetoString()
+        let input : Parameters = LeadsManager.shared.postJobsParams?.toJSONForNewCustomer ?? [:]
+        
+        LoadingIndicator.shared.show(forView: self.view)
+        leadViewModel.postTheTaskBeforeCustomerLogin(input: input) { (result: PostJobBaseForNewCustomer?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
+                    self.redirectToOtpScreen()
+                } else {
+                    print("No response found.")
+                    self.presentAlert(withTitle: error, message: result.desc ?? "")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
             }
         }
     }

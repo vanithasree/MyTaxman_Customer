@@ -21,6 +21,7 @@
 		1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */; };
 		1826254824CDD29900DF7A4B /* LeadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254724CDD29900DF7A4B /* LeadsViewModel.swift */; };
 		1826254A24CDD33B00DF7A4B /* LeadApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254924CDD33B00DF7A4B /* LeadApiManager.swift */; };
+		1826254C24CDEE6F00DF7A4B /* TaxReturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
@@ -127,6 +128,7 @@
 		1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeOrContractViewController.swift; sourceTree = "<group>"; };
 		1826254724CDD29900DF7A4B /* LeadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsViewModel.swift; sourceTree = "<group>"; };
 		1826254924CDD33B00DF7A4B /* LeadApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadApiManager.swift; sourceTree = "<group>"; };
+		1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxReturnViewController.swift; sourceTree = "<group>"; };
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -458,6 +460,7 @@
 				1826253E24CD481100DF7A4B /* AuditServiceViewController.swift */,
 				1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */,
 				1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */,
+				1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */,
 			);
 			path = Leads;
 			sourceTree = "<group>";
@@ -939,6 +942,7 @@
 				3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */,
 				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,
 				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
+				1826254C24CDEE6F00DF7A4B /* TaxReturnViewController.swift in Sources */,
 				18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */,
 				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
 				18F6AA6724CC079B005F3855 /* SettingsViewController.swift in Sources */,

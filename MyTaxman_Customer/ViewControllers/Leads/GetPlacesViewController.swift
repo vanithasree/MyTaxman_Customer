@@ -113,16 +113,16 @@ class GetPlacesViewController: UIViewController {
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
         LeadsManager.shared.postJobsParams?.service_location = self.locationAddress
+        LeadsManager.shared.postJobsParams?.lattitude = -37.8320111
+        LeadsManager.shared.postJobsParams?.longtitude = 144.9559391
+        
         print(LeadsManager.shared.postJobsParams)
         if UserDetails.shared.isLoggedIn {
-         
+            
         }
         else {
             self.redirectToContactInfoScreen()
         }
-        
-        
-       
     }
 }
 

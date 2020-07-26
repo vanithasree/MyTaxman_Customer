@@ -71,8 +71,14 @@ class PageOneViewController: UIViewController {
         }
     }
     
+    func redirecToPageTwoVCForIndividual() {
+        
+        let pageTwoVC = EmployeeOrContractViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageTwoVC, animated: true)
+    }
+    
     func redirecToPageTwoVC() {
-      
+        
         let pageTwoVC = PageTwoViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(pageTwoVC, animated: true)
     }
@@ -84,6 +90,7 @@ class PageOneViewController: UIViewController {
              print(LeadsManager.shared.postJobsParams)
             switch value.lowercased() {
             case firstBtn.titleLabel?.text?.lowercased():
+                self.redirecToPageTwoVCForIndividual()
                 break
             case secondBtn.titleLabel?.text?.lowercased():
                 self.redirecToPageTwoVC()

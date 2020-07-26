@@ -142,38 +142,38 @@ extension LeadsDashboardViewController : UICollectionViewDataSource, UICollectio
 extension LeadsDashboardViewController{
     func redirectToPageOne() {
         let pageOneVC = PageOneViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        self.initJobPostParameters()
+        self.initJobPostParameters(categoryName: "Tax Returns")
         self.navigationController?.pushViewController(pageOneVC, animated: true)
         
     }
     func redirectToPageOneForAccountService() {
         let pageOneVC = AccountServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        self.initJobPostParameters()
+        self.initJobPostParameters(categoryName: "Accounting")
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     func redirectToPageOneForFinancialService() {
         let pageOneVC = FinancialServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        self.initJobPostParameters()
+        self.initJobPostParameters(categoryName: "Financial")
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     func redirectToPageOneForSuperFundsService() {
         let pageOneVC = SuperFundsServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        self.initJobPostParameters()
+        self.initJobPostParameters(categoryName: "Super Funds")
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     func redirectToPageOneForAuditService() {
         let pageOneVC = AuditServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        self.initJobPostParameters()
+        self.initJobPostParameters(categoryName: "Audit")
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     func redirectToPageOneForLegalservice() {
         let pageOneVC = LegalAdviceServiceViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
-        self.initJobPostParameters()
+        self.initJobPostParameters(categoryName: "Legal Advice")
         self.navigationController?.pushViewController(pageOneVC, animated: true)
     }
     
     
-    func initJobPostParameters() {
+    func initJobPostParameters(categoryName : String) {
         let data = """
 {
                                    "customername":"",
@@ -205,10 +205,7 @@ extension LeadsDashboardViewController{
             let jobsParams = try decoder.decode(JobsParams.self, from: data)
             
             LeadsManager.shared.postJobsParams = jobsParams
-            
-            LeadsManager.shared.postJobsParams?.page2 = "Test"
-            LeadsManager.shared.postJobsParams?.page1 = "Vanithasree"
-            
+            LeadsManager.shared.postJobsParams?.category = categoryName
             
             print(LeadsManager.shared.postJobsParams)
             

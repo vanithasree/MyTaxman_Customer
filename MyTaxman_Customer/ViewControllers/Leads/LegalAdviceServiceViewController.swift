@@ -53,8 +53,12 @@ class LegalAdviceServiceViewController: UIViewController {
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        redirectToPageSixScreen()
         
+        if let value = LeadsManager.shared.postJobsParams?.page1, !value.isEmpty {
+            print(value)
+            print(LeadsManager.shared.postJobsParams)
+            redirectToPageSixScreen()
+        }
     }
     @objc @IBAction private func logSelectedButtonForLegalAdvice(radioButton : DLRadioButton) {
         if (radioButton.isMultipleSelectionEnabled) {
@@ -63,6 +67,7 @@ class LegalAdviceServiceViewController: UIViewController {
             }
         } else {
             self.legalAdviceValue = radioButton.selected()!.titleLabel!.text ?? ""
+            LeadsManager.shared.postJobsParams?.page1 = self.legalAdviceValue
             self.checkIsLegalAdviceValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }

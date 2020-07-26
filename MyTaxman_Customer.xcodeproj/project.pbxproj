@@ -18,6 +18,7 @@
 		1826253F24CD481100DF7A4B /* AuditServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253E24CD481100DF7A4B /* AuditServiceViewController.swift */; };
 		1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */; };
 		1826254424CDB94200DF7A4B /* JobsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254324CDB94200DF7A4B /* JobsModel.swift */; };
+		1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		1826253E24CD481100DF7A4B /* AuditServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditServiceViewController.swift; sourceTree = "<group>"; };
 		1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalAdviceServiceViewController.swift; sourceTree = "<group>"; };
 		1826254324CDB94200DF7A4B /* JobsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsModel.swift; sourceTree = "<group>"; };
+		1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeOrContractViewController.swift; sourceTree = "<group>"; };
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				1826253C24CD450E00DF7A4B /* SuperFundsServiceViewController.swift */,
 				1826253E24CD481100DF7A4B /* AuditServiceViewController.swift */,
 				1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */,
+				1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */,
 			);
 			path = Leads;
 			sourceTree = "<group>";
@@ -923,6 +926,7 @@
 				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,
 				3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */,
 				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,
+				1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */,
 				1826253B24CD414C00DF7A4B /* FinancialServiceViewController.swift in Sources */,
 				3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */,
 				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,

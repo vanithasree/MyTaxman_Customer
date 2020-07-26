@@ -2178,6 +2178,160 @@
             </objects>
             <point key="canvasLocation" x="2965" y="812"/>
         </scene>
+        <!--Employee Or Contract View Controller-->
+        <scene sceneID="10b-Ly-ULG">
+            <objects>
+                <viewController storyboardIdentifier="EmployeeOrContractViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nd9-Co-o9B" customClass="EmployeeOrContractViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6sk-hN-Yni">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaP-d0-IX4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which service do you need?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dP-9R-KMx">
+                                        <rect key="frame" x="30" y="20" width="354" height="21"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgX-tr-qgc">
+                                        <rect key="frame" x="30" y="61.5" width="354" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTo-H5-p8H" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="344" height="50"/>
+                                                <state key="normal" title="Not for Profit">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logSelectedButtonForEmployeeOrContractWithRadioButton:" destination="nd9-Co-o9B" eventType="touchUpInside" id="yvM-lU-QZ5"/>
+                                                    <outletCollection property="otherButtons" destination="Yug-qr-6PH" id="Be8-Ix-klc"/>
+                                                    <outletCollection property="otherButtons" destination="eJo-2l-bmV" id="C8k-IN-gr4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="JTo-H5-p8H" firstAttribute="top" secondItem="hgX-tr-qgc" secondAttribute="top" id="6LU-d1-Ppn"/>
+                                            <constraint firstAttribute="bottom" secondItem="JTo-H5-p8H" secondAttribute="bottom" id="aje-fY-PTi"/>
+                                            <constraint firstItem="JTo-H5-p8H" firstAttribute="leading" secondItem="hgX-tr-qgc" secondAttribute="leading" id="chS-Yi-rso"/>
+                                            <constraint firstItem="JTo-H5-p8H" firstAttribute="centerY" secondItem="hgX-tr-qgc" secondAttribute="centerY" id="gKW-rG-isS"/>
+                                            <constraint firstAttribute="height" constant="50" id="ik3-h2-MkZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="JTo-H5-p8H" secondAttribute="trailing" constant="10" id="kXi-xX-eGz"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueo-Ew-g0b">
+                                        <rect key="frame" x="30" y="121.5" width="354" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yug-qr-6PH" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <state key="normal" title="Corporate">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logSelectedButtonForEmployeeOrContractWithRadioButton:" destination="nd9-Co-o9B" eventType="touchUpInside" id="x8e-Df-HdC"/>
+                                                    <outletCollection property="otherButtons" destination="JTo-H5-p8H" id="daG-b5-630"/>
+                                                    <outletCollection property="otherButtons" destination="eJo-2l-bmV" id="6L7-Go-2we"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Yug-qr-6PH" firstAttribute="centerY" secondItem="ueo-Ew-g0b" secondAttribute="centerY" id="2M7-0O-IED"/>
+                                            <constraint firstItem="Yug-qr-6PH" firstAttribute="leading" secondItem="ueo-Ew-g0b" secondAttribute="leading" id="KgT-EB-YV3"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yug-qr-6PH" secondAttribute="trailing" constant="10" id="NBW-RZ-H3m"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fC5-bP-jdN">
+                                        <rect key="frame" x="0.0" y="744.5" width="414" height="73.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJu-MF-G9F">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="73.5"/>
+                                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="25"/>
+                                                <state key="normal" title="Next">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onTappedNextBtn:" destination="nd9-Co-o9B" eventType="touchUpInside" id="8on-jq-CTC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="fJu-MF-G9F" secondAttribute="trailing" id="UNI-or-KmJ"/>
+                                            <constraint firstItem="fJu-MF-G9F" firstAttribute="top" secondItem="fC5-bP-jdN" secondAttribute="top" id="bN0-sL-l1y"/>
+                                            <constraint firstAttribute="bottom" secondItem="fJu-MF-G9F" secondAttribute="bottom" id="eEH-9a-jeI"/>
+                                            <constraint firstItem="fJu-MF-G9F" firstAttribute="leading" secondItem="fC5-bP-jdN" secondAttribute="leading" id="yCi-5H-DlP"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPP-3q-wFC">
+                                        <rect key="frame" x="30" y="181.5" width="354" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJo-2l-bmV" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <state key="normal" title="Self Managed Super Fund">
+                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="logSelectedButtonForEmployeeOrContractWithRadioButton:" destination="nd9-Co-o9B" eventType="touchUpInside" id="h09-sZ-X9j"/>
+                                                    <outletCollection property="otherButtons" destination="JTo-H5-p8H" id="dVd-Ga-uEh"/>
+                                                    <outletCollection property="otherButtons" destination="Yug-qr-6PH" id="iy3-Bu-Sei"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="eJo-2l-bmV" secondAttribute="trailing" constant="10" id="6vQ-yD-hAA"/>
+                                            <constraint firstItem="eJo-2l-bmV" firstAttribute="leading" secondItem="HPP-3q-wFC" secondAttribute="leading" id="Aez-Rz-lf3"/>
+                                            <constraint firstItem="eJo-2l-bmV" firstAttribute="centerY" secondItem="HPP-3q-wFC" secondAttribute="centerY" id="Ba0-eI-pNz"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ueo-Ew-g0b" firstAttribute="leading" secondItem="HPP-3q-wFC" secondAttribute="leading" id="4bn-Yc-71i"/>
+                                    <constraint firstItem="fC5-bP-jdN" firstAttribute="height" secondItem="uaP-d0-IX4" secondAttribute="height" multiplier="0.09" id="Eie-vp-BB1"/>
+                                    <constraint firstItem="ueo-Ew-g0b" firstAttribute="trailing" secondItem="HPP-3q-wFC" secondAttribute="trailing" id="FRm-gK-bhx"/>
+                                    <constraint firstItem="hgX-tr-qgc" firstAttribute="top" secondItem="2dP-9R-KMx" secondAttribute="bottom" multiplier="1.5" id="I44-mS-h9w"/>
+                                    <constraint firstItem="hgX-tr-qgc" firstAttribute="trailing" secondItem="ueo-Ew-g0b" secondAttribute="trailing" id="PlC-CG-NUw"/>
+                                    <constraint firstItem="2dP-9R-KMx" firstAttribute="leading" secondItem="hgX-tr-qgc" secondAttribute="leading" id="aLd-JS-hV8"/>
+                                    <constraint firstItem="HPP-3q-wFC" firstAttribute="top" secondItem="ueo-Ew-g0b" secondAttribute="bottom" constant="10" id="bwf-yo-883"/>
+                                    <constraint firstItem="hgX-tr-qgc" firstAttribute="leading" secondItem="ueo-Ew-g0b" secondAttribute="leading" id="drI-FE-mL7"/>
+                                    <constraint firstItem="2dP-9R-KMx" firstAttribute="trailing" secondItem="hgX-tr-qgc" secondAttribute="trailing" id="fGc-01-a4k"/>
+                                    <constraint firstItem="2dP-9R-KMx" firstAttribute="leading" secondItem="uaP-d0-IX4" secondAttribute="leading" constant="30" id="gLt-aB-CV4"/>
+                                    <constraint firstItem="ueo-Ew-g0b" firstAttribute="height" secondItem="HPP-3q-wFC" secondAttribute="height" id="gnk-5O-K25"/>
+                                    <constraint firstAttribute="bottom" secondItem="fC5-bP-jdN" secondAttribute="bottom" id="hap-HE-izR"/>
+                                    <constraint firstAttribute="trailing" secondItem="fC5-bP-jdN" secondAttribute="trailing" id="iKf-bO-BU7"/>
+                                    <constraint firstItem="hgX-tr-qgc" firstAttribute="height" secondItem="ueo-Ew-g0b" secondAttribute="height" id="ihU-8N-V8b"/>
+                                    <constraint firstItem="ueo-Ew-g0b" firstAttribute="top" secondItem="hgX-tr-qgc" secondAttribute="bottom" constant="10" id="sUd-Xd-2cP"/>
+                                    <constraint firstAttribute="trailing" secondItem="2dP-9R-KMx" secondAttribute="trailing" constant="30" id="uU3-hA-G9c"/>
+                                    <constraint firstItem="fC5-bP-jdN" firstAttribute="leading" secondItem="uaP-d0-IX4" secondAttribute="leading" id="v7H-Nc-Ykn"/>
+                                    <constraint firstItem="2dP-9R-KMx" firstAttribute="top" secondItem="uaP-d0-IX4" secondAttribute="top" constant="20" id="vqC-N9-Bea"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uaP-d0-IX4" firstAttribute="top" secondItem="Yhg-jN-xiw" secondAttribute="top" id="SXF-Cx-TRt"/>
+                            <constraint firstItem="Yhg-jN-xiw" firstAttribute="trailing" secondItem="uaP-d0-IX4" secondAttribute="trailing" id="bj7-3n-AHw"/>
+                            <constraint firstItem="uaP-d0-IX4" firstAttribute="leading" secondItem="6sk-hN-Yni" secondAttribute="leading" id="k1h-M4-ap0"/>
+                            <constraint firstItem="Yhg-jN-xiw" firstAttribute="bottom" secondItem="uaP-d0-IX4" secondAttribute="bottom" id="lre-u8-oiz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yhg-jN-xiw"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstBtn" destination="JTo-H5-p8H" id="An5-1w-Opj"/>
+                        <outlet property="nextBtn" destination="fJu-MF-G9F" id="SOh-FY-624"/>
+                        <outlet property="nextView" destination="fC5-bP-jdN" id="r1c-Rz-KcU"/>
+                        <outlet property="secondBtn" destination="Yug-qr-6PH" id="BIo-wQ-Oib"/>
+                        <outlet property="thirdBtn" destination="eJo-2l-bmV" id="VfK-dL-pLb"/>
+                        <outlet property="titleLabel" destination="2dP-9R-KMx" id="8sz-8k-ccY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CSh-XX-6I6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="667" y="-564"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Back" width="30" height="30"/>

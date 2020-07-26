@@ -195,6 +195,10 @@ class ContactInfoViewController: BaseViewController {
         retypePasswordTextField.isSecureTextEntry.toggle()
     }
     
+    @IBAction func didTapPasswordAction(_ sender: Any) {
+    }
+    
+    
     @IBAction func onTappedSubmitBtn(_ sender: UIButton) {
         self.view.endEditing(true)
         let verifyMobile : ValidationMessage = authViewModel.validateMobile(mobileNumberTextField.text ?? "")
@@ -268,7 +272,11 @@ extension ContactInfoViewController {
                 if let result = result {
                     if let success = result.code, success == "0" {
                         self.showRegisterInfoView(isShow: true)
-                    } else {
+                    } else if let success = result.code, success == "1" {
+                        if result.customer.otp_verified ?? "" == "1"{
+                            self.showPasswordInfoView(isShow: true)
+                        }
+                    }else {
                         self.presentAlert(withTitle: error, message: result.desc ?? "")
                     }
                 } else if let alert = alert {

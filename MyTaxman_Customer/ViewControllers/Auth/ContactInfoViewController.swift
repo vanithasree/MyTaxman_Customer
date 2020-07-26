@@ -67,39 +67,37 @@ class ContactInfoViewController: BaseViewController {
         if !isShow {
             bgInfoView.isHidden = true
             contactInfoLabel.isHidden = true
-            doOnMain {
-                self.contactViewHeightConstaints.constant = 220
-                self.contactViewHeightConstaints.isActive = true
-            }
+            self.contactViewHeightConstaints.constant = 220
+            self.contactViewHeightConstaints.isActive = true
         }else {
             bgInfoView.isHidden = false
             contactInfoLabel.isHidden = false
-            doOnMain {
-                if UIDevice.current.screenType == .iPhones_5_5s_5c_SE  {
-                    self.contactViewHeightConstaints.constant = self.view.frame.size.height + 50
-                    self.contactViewHeightConstaints.isActive = true
-                }else {
-                    self.contactViewHeightConstaints.constant = self.view.frame.size.height
-                    self.contactViewHeightConstaints.isActive = true
-                }
+            if UIDevice.current.screenType == .iPhones_5_5s_5c_SE  {
+                self.contactViewHeightConstaints.constant = self.view.frame.size.height + 50
+                self.contactViewHeightConstaints.isActive = true
+            }else {
+                let window = UIApplication.shared.keyWindow
+                let topPadding = window?.safeAreaInsets.top ?? 0
+                self.contactViewHeightConstaints.constant = self.view.frame.size.height - topPadding
+                self.contactViewHeightConstaints.isActive = true
             }
         }
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
     }
     
     func showPasswordInfoView(isShow: Bool) {
         if !isShow {
             bgPasswordView.isHidden = true
-            doOnMain {
-                self.contactViewHeightConstaints.constant = 220
-                self.contactViewHeightConstaints.isActive = true
-            }
+            self.contactViewHeightConstaints.constant = 220
+            self.contactViewHeightConstaints.isActive = true
         }else {
-            bgInfoView.isHidden = false
-            doOnMain {
-                self.contactViewHeightConstaints.constant = self.view.frame.size.height
-                self.contactViewHeightConstaints.isActive = true
-            }
+            bgPasswordView.isHidden = false
+            self.contactViewHeightConstaints.constant = self.view.frame.size.height
+            self.contactViewHeightConstaints.isActive = true
         }
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
     }
     
     func setupViewUI() {
@@ -108,7 +106,6 @@ class ContactInfoViewController: BaseViewController {
         contactInfoLabel.setHeaderTitle(titleText: "Hello! Looks like you are new.")
         
         if getPageType == .register {
-            
             bgPasswordView.isHidden = true
             showRegisterInfoView(isShow: false)
         }else if getPageType == .contact {
@@ -116,7 +113,6 @@ class ContactInfoViewController: BaseViewController {
             contactInfoLabel.isHidden = true
             showPasswordInfoView(isShow: false)
         }
-        
         contactInfoLabel.backgroundColor = ColorManager.backgroundGrey.color
         doOnMain {
             self.contactInfoLabel.cornerRadius = self.contactInfoLabel.frame.size.height / 2
@@ -265,6 +261,12 @@ extension ContactInfoViewController {
         self.navigationController?.pushViewController(otpVC, animated: true)
     }
     
+    func redirectToOtpScreen(customerid : String) {
+        let otpVC = OtpViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+        otpVC.customerid = customerid
+        self.navigationController?.pushViewController(otpVC, animated: true)
+    }
+    
     @objc func checkMobileExist() {
         let verifyEmail : ValidationMessage = authViewModel.validateMobile(mobileNumberTextField.text ?? "")
         if verifyEmail.status == false {
@@ -278,13 +280,18 @@ extension ContactInfoViewController {
                 LoadingIndicator.shared.hide()
                 if let result = result {
                     if let success = result.code, success == "0" {
-                        self.showRegisterInfoView(isShow: true)
-                        self.showPasswordInfoView(isShow: false)
+                        doOnMain {
+                            self.showPasswordInfoView(isShow: false)
+                            self.showRegisterInfoView(isShow: true)
+                        }
                     } else if let success = result.code, success == "1" {
                         if result.customer?.first?.otp_verified ?? "" == "1"{
-                            self.showPasswordInfoView(isShow: true)
-                            self.showRegisterInfoView(isShow: false)
-                            
+                            doOnMain {
+                                self.showRegisterInfoView(isShow: false)
+                                self.showPasswordInfoView(isShow: true)
+                            }
+                        }else {
+                            self.redirectToOtpScreen(customerid: result.customer?.first?.customerid ?? "")
                         }
                     }else {
                         self.presentAlert(withTitle: error, message: result.desc ?? "")

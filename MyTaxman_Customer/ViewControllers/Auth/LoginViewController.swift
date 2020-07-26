@@ -179,42 +179,21 @@ extension LoginViewController : UITextFieldDelegate {
         }
     }
     
-   /* func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        guard let existText = textField.text,
-            let textRange = Range(range, in: existText) else { return false }
-        
+   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let existText = textField.text, let textRange = Range(range, in: existText) else { return false }
         let newText = existText.replacingCharacters(in: textRange, with: string)
-        
         switch textField {
         case userNameTextField:
-//            let textString = ValidationManager().getMobileNumber(mobileNumber: newText)
             if newText.isNumber {
-                //emailOrMobileTextField.rightViewMode = .always
                 return 10 >= newText.count ? true : false
-//                let length = Int(ValidationManager().getLength(mobileNumber: textField.text!))
-//                if length == 10 {
-//                    if range.length == 0 {
-//                        return false
-//                    }
-//                }
-//                //                guard let text = textField.text else { return false }
-//                //                let newString = (text as NSString).replacingCharacters(in: range, with: string)
-//                //                textField.text = ValidationManager().format(with: Constant.k_mobileFormat, phone: newString)
-//                return false
-//            }
-//            else if newText.isEmpty {
-//                userNameTextField.rightViewMode = .always
             } else {
-//                userNameTextField.rightViewMode = .never
                 return 40 >= newText.count ? true : false
             }
         default:
             break
         }
         return true
-    }*/
-    
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let textField = textField as? TweeAttributedTextField {
@@ -225,19 +204,15 @@ extension LoginViewController : UITextFieldDelegate {
     func validateTextField(textField:TweeAttributedTextField) {
         if textField == userNameTextField {
             let nameValidation:ValidationMessage = authViewModel.validateUsernameTextField(textField: userNameTextField)
-            
             if nameValidation.status == false {
                 textField.showInfo(nameValidation.errorMessage ?? "")
-                
             } else {
                 textField.hideInfo()
-                
             }
         } else if textField == passwordTextField {
             let passwordValidation:ValidationMessage = authViewModel.validatePasswordTextField(passwordTextField: passwordTextField)
             if passwordValidation.status == false {
                 textField.showInfo(passwordValidation.errorMessage ?? "")
-                
             } else {
                 textField.hideInfo()
             }

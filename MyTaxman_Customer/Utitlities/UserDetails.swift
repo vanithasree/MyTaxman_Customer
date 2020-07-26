@@ -44,7 +44,7 @@ struct UserDetails {
     }
     
     var isLoggedIn: Bool {
-        userId != nil
+        return !(userLoginData?.customerid ?? "").isBlank
     }
     
     mutating func logout() {

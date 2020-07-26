@@ -9,6 +9,14 @@
 import UIKit
 import TweeTextField
 import Alamofire
+
+enum pageType : Int
+{
+    case register = 1
+    case contact = 2
+    case none
+}
+
 class ContactInfoViewController: BaseViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -25,10 +33,13 @@ class ContactInfoViewController: BaseViewController {
     @IBOutlet var bgInfoView: UIView!
     @IBOutlet var contactViewHeightConstaints: NSLayoutConstraint!
     
-    private var authViewModel = AuthViewModel()
+    @IBOutlet var pwdTextField: TweeAttributedTextField!
+    @IBOutlet var bgPasswordView: UIView!
+    @IBOutlet var submitPasswordButton: UIButton!
     
-    var fromVCID : Int = 0
+    var getPageType : pageType = .none
 
+    private var authViewModel = AuthViewModel()
     var isAllConditionSatisfied:Bool = false {
         didSet {
             doOnMain {
@@ -50,7 +61,7 @@ class ContactInfoViewController: BaseViewController {
         isHideNavigationBar = false
     }
     
-    func showInformationView(isShow: Bool) {
+    func showRegisterInfoView(isShow: Bool) {
         if !isShow {
             bgInfoView.isHidden = true
             contactInfoLabel.isHidden = true
@@ -73,13 +84,35 @@ class ContactInfoViewController: BaseViewController {
         }
     }
     
+    func showPasswordInfoView(isShow: Bool) {
+        if !isShow {
+            bgPasswordView.isHidden = true
+            doOnMain {
+                self.contactViewHeightConstaints.constant = 220
+                self.contactViewHeightConstaints.isActive = true
+            }
+        }else {
+            bgInfoView.isHidden = false
+            doOnMain {
+                self.contactViewHeightConstaints.constant = self.view.frame.size.height
+                self.contactViewHeightConstaints.isActive = true
+            }
+        }
+    }
+    
     func setupViewUI() {
         contactTitleLabel.setHeaderTitle(titleText: "Your contact information")
         contactSubTitleLabel.setFooterTitle(titleText: "This is where we will send you quotes")
-        
         contactInfoLabel.setHeaderTitle(titleText: "Hello! Looks like you are new.")
         
-        showInformationView(isShow: false)
+        if getPageType == .register {
+            bgPasswordView.isHidden = true
+            showRegisterInfoView(isShow: false)
+        }else if getPageType == .contact {
+            bgInfoView.isHidden = true
+            contactInfoLabel.isHidden = true
+            showPasswordInfoView(isShow: false)
+        }
         
         contactInfoLabel.backgroundColor = ColorManager.backgroundGrey.color
         doOnMain {
@@ -93,12 +126,12 @@ class ContactInfoViewController: BaseViewController {
         
         emailTextField.setTextFieldProperties(placeholderString:"Email", isSecureText: false)
         emailTextField.keyboardType = .emailAddress
-        
+    
         passwordTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
         retypePasswordTextField.setTextFieldProperties(placeholderString:"Retype Password", isSecureText: true)
         submitBtn.setDarkGreenTheme(btn: submitBtn, title: "Submit")
         submitBtn.applyCornerRadius(amount: 0)
-        
+
         let eyeShowButton = UIButton(type: .custom)
         eyeShowButton.setImage(UIImage(named: "eyeShow")?.withRenderingMode(.alwaysTemplate), for: .normal)
         eyeShowButton.setImage(UIImage(named: "eyeHide")?.withRenderingMode(.alwaysTemplate), for: .selected)
@@ -118,7 +151,31 @@ class ContactInfoViewController: BaseViewController {
         eyeConfirmShowButton.tintColor = ColorManager.darkBGTheme.color
         retypePasswordTextField.rightView = eyeConfirmShowButton
         retypePasswordTextField.rightViewMode = .always
+        
+        pwdTextField.setTextFieldProperties(placeholderString:"Password", isSecureText: true)
+        submitPasswordButton.setDarkGreenTheme(btn: submitPasswordButton, title: "Submit")
+        submitPasswordButton.applyCornerRadius(amount: 0)
+        
+        let contactEyeShowButton = UIButton(type: .custom)
+        contactEyeShowButton.setImage(UIImage(named: "eyeShow")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        contactEyeShowButton.setImage(UIImage(named: "eyeHide")?.withRenderingMode(.alwaysTemplate), for: .selected)
+        contactEyeShowButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: -16, bottom: 0, right: 0)
+        contactEyeShowButton.frame = CGRect(x: CGFloat(pwdTextField.frame.size.width - 30), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        contactEyeShowButton.addTarget(self, action: #selector(self.contactShowOrHide), for: .touchUpInside)
+        contactEyeShowButton.tintColor = ColorManager.darkBGTheme.color
+        pwdTextField.rightView = contactEyeShowButton
+        pwdTextField.rightViewMode = .always
     }
+    
+    @IBAction func contactShowOrHide(_ sender: UIButton) {
+          if sender.isSelected == true {
+              sender.isSelected = false
+          }else {
+              sender.isSelected = true
+          }
+          pwdTextField.isSecureTextEntry.toggle()
+      }
+      
     
     @IBAction func showOrHide(_ sender: UIButton) {
         if sender.isSelected == true {
@@ -140,17 +197,11 @@ class ContactInfoViewController: BaseViewController {
     
     @IBAction func onTappedSubmitBtn(_ sender: UIButton) {
         self.view.endEditing(true)
-        
         let verifyMobile : ValidationMessage = authViewModel.validateMobile(mobileNumberTextField.text ?? "")
-
         let verifyPassword : ValidationMessage = authViewModel.validatePasswordTextField(passwordTextField: passwordTextField)
-        
         let verifyConfirmPassword : ValidationMessage = authViewModel.validateConfirmPassword(retypePasswordTextField.text ?? "", password: passwordTextField.text ?? "")
-
         let verifyName : ValidationMessage = authViewModel.validateNameForSignup(fullnameTextField.text ?? "")
-        
         let verifyEmail : ValidationMessage = authViewModel.validateEmailTextField(textField: emailTextField)
-        
         if verifyName.status && verifyMobile.status && verifyEmail.status && verifyPassword.status && verifyConfirmPassword.status {
             let params: Parameters = [
                 "customername": fullnameTextField.text ?? "",
@@ -216,7 +267,7 @@ extension ContactInfoViewController {
                 LoadingIndicator.shared.hide()
                 if let result = result {
                     if let success = result.code, success == "0" {
-                        self.showInformationView(isShow: true)
+                        self.showRegisterInfoView(isShow: true)
                     } else {
                         self.presentAlert(withTitle: error, message: result.desc ?? "")
                     }
@@ -240,7 +291,6 @@ extension ContactInfoViewController : UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let existText = textField.text,
             let textRange = Range(range, in: existText) else { return false }
-        
         let newText = existText.replacingCharacters(in: textRange, with: string)
         
         switch textField {
@@ -260,9 +310,7 @@ extension ContactInfoViewController : UITextFieldDelegate {
         
         if let field = textField as? TweeAttributedTextField {
             var errorMessage = ""
-            
             switch field  {
-                
             case fullnameTextField:
                 errorMessage = authViewModel.validateNameForSignup(field.text).errorMessage ?? ""
             case mobileNumberTextField:
@@ -276,7 +324,6 @@ extension ContactInfoViewController : UITextFieldDelegate {
             default:
                 break
             }
-            
             if errorMessage == "" {
                 if textField == mobileNumberTextField {
                     self.perform(#selector(checkMobileExist), with: nil, with: 0.1)
@@ -307,7 +354,6 @@ extension ContactInfoViewController : UITextFieldDelegate {
             let passwordValidation:ValidationMessage = authViewModel.validatePasswordTextField(passwordTextField: passwordTextField)
             if passwordValidation.status == false {
                 textField.showInfo(passwordValidation.errorMessage ?? "")
-                
             } else {
                 textField.hideInfo()
             }
@@ -315,7 +361,6 @@ extension ContactInfoViewController : UITextFieldDelegate {
             let passwordValidation:ValidationMessage = authViewModel.validateConfirmPassword(textField.text, password: passwordTextField.text)
             if passwordValidation.status == false {
                 textField.showInfo(passwordValidation.errorMessage ?? "")
-                
             } else {
                 textField.hideInfo()
             }
@@ -323,7 +368,6 @@ extension ContactInfoViewController : UITextFieldDelegate {
             let passwordValidation:ValidationMessage = authViewModel.validateEmail(textField.text ?? "")
             if passwordValidation.status == false {
                 textField.showInfo(passwordValidation.errorMessage ?? "")
-                
             } else {
                 textField.hideInfo()
             }

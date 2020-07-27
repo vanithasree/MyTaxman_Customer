@@ -29,11 +29,6 @@ enum ServiceListKeys : String {
 
 struct JobsParams : Codable {
     var customerid : String?
-    var customername : String?
-    var email : String?
-    var mobile : String?
-    var password : String?
-    var deviceid : String?
     var device_currentdatetime : String?
     var category : String?
     var page1 : String?
@@ -51,11 +46,8 @@ struct JobsParams : Codable {
     
     enum CodingKeys: String, CodingKey {
         
-        case customername = "customername"
-        case email = "email"
-        case mobile = "mobile"
-        case password = "password"
-        case deviceid = "deviceid"
+        
+        case customerid = "customerid"
         case device_currentdatetime = "device_currentdatetime"
         case category = "category"
         case page1 = "page1"
@@ -73,14 +65,10 @@ struct JobsParams : Codable {
     }
     
     var toJSONForNewCustomer : [String : Any] {
-        return ["customername" : customername ?? "",
-                "email" : email ?? "",
-                "mobile": mobile ?? 0,
-                "password" : password ?? false,
-                "deviceid": deviceid ?? "",
+        return ["customerid" : customerid ?? "",
                 "device_currentdatetime": device_currentdatetime ?? "",
-                "category" : category,
-                "page1": page1,
+                "category" : category ?? "",
+                "page1": page1 ?? "",
                 "page2" : page2 ?? "",
                 "page3" : page3 ?? "",
                 "page4": page4 ?? "",
@@ -97,11 +85,8 @@ struct JobsParams : Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        customername = try values.decodeIfPresent(String.self, forKey: .customername)
-        email = try values.decodeIfPresent(String.self, forKey: .email)
-        mobile = try values.decodeIfPresent(String.self, forKey: .mobile)
-        password = try values.decodeIfPresent(String.self, forKey: .password)
-        deviceid = try values.decodeIfPresent(String.self, forKey: .deviceid)
+        
+        customerid = try values.decodeIfPresent(String.self, forKey: .customerid)
         device_currentdatetime = try values.decodeIfPresent(String.self, forKey: .device_currentdatetime)
         category = try values.decodeIfPresent(String.self, forKey: .category)
         page1 = try values.decodeIfPresent(String.self, forKey: .page1)

@@ -25,8 +25,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-da-Fsp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1218"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteBg" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-da-Fsp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="1344"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are you Looking for?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3S-Bv-Uri">
                                 <rect key="frame" x="94" y="64" width="226.5" height="24"/>
@@ -36,7 +36,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JFs-sJ-tix">
                                 <rect key="frame" x="0.0" y="108" width="414" height="754"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vih-e8-VJL">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -63,7 +63,10 @@
                             <constraint firstItem="LTE-da-Fsp" firstAttribute="top" secondItem="v3S-Bv-Uri" secondAttribute="bottom" id="2WW-GE-JyU"/>
                             <constraint firstItem="JFs-sJ-tix" firstAttribute="leading" secondItem="SlR-gh-bEG" secondAttribute="leading" id="J8O-J4-lQ0"/>
                             <constraint firstItem="LTE-da-Fsp" firstAttribute="leading" secondItem="SlR-gh-bEG" secondAttribute="leading" id="Npr-Uy-hia"/>
+                            <constraint firstItem="LTE-da-Fsp" firstAttribute="leading" secondItem="SlR-gh-bEG" secondAttribute="leading" id="QwT-Do-9gL"/>
+                            <constraint firstItem="LTE-da-Fsp" firstAttribute="trailing" secondItem="SlR-gh-bEG" secondAttribute="trailing" id="YQY-KC-W77"/>
                             <constraint firstItem="SlR-gh-bEG" firstAttribute="trailing" secondItem="LTE-da-Fsp" secondAttribute="trailing" id="lHF-RE-Gre"/>
+                            <constraint firstItem="LTE-da-Fsp" firstAttribute="top" secondItem="v3S-Bv-Uri" secondAttribute="bottom" id="oAf-Z1-0AW"/>
                             <constraint firstItem="SlR-gh-bEG" firstAttribute="bottom" secondItem="JFs-sJ-tix" secondAttribute="bottom" id="qJB-8y-XoW"/>
                             <constraint firstItem="JFs-sJ-tix" firstAttribute="top" secondItem="v3S-Bv-Uri" secondAttribute="bottom" constant="20" id="qUq-pv-9tw"/>
                         </constraints>
@@ -76,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfl-oq-B4E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23" y="127"/>
+            <point key="canvasLocation" x="21.739130434782609" y="126.5625"/>
         </scene>
         <!--Page One View Controller-->
         <scene sceneID="Heg-kR-AhT">
@@ -2358,6 +2361,7 @@
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="logSelectedButtonForTaxReturnIndividualWithRadioButton:" destination="dQv-7v-2UT" eventType="touchUpInside" id="xIB-3c-QOy"/>
                                                     <outletCollection property="otherButtons" destination="TOC-nv-oxS" id="aGW-LR-hdd"/>
                                                     <outletCollection property="otherButtons" destination="pT7-Is-229" id="iQR-V9-kNG"/>
                                                     <outletCollection property="otherButtons" destination="zxd-vT-rmO" id="NlN-S6-DZr"/>
@@ -2382,6 +2386,7 @@
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="logSelectedButtonForTaxReturnIndividualWithRadioButton:" destination="dQv-7v-2UT" eventType="touchDragInside" id="xZa-4W-IYt"/>
                                                     <outletCollection property="otherButtons" destination="92X-QX-XLz" id="eHR-Bo-COP"/>
                                                     <outletCollection property="otherButtons" destination="zxd-vT-rmO" id="xNt-kk-RTG"/>
                                                     <outletCollection property="otherButtons" destination="pT7-Is-229" id="YNl-9c-wyY"/>
@@ -2427,6 +2432,7 @@
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="logSelectedButtonForTaxReturnIndividualWithRadioButton:" destination="dQv-7v-2UT" eventType="touchUpInside" id="b4N-cY-SFX"/>
                                                     <outletCollection property="otherButtons" destination="92X-QX-XLz" id="ElY-Fj-32U"/>
                                                     <outletCollection property="otherButtons" destination="TOC-nv-oxS" id="6AW-Lz-2As"/>
                                                     <outletCollection property="otherButtons" destination="pT7-Is-229" id="2V3-po-SmB"/>
@@ -2451,6 +2457,7 @@
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="logSelectedButtonForTaxReturnIndividualWithRadioButton:" destination="dQv-7v-2UT" eventType="touchUpInside" id="AWM-qC-pvV"/>
                                                     <outletCollection property="otherButtons" destination="92X-QX-XLz" id="SQm-lC-HoS"/>
                                                     <outletCollection property="otherButtons" destination="TOC-nv-oxS" id="K3O-vt-hqB"/>
                                                     <outletCollection property="otherButtons" destination="zxd-vT-rmO" id="yX0-s5-adU"/>
@@ -2475,6 +2482,7 @@
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="logSelectedButtonForTaxReturnIndividualWithRadioButton:" destination="dQv-7v-2UT" eventType="touchUpInside" id="Yw4-zm-rcO"/>
                                                     <outletCollection property="otherButtons" destination="92X-QX-XLz" id="PYh-fu-D81"/>
                                                     <outletCollection property="otherButtons" destination="TOC-nv-oxS" id="KTU-iB-6Ys"/>
                                                     <outletCollection property="otherButtons" destination="zxd-vT-rmO" id="iso-ln-VOv"/>
@@ -2572,6 +2580,6 @@
     </scenes>
     <resources>
         <image name="Back" width="30" height="30"/>
-        <image name="bg" width="562.5" height="1218"/>
+        <image name="whiteBg" width="621" height="1344"/>
     </resources>
 </document>

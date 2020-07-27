@@ -63,6 +63,7 @@ class EmployeeOrContractViewController: UIViewController {
                 for button in radioButton.selectedButtons() {
                     print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
                     print(button.tag)
+                    LeadsManager.shared.postJobsParams?.page2 = button.titleLabel!.text ?? ""
                     
                     let buttonsArray = radioButton.selectedButtons().compactMap { $0.tag == 3}
                     print(buttonsArray)
@@ -75,6 +76,7 @@ class EmployeeOrContractViewController: UIViewController {
                     else {
                         /* self.otherView.isHidden = true*/
                         self.pageTwoValueForIndividual = button.titleLabel!.text ?? ""
+                        LeadsManager.shared.postJobsParams?.page2 = self.pageTwoValueForIndividual
                         self.checkIsPageTwoValueForIndividualChoosen()
                     }
                 }
@@ -92,6 +94,14 @@ class EmployeeOrContractViewController: UIViewController {
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
+        if let value = LeadsManager.shared.postJobsParams?.page2 {
+            self.redirectToTaxReturnTypeScreen()
+        }
+    }
+    
+    func redirectToTaxReturnTypeScreen() {
+        let pageThreeVC = TaxReturnViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageThreeVC, animated: true)
     }
     /*
      // MARK: - Navigation

@@ -46,7 +46,21 @@ class TaxReturnViewController: UIViewController {
         otherTextField.setTextFieldProperties(placeholderString: "Other", isSecureText: false)
         otherTextField.delegate = self
         
+        nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
+        checkIsPageThreeForIndividualValueChoosen()
+        
     }
+    
+    func checkIsPageThreeForIndividualValueChoosen() {
+        
+        if self.pageThreeValueForIndividual.isEmpty {
+            self.nextView.isHidden = true
+        }
+        else {
+            self.nextView.isHidden = false
+        }
+    }
+    
     
     func setRadioButtonPropertiesForIndividualService(radioBtn : DLRadioButton, titleString : String, tag:Int) {
         radioBtn.setOptionChooseTheme(btn: radioBtn, title:titleString)
@@ -59,6 +73,39 @@ class TaxReturnViewController: UIViewController {
     }
     
     
+    @IBAction private func logSelectedButtonForTaxReturnIndividual(radioButton : DLRadioButton) {
+        if (radioButton.isMultipleSelectionEnabled) {
+            if radioButton.selectedButtons().count > 0 {
+                for button in radioButton.selectedButtons() {
+                    print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
+                    print(button.tag)
+                    LeadsManager.shared.postJobsParams?.page3 = button.titleLabel?.text ?? ""
+                    
+                    let buttonsArray = radioButton.selectedButtons().compactMap { $0.tag == 5}
+                    print(buttonsArray)
+                    if buttonsArray.contains(true) {
+                        self.otherView.isHidden = false
+                        self.pageThreeValueForIndividual = ""
+                        self.checkIsPageThreeForIndividualValueChoosen()
+                    }
+                    else {
+                        self.otherView.isHidden = true
+                        self.pageThreeValueForIndividual = button.titleLabel!.text ?? ""
+                        self.checkIsPageThreeForIndividualValueChoosen()
+                    }
+                }
+            }
+            else {
+                self.pageThreeValueForIndividual = ""
+                self.otherView.isHidden = true
+                self.checkIsPageThreeForIndividualValueChoosen()
+            }
+        } else {
+            self.pageThreeValueForIndividual = radioButton.selected()!.titleLabel!.text ?? ""
+            self.checkIsPageThreeForIndividualValueChoosen()
+            print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
+        }
+    }
     /*
      // MARK: - Navigation
      
@@ -68,8 +115,15 @@ class TaxReturnViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    func redirectToPageThreeScreenFromIndividual() {
+        let pageThreeVC = PageThreeViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(pageThreeVC, animated: true)
+    }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
+        if let value = LeadsManager.shared.postJobsParams?.page3 {
+            self.redirectToPageThreeScreenFromIndividual()
+        }
     }
 }
 extension TaxReturnViewController : UITextFieldDelegate {

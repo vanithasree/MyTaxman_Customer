@@ -195,7 +195,22 @@ class ContactInfoViewController: BaseViewController {
     }
     
     @IBAction func didTapPasswordAction(_ sender: Any) {
+        self.view.endEditing(true)
+        
+        let verifyEmail : ValidationMessage = authViewModel.validateUsernameTextField(textField: mobileNumberTextField)
+        let verifyPassword : ValidationMessage = authViewModel.validatePasswordTextField(passwordTextField: pwdTextField)
+        if verifyEmail.status && verifyPassword.status {
+            self.mobileNumberTextField.hideInfo()
+            self.pwdTextField.hideInfo()
+            self.callLoginApiToPostTheTask()
+        }
+        else {
+            self.validateTextFieldForContactLogin(textField: mobileNumberTextField)
+            self.validateTextFieldForContactLogin(textField: pwdTextField)
+        }
     }
+        
+    
     
     
     @IBAction func onTappedSubmitBtn(_ sender: UIButton) {
@@ -306,7 +321,7 @@ extension ContactInfoViewController {
 }
 
 extension ContactInfoViewController : UITextFieldDelegate {
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if let field = textField as? TweeAttributedTextField {
             field.hideInfo()
@@ -401,12 +416,103 @@ extension ContactInfoViewController : UITextFieldDelegate {
 }
 
 extension ContactInfoViewController {
-    func postTaskForLoggedInCustomer() {
     
-        // let input : Parameters = LeadApiManager.shared.j?.toJSONForTransferService ?? [:]
-        
+    func callLoginApiToPostTheTask() {
+        let params: Parameters = [
+            "cusemail": mobileNumberTextField.text ?? "",
+            "cuspassword": pwdTextField.text ?? ""
+        ]
+        LoadingIndicator.shared.show(forView: self.view)
+        authViewModel.requestLogin(input: params) { (result: LoginBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    if result.customerid?.first?.otp_verified ?? "" == "0"{
+                        self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                            self.redirectToOtpScreen(customerid: result.customerid?.first?.customerid ?? "")
+                        }
+                    }else {
+                        //self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                        UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
+                        LeadsManager.shared.postJobsParams?.customerid  = result.customerid?.first?.customerid ?? ""
+                        self.postTaskForLoggedInCustomer()
+                        
+                        //                            }
+                    }
+                } else if let success = result.code, success == "0" {
+                    if result.customerid?.first?.otp_verified ?? "" == "0"{
+                        self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                            self.redirectToOtpScreen(customerid: result.customerid?.first?.customerid ?? "")
+                        }
+                    }else {
+                        self.presentAlert(withTitle: "", message: result.desc ?? "") {}
+                    }
+                } else if let success = result.code, success == "4" {
+                    self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                        // self.redirectToContactRegisterInfoScreen()
+                    }
+                }else{
+                    print("No response found.")
+                    self.presentAlert(withTitle: error, message: result.desc ?? "")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
     }
-    func postTaskForNewCustomer() {
+    func postTaskForLoggedInCustomer() {
+        
+        let input : Parameters = LeadsManager.shared.postJobsParams?.toJSONForNewCustomer ?? [:]
+        LoadingIndicator.shared.show(forView: self.view)
+        leadViewModel.postTaskLoggedInCustomer(input: input) { (result: PostJobForLoggedInCustomer?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    self.presentAlert(withTitle: "Success", message:"Task has been successfully posted" ) {
+                       
+                        self.redirectToDashBoardScreenFromContact()
+                    }
+                }
+                else {
+                    print("No response found.")
+                    self.presentAlert(withTitle: error, message: "Some error happened")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
+    }
+    
+    func redirectToOtpScreenFromContact(customerid : String) {
+           let otpVC = OtpViewController.instantiateFromAppStoryboard(appStoryboard: .Auth)
+           otpVC.customerid = customerid
+           self.navigationController?.pushViewController(otpVC, animated: true)
+       }
+    func redirectToDashBoardScreenFromContact() {
+        let tabBar = TabBarViewController.instantiateFromAppStoryboard(appStoryboard: .Tabbar)
+        tabBar.modalPresentationStyle = .fullScreen
+        self.present(tabBar, animated: true) {
+        }
+    }
+    
+    func validateTextFieldForContactLogin(textField:TweeAttributedTextField) {
+        if textField == mobileNumberTextField {
+            let nameValidation:ValidationMessage = authViewModel.validateUsernameTextField(textField: mobileNumberTextField)
+            if nameValidation.status == false {
+                textField.showInfo(nameValidation.errorMessage ?? "")
+            } else {
+                textField.hideInfo()
+            }
+        } else if textField == pwdTextField {
+            let passwordValidation:ValidationMessage = authViewModel.validatePasswordTextField(passwordTextField: pwdTextField)
+            if passwordValidation.status == false {
+                textField.showInfo(passwordValidation.errorMessage ?? "")
+            } else {
+                textField.hideInfo()
+            }
+        }
+    }
+  /*  func postTaskForNewCustomer() {
         LeadsManager.shared.postJobsParams?.device_currentdatetime = Date().dateAndTimetoString()
         let input : Parameters = LeadsManager.shared.postJobsParams?.toJSONForNewCustomer ?? [:]
         
@@ -425,5 +531,5 @@ extension ContactInfoViewController {
                 self.presentAlert(withTitle: "", message: alert.errorMessage)
             }
         }
-    }
+    }*/
 }

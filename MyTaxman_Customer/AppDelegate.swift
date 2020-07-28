@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             redirectToGetStartPage()
         }
         
-        
         // Override point for customization after application launch.
         return true
     }
@@ -49,32 +48,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func redirectToHomePage() {
-        
-       /* let storyboard : UIStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
-        let tabbarVC = storyboard.instantiateInitialViewController()
-        self.window?.rootViewController = tabbarVC
-        self.window?.makeKeyAndVisible()*/
-        
-        
-        
         let storyboard = UIStoryboard.init(name: "Tabbar", bundle: nil)
         if let tabBar = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? UITabBarController {
-            let navigationController = UINavigationController(rootViewController: tabBar)
-            window?.rootViewController = navigationController
+            window?.rootViewController = tabBar
             window?.makeKeyAndVisible()
         }
-        
     }
     
     func redirectToGetStartPage() {
-        
         window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard.init(name: "Auth", bundle: nil)
         let initialVC = storyboard.instantiateInitialViewController()
         window?.makeKeyAndVisible()
         window?.rootViewController = initialVC
     }
-    
-    
 }
 

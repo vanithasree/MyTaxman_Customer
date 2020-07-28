@@ -15,7 +15,10 @@ class OtpViewController: BaseViewController {
     @IBOutlet weak var pinview: SVPinView!
     @IBOutlet var resendButton: UIButton!
     private var authViewModel = AuthViewModel()
+    private var leadViewModel = LeadViewModel()
     var customerid : String = ""
+    var getPageType : pageType = .none
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -66,6 +69,25 @@ class OtpViewController: BaseViewController {
      }
      */
     
+    func postTask() {
+        
+        let input : Parameters = LeadsManager.shared.postJobsParams?.toJSONForNewCustomer ?? [:]
+        LoadingIndicator.shared.show(forView: self.view)
+        leadViewModel.postTaskLoggedInCustomer(input: input) { (result: PostJobForLoggedInCustomer?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    self.redirectToDashBoardScreen()
+                } else {
+                    print("No response found.")
+                    self.presentAlert(withTitle: error, message: "Some error happened")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
+    }
+    
     func sendOtpAction(token: String) {
         let params: Parameters = [
             "customerid": customerid,
@@ -78,7 +100,16 @@ class OtpViewController: BaseViewController {
                 if let success = result.code, success == "1" {
                     //self.presentAlert(withTitle: "", message: result.desc ?? "") {
                     //UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
-                    self.redirectToDashBoardScreen()
+                    
+                    
+                    if self.getPageType == .contact {
+                        self.postTask()
+                    }
+                    else {
+                        self.redirectToDashBoardScreen()
+                    }
+                    
+                    
                     //}
                 }else{
                     print("No response found.")

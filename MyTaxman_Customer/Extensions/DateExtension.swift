@@ -85,7 +85,7 @@ extension Date {
     /// Date to"yyyy-MM-dd'T'HH:mm:ss.ZZZ"
     /// //"yyyy-MM-dd'T'HH:mm:ss
     /// - Parameter format: format
-    func dateAndTimetoString(format: String = "yyyy-MM-dd'T'HH:mm:ss") -> String {
+    func dateAndTimetoString(format: String = "yyyy-MM-dd HH:mm:ss") -> String {
         //2020-05-12T11:25:08.000Z
         let formatter = DateFormatter()
         formatter.timeZone = NSTimeZone.init(abbreviation: "UTC") as TimeZone?

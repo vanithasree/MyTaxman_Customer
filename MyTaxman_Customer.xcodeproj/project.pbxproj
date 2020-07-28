@@ -19,6 +19,9 @@
 		1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */; };
 		1826254424CDB94200DF7A4B /* JobsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254324CDB94200DF7A4B /* JobsModel.swift */; };
 		1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */; };
+		1826254824CDD29900DF7A4B /* LeadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254724CDD29900DF7A4B /* LeadsViewModel.swift */; };
+		1826254A24CDD33B00DF7A4B /* LeadApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254924CDD33B00DF7A4B /* LeadApiManager.swift */; };
+		1826254C24CDEE6F00DF7A4B /* TaxReturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
@@ -123,6 +126,9 @@
 		1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalAdviceServiceViewController.swift; sourceTree = "<group>"; };
 		1826254324CDB94200DF7A4B /* JobsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsModel.swift; sourceTree = "<group>"; };
 		1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeOrContractViewController.swift; sourceTree = "<group>"; };
+		1826254724CDD29900DF7A4B /* LeadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadsViewModel.swift; sourceTree = "<group>"; };
+		1826254924CDD33B00DF7A4B /* LeadApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadApiManager.swift; sourceTree = "<group>"; };
+		1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxReturnViewController.swift; sourceTree = "<group>"; };
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -454,6 +460,7 @@
 				1826253E24CD481100DF7A4B /* AuditServiceViewController.swift */,
 				1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */,
 				1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */,
+				1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */,
 			);
 			path = Leads;
 			sourceTree = "<group>";
@@ -509,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				18B2E63A24C8ABD8002A9CCE /* LeadsManager.swift */,
+				1826254724CDD29900DF7A4B /* LeadsViewModel.swift */,
 			);
 			path = LeadsManager;
 			sourceTree = "<group>";
@@ -589,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				3BF05BF724C9936400E16081 /* AuthApiManager.swift */,
+				1826254924CDD33B00DF7A4B /* LeadApiManager.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -908,6 +917,7 @@
 				18B2E62124C89586002A9CCE /* LeadsDashboardViewController.swift in Sources */,
 				18B2E63B24C8ABD8002A9CCE /* LeadsManager.swift in Sources */,
 				3BF05BEA24C96AFC00E16081 /* APIManager.swift in Sources */,
+				1826254A24CDD33B00DF7A4B /* LeadApiManager.swift in Sources */,
 				1888977824C728C1000DFAB3 /* LoginViewController.swift in Sources */,
 				3BF05BD424C9634600E16081 /* UIDeviceExtension.swift in Sources */,
 				1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */,
@@ -915,6 +925,7 @@
 				3BF05BE724C96AED00E16081 /* ColorManager.swift in Sources */,
 				3BF05BD524C9634600E16081 /* UIViewExtension.swift in Sources */,
 				3BF05BE524C96AED00E16081 /* FontManager.swift in Sources */,
+				1826254824CDD29900DF7A4B /* LeadsViewModel.swift in Sources */,
 				3BF05BF224C973E900E16081 /* BaseViewController.swift in Sources */,
 				3BF05BD224C9634600E16081 /* UITextFieldExtension.swift in Sources */,
 				1826253D24CD450E00DF7A4B /* SuperFundsServiceViewController.swift in Sources */,
@@ -931,6 +942,7 @@
 				3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */,
 				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,
 				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
+				1826254C24CDEE6F00DF7A4B /* TaxReturnViewController.swift in Sources */,
 				18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */,
 				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
 				18F6AA6724CC079B005F3855 /* SettingsViewController.swift in Sources */,

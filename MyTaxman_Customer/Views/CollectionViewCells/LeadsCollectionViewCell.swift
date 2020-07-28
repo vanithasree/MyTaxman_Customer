@@ -20,6 +20,7 @@ class LeadsCollectionViewCell: UICollectionViewCell {
     }
     
     func setCellViewUI() {
+        self.backgroundColor = .clear
         serviceNameTitleLabel.setPopupTitle(titleText: "")
         serviceNameTitleLabel.textColor = ColorManager.textDarkGreenColor.color
     }

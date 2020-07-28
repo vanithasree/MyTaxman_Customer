@@ -40,7 +40,10 @@ class LeadsDashboardViewController: BaseViewController {
         leadsCollectionView.register(LeadsCollectionViewCell.nib, forCellWithReuseIdentifier: LeadsCollectionViewCell.identifier)
         leadsCollectionView.delegate = self
         leadsCollectionView.dataSource = self
-        leadsCollectionView.backgroundColor = .white
+        leadsCollectionView.backgroundColor = .clear
+        
+     
+//        self.collectionView.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
         
         
         serviceDataListArray.append(ServicesList(imageName: "Tax", title: "Tax Returns"))

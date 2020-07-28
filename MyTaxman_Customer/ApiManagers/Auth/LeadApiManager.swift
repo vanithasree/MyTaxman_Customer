@@ -14,6 +14,9 @@ enum LeadsApi {
     case cus_posttask
     case send_notification_cus_taskposted
     case send_notification_allven_newtaskposted
+    
+    case custasklist
+    case completedtask
 }
 // MARK: - EndPointType
 extension LeadsApi: EndPointType {
@@ -43,6 +46,10 @@ extension LeadsApi: EndPointType {
             return "/send_notification_cus_taskposted"
         case .send_notification_allven_newtaskposted:
             return "/send_notification_allven_newtaskposted"
+        case .custasklist:
+            return "/custasklist"
+        case .completedtask:
+            return "/completedtask"
         }
     }
     
@@ -97,6 +104,25 @@ class LeadApiManager {
     
     func postTaskForLoggedInCustomer(input: Parameters, handler: @escaping (_ result: PostJobForLoggedInCustomer?, _ error: AlertMessage?)->()) {
         APIManager.shared().call(type: LeadsApi.cus_posttask, params: input) { (result: PostJobForLoggedInCustomer?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+    
+    func getCusTaskList(input: Parameters, handler: @escaping (_ result: CustTaskListBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: LeadsApi.custasklist, params: input) { (result: CustTaskListBase?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+    func getCusCompletedTaskList(input: Parameters, handler: @escaping (_ result: CompletedTaskListBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: LeadsApi.completedtask, params: input) { (result: CompletedTaskListBase?,message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {

@@ -18,6 +18,12 @@ class LeadViewModel {
     func postTaskLoggedInCustomer(input: Parameters, handler: @escaping (_ user: PostJobForLoggedInCustomer?, _ error: AlertMessage?)->()) {
         LeadApiManager().postTaskForLoggedInCustomer(input: input, handler: handler)
     }
+    func getCustomerTaskListForActiveTab(input: Parameters, handler: @escaping (_ user: CustTaskListBase?, _ error: AlertMessage?)->()) {
+        LeadApiManager().getCusTaskList(input: input, handler: handler)
+    }
+    func getCustomerTaskListForCompletedTab(input: Parameters, handler: @escaping (_ user: CompletedTaskListBase?, _ error: AlertMessage?)->()) {
+        LeadApiManager().getCusCompletedTaskList(input: input, handler: handler)
+    }
 }
 
 

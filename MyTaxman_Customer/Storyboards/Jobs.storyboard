@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Job List View Controller-->
         <scene sceneID="Oli-nG-fOX">
@@ -15,13 +20,82 @@
                     <view key="view" contentMode="scaleToFill" id="V25-0H-oho">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qI-DR-H5J">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVG-aa-LGp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Vanithasree..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIq-o2-GRb">
+                                                <rect key="frame" x="20" y="5" width="236" height="35"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund" translatesAutoresizingMaskIntoConstraints="NO" id="CZt-YN-0Ue">
+                                                <rect key="frame" x="261" y="10" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="71U-Om-PsA"/>
+                                                    <constraint firstAttribute="height" constant="25" id="irW-Vl-Yag"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let;s Get Started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V98-yU-hAQ">
+                                                <rect key="frame" x="20" y="50" width="171" height="28"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="CZt-YN-0Ue" firstAttribute="leading" secondItem="MIq-o2-GRb" secondAttribute="trailing" constant="5" id="166-Io-IhY"/>
+                                            <constraint firstItem="MIq-o2-GRb" firstAttribute="leading" secondItem="V98-yU-hAQ" secondAttribute="leading" id="6gC-P0-c2S"/>
+                                            <constraint firstAttribute="height" constant="80" id="MxF-MP-DDz"/>
+                                            <constraint firstItem="MIq-o2-GRb" firstAttribute="top" secondItem="kVG-aa-LGp" secondAttribute="top" constant="5" id="Nif-qN-aq2"/>
+                                            <constraint firstItem="MIq-o2-GRb" firstAttribute="centerY" secondItem="CZt-YN-0Ue" secondAttribute="centerY" id="ikc-ER-Ap2"/>
+                                            <constraint firstItem="V98-yU-hAQ" firstAttribute="top" secondItem="MIq-o2-GRb" secondAttribute="bottom" constant="10" id="r2M-8O-gM6"/>
+                                            <constraint firstItem="MIq-o2-GRb" firstAttribute="leading" secondItem="kVG-aa-LGp" secondAttribute="leading" constant="20" id="rIw-vL-d3Y"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMQ-kp-5UL" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                        <rect key="frame" x="10" y="80" width="394" height="57.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hMQ-kp-5UL" firstAttribute="height" secondItem="0qI-DR-H5J" secondAttribute="height" multiplier="0.07" id="36U-Ne-3BE"/>
+                                    <constraint firstAttribute="trailing" secondItem="hMQ-kp-5UL" secondAttribute="trailing" constant="10" id="9Ji-ze-cmF"/>
+                                    <constraint firstItem="hMQ-kp-5UL" firstAttribute="leading" secondItem="0qI-DR-H5J" secondAttribute="leading" constant="10" id="DbJ-fY-pLL"/>
+                                    <constraint firstItem="hMQ-kp-5UL" firstAttribute="top" secondItem="kVG-aa-LGp" secondAttribute="bottom" id="OrQ-fB-7MW"/>
+                                    <constraint firstItem="kVG-aa-LGp" firstAttribute="top" secondItem="0qI-DR-H5J" secondAttribute="top" id="SrB-Gk-QtL"/>
+                                    <constraint firstAttribute="trailing" secondItem="kVG-aa-LGp" secondAttribute="trailing" id="bjy-YZ-xlC"/>
+                                    <constraint firstItem="kVG-aa-LGp" firstAttribute="leading" secondItem="0qI-DR-H5J" secondAttribute="leading" id="gYc-eu-mLI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="U5x-t4-quS" firstAttribute="bottom" secondItem="0qI-DR-H5J" secondAttribute="bottom" id="AN2-D0-zXU"/>
+                            <constraint firstItem="0qI-DR-H5J" firstAttribute="leading" secondItem="U5x-t4-quS" secondAttribute="leading" id="DAp-ZO-LsY"/>
+                            <constraint firstItem="U5x-t4-quS" firstAttribute="trailing" secondItem="0qI-DR-H5J" secondAttribute="trailing" id="dfw-V7-T6k"/>
+                            <constraint firstItem="0qI-DR-H5J" firstAttribute="top" secondItem="U5x-t4-quS" secondAttribute="top" id="yJF-dF-qu7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U5x-t4-quS"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="V98-yU-hAQ" id="nGQ-4I-Lda"/>
+                        <outlet property="nameTitleLabel" destination="MIq-o2-GRb" id="A01-50-fdC"/>
+                        <outlet property="segmentView" destination="hMQ-kp-5UL" id="edd-ht-UWy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZE-fS-PT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-201" y="104"/>
+            <point key="canvasLocation" x="-201.44927536231884" y="103.79464285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fund" width="50" height="50"/>
+    </resources>
 </document>

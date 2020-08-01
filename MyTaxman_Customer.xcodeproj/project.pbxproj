@@ -56,6 +56,10 @@
 		3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */; };
 		3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14A58824CC053700FC235D /* OtpViewController.swift */; };
 		3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA6B24CC0819005F3855 /* TabBarViewController.swift */; };
+		3B8274D424D51A6B000E1617 /* QuoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D324D51A6B000E1617 /* QuoteDetailsViewController.swift */; };
+		3B8274D624D51A77000E1617 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D524D51A77000E1617 /* ChatViewController.swift */; };
+		3B8274D824D51A90000E1617 /* BusinessProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D724D51A90000E1617 /* BusinessProfileViewController.swift */; };
+		3B8274DA24D51AB9000E1617 /* InboxDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D924D51AB9000E1617 /* InboxDetailsViewController.swift */; };
 		3BBFD2C824D28C4A004B7AE4 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD2C724D28C4A004B7AE4 /* ChatTableViewCell.swift */; };
 		3BBFD2CA24D28C52004B7AE4 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBFD2C924D28C52004B7AE4 /* ChatTableViewCell.xib */; };
 		3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */; };
@@ -174,6 +178,10 @@
 		204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		3B14A58824CC053700FC235D /* OtpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewController.swift; sourceTree = "<group>"; };
+		3B8274D324D51A6B000E1617 /* QuoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsViewController.swift; sourceTree = "<group>"; };
+		3B8274D524D51A77000E1617 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		3B8274D724D51A90000E1617 /* BusinessProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessProfileViewController.swift; sourceTree = "<group>"; };
+		3B8274D924D51AB9000E1617 /* InboxDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxDetailsViewController.swift; sourceTree = "<group>"; };
 		3BBFD2C724D28C4A004B7AE4 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		3BBFD2C924D28C52004B7AE4 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -533,6 +541,10 @@
 			isa = PBXGroup;
 			children = (
 				18F6AA6324CC0777005F3855 /* ChatListViewController.swift */,
+				3B8274D924D51AB9000E1617 /* InboxDetailsViewController.swift */,
+				3B8274D324D51A6B000E1617 /* QuoteDetailsViewController.swift */,
+				3B8274D524D51A77000E1617 /* ChatViewController.swift */,
+				3B8274D724D51A90000E1617 /* BusinessProfileViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -956,6 +968,7 @@
 				3BF05BB324C9632300E16081 /* LoadingIndicator.swift in Sources */,
 				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,
 				3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */,
+				3B8274DA24D51AB9000E1617 /* InboxDetailsViewController.swift in Sources */,
 				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,
 				1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */,
 				1826253B24CD414C00DF7A4B /* FinancialServiceViewController.swift in Sources */,
@@ -963,6 +976,7 @@
 				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,
 				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
 				1826254C24CDEE6F00DF7A4B /* TaxReturnViewController.swift in Sources */,
+				3B8274D424D51A6B000E1617 /* QuoteDetailsViewController.swift in Sources */,
 				18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */,
 				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
 				18F6AA6724CC079B005F3855 /* SettingsViewController.swift in Sources */,
@@ -973,6 +987,7 @@
 				3BF05BC624C9634600E16081 /* UIImageExtension.swift in Sources */,
 				1826254424CDB94200DF7A4B /* JobsModel.swift in Sources */,
 				3BF05BCC24C9634600E16081 /* UILabelExtension.swift in Sources */,
+				3B8274D824D51A90000E1617 /* BusinessProfileViewController.swift in Sources */,
 				18B2E63124C8AB46002A9CCE /* PageTwoViewController.swift in Sources */,
 				18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */,
 				3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */,
@@ -985,6 +1000,7 @@
 				3BF05BCE24C9634600E16081 /* UIButtonExtension.swift in Sources */,
 				3BF05BF524C9920D00E16081 /* AuthViewModel.swift in Sources */,
 				3BF05BC724C9634600E16081 /* UIPageViewControllerExtension.swift in Sources */,
+				3B8274D624D51A77000E1617 /* ChatViewController.swift in Sources */,
 				18F6AA5624CA0E63005F3855 /* ContactInfoViewController.swift in Sources */,
 				1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */,
 				1826253924CD362A00DF7A4B /* AccountServiceViewController.swift in Sources */,

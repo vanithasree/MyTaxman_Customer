@@ -52,6 +52,5 @@ class ChatTableViewCell: UITableViewCell {
         chatLabel.font  = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
         
         lastMessageLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
-
     }
 }

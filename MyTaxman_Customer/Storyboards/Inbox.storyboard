@@ -42,5 +42,101 @@
             </objects>
             <point key="canvasLocation" x="-132" y="106"/>
         </scene>
+        <!--Inbox Details View Controller-->
+        <scene sceneID="VZe-M1-wQu">
+            <objects>
+                <viewController storyboardIdentifier="InboxDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N0L-S1-8Yi" customClass="InboxDetailsViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="obH-fV-KBL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWU-HS-FH7" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="54"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKG-zq-vFZ">
+                                <rect key="frame" x="0.0" y="98" width="414" height="764"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aF-JU-ET0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="764"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="3aF-JU-ET0" firstAttribute="top" secondItem="JKG-zq-vFZ" secondAttribute="top" id="4AH-Id-tOk"/>
+                                    <constraint firstAttribute="trailing" secondItem="3aF-JU-ET0" secondAttribute="trailing" id="7vX-y5-nTy"/>
+                                    <constraint firstItem="3aF-JU-ET0" firstAttribute="leading" secondItem="JKG-zq-vFZ" secondAttribute="leading" id="kYy-Th-zEb"/>
+                                    <constraint firstAttribute="bottom" secondItem="3aF-JU-ET0" secondAttribute="bottom" id="rHu-vF-P1o"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="T8u-zf-XXG" firstAttribute="bottom" secondItem="JKG-zq-vFZ" secondAttribute="bottom" id="0TB-oQ-91a"/>
+                            <constraint firstItem="lWU-HS-FH7" firstAttribute="height" secondItem="obH-fV-KBL" secondAttribute="height" multiplier="0.06" id="3h4-sc-SyO"/>
+                            <constraint firstItem="lWU-HS-FH7" firstAttribute="leading" secondItem="T8u-zf-XXG" secondAttribute="leading" id="3jQ-Qc-i5T"/>
+                            <constraint firstItem="T8u-zf-XXG" firstAttribute="trailing" secondItem="JKG-zq-vFZ" secondAttribute="trailing" id="CiW-Eq-0Tb"/>
+                            <constraint firstItem="JKG-zq-vFZ" firstAttribute="top" secondItem="lWU-HS-FH7" secondAttribute="bottom" id="WOF-R3-MTj"/>
+                            <constraint firstItem="lWU-HS-FH7" firstAttribute="top" secondItem="T8u-zf-XXG" secondAttribute="top" id="Ygn-uy-QON"/>
+                            <constraint firstItem="T8u-zf-XXG" firstAttribute="trailing" secondItem="lWU-HS-FH7" secondAttribute="trailing" id="dk8-af-gql"/>
+                            <constraint firstItem="JKG-zq-vFZ" firstAttribute="leading" secondItem="T8u-zf-XXG" secondAttribute="leading" id="sEw-OP-X5M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T8u-zf-XXG"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="JKG-zq-vFZ" id="rGl-FA-lj6"/>
+                        <outlet property="scrollView" destination="3aF-JU-ET0" id="LBg-Aw-xco"/>
+                        <outlet property="segmentControl" destination="lWU-HS-FH7" id="0G0-7d-xwz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vd7-sI-8Zi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="104"/>
+        </scene>
+        <!--Quote Details View Controller-->
+        <scene sceneID="ece-w8-2vM">
+            <objects>
+                <viewController storyboardIdentifier="QuoteDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Rb-rj-O16" customClass="QuoteDetailsViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="89L-an-a45">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Jtm-Xt-cf0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J0U-ht-PZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="104"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="lJF-J2-U5l">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lbj-Ti-48d" customClass="ChatViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gGk-Ic-IsV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XMt-Pw-B5w"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfF-pi-KAe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037" y="102"/>
+        </scene>
+        <!--Business Profile View Controller-->
+        <scene sceneID="rez-H1-Hdq">
+            <objects>
+                <viewController storyboardIdentifier="BusinessProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8Tr-x3-6Er" customClass="BusinessProfileViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1yM-iM-0oH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Y8a-RL-NO5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z2J-r9-97p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2739" y="104"/>
+        </scene>
     </scenes>
 </document>

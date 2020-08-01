@@ -51,4 +51,9 @@ extension ChatListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Utility.dynamicSize(120)
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let inboxDetailsVC = InboxDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+        inboxDetailsVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(inboxDetailsVC, animated: true)
+    }
 }

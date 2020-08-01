@@ -67,8 +67,9 @@ class JobListViewController: UIViewController {
         segmentControl.options = [.backgroundColor(UIColor.white.withAlphaComponent(0.4)),
                                   .indicatorViewBackgroundColor(UIColor.clear),
                                   .cornerRadius(10)]
-        
+
     }
+
     
     func getCustomerTaskListForActiveView() {
         LoadingIndicator.shared.show(forView: self.view)

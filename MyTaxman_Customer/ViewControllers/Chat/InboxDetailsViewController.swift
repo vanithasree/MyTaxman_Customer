@@ -62,6 +62,7 @@ class InboxDetailsViewController: UIViewController {
     // MARK: - Setup container view
     
     private func setupScrollView() {
+        scrollView.isScrollEnabled = false
         scrollView.isPagingEnabled = true
         scrollView.contentSize = CGSize(
             width: UIScreen.main.bounds.width * CGFloat(viewControllers.count),

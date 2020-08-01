@@ -53,7 +53,6 @@ class LoginViewController: BaseViewController {
         accountLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
         accountLabel.textColor = ColorManager.darkGrey.color
         
-        
         registerButton.setButtonProperties(title: "Register", font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0)), titleColor: ColorManager.darkTheme.color)
         registerButton.underline(text: "Register", color: ColorManager.darkTheme.color)
         

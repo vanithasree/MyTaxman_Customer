@@ -10,12 +10,18 @@ import UIKit
 
 class ChatListViewController: UIViewController {
 
+    @IBOutlet var chatTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        setupViews()
     }
     
+    func setupViews(){
+        chatTableView.register(ChatTableViewCell.nib, forCellReuseIdentifier: ChatTableViewCell.identifier)
+        chatTableView.tableFooterView = UIView()
+        chatTableView.reloadData()
+    }
 
     /*
     // MARK: - Navigation
@@ -27,4 +33,27 @@ class ChatListViewController: UIViewController {
     }
     */
 
+}
+
+extension ChatListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.identifier) else { return UITableViewCell() }
+        return cell
+    }
+    
+}
+
+extension ChatListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Utility.dynamicSize(120)
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let inboxDetailsVC = InboxDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+        inboxDetailsVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(inboxDetailsVC, animated: true)
+    }
 }

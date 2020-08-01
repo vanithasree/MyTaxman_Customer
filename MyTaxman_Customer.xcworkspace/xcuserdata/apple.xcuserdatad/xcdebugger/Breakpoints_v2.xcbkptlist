@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "72169743-34F1-46E4-A4FA-F972F7DDD104"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3020859-FCCE-4BFC-A9A1-D1018B4521D1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTaxman_Customer/ViewControllers/Jobs/JobListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "JobListViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A412383-2ADA-4218-A185-B34D984E291B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTaxman_Customer/ViewControllers/Jobs/JobListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1A412383-2ADA-4218-A185-B34D984E291B - ddb84533f8a9fe41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyTaxman_Customer.JobListViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "MyTaxman_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/MyTaxMan/MyTaxman_Customer/MyTaxman_Customer/ViewControllers/Jobs/JobListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "1A412383-2ADA-4218-A185-B34D984E291B - ddb84533f8a9fe41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyTaxman_Customer.JobListViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "MyTaxman_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/MyTaxMan/MyTaxman_Customer/MyTaxman_Customer/ViewControllers/Jobs/JobListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "409">
+               </Location>
+               <Location
+                  uuid = "1A412383-2ADA-4218-A185-B34D984E291B - ddb84533f8a9fe41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyTaxman_Customer.JobListViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "MyTaxman_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/MyTaxMan/MyTaxman_Customer/MyTaxman_Customer/ViewControllers/Jobs/JobListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "1402">
+               </Location>
+               <Location
+                  uuid = "1A412383-2ADA-4218-A185-B34D984E291B - ddb84533f8a9fe41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyTaxman_Customer.JobListViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "MyTaxman_Customer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/MyTaxMan/MyTaxman_Customer/MyTaxman_Customer/ViewControllers/Jobs/JobListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "2407">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B943E796-7338-46F8-8F34-9DE5F7E91CBB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyTaxman_Customer/ViewControllers/Jobs/JobListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

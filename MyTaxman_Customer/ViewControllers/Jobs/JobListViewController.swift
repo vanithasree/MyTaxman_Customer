@@ -89,6 +89,7 @@ class JobListViewController: UIViewController {
         
         
     }
+
     
     func getCustomerTaskListForActiveView() {
         LoadingIndicator.shared.show(forView: self.view)

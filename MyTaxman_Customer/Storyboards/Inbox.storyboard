@@ -15,9 +15,28 @@
                     <view key="view" contentMode="scaleToFill" id="lFN-7l-Hkv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ALQ-ol-DPG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="joA-3B-yOJ" id="cxq-zz-u3X"/>
+                                    <outlet property="delegate" destination="joA-3B-yOJ" id="UHt-6o-kpT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ALQ-ol-DPG" firstAttribute="top" secondItem="HSS-XF-dqi" secondAttribute="top" id="hZR-UW-X7m"/>
+                            <constraint firstItem="HSS-XF-dqi" firstAttribute="bottom" secondItem="ALQ-ol-DPG" secondAttribute="bottom" id="l5s-nb-mle"/>
+                            <constraint firstItem="ALQ-ol-DPG" firstAttribute="leading" secondItem="lFN-7l-Hkv" secondAttribute="leading" id="r6p-nu-pWv"/>
+                            <constraint firstItem="HSS-XF-dqi" firstAttribute="trailing" secondItem="ALQ-ol-DPG" secondAttribute="trailing" id="wc9-Kt-4bh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HSS-XF-dqi"/>
                     </view>
+                    <connections>
+                        <outlet property="chatTableView" destination="ALQ-ol-DPG" id="GQ1-TQ-fsa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJ2-8k-wax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

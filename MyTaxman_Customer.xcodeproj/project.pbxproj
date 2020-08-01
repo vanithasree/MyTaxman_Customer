@@ -56,6 +56,8 @@
 		3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */; };
 		3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14A58824CC053700FC235D /* OtpViewController.swift */; };
 		3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA6B24CC0819005F3855 /* TabBarViewController.swift */; };
+		3BBFD2C824D28C4A004B7AE4 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD2C724D28C4A004B7AE4 /* ChatTableViewCell.swift */; };
+		3BBFD2CA24D28C52004B7AE4 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BBFD2C924D28C52004B7AE4 /* ChatTableViewCell.xib */; };
 		3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */; };
 		3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */; };
 		3BF05BA724C95F0500E16081 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA624C95F0500E16081 /* Poppins-Regular.ttf */; };
@@ -172,6 +174,8 @@
 		204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		3B14A58824CC053700FC235D /* OtpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewController.swift; sourceTree = "<group>"; };
+		3BBFD2C724D28C4A004B7AE4 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		3BBFD2C924D28C52004B7AE4 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		3BF05BA624C95F0500E16081 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -503,6 +507,7 @@
 		18B2E62824C89CFF002A9CCE /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				3BBFD2C624D28C21004B7AE4 /* Inbox */,
 				1826253324CCBB3100DF7A4B /* Jobs */,
 			);
 			path = TableViewCells;
@@ -553,6 +558,15 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		3BBFD2C624D28C21004B7AE4 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				3BBFD2C724D28C4A004B7AE4 /* ChatTableViewCell.swift */,
+				3BBFD2C924D28C52004B7AE4 /* ChatTableViewCell.xib */,
+			);
+			path = Inbox;
 			sourceTree = "<group>";
 		};
 		3BF05BE824C96AF500E16081 /* WebServices */ = {
@@ -746,6 +760,7 @@
 				3BF05BAF24C95F4400E16081 /* Poppins-Thin.ttf in Resources */,
 				1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */,
 				1826253724CCBB4E00DF7A4B /* AddressTableViewCell.xib in Resources */,
+				3BBFD2CA24D28C52004B7AE4 /* ChatTableViewCell.xib in Resources */,
 				3BF05BA724C95F0500E16081 /* Poppins-Regular.ttf in Resources */,
 				3BF05BB124C95F4D00E16081 /* Poppins-ExtraLight.ttf in Resources */,
 			);
@@ -936,6 +951,7 @@
 				3BF05BD024C9634600E16081 /* NotificationExtension.swift in Sources */,
 				18F6AA6424CC0777005F3855 /* ChatListViewController.swift in Sources */,
 				18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */,
+				3BBFD2C824D28C4A004B7AE4 /* ChatTableViewCell.swift in Sources */,
 				3BF05BC924C9634600E16081 /* UITextViewExtension.swift in Sources */,
 				3BF05BB324C9632300E16081 /* LoadingIndicator.swift in Sources */,
 				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,

@@ -13,6 +13,7 @@ target 'MyTaxman_Customer' do
   pod 'SVPinView', '~> 1.0'
   pod 'GooglePlaces'
   pod 'BetterSegmentedControl', '~> 1.3'
+  pod 'FloatRatingView', '~> 4'
 
   # Pods for MyTaxman_Customer
 

@@ -23,6 +23,8 @@
 		1826254A24CDD33B00DF7A4B /* LeadApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254924CDD33B00DF7A4B /* LeadApiManager.swift */; };
 		1826254C24CDEE6F00DF7A4B /* TaxReturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */; };
 		1857C75E24CF37BE00E1DDAD /* JobsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857C75D24CF37BD00E1DDAD /* JobsListModel.swift */; };
+		1857C7B724D2927200E1DDAD /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857C7B524D2927200E1DDAD /* JobsTableViewCell.swift */; };
+		1857C7B824D2927200E1DDAD /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1857C7B624D2927200E1DDAD /* JobsTableViewCell.xib */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
@@ -131,6 +133,8 @@
 		1826254924CDD33B00DF7A4B /* LeadApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadApiManager.swift; sourceTree = "<group>"; };
 		1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxReturnViewController.swift; sourceTree = "<group>"; };
 		1857C75D24CF37BD00E1DDAD /* JobsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListModel.swift; sourceTree = "<group>"; };
+		1857C7B524D2927200E1DDAD /* JobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
+		1857C7B624D2927200E1DDAD /* JobsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTableViewCell.xib; sourceTree = "<group>"; };
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 			children = (
 				1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */,
 				1826253524CCBB4E00DF7A4B /* AddressTableViewCell.xib */,
+				1857C7B524D2927200E1DDAD /* JobsTableViewCell.swift */,
+				1857C7B624D2927200E1DDAD /* JobsTableViewCell.xib */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				1826253724CCBB4E00DF7A4B /* AddressTableViewCell.xib in Resources */,
 				3BF05BA724C95F0500E16081 /* Poppins-Regular.ttf in Resources */,
 				3BF05BB124C95F4D00E16081 /* Poppins-ExtraLight.ttf in Resources */,
+				1857C7B824D2927200E1DDAD /* JobsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,6 +979,7 @@
 				18F6AA5624CA0E63005F3855 /* ContactInfoViewController.swift in Sources */,
 				1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */,
 				1826253924CD362A00DF7A4B /* AccountServiceViewController.swift in Sources */,
+				1857C7B724D2927200E1DDAD /* JobsTableViewCell.swift in Sources */,
 				1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */,
 				18B2E63324C8AB50002A9CCE /* PageThreeViewController.swift in Sources */,
 			);
@@ -1140,13 +1148,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MKQJ3567U;
 				INFOPLIST_FILE = MyTaxman_Customer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-Customer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kuya.chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1159,13 +1168,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9MKQJ3567U;
 				INFOPLIST_FILE = MyTaxman_Customer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sunrise.MyTaxman-Customer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kuya.chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

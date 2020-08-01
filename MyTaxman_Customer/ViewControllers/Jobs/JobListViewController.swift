@@ -16,6 +16,7 @@ class JobListViewController: UIViewController {
     @IBOutlet weak var nameTitleLabel: UILabel!
     @IBOutlet weak var segmentView: BetterSegmentedControl!
     
+    @IBOutlet weak var jobsListTableView: UITableView!
     private var leadViewModel = LeadViewModel()
     
     var activeList : [Quotes] = []
@@ -29,6 +30,11 @@ class JobListViewController: UIViewController {
         
         
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getCustomerTaskListForActiveView()
+        //self.getCustomerTaskListForCompletedView()
     }
     
     func setupViewUI() {
@@ -47,6 +53,18 @@ class JobListViewController: UIViewController {
         }
         
         self.setUpSegmentViewControl(segmentControl: segmentView, bgColor: .white, titles: ["Active","Completed", "Closed"])
+        
+        
+        jobsListTableView.register(JobsTableViewCell.nib, forCellReuseIdentifier: JobsTableViewCell.identifier)
+        jobsListTableView.tableFooterView = UIView()
+        jobsListTableView.backgroundColor = ColorManager.white.color
+        jobsListTableView.separatorStyle = .none
+        jobsListTableView.estimatedRowHeight = 500
+        jobsListTableView.rowHeight = UITableView.automaticDimension
+        jobsListTableView.delegate = self
+        jobsListTableView.dataSource = self
+        
+        
     }
     
     func setUpSegmentViewControl(segmentControl : BetterSegmentedControl, bgColor:UIColor, titles:[String]) {
@@ -67,6 +85,8 @@ class JobListViewController: UIViewController {
         segmentControl.options = [.backgroundColor(UIColor.white.withAlphaComponent(0.4)),
                                   .indicatorViewBackgroundColor(UIColor.clear),
                                   .cornerRadius(10)]
+        segmentControl.addTarget(self, action: #selector(navigationSegmentedControlValueChanged(_:)), for: .valueChanged)
+        
         
     }
     
@@ -85,13 +105,16 @@ class JobListViewController: UIViewController {
                 else {
                     
                 }
+                doOnMain {
+                    self.jobsListTableView.reloadData()
+                }
                 
             } else if let alert = alert {
                 self.presentAlert(withTitle: "", message: alert.errorMessage)
             }
         }
-        
     }
+    
     func getCustomerTaskListForCompletedView() {
         LoadingIndicator.shared.show(forView: self.view)
         let params: Parameters = [
@@ -105,11 +128,14 @@ class JobListViewController: UIViewController {
                     self.completedList = result.desc?.ilist ?? []
                 }
                 
+                doOnMain {
+                    self.jobsListTableView.reloadData()
+                }
+                
             } else if let alert = alert {
                 self.presentAlert(withTitle: "", message: alert.errorMessage)
             }
         }
-        
     }
     
     
@@ -123,4 +149,92 @@ class JobListViewController: UIViewController {
      }
      */
     
+    // MARK: - Action handlers
+    @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
+        self.jobsListTableView.reloadData()
+        
+        /*  if sender.index == 0 {
+         print("Turning lights on.")
+         
+         } else {
+         print("Turning lights off.")
+         
+         }*/
+    }
+}
+
+extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch self.segmentView.index {
+        case 0:
+            return  self.activeList.count
+        case 1:
+            return self.completedList.count
+        case 2:
+            return self.closedList.count
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch self.segmentView.index {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: JobsTableViewCell.identifier) as? JobsTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            
+            
+            
+            cell.backgroundColor = .yellow
+            cell.actionBtn.tag = indexPath.row
+            cell.delegate = self
+            cell.selectionStyle = .none
+            return cell
+            
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: JobsTableViewCell.identifier) as? JobsTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.backgroundColor = .cyan
+            cell.actionBtn.tag = indexPath.row
+            cell.delegate = self
+            cell.selectionStyle = .none
+            return cell
+            
+        case 2:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: JobsTableViewCell.identifier) as? JobsTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.backgroundColor = .orange
+            cell.actionBtn.tag = indexPath.row
+            cell.delegate = self
+            cell.selectionStyle = .none
+            return cell
+            
+            
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500
+    }
+}
+extension JobListViewController : JobDetailsActionButtonDelegate {
+    func onTappedButton(_ tag: Int) {
+        print("Selected Button== \(tag)")
+    }
 }

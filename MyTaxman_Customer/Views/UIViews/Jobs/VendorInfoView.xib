@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VendorInfoView" customModule="MyTaxman_Customer" customModuleProvider="target">
+            <connections>
+                <outlet property="vendorInfoView" destination="iN0-l3-epB" id="awW-SH-6Rk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nEM-9K-jCv">
+                    <rect key="frame" x="5" y="5" width="404" height="90"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-0F-tNb">
+                            <rect key="frame" x="10" y="14.5" width="60.5" height="61"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="jlJ-0F-tNb" secondAttribute="height" id="TCs-iZ-moH"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-gD-h5Z">
+                            <rect key="frame" x="75.5" y="0.0" width="328.5" height="90"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suyambu Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIV-aq-nhP">
+                                    <rect key="frame" x="5" y="5" width="107.5" height="21"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Featured " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vI-WH-Fjv">
+                                    <rect key="frame" x="120" y="6.5" width="65.5" height="18.5"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0f-Qc-qho" customClass="FloatRatingView" customModule="FloatRatingView">
+                                    <rect key="frame" x="5" y="31" width="150" height="20"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="9i7-hk-7uf"/>
+                                        <constraint firstAttribute="width" constant="150" id="p3C-Yz-Pz0"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="Radio"/>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="RadioSelected"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site inspection Needed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPI-jS-UlP">
+                                    <rect key="frame" x="5" y="56" width="161" height="20"/>
+                                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="KIV-aq-nhP" firstAttribute="leading" secondItem="p0f-Qc-qho" secondAttribute="leading" id="05k-12-xOS"/>
+                                <constraint firstItem="9vI-WH-Fjv" firstAttribute="leading" secondItem="KIV-aq-nhP" secondAttribute="trailing" constant="7.5" id="5nA-VA-QNv"/>
+                                <constraint firstItem="p0f-Qc-qho" firstAttribute="top" secondItem="KIV-aq-nhP" secondAttribute="bottom" constant="5" id="6HV-PJ-qF7"/>
+                                <constraint firstItem="KIV-aq-nhP" firstAttribute="leading" secondItem="xfb-gD-h5Z" secondAttribute="leading" constant="5" id="J76-gF-S7g"/>
+                                <constraint firstItem="KIV-aq-nhP" firstAttribute="centerY" secondItem="9vI-WH-Fjv" secondAttribute="centerY" id="Nj1-th-wzT"/>
+                                <constraint firstItem="iPI-jS-UlP" firstAttribute="top" secondItem="p0f-Qc-qho" secondAttribute="bottom" constant="5" id="UGd-r8-dpM"/>
+                                <constraint firstItem="KIV-aq-nhP" firstAttribute="top" secondItem="xfb-gD-h5Z" secondAttribute="top" constant="5" id="eZF-fB-vqP"/>
+                                <constraint firstItem="KIV-aq-nhP" firstAttribute="leading" secondItem="iPI-jS-UlP" secondAttribute="leading" id="te6-Ct-EDe"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="jlJ-0F-tNb" firstAttribute="centerY" secondItem="nEM-9K-jCv" secondAttribute="centerY" id="GrF-TN-uWz"/>
+                        <constraint firstAttribute="bottom" secondItem="xfb-gD-h5Z" secondAttribute="bottom" id="JSf-0C-MBs"/>
+                        <constraint firstItem="xfb-gD-h5Z" firstAttribute="top" secondItem="nEM-9K-jCv" secondAttribute="top" id="a5S-0q-JP1"/>
+                        <constraint firstItem="xfb-gD-h5Z" firstAttribute="leading" secondItem="jlJ-0F-tNb" secondAttribute="trailing" constant="5" id="h4z-Im-fIu"/>
+                        <constraint firstItem="jlJ-0F-tNb" firstAttribute="width" secondItem="nEM-9K-jCv" secondAttribute="width" multiplier="0.15" id="oa4-I6-S2s"/>
+                        <constraint firstAttribute="trailing" secondItem="xfb-gD-h5Z" secondAttribute="trailing" id="r6d-6T-t2f"/>
+                        <constraint firstItem="jlJ-0F-tNb" firstAttribute="leading" secondItem="nEM-9K-jCv" secondAttribute="leading" constant="10" id="wkz-1G-gTm"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="nEM-9K-jCv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="V1q-ah-2WE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nEM-9K-jCv" secondAttribute="trailing" constant="5" id="YmA-OA-a8u"/>
+                <constraint firstItem="nEM-9K-jCv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="kAR-8b-cXo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nEM-9K-jCv" secondAttribute="bottom" constant="5" id="z30-7H-ia7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="118"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Radio" width="15" height="15"/>
+        <image name="RadioSelected" width="15" height="15"/>
+        <image name="profile" width="25" height="25"/>
+    </resources>
+</document>

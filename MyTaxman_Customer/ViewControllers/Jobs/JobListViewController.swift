@@ -89,7 +89,7 @@ class JobListViewController: UIViewController {
         
         
     }
-
+    
     
     func getCustomerTaskListForActiveView() {
         LoadingIndicator.shared.show(forView: self.view)
@@ -193,7 +193,6 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
             
             
             
-            
             cell.backgroundColor = .yellow
             cell.actionBtn.tag = indexPath.row
             cell.delegate = self
@@ -231,11 +230,15 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
+        return UITableView.automaticDimension
     }
 }
 extension JobListViewController : JobDetailsActionButtonDelegate {
     func onTappedButton(_ tag: Int) {
         print("Selected Button== \(tag)")
     }
+    func showActionSheetBasedOnMenuSelection() {
+        
+    }
+    
 }

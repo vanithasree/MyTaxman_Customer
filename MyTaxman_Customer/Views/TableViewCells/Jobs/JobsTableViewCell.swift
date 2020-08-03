@@ -37,8 +37,8 @@ class JobsTableViewCell: UITableViewCell {
     }
     
     func setCellViewUI() {
-        quoteTitleLabel.setMainTitle(titleText: "")
-        quoteStatusMessageLabel.setPopupTitle(titleText: "")
+        quoteTitleLabel.setMainTitle(titleText: "Test")
+        quoteStatusMessageLabel.setPopupTitle(titleText: "Welcome")
     }
     
     func setCellDataForQuoteStatusForZero(quoteData: Quotes) {

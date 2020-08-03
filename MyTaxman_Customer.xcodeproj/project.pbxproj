@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */; };
+		1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */; };
 		1826253024CCA41F00DF7A4B /* PageSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */; };
 		1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */; };
 		1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */; };
@@ -25,6 +26,8 @@
 		1857C75E24CF37BE00E1DDAD /* JobsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857C75D24CF37BD00E1DDAD /* JobsListModel.swift */; };
 		1857C7B724D2927200E1DDAD /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857C7B524D2927200E1DDAD /* JobsTableViewCell.swift */; };
 		1857C7B824D2927200E1DDAD /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1857C7B624D2927200E1DDAD /* JobsTableViewCell.xib */; };
+		187DDF0E24D68D2F00CBE610 /* VendorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187DDF0D24D68D2F00CBE610 /* VendorInfoView.xib */; };
+		187DDF1024D68D4C00CBE610 /* VendorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DDF0F24D68D4C00CBE610 /* VendorInfoView.swift */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
 		1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973E24C7281C000DFAB3 /* SceneDelegate.swift */; };
 		1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1888974524C7281F000DFAB3 /* Assets.xcassets */; };
@@ -124,6 +127,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelJobsListViewController.swift; sourceTree = "<group>"; };
 		1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSixViewController.swift; sourceTree = "<group>"; };
 		1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesViewController.swift; sourceTree = "<group>"; };
 		1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 		1857C75D24CF37BD00E1DDAD /* JobsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListModel.swift; sourceTree = "<group>"; };
 		1857C7B524D2927200E1DDAD /* JobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
 		1857C7B624D2927200E1DDAD /* JobsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobsTableViewCell.xib; sourceTree = "<group>"; };
+		187DDF0D24D68D2F00CBE610 /* VendorInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VendorInfoView.xib; sourceTree = "<group>"; };
+		187DDF0F24D68D4C00CBE610 /* VendorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorInfoView.swift; sourceTree = "<group>"; };
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1888973C24C7281C000DFAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1888973E24C7281C000DFAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -289,6 +295,15 @@
 			children = (
 				1826254324CDB94200DF7A4B /* JobsModel.swift */,
 				1857C75D24CF37BD00E1DDAD /* JobsListModel.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		187DDF0C24D68D1900CBE610 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				187DDF0D24D68D2F00CBE610 /* VendorInfoView.xib */,
+				187DDF0F24D68D4C00CBE610 /* VendorInfoView.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -530,6 +545,7 @@
 		18B2E62924C89D07002A9CCE /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				187DDF0C24D68D1900CBE610 /* Jobs */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -567,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				18F6AA6924CC07C1005F3855 /* JobListViewController.swift */,
+				1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -777,6 +794,7 @@
 				3BF05BA924C95F1300E16081 /* Poppins-SemiBold.ttf in Resources */,
 				3BF05BAF24C95F4400E16081 /* Poppins-Thin.ttf in Resources */,
 				1888974624C7281F000DFAB3 /* Assets.xcassets in Resources */,
+				187DDF0E24D68D2F00CBE610 /* VendorInfoView.xib in Resources */,
 				1826253724CCBB4E00DF7A4B /* AddressTableViewCell.xib in Resources */,
 				3BBFD2CA24D28C52004B7AE4 /* ChatTableViewCell.xib in Resources */,
 				3BF05BA724C95F0500E16081 /* Poppins-Regular.ttf in Resources */,
@@ -976,6 +994,7 @@
 				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,
 				3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */,
 				3B8274DA24D51AB9000E1617 /* InboxDetailsViewController.swift in Sources */,
+				187DDF1024D68D4C00CBE610 /* VendorInfoView.swift in Sources */,
 				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,
 				1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */,
 				1826253B24CD414C00DF7A4B /* FinancialServiceViewController.swift in Sources */,
@@ -1011,6 +1030,7 @@
 				18F6AA5624CA0E63005F3855 /* ContactInfoViewController.swift in Sources */,
 				1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */,
 				1826253924CD362A00DF7A4B /* AccountServiceViewController.swift in Sources */,
+				1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */,
 				1857C7B724D2927200E1DDAD /* JobsTableViewCell.swift in Sources */,
 				1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */,
 				18B2E63324C8AB50002A9CCE /* PageThreeViewController.swift in Sources */,

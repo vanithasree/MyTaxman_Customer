@@ -100,9 +100,28 @@
                     <view key="view" contentMode="scaleToFill" id="89L-an-a45">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xaz-0Q-lQj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="0Rb-rj-O16" id="Kiz-LM-m4O"/>
+                                    <outlet property="delegate" destination="0Rb-rj-O16" id="lPY-gQ-HBF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xaz-0Q-lQj" firstAttribute="leading" secondItem="Jtm-Xt-cf0" secondAttribute="leading" id="0cA-TB-3FL"/>
+                            <constraint firstItem="Jtm-Xt-cf0" firstAttribute="trailing" secondItem="xaz-0Q-lQj" secondAttribute="trailing" id="2d3-H6-0dd"/>
+                            <constraint firstItem="xaz-0Q-lQj" firstAttribute="top" secondItem="Jtm-Xt-cf0" secondAttribute="top" id="5fQ-Db-44U"/>
+                            <constraint firstItem="Jtm-Xt-cf0" firstAttribute="bottom" secondItem="xaz-0Q-lQj" secondAttribute="bottom" id="lZ4-WY-Z2t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jtm-Xt-cf0"/>
                     </view>
+                    <connections>
+                        <outlet property="quoteTableView" destination="xaz-0Q-lQj" id="CDg-p5-Kip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J0U-ht-PZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,9 +134,28 @@
                     <view key="view" contentMode="scaleToFill" id="gGk-Ic-IsV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GMd-FU-QW1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lbj-Ti-48d" id="jOA-ls-m13"/>
+                                    <outlet property="delegate" destination="Lbj-Ti-48d" id="aWB-Ql-jbU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GMd-FU-QW1" firstAttribute="top" secondItem="XMt-Pw-B5w" secondAttribute="top" id="B7q-6l-ldA"/>
+                            <constraint firstItem="XMt-Pw-B5w" firstAttribute="bottom" secondItem="GMd-FU-QW1" secondAttribute="bottom" id="F54-ob-Fs4"/>
+                            <constraint firstItem="XMt-Pw-B5w" firstAttribute="trailing" secondItem="GMd-FU-QW1" secondAttribute="trailing" id="XA3-9n-zTP"/>
+                            <constraint firstItem="GMd-FU-QW1" firstAttribute="leading" secondItem="XMt-Pw-B5w" secondAttribute="leading" id="s32-pi-XcX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XMt-Pw-B5w"/>
                     </view>
+                    <connections>
+                        <outlet property="chatTableView" destination="GMd-FU-QW1" id="ayS-vm-7ul"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfF-pi-KAe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,9 +168,28 @@
                     <view key="view" contentMode="scaleToFill" id="1yM-iM-0oH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hwb-C4-Xxu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Tr-x3-6Er" id="drR-dR-Xyo"/>
+                                    <outlet property="delegate" destination="8Tr-x3-6Er" id="a8W-ey-7vp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hwb-C4-Xxu" firstAttribute="top" secondItem="Y8a-RL-NO5" secondAttribute="top" id="DoQ-AA-b27"/>
+                            <constraint firstItem="Y8a-RL-NO5" firstAttribute="trailing" secondItem="hwb-C4-Xxu" secondAttribute="trailing" id="h7y-t2-ofR"/>
+                            <constraint firstItem="Y8a-RL-NO5" firstAttribute="bottom" secondItem="hwb-C4-Xxu" secondAttribute="bottom" id="nLY-oX-C2v"/>
+                            <constraint firstItem="hwb-C4-Xxu" firstAttribute="leading" secondItem="Y8a-RL-NO5" secondAttribute="leading" id="nxt-tq-tRa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Y8a-RL-NO5"/>
                     </view>
+                    <connections>
+                        <outlet property="profileTableView" destination="hwb-C4-Xxu" id="kpY-VA-vUx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2J-r9-97p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -61,6 +61,8 @@
 		3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */; };
 		3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14A58824CC053700FC235D /* OtpViewController.swift */; };
 		3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA6B24CC0819005F3855 /* TabBarViewController.swift */; };
+		3B51F49824D5A633007A80A2 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B51F49724D5A633007A80A2 /* QuoteTableViewCell.swift */; };
+		3B51F49A24D5A639007A80A2 /* QuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B51F49924D5A639007A80A2 /* QuoteTableViewCell.xib */; };
 		3B8274D424D51A6B000E1617 /* QuoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D324D51A6B000E1617 /* QuoteDetailsViewController.swift */; };
 		3B8274D624D51A77000E1617 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D524D51A77000E1617 /* ChatViewController.swift */; };
 		3B8274D824D51A90000E1617 /* BusinessProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D724D51A90000E1617 /* BusinessProfileViewController.swift */; };
@@ -188,6 +190,8 @@
 		204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.debug.xcconfig"; sourceTree = "<group>"; };
 		3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		3B14A58824CC053700FC235D /* OtpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewController.swift; sourceTree = "<group>"; };
+		3B51F49724D5A633007A80A2 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
+		3B51F49924D5A639007A80A2 /* QuoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuoteTableViewCell.xib; sourceTree = "<group>"; };
 		3B8274D324D51A6B000E1617 /* QuoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsViewController.swift; sourceTree = "<group>"; };
 		3B8274D524D51A77000E1617 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3B8274D724D51A90000E1617 /* BusinessProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessProfileViewController.swift; sourceTree = "<group>"; };
@@ -600,6 +604,8 @@
 			children = (
 				3BBFD2C724D28C4A004B7AE4 /* ChatTableViewCell.swift */,
 				3BBFD2C924D28C52004B7AE4 /* ChatTableViewCell.xib */,
+				3B51F49724D5A633007A80A2 /* QuoteTableViewCell.swift */,
+				3B51F49924D5A639007A80A2 /* QuoteTableViewCell.xib */,
 			);
 			path = Inbox;
 			sourceTree = "<group>";
@@ -786,6 +792,7 @@
 				3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */,
 				18F6AA6E24CC085F005F3855 /* Jobs.storyboard in Resources */,
 				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,
+				3B51F49A24D5A639007A80A2 /* QuoteTableViewCell.xib in Resources */,
 				3BF05BAB24C95F2600E16081 /* Poppins-Black.ttf in Resources */,
 				18F6AA5F24CC074B005F3855 /* Inbox.storyboard in Resources */,
 				18B2E62D24C89D21002A9CCE /* LeadsCollectionViewCell.xib in Resources */,
@@ -993,6 +1000,7 @@
 				3BF05BB324C9632300E16081 /* LoadingIndicator.swift in Sources */,
 				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,
 				3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */,
+				3B51F49824D5A633007A80A2 /* QuoteTableViewCell.swift in Sources */,
 				3B8274DA24D51AB9000E1617 /* InboxDetailsViewController.swift in Sources */,
 				187DDF1024D68D4C00CBE610 /* VendorInfoView.swift in Sources */,
 				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,

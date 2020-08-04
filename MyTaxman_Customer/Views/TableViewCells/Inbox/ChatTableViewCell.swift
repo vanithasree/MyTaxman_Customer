@@ -40,7 +40,7 @@ class ChatTableViewCell: UITableViewCell {
         
         profileImageView.cornerRadius = profileImageView.frame.size.width / 2
         profileImageView.contentMode = .scaleAspectFill
-
+        
         deliveryStatusImageView.contentMode = .scaleAspectFit
         
         nameLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
@@ -52,5 +52,33 @@ class ChatTableViewCell: UITableViewCell {
         chatLabel.font  = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
         
         lastMessageLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
+    }
+    
+    func setValue(data: Inboxlist){
+        profileImageView.load(from: data.profile_pic ?? "")
+        nameLabel.text = data.vendorname ?? ""
+        var quote_status = ""
+        switch data.quote_status ?? "" {
+        case "0":
+            quote_status = "Some one is quoted"
+            break
+        case "1":
+            quote_status = "Hired"
+            break
+        case "2":
+            quote_status = "Customer quotes declined"
+            break
+        case "3":
+            quote_status = "Expired"
+            break
+        case "4":
+            quote_status = "Complete the task"
+            break
+        default:
+            break
+        }
+        jobStatusLabel.text = " \(quote_status) "
+        chatLabel.text = data.business_name ?? ""
+        lastMessageLabel.text = data.rmsg?.first?.recent_message ?? ""
     }
 }

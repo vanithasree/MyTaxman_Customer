@@ -127,40 +127,6 @@
             </objects>
             <point key="canvasLocation" x="1322" y="104"/>
         </scene>
-        <!--Chat View Controller-->
-        <scene sceneID="lJF-J2-U5l">
-            <objects>
-                <viewController storyboardIdentifier="ChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lbj-Ti-48d" customClass="ChatViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gGk-Ic-IsV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GMd-FU-QW1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Lbj-Ti-48d" id="jOA-ls-m13"/>
-                                    <outlet property="delegate" destination="Lbj-Ti-48d" id="aWB-Ql-jbU"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="GMd-FU-QW1" firstAttribute="top" secondItem="XMt-Pw-B5w" secondAttribute="top" id="B7q-6l-ldA"/>
-                            <constraint firstItem="XMt-Pw-B5w" firstAttribute="bottom" secondItem="GMd-FU-QW1" secondAttribute="bottom" id="F54-ob-Fs4"/>
-                            <constraint firstItem="XMt-Pw-B5w" firstAttribute="trailing" secondItem="GMd-FU-QW1" secondAttribute="trailing" id="XA3-9n-zTP"/>
-                            <constraint firstItem="GMd-FU-QW1" firstAttribute="leading" secondItem="XMt-Pw-B5w" secondAttribute="leading" id="s32-pi-XcX"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="XMt-Pw-B5w"/>
-                    </view>
-                    <connections>
-                        <outlet property="chatTableView" destination="GMd-FU-QW1" id="ayS-vm-7ul"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vfF-pi-KAe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2037" y="102"/>
-        </scene>
         <!--Business Profile View Controller-->
         <scene sceneID="rez-H1-Hdq">
             <objects>
@@ -194,6 +160,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2J-r9-97p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2739" y="104"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="9Xp-yc-8s3">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ffv-5g-3LP" customClass="ChatViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="36l-6E-2ou">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rPY-oD-TsY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="755.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ffv-5g-3LP" id="6Lt-VD-2qM"/>
+                                    <outlet property="delegate" destination="ffv-5g-3LP" id="O0T-sx-dTL"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCp-fv-rok">
+                                <rect key="frame" x="0.0" y="799.5" width="414" height="62.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-6W-mEH">
+                                        <rect key="frame" x="20" y="6" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mbn-6W-mEH" secondAttribute="height" multiplier="1:1" id="TlS-2G-7rb"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapMediaAction:" destination="ffv-5g-3LP" eventType="touchUpInside" id="hFI-DH-W6S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86I-Gy-yGr">
+                                        <rect key="frame" x="344" y="6" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="86I-Gy-yGr" secondAttribute="height" multiplier="1:1" id="Qi6-NK-Y96"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="didTapSendAction:" destination="ffv-5g-3LP" eventType="touchUpInside" id="IDl-lj-a1l"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bdx-lE-TAn">
+                                        <rect key="frame" x="80" y="6" width="254" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ffv-5g-3LP" id="yjV-sU-1pZ"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="mbn-6W-mEH" firstAttribute="leading" secondItem="dCp-fv-rok" secondAttribute="leading" constant="20" id="5dT-Nj-5LV"/>
+                                    <constraint firstItem="mbn-6W-mEH" firstAttribute="height" secondItem="dCp-fv-rok" secondAttribute="height" multiplier="0.8" id="RnC-vN-zH0"/>
+                                    <constraint firstItem="bdx-lE-TAn" firstAttribute="centerY" secondItem="dCp-fv-rok" secondAttribute="centerY" id="WMD-zc-Oxu"/>
+                                    <constraint firstItem="86I-Gy-yGr" firstAttribute="height" secondItem="dCp-fv-rok" secondAttribute="height" multiplier="0.8" id="ccQ-T9-AmV"/>
+                                    <constraint firstItem="86I-Gy-yGr" firstAttribute="centerY" secondItem="dCp-fv-rok" secondAttribute="centerY" id="cke-CJ-h5S"/>
+                                    <constraint firstItem="bdx-lE-TAn" firstAttribute="leading" secondItem="mbn-6W-mEH" secondAttribute="trailing" constant="10" id="d5a-it-fhD"/>
+                                    <constraint firstItem="bdx-lE-TAn" firstAttribute="height" secondItem="dCp-fv-rok" secondAttribute="height" multiplier="0.8" id="fEB-H3-Dv6"/>
+                                    <constraint firstItem="mbn-6W-mEH" firstAttribute="centerY" secondItem="dCp-fv-rok" secondAttribute="centerY" id="fEB-mr-Ad6"/>
+                                    <constraint firstAttribute="trailing" secondItem="86I-Gy-yGr" secondAttribute="trailing" constant="20" id="oDA-cE-3wH"/>
+                                    <constraint firstItem="86I-Gy-yGr" firstAttribute="leading" secondItem="bdx-lE-TAn" secondAttribute="trailing" constant="10" id="xKB-hp-SAl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rPY-oD-TsY" firstAttribute="trailing" secondItem="071-6c-NJW" secondAttribute="trailing" id="3nf-EC-uXG"/>
+                            <constraint firstItem="071-6c-NJW" firstAttribute="bottom" secondItem="dCp-fv-rok" secondAttribute="bottom" id="J2n-NJ-Hrj"/>
+                            <constraint firstItem="dCp-fv-rok" firstAttribute="leading" secondItem="071-6c-NJW" secondAttribute="leading" id="UzN-Go-OrB"/>
+                            <constraint firstItem="071-6c-NJW" firstAttribute="trailing" secondItem="dCp-fv-rok" secondAttribute="trailing" id="jV7-H3-lrl"/>
+                            <constraint firstItem="dCp-fv-rok" firstAttribute="height" secondItem="36l-6E-2ou" secondAttribute="height" multiplier="0.07" id="oD1-Ck-1ej"/>
+                            <constraint firstItem="dCp-fv-rok" firstAttribute="top" secondItem="rPY-oD-TsY" secondAttribute="bottom" id="oXQ-5B-vZw"/>
+                            <constraint firstItem="rPY-oD-TsY" firstAttribute="top" secondItem="071-6c-NJW" secondAttribute="top" id="rrF-4M-nxb"/>
+                            <constraint firstItem="rPY-oD-TsY" firstAttribute="leading" secondItem="071-6c-NJW" secondAttribute="leading" id="s8h-E6-czx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="071-6c-NJW"/>
+                    </view>
+                    <connections>
+                        <outlet property="InputView" destination="dCp-fv-rok" id="CfD-Te-Hso"/>
+                        <outlet property="chatTableView" destination="rPY-oD-TsY" id="abl-Dc-0Up"/>
+                        <outlet property="chatTextView" destination="bdx-lE-TAn" id="nIf-El-L9x"/>
+                        <outlet property="mediaButton" destination="mbn-6W-mEH" id="PH2-tx-1qN"/>
+                        <outlet property="sentButton" destination="86I-Gy-yGr" id="wDN-33-zgF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NH3-iI-8Sb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036.2318840579712" y="101.78571428571428"/>
         </scene>
     </scenes>
 </document>

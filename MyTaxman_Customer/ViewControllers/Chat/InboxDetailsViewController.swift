@@ -16,6 +16,7 @@ class InboxDetailsViewController: UIViewController {
     private lazy var viewControllers: [UIViewController] = {
          return self.preparedViewControllers()
      }()
+    var inbox: Inboxlist?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
@@ -25,14 +26,18 @@ class InboxDetailsViewController: UIViewController {
     
     private func preparedViewControllers() -> [UIViewController] {
         let quoteDetailsVC = QuoteDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+        quoteDetailsVC.inbox = inbox
+        
         let chatVC = ChatViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+        chatVC.inbox = inbox
+
         let businessVC = BusinessProfileViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+        businessVC.inbox = inbox
+
         return [
             quoteDetailsVC,chatVC,businessVC
         ]
     }
-    
-    
     func setUpSegmentViewControl(segmentControl : BetterSegmentedControl, bgColor:UIColor, titles:[String]) {
         
         let normaFont = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(15.0))
@@ -51,7 +56,7 @@ class InboxDetailsViewController: UIViewController {
         segmentControl.options = [.backgroundColor(UIColor.white.withAlphaComponent(0.4)),
                                   .indicatorViewBackgroundColor(UIColor.clear),
                                   .cornerRadius(10)]
-        segmentControl.addTarget(self, action: #selector(self.controlValueChanged(_:)), for: .valueChanged)        
+        segmentControl.addTarget(self, action: #selector(self.controlValueChanged(_:)), for: .valueChanged)
     }
 
     @IBAction func controlValueChanged(_ sender: BetterSegmentedControl) {
@@ -74,7 +79,7 @@ class InboxDetailsViewController: UIViewController {
                 x: UIScreen.main.bounds.width * CGFloat(index),
                 y: 0,
                 width: view.frame.width,
-                height: view.frame.height
+                height: containerView.frame.height
             )
             addChild(viewController)
             scrollView.addSubview(viewController.view, options: .useAutoresize) // module's extension
@@ -82,8 +87,6 @@ class InboxDetailsViewController: UIViewController {
         }
     }
     
-
-
     /*
     // MARK: - Navigation
 
@@ -93,7 +96,6 @@ class InboxDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 extension InboxDetailsViewController: UIScrollViewDelegate {

@@ -106,7 +106,4 @@ let addressLine2Required = "Address Line 2 field is required"
 let addressLine3Required = "Landmark or direction field is required"
 let parishRequired = "Parish field is required"
 
-
-
-
-
+let messgeRequired = "Please enter message!"//"Password field is required"

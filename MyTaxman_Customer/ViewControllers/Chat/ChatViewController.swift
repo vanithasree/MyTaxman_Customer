@@ -7,19 +7,40 @@
 //
 
 import UIKit
+import Alamofire
 
 class ChatViewController: UIViewController {
     @IBOutlet var chatTableView: UITableView!
+    var inbox: Inboxlist?
+    var chatList : [Chat] = []
+    private var inboxViewModel = InboxViewModel()
+    @IBOutlet var chatTextView: UITextView!
+    @IBOutlet var InputView: UIView!
+    @IBOutlet var mediaButton: UIButton!
+    @IBOutlet var sentButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupViews()
+        requestChat()
     }
     
     func setupViews(){
-        chatTableView.register(QuoteTableViewCell.nib, forCellReuseIdentifier: QuoteTableViewCell.identifier)
+        InputView.backgroundColor = ColorManager.backgroundGrey.color
+        chatTextView.backgroundColor = ColorManager.white.color
+        chatTextView.text = ""
+        chatTextView.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
+        chatTextView.placeholder = "Write a message"
+        doOnMain {
+            self.chatTextView.cornerRadius = self.chatTextView.frame.height / 2
+        }
+        chatTableView.register(LeftViewCell.nib, forCellReuseIdentifier: LeftViewCell.identifier)
+        chatTableView.register(RightViewCell.nib, forCellReuseIdentifier: RightViewCell.identifier)
+        chatTableView.rowHeight = UITableView.automaticDimension
         chatTableView.tableFooterView = UIView()
+        chatTableView.separatorStyle = .none
+        chatTableView.backgroundColor = UIColor(hexString: "E4DDD6")
         chatTableView.reloadData()
     }
     
@@ -33,21 +54,102 @@ class ChatViewController: UIViewController {
      }
      */
     
+    @IBAction func didTapMediaAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func didTapSendAction(_ sender: Any) {
+        self.view.endEditing(true)
+        let verifyMessage : ValidationMessage = inboxViewModel.validateMessage(text: chatTextView.text)
+        if verifyMessage.status {
+            requestSendChat()
+        }else {
+            self.presentAlert(withTitle: "", message: verifyMessage.errorMessage ?? "") {}
+        }
+    }
 }
 
 extension ChatViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+         if (chatList.count > 0){
+             tableView.backgroundView = nil
+             return 1
+         }
+         let noDataView : NoDataView = UIView.fromNib()
+         noDataView.frame = tableView.bounds
+         tableView.backgroundView = noDataView
+         noDataView.setData(information: "You can start messaging with a business once they have sent you a quote")
+         return 0
+     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return chatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: QuoteTableViewCell.identifier) else { return UITableViewCell() }
-        return cell
+        let message: Chat = chatList[indexPath.row]
+        if message.sent_by ?? "" == "Vendor" {
+            guard let cell : LeftViewCell = tableView.dequeueReusableCell(withIdentifier: LeftViewCell.identifier) as? LeftViewCell else { return UITableViewCell() }
+            cell.configureCell(data: message)
+            return cell
+        } else {
+            guard let cell : RightViewCell = tableView.dequeueReusableCell(withIdentifier: RightViewCell.identifier) as? RightViewCell else { return UITableViewCell() }
+            cell.configureCell(data: message)
+            return cell
+        }
     }
 }
 
-extension ChatViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Utility.dynamicSize(60)
+extension ChatViewController {
+    @objc func requestChat() {
+        LoadingIndicator.shared.show(forView: self.view)
+        let params: Parameters = [
+            "customerid": UserDetails.shared.userId ,
+            "vendorid" : inbox?.vendorid ?? "",
+            "taskid" : inbox?.taskid ?? "",
+        ]
+        inboxViewModel.requestChat(input: params) { (result: ChatBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    self.chatList = result.desc ?? []
+                    doOnMain {
+                        self.chatTableView.reloadData()
+                    }
+                }else{
+                    print("No response found.")
+                    self.presentAlert(withTitle: error, message: "")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
+    }
+    
+    func requestSendChat() {
+        LoadingIndicator.shared.show(forView: self.view)
+        let params: Parameters = [
+            "customerid": UserDetails.shared.userId ,
+            "vendorid" : inbox?.vendorid ?? "",
+            "taskid" : inbox?.taskid ?? "",
+            "chatmessage": chatTextView.text ?? "",
+            "sender": "Customer",
+            "device_currentdatetime" : Date().toString(format: "yyyy-MM-dd HH:mm:ss"),
+            "chat_pic": ""
+        ]
+        inboxViewModel.requestSendChat(input: params) { (result: SendChatBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if let success = result.code, success == "1" {
+                    self.chatTextView.text = ""
+                    self.perform(#selector(self.requestChat), with: nil, afterDelay: 0.1)
+                }else{
+                    print("No response found.")
+                    self.presentAlert(withTitle: error, message: "Try again")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
     }
 }

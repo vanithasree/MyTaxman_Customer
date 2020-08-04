@@ -49,7 +49,7 @@ class LoadingIndicator: UIView {
     
     /// Show Indicator View with animation
     func show(forView: UIView, useAutoLayout: Bool = false) {
-        self.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        self.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         
         if let previousLoader = forView.subviews.filter({$0.tag == 101011 }).first as? LoadingIndicator {
             previousLoader.hide()

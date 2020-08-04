@@ -7,10 +7,19 @@
 //
 
 import UIKit
-
+struct QuoteDetail {
+    let title: String!
+}
 class QuoteDetailsViewController: UIViewController {
     @IBOutlet var quoteTableView: UITableView!
-    
+    var inbox: Inboxlist?
+    var quoteDetailList : [QuoteDetail] = [.init(title: "Flat Estimated Cost"),
+                                           .init(title: "Site Inspection"),
+                                           .init(title: "More Info"),
+                                           .init(title: "Additional Info"),
+                                           .init(title: "Quote Received On"),
+                                          ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,11 +46,12 @@ class QuoteDetailsViewController: UIViewController {
 
 extension QuoteDetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return quoteDetailList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: QuoteTableViewCell.identifier) else { return UITableViewCell() }
+        guard let cell : QuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: QuoteTableViewCell.identifier) as? QuoteTableViewCell else { return UITableViewCell() }
+        cell.setValue(data: quoteDetailList[indexPath.row], index: indexPath.row, inbox: inbox)
         return cell
     }
 }

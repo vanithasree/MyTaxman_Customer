@@ -10,7 +10,8 @@ import UIKit
 
 class BusinessProfileViewController: UIViewController {
     @IBOutlet var profileTableView: UITableView!
-    
+    var inbox: Inboxlist?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

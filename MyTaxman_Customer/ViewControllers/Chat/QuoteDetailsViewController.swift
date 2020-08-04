@@ -28,6 +28,7 @@ class QuoteDetailsViewController: UIViewController {
     
     func setupViews(){
         quoteTableView.register(QuoteTableViewCell.nib, forCellReuseIdentifier: QuoteTableViewCell.identifier)
+        quoteTableView.estimatedRowHeight = UITableView.automaticDimension
         quoteTableView.tableFooterView = UIView()
         quoteTableView.reloadData()
     }
@@ -58,6 +59,6 @@ extension QuoteDetailsViewController: UITableViewDataSource {
 
 extension QuoteDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Utility.dynamicSize(60)
+        return UITableView.automaticDimension
     }
 }

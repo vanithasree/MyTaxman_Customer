@@ -14,10 +14,11 @@ class ChatViewController: UIViewController {
     var inbox: Inboxlist?
     var chatList : [Chat] = []
     private var inboxViewModel = InboxViewModel()
-    @IBOutlet var chatTextView: UITextView!
+    @IBOutlet var chatTextView: ChatTextInputView!
     @IBOutlet var InputView: UIView!
     @IBOutlet var mediaButton: UIButton!
     @IBOutlet var sentButton: UIButton!
+    @IBOutlet var chatViewHeightConstraints: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class ChatViewController: UIViewController {
         chatTextView.text = ""
         chatTextView.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
         chatTextView.placeholder = "Write a message"
+        chatTextView.delegate = self
         doOnMain {
             self.chatTextView.cornerRadius = self.chatTextView.frame.height / 2
         }
@@ -71,16 +73,16 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-         if (chatList.count > 0){
-             tableView.backgroundView = nil
-             return 1
-         }
-         let noDataView : NoDataView = UIView.fromNib()
-         noDataView.frame = tableView.bounds
-         tableView.backgroundView = noDataView
-         noDataView.setData(information: "You can start messaging with a business once they have sent you a quote")
-         return 0
-     }
+        if (chatList.count > 0){
+            tableView.backgroundView = nil
+            return 1
+        }
+        let noDataView : NoDataView = UIView.fromNib()
+        noDataView.frame = tableView.bounds
+        tableView.backgroundView = noDataView
+        noDataView.setData(information: "You can start messaging with a business once they have sent you a quote")
+        return 0
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatList.count
@@ -141,7 +143,11 @@ extension ChatViewController {
             LoadingIndicator.shared.hide()
             if let result = result {
                 if let success = result.code, success == "1" {
-                    self.chatTextView.text = ""
+                    doOnMain {
+                        self.chatTextView.text = ""
+                        self.chatViewHeightConstraints.constant = 60
+                        self.chatViewHeightConstraints.isActive = true
+                    }
                     self.perform(#selector(self.requestChat), with: nil, afterDelay: 0.1)
                 }else{
                     print("No response found.")
@@ -151,5 +157,40 @@ extension ChatViewController {
                 self.presentAlert(withTitle: "", message: alert.errorMessage)
             }
         }
+    }
+}
+
+// MARK: - UITextViewDelegate
+extension ChatViewController : UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+        let textSize = chatTextView.sizeThatFits(CGSize(width: chatTextView.bounds.width, height: CGFloat.greatestFiniteMagnitude))
+        if textSize.height > 20 {
+            let newHeight = textSize.height + 25
+            if newHeight > ContainerViewHeight.maximum.rawValue {
+                chatViewHeightConstraints.constant = ContainerViewHeight.maximum.rawValue
+            } else {
+                chatViewHeightConstraints.constant = newHeight
+            }
+        } else {
+            chatViewHeightConstraints.constant = ContainerViewHeight.minimum.rawValue
+        }
+        chatViewHeightConstraints.isActive = true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        chatTextView.enablesReturnKeyAutomatically = false
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText = textView.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let changedText = currentText.replacingCharacters(in: stringRange, with: text)
+        return changedText.count <= MessengerConstant.maximumCharCount
     }
 }

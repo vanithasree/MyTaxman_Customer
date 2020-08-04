@@ -129,6 +129,7 @@
 		3BF05BF224C973E900E16081 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BF124C973E900E16081 /* BaseViewController.swift */; };
 		3BF05BF524C9920D00E16081 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BF424C9920D00E16081 /* AuthViewModel.swift */; };
 		3BF05BF824C9936400E16081 /* AuthApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BF724C9936400E16081 /* AuthApiManager.swift */; };
+		3BFB7CFB24D98A8400065135 /* ChatTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB7CF924D98A8400065135 /* ChatTextInputView.swift */; };
 		78B494BAE0D54EE19A125A1D /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DEF4EEFA743F15959C3A9CC /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework */; };
 		7B5C58902D8716F2B47499B1 /* Pods_MyTaxman_Customer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A808644CBE221222169888A /* Pods_MyTaxman_Customer.framework */; };
 /* End PBXBuildFile section */
@@ -280,6 +281,7 @@
 		3BF05BF124C973E900E16081 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		3BF05BF424C9920D00E16081 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		3BF05BF724C9936400E16081 /* AuthApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthApiManager.swift; sourceTree = "<group>"; };
+		3BFB7CF924D98A8400065135 /* ChatTextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextInputView.swift; sourceTree = "<group>"; };
 		48619F62146DF708E2A60C90 /* Pods-MyTaxman_CustomerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_CustomerTests.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_CustomerTests/Pods-MyTaxman_CustomerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DEF4EEFA743F15959C3A9CC /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB8A480B1904D8FE5D8DEB4 /* Pods-MyTaxman_Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.release.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.release.xcconfig"; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 		1888977224C72866000DFAB3 /* Utitlities */ = {
 			isa = PBXGroup;
 			children = (
+				3BFB7CF924D98A8400065135 /* ChatTextInputView.swift */,
 				3BF05BE824C96AF500E16081 /* WebServices */,
 				3BF05BD624C96AEC00E16081 /* CameraHandler.swift */,
 				3BF05BDE24C96AEC00E16081 /* ColorManager.swift */,
@@ -1148,6 +1151,7 @@
 				3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */,
 				3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */,
 				3BF05BE324C96AEC00E16081 /* Config.swift in Sources */,
+				3BFB7CFB24D98A8400065135 /* ChatTextInputView.swift in Sources */,
 				1826253F24CD481100DF7A4B /* AuditServiceViewController.swift in Sources */,
 				1867F02324D88E7000A69418 /* CallViewController.swift in Sources */,
 				3BF05BCE24C9634600E16081 /* UIButtonExtension.swift in Sources */,

@@ -14,6 +14,15 @@ extension UIView {
         return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
     }
     
+    /// Add shadow
+    func addShadow() {
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowRadius = 10
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 1, height: 0)
+        layer.masksToBounds = false
+    }
+    
     var cornerRadius: CGFloat{
         set{
             self.layer.cornerRadius = newValue

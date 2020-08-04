@@ -17,30 +17,19 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-K1-lzv">
                     <rect key="frame" x="0.0" y="0.0" width="405" height="104"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FZR-AM-sXE">
-                            <rect key="frame" x="20" y="5" width="365" height="94"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-7b-Bad">
-                                    <rect key="frame" x="0.0" y="0.0" width="365" height="47"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpt-Ym-K2N">
-                                    <rect key="frame" x="0.0" y="47" width="365" height="47"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvC-gF-xzZ">
+                            <rect key="frame" x="20" y="10" width="365" height="84"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="FZR-AM-sXE" firstAttribute="top" secondItem="ZYT-K1-lzv" secondAttribute="top" constant="5" id="I7h-Er-koc"/>
-                        <constraint firstAttribute="bottom" secondItem="FZR-AM-sXE" secondAttribute="bottom" constant="5" id="KhR-ku-cNZ"/>
-                        <constraint firstAttribute="trailing" secondItem="FZR-AM-sXE" secondAttribute="trailing" constant="20" id="NQn-Zn-gzK"/>
-                        <constraint firstItem="FZR-AM-sXE" firstAttribute="leading" secondItem="ZYT-K1-lzv" secondAttribute="leading" constant="20" id="PVm-Gc-eKK"/>
+                        <constraint firstAttribute="trailing" secondItem="JvC-gF-xzZ" secondAttribute="trailing" constant="20" id="LDA-NK-a1T"/>
+                        <constraint firstItem="JvC-gF-xzZ" firstAttribute="leading" secondItem="ZYT-K1-lzv" secondAttribute="leading" constant="20" id="Vso-po-mUP"/>
+                        <constraint firstAttribute="bottom" secondItem="JvC-gF-xzZ" secondAttribute="bottom" constant="10" id="mnF-iL-6J7"/>
+                        <constraint firstItem="JvC-gF-xzZ" firstAttribute="top" secondItem="ZYT-K1-lzv" secondAttribute="top" constant="10" id="qGZ-K6-Vcw"/>
                     </constraints>
                 </view>
             </subviews>
@@ -56,8 +45,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="subTitleLabel" destination="rpt-Ym-K2N" id="KWz-yD-Ha4"/>
-                <outlet property="titleLabel" destination="J2G-7b-Bad" id="CCW-b6-W4u"/>
+                <outlet property="titleLabel" destination="JvC-gF-xzZ" id="VCI-KF-zZK"/>
             </connections>
             <point key="canvasLocation" x="131.15942028985509" y="-167.41071428571428"/>
         </view>

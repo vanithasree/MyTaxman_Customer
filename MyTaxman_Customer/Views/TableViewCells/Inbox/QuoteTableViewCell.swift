@@ -10,7 +10,7 @@ import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subTitleLabel: UILabel!
+//    @IBOutlet var subTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,30 +35,35 @@ class QuoteTableViewCell: UITableViewCell {
     func setupViews(){
         titleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
         
-        subTitleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
-        subTitleLabel.textColor = ColorManager.lightGrey.color
+//        subTitleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
+//        subTitleLabel.textColor = ColorManager.lightGrey.color
     }
     
     func setValue(data: QuoteDetail, index: Int, inbox: Inboxlist?){
+        var text = ""
         switch index {
         case 0:
-            subTitleLabel.text = (inbox?.cost_estimate_flat ?? "").isBlank ? "$0" : "$\(inbox?.cost_estimate_flat ?? "0")"
+            text = (inbox?.cost_estimate_flat ?? "").isBlank ? "$0" : "$\(inbox?.cost_estimate_flat ?? "0")"
             break
         case 1:
-            subTitleLabel.text = inbox?.site_inspection ?? ""
+            text = inbox?.site_inspection ?? ""
             break
         case 2:
-            subTitleLabel.text = inbox?.more_information ?? ""
+            text = inbox?.more_information ?? ""
             break
         case 3:
-            subTitleLabel.text = inbox?.additional_comments ?? "-"
+            text = inbox?.additional_comments ?? "-"
             break
         case 4:
-            subTitleLabel.text = (inbox?.quote_accepted_on ?? "").toDate(withFormat: "yyyy-MM-dd HH:mm:ss")?.toString(format: "dd MMM yyyy") ?? ""
+            text = (inbox?.quote_accepted_on ?? "").toDate(withFormat: "yyyy-MM-dd HH:mm:ss")?.toString(format: "dd MMM yyyy") ?? ""
             break
         default:
             break
         }
-        titleLabel.text = data.title 
+        titleLabel.text = "\(data.title ?? "")\n\(text)"
+        let balanceAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: titleLabel.text ?? "")
+        balanceAttributedString.setColorForText(textForAttribute: "\(text)", withColor: ColorManager.lightGrey.color, withFont: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))!)
+        balanceAttributedString.setLineSpaceForText(lineSpace: 3, alignment: titleLabel.textAlignment)
+        titleLabel.attributedText = balanceAttributedString
     }
 }

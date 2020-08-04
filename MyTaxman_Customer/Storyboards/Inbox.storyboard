@@ -170,7 +170,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rPY-oD-TsY">
-                                <rect key="frame" x="0.0" y="44" width="414" height="755.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="760.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ffv-5g-3LP" id="6Lt-VD-2qM"/>
@@ -178,10 +178,10 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCp-fv-rok">
-                                <rect key="frame" x="0.0" y="799.5" width="414" height="62.5"/>
+                                <rect key="frame" x="0.0" y="804.5" width="414" height="57.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-6W-mEH">
-                                        <rect key="frame" x="20" y="6" width="50" height="50"/>
+                                        <rect key="frame" x="20" y="6" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mbn-6W-mEH" secondAttribute="height" multiplier="1:1" id="TlS-2G-7rb"/>
                                         </constraints>
@@ -191,7 +191,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86I-Gy-yGr">
-                                        <rect key="frame" x="344" y="6" width="50" height="50"/>
+                                        <rect key="frame" x="348" y="6" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="86I-Gy-yGr" secondAttribute="height" multiplier="1:1" id="Qi6-NK-Y96"/>
                                         </constraints>
@@ -200,8 +200,8 @@
                                             <action selector="didTapSendAction:" destination="ffv-5g-3LP" eventType="touchUpInside" id="IDl-lj-a1l"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bdx-lE-TAn">
-                                        <rect key="frame" x="80" y="6" width="254" height="50"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bdx-lE-TAn" customClass="ChatTextInputView" customModule="MyTaxman_Customer" customModuleProvider="target">
+                                        <rect key="frame" x="76" y="6" width="262" height="46"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -214,14 +214,15 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="mbn-6W-mEH" firstAttribute="leading" secondItem="dCp-fv-rok" secondAttribute="leading" constant="20" id="5dT-Nj-5LV"/>
-                                    <constraint firstItem="mbn-6W-mEH" firstAttribute="height" secondItem="dCp-fv-rok" secondAttribute="height" multiplier="0.8" id="RnC-vN-zH0"/>
+                                    <constraint firstItem="86I-Gy-yGr" firstAttribute="width" secondItem="dCp-fv-rok" secondAttribute="width" multiplier="0.111111" id="Nqx-bs-t4w"/>
+                                    <constraint firstItem="mbn-6W-mEH" firstAttribute="width" secondItem="dCp-fv-rok" secondAttribute="width" multiplier="0.111111" id="Vod-GN-jm8"/>
                                     <constraint firstItem="bdx-lE-TAn" firstAttribute="centerY" secondItem="dCp-fv-rok" secondAttribute="centerY" id="WMD-zc-Oxu"/>
-                                    <constraint firstItem="86I-Gy-yGr" firstAttribute="height" secondItem="dCp-fv-rok" secondAttribute="height" multiplier="0.8" id="ccQ-T9-AmV"/>
                                     <constraint firstItem="86I-Gy-yGr" firstAttribute="centerY" secondItem="dCp-fv-rok" secondAttribute="centerY" id="cke-CJ-h5S"/>
                                     <constraint firstItem="bdx-lE-TAn" firstAttribute="leading" secondItem="mbn-6W-mEH" secondAttribute="trailing" constant="10" id="d5a-it-fhD"/>
                                     <constraint firstItem="bdx-lE-TAn" firstAttribute="height" secondItem="dCp-fv-rok" secondAttribute="height" multiplier="0.8" id="fEB-H3-Dv6"/>
                                     <constraint firstItem="mbn-6W-mEH" firstAttribute="centerY" secondItem="dCp-fv-rok" secondAttribute="centerY" id="fEB-mr-Ad6"/>
                                     <constraint firstAttribute="trailing" secondItem="86I-Gy-yGr" secondAttribute="trailing" constant="20" id="oDA-cE-3wH"/>
+                                    <constraint firstAttribute="height" constant="57.5" id="ug4-Er-G8g"/>
                                     <constraint firstItem="86I-Gy-yGr" firstAttribute="leading" secondItem="bdx-lE-TAn" secondAttribute="trailing" constant="10" id="xKB-hp-SAl"/>
                                 </constraints>
                             </view>
@@ -232,7 +233,6 @@
                             <constraint firstItem="071-6c-NJW" firstAttribute="bottom" secondItem="dCp-fv-rok" secondAttribute="bottom" id="J2n-NJ-Hrj"/>
                             <constraint firstItem="dCp-fv-rok" firstAttribute="leading" secondItem="071-6c-NJW" secondAttribute="leading" id="UzN-Go-OrB"/>
                             <constraint firstItem="071-6c-NJW" firstAttribute="trailing" secondItem="dCp-fv-rok" secondAttribute="trailing" id="jV7-H3-lrl"/>
-                            <constraint firstItem="dCp-fv-rok" firstAttribute="height" secondItem="36l-6E-2ou" secondAttribute="height" multiplier="0.07" id="oD1-Ck-1ej"/>
                             <constraint firstItem="dCp-fv-rok" firstAttribute="top" secondItem="rPY-oD-TsY" secondAttribute="bottom" id="oXQ-5B-vZw"/>
                             <constraint firstItem="rPY-oD-TsY" firstAttribute="top" secondItem="071-6c-NJW" secondAttribute="top" id="rrF-4M-nxb"/>
                             <constraint firstItem="rPY-oD-TsY" firstAttribute="leading" secondItem="071-6c-NJW" secondAttribute="leading" id="s8h-E6-czx"/>
@@ -243,6 +243,7 @@
                         <outlet property="InputView" destination="dCp-fv-rok" id="CfD-Te-Hso"/>
                         <outlet property="chatTableView" destination="rPY-oD-TsY" id="abl-Dc-0Up"/>
                         <outlet property="chatTextView" destination="bdx-lE-TAn" id="nIf-El-L9x"/>
+                        <outlet property="chatViewHeightConstraints" destination="ug4-Er-G8g" id="hNe-nT-OsR"/>
                         <outlet property="mediaButton" destination="mbn-6W-mEH" id="PH2-tx-1qN"/>
                         <outlet property="sentButton" destination="86I-Gy-yGr" id="wDN-33-zgF"/>
                     </connections>

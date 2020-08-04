@@ -10,7 +10,7 @@ import UIKit
 
 class QuoteTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
-//    @IBOutlet var subTitleLabel: UILabel!
+    //    @IBOutlet var subTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,8 +35,8 @@ class QuoteTableViewCell: UITableViewCell {
     func setupViews(){
         titleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
         
-//        subTitleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
-//        subTitleLabel.textColor = ColorManager.lightGrey.color
+        //        subTitleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
+        //        subTitleLabel.textColor = ColorManager.lightGrey.color
     }
     
     func setValue(data: QuoteDetail, index: Int, inbox: Inboxlist?){
@@ -65,5 +65,39 @@ class QuoteTableViewCell: UITableViewCell {
         balanceAttributedString.setColorForText(textForAttribute: "\(text)", withColor: ColorManager.lightGrey.color, withFont: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))!)
         balanceAttributedString.setLineSpaceForText(lineSpace: 3, alignment: titleLabel.textAlignment)
         titleLabel.attributedText = balanceAttributedString
+    }
+    
+    func setVendorValue(vendorProfile : VendorProfile_Base?, index: Int){
+        var title = ""
+        var value = ""
+        switch index {
+        case 1:
+            title = "Mobile Number"
+            value = vendorProfile?.desc?.first?.mobile_no ?? ""
+            break
+        case 2:
+            title = "Landline"
+            value = vendorProfile?.desc?.first?.landline ?? ""
+            break
+        case 3:
+            title = "Email"
+            value = vendorProfile?.desc?.first?.email ?? ""
+            break
+        case 4:
+            title = "Location"
+            value = vendorProfile?.desc?.first?.location ?? ""
+            break
+        default:
+            break
+        }
+        
+        titleLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
+        titleLabel.text = "\(title)\n\(value)"
+        
+        let balanceAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: titleLabel.text ?? "")
+        balanceAttributedString.setColorForText(textForAttribute: "\(title)", withColor: ColorManager.lightGrey.color, withFont: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))!)
+        balanceAttributedString.setLineSpaceForText(lineSpace: 3, alignment: titleLabel.textAlignment)
+        titleLabel.attributedText = balanceAttributedString
+
     }
 }

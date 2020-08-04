@@ -23,7 +23,7 @@ class InboxViewModel {
         InboxApiManager().requestSendChat(input: input, handler: handler)
     }
     
-    func requestVenProfile(input: Parameters, handler: @escaping (_ user: CheckMobile_Base?, _ error: AlertMessage?)->()) {
+    func requestVenProfile(input: Parameters, handler: @escaping (_ user: VendorProfile_Base?, _ error: AlertMessage?)->()) {
         InboxApiManager().requestVenProfile(input: input, handler: handler)
     }
     

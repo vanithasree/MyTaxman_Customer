@@ -124,8 +124,8 @@ class InboxApiManager {
          }
      }
     
-    func requestVenProfile(input: Parameters, handler: @escaping (_ result: CheckMobile_Base?, _ error: AlertMessage?)->()) {
-        APIManager.shared().call(type: InboxApi.venprofile, params: input) { (result: CheckMobile_Base?,message: AlertMessage?) in
+    func requestVenProfile(input: Parameters, handler: @escaping (_ result: VendorProfile_Base?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: InboxApi.venprofile, params: input) { (result: VendorProfile_Base?,message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {

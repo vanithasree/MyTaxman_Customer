@@ -19,7 +19,9 @@ class InboxDetailsViewController: UIViewController {
     var inbox: Inboxlist?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupScrollView()
+        doOnMain {
+            self.setupScrollView()
+        }
         self.setUpSegmentViewControl(segmentControl: segmentControl, bgColor: .white, titles: ["Quote Details","Chat", "Business Profile"])
         // Do any additional setup after loading the view.
     }

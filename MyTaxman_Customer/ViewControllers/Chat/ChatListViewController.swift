@@ -18,6 +18,10 @@ class ChatListViewController: UIViewController {
         title = "Inbox"
         // Do any additional setup after loading the view.
         setupViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         requestCusinboxlist()
     }
     

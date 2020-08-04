@@ -69,12 +69,12 @@ class ChatTextInputView: UITextView {
             self.text = MessengerConstant.textViewPlaceHodler
             self.textColor = UIColor.lightGray
             self.enablesReturnKeyAutomatically = true
-            self.font = UIFont.systemFont(ofSize: 16.0)
+            self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0))
         }
     }
     
     fileprivate func setup() {
-        self.font = UIFont.systemFont(ofSize: 16.0)
+        self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0))
         
         self.text = MessengerConstant.textViewPlaceHodler
         self.textColor = UIColor.lightGray
@@ -97,7 +97,7 @@ class ChatTextInputView: UITextView {
             if self.text == MessengerConstant.textViewPlaceHodler {
                 self.text = ""
                 self.textColor = .darkText
-                self.font = UIFont.systemFont(ofSize: 15.0)
+                self.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0))
             }
         } else if notification.name == UITextView.textDidEndEditingNotification {
             if self.text.isEmpty {

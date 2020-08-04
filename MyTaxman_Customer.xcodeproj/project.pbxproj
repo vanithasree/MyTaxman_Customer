@@ -91,6 +91,7 @@
 		3B8274D624D51A77000E1617 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D524D51A77000E1617 /* ChatViewController.swift */; };
 		3B8274D824D51A90000E1617 /* BusinessProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D724D51A90000E1617 /* BusinessProfileViewController.swift */; };
 		3B8274DA24D51AB9000E1617 /* InboxDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8274D924D51AB9000E1617 /* InboxDetailsViewController.swift */; };
+		3BD5F06A24D9BB7500966C63 /* VendorProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD5F06924D9BB7500966C63 /* VendorProfileModel.swift */; };
 		3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */; };
 		3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */; };
 		3BF05BA724C95F0500E16081 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BF05BA624C95F0500E16081 /* Poppins-Regular.ttf */; };
@@ -130,6 +131,9 @@
 		3BF05BF524C9920D00E16081 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BF424C9920D00E16081 /* AuthViewModel.swift */; };
 		3BF05BF824C9936400E16081 /* AuthApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF05BF724C9936400E16081 /* AuthApiManager.swift */; };
 		3BFB7CFB24D98A8400065135 /* ChatTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB7CF924D98A8400065135 /* ChatTextInputView.swift */; };
+		3BFB7CFE24D9937100065135 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB7CFD24D9937100065135 /* UITableViewExtension.swift */; };
+		3BFB7D0024D9961F00065135 /* BusinessProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB7CFF24D9961F00065135 /* BusinessProfileTableViewCell.swift */; };
+		3BFB7D0224D9962900065135 /* BusinessProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BFB7D0124D9962900065135 /* BusinessProfileTableViewCell.xib */; };
 		78B494BAE0D54EE19A125A1D /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DEF4EEFA743F15959C3A9CC /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework */; };
 		7B5C58902D8716F2B47499B1 /* Pods_MyTaxman_Customer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A808644CBE221222169888A /* Pods_MyTaxman_Customer.framework */; };
 /* End PBXBuildFile section */
@@ -243,6 +247,7 @@
 		3B8274D524D51A77000E1617 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3B8274D724D51A90000E1617 /* BusinessProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessProfileViewController.swift; sourceTree = "<group>"; };
 		3B8274D924D51AB9000E1617 /* InboxDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxDetailsViewController.swift; sourceTree = "<group>"; };
+		3BD5F06924D9BB7500966C63 /* VendorProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorProfileModel.swift; sourceTree = "<group>"; };
 		3BF05BA224C95ED700E16081 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		3BF05BA324C95EE900E16081 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		3BF05BA624C95F0500E16081 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -282,6 +287,9 @@
 		3BF05BF424C9920D00E16081 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		3BF05BF724C9936400E16081 /* AuthApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthApiManager.swift; sourceTree = "<group>"; };
 		3BFB7CF924D98A8400065135 /* ChatTextInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextInputView.swift; sourceTree = "<group>"; };
+		3BFB7CFD24D9937100065135 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		3BFB7CFF24D9961F00065135 /* BusinessProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessProfileTableViewCell.swift; sourceTree = "<group>"; };
+		3BFB7D0124D9962900065135 /* BusinessProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusinessProfileTableViewCell.xib; sourceTree = "<group>"; };
 		48619F62146DF708E2A60C90 /* Pods-MyTaxman_CustomerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_CustomerTests.debug.xcconfig"; path = "Target Support Files/Pods-MyTaxman_CustomerTests/Pods-MyTaxman_CustomerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DEF4EEFA743F15959C3A9CC /* Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyTaxman_Customer_MyTaxman_CustomerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB8A480B1904D8FE5D8DEB4 /* Pods-MyTaxman_Customer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyTaxman_Customer.release.xcconfig"; path = "Target Support Files/Pods-MyTaxman_Customer/Pods-MyTaxman_Customer.release.xcconfig"; sourceTree = "<group>"; };
@@ -594,6 +602,7 @@
 				3BF05BB824C9634500E16081 /* UITextViewExtension.swift */,
 				3BF05BC224C9634600E16081 /* UIViewControllerExtension.swift */,
 				3BF05BC424C9634600E16081 /* UIViewExtension.swift */,
+				3BFB7CFD24D9937100065135 /* UITableViewExtension.swift */,
 				3BF05BBC24C9634500E16081 /* Validations.swift */,
 			);
 			path = Extensions;
@@ -677,6 +686,7 @@
 			children = (
 				3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */,
 				3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */,
+				3BD5F06924D9BB7500966C63 /* VendorProfileModel.swift */,
 			);
 			path = Inbox;
 			sourceTree = "<group>";
@@ -717,6 +727,8 @@
 				3B6B6E5E24D9748600D70E5F /* ChatTableViewCell.xib */,
 				3B6B6E5F24D9748700D70E5F /* QuoteTableViewCell.swift */,
 				3B6B6E6024D9748700D70E5F /* QuoteTableViewCell.xib */,
+				3BFB7CFF24D9961F00065135 /* BusinessProfileTableViewCell.swift */,
+				3BFB7D0124D9962900065135 /* BusinessProfileTableViewCell.xib */,
 			);
 			path = Inbox;
 			sourceTree = "<group>";
@@ -909,6 +921,7 @@
 				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,
 				3BF05BAB24C95F2600E16081 /* Poppins-Black.ttf in Resources */,
 				18F6AA5F24CC074B005F3855 /* Inbox.storyboard in Resources */,
+				3BFB7D0224D9962900065135 /* BusinessProfileTableViewCell.xib in Resources */,
 				18B2E62D24C89D21002A9CCE /* LeadsCollectionViewCell.xib in Resources */,
 				1888974924C7281F000DFAB3 /* LaunchScreen.storyboard in Resources */,
 				3B6B6E6424D9748700D70E5F /* QuoteTableViewCell.xib in Resources */,
@@ -1110,10 +1123,12 @@
 				3BF05BD224C9634600E16081 /* UITextFieldExtension.swift in Sources */,
 				1826253D24CD450E00DF7A4B /* SuperFundsServiceViewController.swift in Sources */,
 				3BF05BD024C9634600E16081 /* NotificationExtension.swift in Sources */,
+				3BFB7CFE24D9937100065135 /* UITableViewExtension.swift in Sources */,
 				18F6AA6424CC0777005F3855 /* ChatListViewController.swift in Sources */,
 				18B2E63824C8AB71002A9CCE /* PageFiveViewController.swift in Sources */,
 				3BF05BC924C9634600E16081 /* UITextViewExtension.swift in Sources */,
 				3BF05BB324C9632300E16081 /* LoadingIndicator.swift in Sources */,
+				3BFB7D0024D9961F00065135 /* BusinessProfileTableViewCell.swift in Sources */,
 				1888977E24C73D6E000DFAB3 /* ForgotPasswordViewController.swift in Sources */,
 				3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */,
 				3B6B6E5124D9742D00D70E5F /* InboxListModel.swift in Sources */,
@@ -1136,6 +1151,7 @@
 				3BF05BD324C9634600E16081 /* UIViewControllerExtension.swift in Sources */,
 				3BF05BE224C96AEC00E16081 /* GCDUtils.swift in Sources */,
 				3BF05BF824C9936400E16081 /* AuthApiManager.swift in Sources */,
+				3BD5F06A24D9BB7500966C63 /* VendorProfileModel.swift in Sources */,
 				1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */,
 				3BF05BC624C9634600E16081 /* UIImageExtension.swift in Sources */,
 				1826254424CDB94200DF7A4B /* JobsModel.swift in Sources */,

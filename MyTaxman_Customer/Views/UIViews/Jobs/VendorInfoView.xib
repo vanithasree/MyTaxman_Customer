@@ -30,13 +30,13 @@
                     <rect key="frame" x="5" y="5" width="404" height="90"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="jlJ-0F-tNb">
-                            <rect key="frame" x="10" y="14.5" width="60.5" height="61"/>
+                            <rect key="frame" x="10" y="4.5" width="81" height="81"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="jlJ-0F-tNb" secondAttribute="height" id="TCs-iZ-moH"/>
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-gD-h5Z">
-                            <rect key="frame" x="75.5" y="0.0" width="328.5" height="90"/>
+                            <rect key="frame" x="96" y="0.0" width="308" height="90"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suyambu Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIV-aq-nhP">
                                     <rect key="frame" x="5" y="5" width="107.5" height="21"/>
@@ -73,7 +73,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site inspection Needed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPI-jS-UlP">
-                                    <rect key="frame" x="5" y="56" width="161" height="20"/>
+                                    <rect key="frame" x="5" y="31" width="161" height="20"/>
                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -84,21 +84,21 @@
                                 <constraint firstItem="KIV-aq-nhP" firstAttribute="leading" secondItem="p0f-Qc-qho" secondAttribute="leading" id="05k-12-xOS"/>
                                 <constraint firstItem="9vI-WH-Fjv" firstAttribute="leading" secondItem="KIV-aq-nhP" secondAttribute="trailing" constant="7.5" id="5nA-VA-QNv"/>
                                 <constraint firstItem="p0f-Qc-qho" firstAttribute="top" secondItem="KIV-aq-nhP" secondAttribute="bottom" constant="5" id="6HV-PJ-qF7"/>
+                                <constraint firstItem="iPI-jS-UlP" firstAttribute="top" secondItem="KIV-aq-nhP" secondAttribute="bottom" constant="5" id="GId-uD-tIS"/>
                                 <constraint firstItem="KIV-aq-nhP" firstAttribute="leading" secondItem="xfb-gD-h5Z" secondAttribute="leading" constant="5" id="J76-gF-S7g"/>
                                 <constraint firstItem="KIV-aq-nhP" firstAttribute="centerY" secondItem="9vI-WH-Fjv" secondAttribute="centerY" id="Nj1-th-wzT"/>
-                                <constraint firstItem="iPI-jS-UlP" firstAttribute="top" secondItem="p0f-Qc-qho" secondAttribute="bottom" constant="5" id="UGd-r8-dpM"/>
                                 <constraint firstItem="KIV-aq-nhP" firstAttribute="top" secondItem="xfb-gD-h5Z" secondAttribute="top" constant="5" id="eZF-fB-vqP"/>
                                 <constraint firstItem="KIV-aq-nhP" firstAttribute="leading" secondItem="iPI-jS-UlP" secondAttribute="leading" id="te6-Ct-EDe"/>
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="jlJ-0F-tNb" firstAttribute="centerY" secondItem="nEM-9K-jCv" secondAttribute="centerY" id="GrF-TN-uWz"/>
                         <constraint firstAttribute="bottom" secondItem="xfb-gD-h5Z" secondAttribute="bottom" id="JSf-0C-MBs"/>
                         <constraint firstItem="xfb-gD-h5Z" firstAttribute="top" secondItem="nEM-9K-jCv" secondAttribute="top" id="a5S-0q-JP1"/>
                         <constraint firstItem="xfb-gD-h5Z" firstAttribute="leading" secondItem="jlJ-0F-tNb" secondAttribute="trailing" constant="5" id="h4z-Im-fIu"/>
-                        <constraint firstItem="jlJ-0F-tNb" firstAttribute="width" secondItem="nEM-9K-jCv" secondAttribute="width" multiplier="0.15" id="oa4-I6-S2s"/>
+                        <constraint firstItem="jlJ-0F-tNb" firstAttribute="width" secondItem="nEM-9K-jCv" secondAttribute="width" multiplier="0.2" id="oa4-I6-S2s"/>
                         <constraint firstAttribute="trailing" secondItem="xfb-gD-h5Z" secondAttribute="trailing" id="r6d-6T-t2f"/>
                         <constraint firstItem="jlJ-0F-tNb" firstAttribute="leading" secondItem="nEM-9K-jCv" secondAttribute="leading" constant="10" id="wkz-1G-gTm"/>
                     </constraints>

@@ -28,6 +28,8 @@ class JobListViewController: UIViewController {
         super.viewDidLoad()
         setupViewUI()
         
+        NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"), object: nil, userInfo: ["userId": "Vanithasree_163"])
+        
         
         // Do any additional setup after loading the view.
     }

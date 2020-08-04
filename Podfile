@@ -14,6 +14,7 @@ target 'MyTaxman_Customer' do
   pod 'GooglePlaces'
   pod 'BetterSegmentedControl', '~> 1.3'
   pod 'FloatRatingView', '~> 4'
+  pod 'SinchRTC'
 
   # Pods for MyTaxman_Customer
 

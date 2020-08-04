@@ -9,11 +9,14 @@
 import UIKit
 import IQKeyboardManagerSwift
 import GooglePlaces
+import Sinch
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var client: SINClient!
+    var player: AVAudioPlayer?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -28,6 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             redirectToGetStartPage()
         }
         
+        func onUserDidLogin(_ userId: String)
+        {
+            // self.push?.registerUserNotificationSettings()
+            print("calling initSinch")
+            self.initSinchClient(withUserId: userId)
+        }
+        
+        NotificationCenter.default.addObserver(forName: Notification.Name("UserDidLoginNotification"), object: nil, queue: nil, using: {(_ note: Notification) -> Void in
+            print("Got notification")
+            let userId = note.userInfo!["userId"] as? String
+            UserDefaults.standard.set(userId, forKey: "userId")
+            UserDefaults.standard.synchronize()
+            onUserDidLogin(userId!)
+        })
         // Override point for customization after application launch.
         return true
     }
@@ -62,5 +79,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = initialVC
     }
+    
 }
 
+extension AppDelegate : SINClientDelegate {
+    func initSinchClient(withUserId userId: String) {
+        
+        if client == nil {
+            print("initializing client 2")
+            client = Sinch.client(withApplicationKey: "03987b9e-cdb1-4140-bb65-98d50f7c9374",
+                                  applicationSecret: "KlD0ud20WEebaDd5rioVTA==",
+                                  environmentHost: "sandbox.sinch.com",
+                                  userId: userId)
+            client.delegate = self
+            client.setSupportCalling(true)
+            client.start()
+            client.startListeningOnActiveConnection()
+            
+        }
+    }
+    
+    //SINCallClient delegates
+    func clientDidStart(_ client: SINClient!) {
+        print("Sinch client started successfully (version: \(Sinch.version()) with userid \(client.userId)")
+    }
+    
+    func clientDidFail(_ client: SINClient!, error: Error!) {
+        print("Sinch client error: \(String(describing: error?.localizedDescription))")
+    }
+    
+    func client(_ client: SINClient, logMessage message: String, area: String, severity: SINLogSeverity, timestamp: Date) {
+        print("\(message)")
+    }
+}

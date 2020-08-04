@@ -14,6 +14,7 @@ enum AppStoryBoard : String {
     case Leads
     case Tabbar
     case Inbox
+    case Jobs
 
     var instance : UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

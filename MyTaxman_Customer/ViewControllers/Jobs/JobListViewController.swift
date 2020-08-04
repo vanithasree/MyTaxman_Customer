@@ -9,9 +9,12 @@
 import UIKit
 import Alamofire
 import BetterSegmentedControl
+import Sinch
+
 
 class JobListViewController: UIViewController {
     
+    @IBOutlet weak var callBtn: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nameTitleLabel: UILabel!
     @IBOutlet weak var segmentView: BetterSegmentedControl!
@@ -24,11 +27,14 @@ class JobListViewController: UIViewController {
     var closedList : [Quotes] = []
     
     
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewUI()
         
-        NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"), object: nil, userInfo: ["userId": "Vanithasree_163"])
+        NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"), object: nil, userInfo: ["userId": "suyambu"])
         
         
         // Do any additional setup after loading the view.
@@ -66,6 +72,9 @@ class JobListViewController: UIViewController {
         jobsListTableView.delegate = self
         jobsListTableView.dataSource = self
         
+        
+        
+      
         
     }
     
@@ -151,6 +160,26 @@ class JobListViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    @IBAction func onTapCallBtn(_ sender: UIButton) {
+        
+        var client: SINClient {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.client!
+        }
+        
+        client.call().delegate = self
+        
+        
+        if client.isStarted() {
+            // client.call()?.callUser(withId: "")
+           // weak var call :SINCall? =  client.call()?.callPhoneNumber("+91 9894909595")
+            weak var call: SINCall? = client.call().callUser(withId: "Vanithasree_163")
+            let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+            callVC.call = call
+            self.present(callVC, animated: true, completion: nil)
+        }
+    }
     
     // MARK: - Action handlers
     @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
@@ -241,6 +270,28 @@ extension JobListViewController : JobDetailsActionButtonDelegate {
     }
     func showActionSheetBasedOnMenuSelection() {
         
+    }
+    
+}
+extension JobListViewController : SINCallClientDelegate, SINCallDelegate {
+    func client(_ client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
+        //        performSegue(withIdentifier: "callView", sender: call)
+    }
+    
+    /*func client(_ client: SINCallClient!, localNotificationForIncomingCall call: SINCall!) -> SINLocalNotification! {
+     let notification = SINLocalNotification()
+     notification.alertAction = "Answer"
+     notification.alertBody = String(format: "Incoming call from %@", arguments: [call.remoteUserId])
+     return notification
+     }*/
+    
+    
+    func clientDidFail(_ client: SINClient!, error: Error!) {
+        print("Sinch client error: \(String(describing: error?.localizedDescription))")
+    }
+    
+    func client(_ client: SINClient, logMessage message: String, area: String, severity: SINLogSeverity, timestamp: Date) {
+        print("\(message)")
     }
     
 }

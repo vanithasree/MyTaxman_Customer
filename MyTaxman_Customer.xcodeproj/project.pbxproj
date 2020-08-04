@@ -38,6 +38,8 @@
 		1867F01F24D8857100A69418 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1867F01E24D8857000A69418 /* OpenGLES.framework */; };
 		1867F02124D8857800A69418 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1867F02024D8857800A69418 /* QuartzCore.framework */; };
 		1867F02324D88E7000A69418 /* CallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867F02224D88E7000A69418 /* CallViewController.swift */; };
+		1867F02624D94D9C00A69418 /* incoming.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1867F02424D94D9B00A69418 /* incoming.wav */; };
+		1867F02724D94D9C00A69418 /* ringback.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1867F02524D94D9C00A69418 /* ringback.wav */; };
 		187DDF0E24D68D2F00CBE610 /* VendorInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187DDF0D24D68D2F00CBE610 /* VendorInfoView.xib */; };
 		187DDF1024D68D4C00CBE610 /* VendorInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DDF0F24D68D4C00CBE610 /* VendorInfoView.swift */; };
 		1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1888973C24C7281C000DFAB3 /* AppDelegate.swift */; };
@@ -186,6 +188,8 @@
 		1867F01E24D8857000A69418 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		1867F02024D8857800A69418 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1867F02224D88E7000A69418 /* CallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
+		1867F02424D94D9B00A69418 /* incoming.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incoming.wav; sourceTree = "<group>"; };
+		1867F02524D94D9C00A69418 /* ringback.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringback.wav; sourceTree = "<group>"; };
 		187DDF0D24D68D2F00CBE610 /* VendorInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VendorInfoView.xib; sourceTree = "<group>"; };
 		187DDF0F24D68D4C00CBE610 /* VendorInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorInfoView.swift; sourceTree = "<group>"; };
 		1888973924C7281C000DFAB3 /* MyTaxman_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTaxman_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -509,6 +513,8 @@
 		1888977224C72866000DFAB3 /* Utitlities */ = {
 			isa = PBXGroup;
 			children = (
+				1867F02424D94D9B00A69418 /* incoming.wav */,
+				1867F02524D94D9C00A69418 /* ringback.wav */,
 				3BFB7CF924D98A8400065135 /* ChatTextInputView.swift */,
 				3BF05BE824C96AF500E16081 /* WebServices */,
 				3BF05BD624C96AEC00E16081 /* CameraHandler.swift */,
@@ -914,8 +920,10 @@
 				3B6B6E6C24D97D5000D70E5F /* NoDataView.xib in Resources */,
 				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
 				18F6AA5824CB4F62005F3855 /* Poppins-Medium.ttf in Resources */,
+				1867F02624D94D9C00A69418 /* incoming.wav in Resources */,
 				3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */,
 				3BF05BA524C95EEC00E16081 /* Poppins-Bold.ttf in Resources */,
+				1867F02724D94D9C00A69418 /* ringback.wav in Resources */,
 				18F6AA6E24CC085F005F3855 /* Jobs.storyboard in Resources */,
 				3B6B6E5A24D9746C00D70E5F /* LeftViewCell.xib in Resources */,
 				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,

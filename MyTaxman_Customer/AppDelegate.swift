@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var client: SINClient!
+   
     var player: AVAudioPlayer?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -89,10 +90,11 @@ extension AppDelegate : SINClientDelegate {
             print("initializing client 2")
             client = Sinch.client(withApplicationKey: "03987b9e-cdb1-4140-bb65-98d50f7c9374",
                                   applicationSecret: "KlD0ud20WEebaDd5rioVTA==",
-                                  environmentHost: "sandbox.sinch.com",
+                                  environmentHost: "clientapi.sinch.com",
                                   userId: userId)
             client.delegate = self
             client.setSupportCalling(true)
+           // client.enableManagedPushNotifications()
             client.start()
             client.startListeningOnActiveConnection()
             
@@ -110,5 +112,25 @@ extension AppDelegate : SINClientDelegate {
     
     func client(_ client: SINClient, logMessage message: String, area: String, severity: SINLogSeverity, timestamp: Date) {
         print("\(message)")
+    }
+
+    func callDidProgress(call: SINCall!) {
+
+    }
+
+    func callDidEstablish(call: SINCall!) {
+//        callStatus.text = "Call Connected"
+        print("Call Connected")
+    }
+
+    func callDidEnd(call: SINCall!) {
+
+    }
+    func client(client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
+        //        call.delegate = self;
+        //        call.answer()
+        
+        print("Incoming call coming")
+        
     }
 }

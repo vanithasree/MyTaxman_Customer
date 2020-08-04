@@ -14,6 +14,7 @@ import Sinch
 
 class JobListViewController: UIViewController {
     
+    @IBOutlet weak var videoCallBtn: UIButton!
     @IBOutlet weak var callBtn: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var nameTitleLabel: UILabel!
@@ -28,7 +29,7 @@ class JobListViewController: UIViewController {
     
     
     
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +75,7 @@ class JobListViewController: UIViewController {
         
         
         
-      
+        
         
     }
     
@@ -161,24 +162,29 @@ class JobListViewController: UIViewController {
      }
      */
     
+    @IBAction func onTapVideoCallBtn(_ sender: UIButton) {
+    }
     @IBAction func onTapCallBtn(_ sender: UIButton) {
-        
         var client: SINClient {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             return appDelegate.client!
         }
         
+        
         client.call().delegate = self
         
-        
         if client.isStarted() {
-            // client.call()?.callUser(withId: "")
-           // weak var call :SINCall? =  client.call()?.callPhoneNumber("+91 9894909595")
             weak var call: SINCall? = client.call().callUser(withId: "Vanithasree_163")
-            let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
-            callVC.call = call
-            self.present(callVC, animated: true, completion: nil)
+            self.redirectToCallVC(call: call)
+            
         }
+    }
+    
+    func redirectToCallVC(call : SINCall?) {
+        let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+        callVC.call = call
+        callVC.modalPresentationStyle = .fullScreen
+        self.present(callVC, animated: true, completion: nil)
     }
     
     // MARK: - Action handlers
@@ -275,7 +281,7 @@ extension JobListViewController : JobDetailsActionButtonDelegate {
 }
 extension JobListViewController : SINCallClientDelegate, SINCallDelegate {
     func client(_ client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
-        //        performSegue(withIdentifier: "callView", sender: call)
+        self.redirectToCallVC(call: call)
     }
     
     /*func client(_ client: SINCallClient!, localNotificationForIncomingCall call: SINCall!) -> SINLocalNotification! {

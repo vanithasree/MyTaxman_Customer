@@ -58,16 +58,28 @@
                                                     <action selector="onTapCallBtn:" destination="wPA-tZ-WWB" eventType="touchUpInside" id="qih-z0-4eI"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3m-rb-9jb">
+                                                <rect key="frame" x="326" y="12" width="35" height="31"/>
+                                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" backgroundImage="video" catalog="system"/>
+                                                <connections>
+                                                    <action selector="onTapVideoCallBtn:" destination="wPA-tZ-WWB" eventType="touchUpInside" id="dBv-Cs-Kr9"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="CZt-YN-0Ue" firstAttribute="leading" secondItem="MIq-o2-GRb" secondAttribute="trailing" constant="5" id="166-Io-IhY"/>
+                                            <constraint firstItem="jYS-1h-pRr" firstAttribute="width" secondItem="s3m-rb-9jb" secondAttribute="width" id="5Ov-SI-wpp"/>
                                             <constraint firstItem="MIq-o2-GRb" firstAttribute="leading" secondItem="V98-yU-hAQ" secondAttribute="leading" id="6gC-P0-c2S"/>
+                                            <constraint firstItem="jYS-1h-pRr" firstAttribute="bottom" secondItem="s3m-rb-9jb" secondAttribute="bottom" id="Czg-51-5Af"/>
+                                            <constraint firstItem="jYS-1h-pRr" firstAttribute="top" secondItem="s3m-rb-9jb" secondAttribute="top" id="I2V-pC-ikA"/>
                                             <constraint firstAttribute="height" constant="80" id="MxF-MP-DDz"/>
                                             <constraint firstItem="MIq-o2-GRb" firstAttribute="top" secondItem="kVG-aa-LGp" secondAttribute="top" constant="5" id="Nif-qN-aq2"/>
                                             <constraint firstItem="jYS-1h-pRr" firstAttribute="top" secondItem="kVG-aa-LGp" secondAttribute="top" constant="10" id="TFk-FN-MQ2"/>
                                             <constraint firstItem="MIq-o2-GRb" firstAttribute="centerY" secondItem="CZt-YN-0Ue" secondAttribute="centerY" id="ikc-ER-Ap2"/>
                                             <constraint firstAttribute="trailing" secondItem="jYS-1h-pRr" secondAttribute="trailing" constant="10" id="iwz-dI-b5G"/>
+                                            <constraint firstItem="jYS-1h-pRr" firstAttribute="leading" secondItem="s3m-rb-9jb" secondAttribute="trailing" constant="8" id="jI0-Z3-z7N"/>
                                             <constraint firstItem="V98-yU-hAQ" firstAttribute="top" secondItem="MIq-o2-GRb" secondAttribute="bottom" constant="10" id="r2M-8O-gM6"/>
                                             <constraint firstItem="MIq-o2-GRb" firstAttribute="leading" secondItem="kVG-aa-LGp" secondAttribute="leading" constant="20" id="rIw-vL-d3Y"/>
                                         </constraints>
@@ -112,6 +124,7 @@
                         <outlet property="jobsListTableView" destination="4iY-At-ibL" id="2bN-hW-K5y"/>
                         <outlet property="nameTitleLabel" destination="MIq-o2-GRb" id="A01-50-fdC"/>
                         <outlet property="segmentView" destination="hMQ-kp-5UL" id="edd-ht-UWy"/>
+                        <outlet property="videoCallBtn" destination="s3m-rb-9jb" id="74L-7S-CDn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZE-fS-PT5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -133,20 +146,77 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W80-7x-Asi">
-                                        <rect key="frame" x="20" y="398.5" width="374" height="21"/>
+                                        <rect key="frame" x="20" y="40" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyr-pV-LnL">
+                                        <rect key="frame" x="20" y="65.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z9l-jh-wVo">
+                                        <rect key="frame" x="20" y="569" width="374" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUQ-on-58B">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="60"/>
+                                                <state key="normal" title="Accept"/>
+                                                <connections>
+                                                    <action selector="onTapAcceptBtn:" destination="qja-N5-L77" eventType="touchUpInside" id="mQC-l2-ypM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ul-wx-dgH">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="60"/>
+                                                <state key="normal" title="Decline"/>
+                                                <connections>
+                                                    <action selector="onTapDeclineBtn:" destination="qja-N5-L77" eventType="touchUpInside" id="IpS-QK-CH0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="bNx-oU-ULN"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBQ-H2-OVL">
+                                        <rect key="frame" x="177" y="569" width="60" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJW-jS-xPZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <state key="normal" title="Hangup"/>
+                                                <connections>
+                                                    <action selector="onTapHangUpBtn:" destination="qja-N5-L77" eventType="touchUpInside" id="RN3-2G-0YP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="JJW-jS-xPZ" firstAttribute="leading" secondItem="HBQ-H2-OVL" secondAttribute="leading" id="QTS-j1-CKT"/>
+                                            <constraint firstAttribute="trailing" secondItem="JJW-jS-xPZ" secondAttribute="trailing" id="UQX-1Y-dHb"/>
+                                            <constraint firstAttribute="width" constant="60" id="bbQ-Nv-DOa"/>
+                                            <constraint firstAttribute="height" constant="60" id="mUO-17-IjK"/>
+                                            <constraint firstItem="JJW-jS-xPZ" firstAttribute="top" secondItem="HBQ-H2-OVL" secondAttribute="top" id="upA-bu-xsB"/>
+                                            <constraint firstAttribute="bottom" secondItem="JJW-jS-xPZ" secondAttribute="bottom" id="vBN-q9-zUJ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="mlW-aJ-MCX" firstAttribute="top" secondItem="sUp-pW-KBD" secondAttribute="top" id="8du-k4-8fd"/>
+                                    <constraint firstItem="Kyr-pV-LnL" firstAttribute="top" secondItem="W80-7x-Asi" secondAttribute="bottom" constant="5" id="E9h-gu-ypf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z9l-jh-wVo" secondAttribute="trailing" constant="20" id="FT6-3N-8gH"/>
+                                    <constraint firstItem="W80-7x-Asi" firstAttribute="trailing" secondItem="Kyr-pV-LnL" secondAttribute="trailing" id="Fur-aG-Cex"/>
+                                    <constraint firstItem="W80-7x-Asi" firstAttribute="leading" secondItem="Kyr-pV-LnL" secondAttribute="leading" id="Kxz-op-hxA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z9l-jh-wVo" secondAttribute="bottom" multiplier="1.3" id="LLK-nb-Typ"/>
+                                    <constraint firstItem="Z9l-jh-wVo" firstAttribute="leading" secondItem="sUp-pW-KBD" secondAttribute="leading" constant="20" id="QG8-0W-hgM"/>
+                                    <constraint firstItem="HBQ-H2-OVL" firstAttribute="centerX" secondItem="sUp-pW-KBD" secondAttribute="centerX" id="Tgd-hX-cSd"/>
+                                    <constraint firstItem="W80-7x-Asi" firstAttribute="top" secondItem="sUp-pW-KBD" secondAttribute="top" constant="40" id="Y0H-nr-Byb"/>
                                     <constraint firstAttribute="trailing" secondItem="W80-7x-Asi" secondAttribute="trailing" constant="20" id="YF2-ju-gAm"/>
-                                    <constraint firstItem="W80-7x-Asi" firstAttribute="centerY" secondItem="sUp-pW-KBD" secondAttribute="centerY" id="Z9Z-mY-HM7"/>
                                     <constraint firstItem="W80-7x-Asi" firstAttribute="leading" secondItem="sUp-pW-KBD" secondAttribute="leading" constant="20" id="ZEb-AW-zDM"/>
                                     <constraint firstAttribute="trailing" secondItem="mlW-aJ-MCX" secondAttribute="trailing" id="f1K-4b-9UA"/>
                                     <constraint firstAttribute="bottom" secondItem="mlW-aJ-MCX" secondAttribute="bottom" id="lNz-ba-7co"/>
+                                    <constraint firstAttribute="bottom" secondItem="HBQ-H2-OVL" secondAttribute="bottom" multiplier="1.3" id="tQt-JG-KyL"/>
                                     <constraint firstItem="mlW-aJ-MCX" firstAttribute="leading" secondItem="sUp-pW-KBD" secondAttribute="leading" id="wde-7j-otO"/>
                                 </constraints>
                             </view>
@@ -161,7 +231,13 @@
                         <viewLayoutGuide key="safeArea" id="9I8-Af-qHb"/>
                     </view>
                     <connections>
-                        <outlet property="statusLabel" destination="W80-7x-Asi" id="Grh-4l-F6Q"/>
+                        <outlet property="acceptBtn" destination="sUQ-on-58B" id="Ztc-Lm-D7t"/>
+                        <outlet property="callStackView" destination="Z9l-jh-wVo" id="bqA-ql-ceH"/>
+                        <outlet property="callStatusLabel" destination="Kyr-pV-LnL" id="xOI-e9-HuG"/>
+                        <outlet property="callerNameLabel" destination="W80-7x-Asi" id="jrk-vi-srd"/>
+                        <outlet property="declineBtn" destination="2ul-wx-dgH" id="Cy2-wx-rka"/>
+                        <outlet property="hangUpView" destination="HBQ-H2-OVL" id="lXw-Dw-Xpr"/>
+                        <outlet property="hangupBtn" destination="JJW-jS-xPZ" id="vgk-4o-f2u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2W-DH-yF8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -172,6 +248,7 @@
     <resources>
         <image name="fund" width="50" height="50"/>
         <image name="phone.circle" catalog="system" width="64" height="60"/>
+        <image name="video" catalog="system" width="64" height="40"/>
         <image name="whiteBg" width="621" height="1344"/>
     </resources>
 </document>

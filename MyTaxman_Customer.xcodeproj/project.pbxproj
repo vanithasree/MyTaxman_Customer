@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */; };
 		1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */; };
+		181B01EC24DA9175001CDEF5 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */; };
 		1826253024CCA41F00DF7A4B /* PageSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */; };
 		1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */; };
 		1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */; };
@@ -159,6 +160,7 @@
 
 /* Begin PBXFileReference section */
 		1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelJobsListViewController.swift; sourceTree = "<group>"; };
+		181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSixViewController.swift; sourceTree = "<group>"; };
 		1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesViewController.swift; sourceTree = "<group>"; };
 		1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -659,6 +661,7 @@
 				3B8274D524D51A77000E1617 /* ChatViewController.swift */,
 				3B8274D724D51A90000E1617 /* BusinessProfileViewController.swift */,
 				1867F02224D88E7000A69418 /* CallViewController.swift */,
+				181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1187,6 +1190,7 @@
 				1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */,
 				1826253924CD362A00DF7A4B /* AccountServiceViewController.swift in Sources */,
 				1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */,
+				181B01EC24DA9175001CDEF5 /* VideoCallViewController.swift in Sources */,
 				1857C7B724D2927200E1DDAD /* JobsTableViewCell.swift in Sources */,
 				1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */,
 				18B2E63324C8AB50002A9CCE /* PageThreeViewController.swift in Sources */,

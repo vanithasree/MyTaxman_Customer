@@ -46,8 +46,10 @@ class CallViewController: UIViewController {
         
         call.delegate = self
         
-        callerNameLabel.setHeaderTitle(titleText: call?.remoteUserId! ?? "")
-        callStatusLabel.setMainTitle(titleText: "")
+        callerNameLabel.setLabelCustomProperties(titleText: call.remoteUserId ?? "", textColor: ColorManager.textLiteGreenColor.color, font: UIFont(name:Font.FontName.PoppinsSemiBold.rawValue, size: Utility.dynamicSize(25.0)), numberOfLines: 0, alignment: .center)
+        
+        callStatusLabel.setLabelCustomProperties(titleText: "", textColor: ColorManager.textLiteGreenColor.color, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0)), numberOfLines: 0, alignment: .center)
+        
         
         acceptBtn.setDarkGreenTheme(btn: acceptBtn, title: "Accept")
         declineBtn.setDarkGreenTheme(btn: declineBtn, title: "Decline")
@@ -64,7 +66,7 @@ class CallViewController: UIViewController {
         }
         else
         {
-            callStatusLabel.text = "Calling.."
+            callStatusLabel.text = "Calling..."
             self.getCallButtonStatus = .hangup
         }
         self.setButtonAlignmentBasedOnCallStatus()
@@ -172,7 +174,7 @@ class CallViewController: UIViewController {
 extension CallViewController : SINCallDelegate {
     func callDidProgress(_ call: SINCall)
     {
-        callStatusLabel.text = "ringing..."
+        callStatusLabel.text = "Ringing..."
         audioController.startPlayingSoundFile(pathForSound("ringback.wav"), loop: true)
     }
     

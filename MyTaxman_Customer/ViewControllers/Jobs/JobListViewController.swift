@@ -163,6 +163,21 @@ class JobListViewController: UIViewController {
      */
     
     @IBAction func onTapVideoCallBtn(_ sender: UIButton) {
+        
+        var client: SINClient {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.client!
+        }
+        
+        
+        client.call().delegate = self
+        
+        if client.isStarted() {
+            weak var call: SINCall? = client.call()?.callUserVideo(withId: "Vanithasree_163")
+            self.redirectToVideoCallVC(call: call)
+            
+        }
+        
     }
     @IBAction func onTapCallBtn(_ sender: UIButton) {
         var client: SINClient {
@@ -181,7 +196,13 @@ class JobListViewController: UIViewController {
     }
     
     func redirectToCallVC(call : SINCall?) {
-        let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+        let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+        callVC.call = call
+        callVC.modalPresentationStyle = .fullScreen
+        self.present(callVC, animated: true, completion: nil)
+    }
+    func redirectToVideoCallVC(call : SINCall?) {
+        let callVC = VideoCallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
         callVC.call = call
         callVC.modalPresentationStyle = .fullScreen
         self.present(callVC, animated: true, completion: nil)

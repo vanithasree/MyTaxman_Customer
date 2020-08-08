@@ -52,7 +52,7 @@ class BusinessProfileTableViewCell: UITableViewCell {
         statusLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
         statusLabel.backgroundColor = ColorManager.liteBGTheme.color
         statusLabel.cornerRadius = 5
-        statusLabel.text = ""
+        statusLabel.text = "featured"
         statusLabel.textColor = ColorManager.darkTheme.color
         
         ratingLabel.font  = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
@@ -86,7 +86,12 @@ class BusinessProfileTableViewCell: UITableViewCell {
         profileImageView.load(from: vendorProfile?.profile_pic ?? "")
         
         nameLabel.text = vendorProfile?.desc?.first?.vendorname ?? ""
-        statusLabel.text = ""
+       /* if let isFeaturedValue = vendorProfile?.desc?.first?.featured, isFeaturedValue == "Yes" {
+            statusLabel.
+        }*/
+        
+        
+      //  statusLabel.isHidden = vendorProfile?.desc?.first?.featured
 
         ratingLabel.text = "\(vendorProfile?.average_Rating?.first?.average_rating ?? "0")\navg rating"
         let ratingAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: ratingLabel.text ?? "")

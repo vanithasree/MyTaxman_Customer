@@ -16,10 +16,10 @@ class JobOptionTableViewCell: UITableViewCell {
         // Initialization code
         setCellViewUI()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     static var nib: UINib {
@@ -31,6 +31,7 @@ class JobOptionTableViewCell: UITableViewCell {
     }
     
     func setCellViewUI() {
+        self.optionNameLabel.setMainTitle(titleText: "")
     }
     
     func setValue(){

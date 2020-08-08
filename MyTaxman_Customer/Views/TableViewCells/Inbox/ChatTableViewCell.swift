@@ -92,6 +92,7 @@ class ChatTableViewCell: UITableViewCell {
         case "4":
             quote_status = "Completed"
             break
+            
         default:
             break
         }

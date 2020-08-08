@@ -184,6 +184,27 @@ class JobListViewController: UIViewController {
          
          }*/
     }
+    
+    func menuAction() {
+        let menuOptionVC = JobMenuOptionViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+        menuOptionVC.modalPresentationStyle = .fullScreen
+        menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
+        menuOptionVC.hireBusinessAction = {[weak self] in
+            
+        }
+        menuOptionVC.viewJobAction = {[weak self] in
+            
+        }
+        menuOptionVC.cancelJobAction = {[weak self] in
+            
+        }
+        let navigationController = UINavigationController(rootViewController: menuOptionVC)
+        navigationController.modalPresentationStyle = .overCurrentContext
+        self.tabBarController?.present(navigationController, animated: true, completion: {})
+    }
+    
+    func seeMoreAction() {
+    }
 }
 
 extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
@@ -211,8 +232,10 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         cell.menuAction = {[weak self] in
+            self?.menuAction()
         }
         cell.seemoreAction = {[weak self] in
+            self?.seeMoreAction()
         }
         switch self.segmentView.index {
         case 0:

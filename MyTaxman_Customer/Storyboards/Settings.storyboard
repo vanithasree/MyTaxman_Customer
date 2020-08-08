@@ -15,13 +15,200 @@
                     <view key="view" contentMode="scaleToFill" id="wOH-Od-k2f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HX6-bj-qAa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kKL-DO-Ghw" id="AIc-YC-efU"/>
+                                    <outlet property="delegate" destination="kKL-DO-Ghw" id="3JJ-Zc-zc5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HX6-bj-qAa" firstAttribute="top" secondItem="7hL-pn-UJz" secondAttribute="top" id="W7A-R4-Iyv"/>
+                            <constraint firstItem="7hL-pn-UJz" firstAttribute="trailing" secondItem="HX6-bj-qAa" secondAttribute="trailing" id="bym-7W-bLl"/>
+                            <constraint firstItem="HX6-bj-qAa" firstAttribute="leading" secondItem="7hL-pn-UJz" secondAttribute="leading" id="dP8-wj-odQ"/>
+                            <constraint firstItem="7hL-pn-UJz" firstAttribute="bottom" secondItem="HX6-bj-qAa" secondAttribute="bottom" id="oft-ll-1mk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7hL-pn-UJz"/>
                     </view>
+                    <connections>
+                        <outlet property="profileTableView" destination="HX6-bj-qAa" id="gl9-dK-lOh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIZ-G9-Iye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="122" y="116"/>
+        </scene>
+        <!--Edit Profile View Controller-->
+        <scene sceneID="dhq-ro-Xs7">
+            <objects>
+                <viewController storyboardIdentifier="EditProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AnU-h3-2fi" customClass="EditProfileViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JIz-DU-zhi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="pCw-Vs-Dff">
+                                <rect key="frame" x="20" y="74" width="374" height="244.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21S-I8-TYd" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jtr-oW-Pl2" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="93" width="374" height="58.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mft-vS-qn7" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="186.5" width="374" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mft-vS-qn7" firstAttribute="height" secondItem="jtr-oW-Pl2" secondAttribute="height" id="GIH-xc-sQP"/>
+                                    <constraint firstItem="jtr-oW-Pl2" firstAttribute="height" secondItem="21S-I8-TYd" secondAttribute="height" id="vY1-u4-fhX"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pCw-Vs-Dff" firstAttribute="top" secondItem="lca-4J-6lt" secondAttribute="top" constant="30" id="40k-2R-ezz"/>
+                            <constraint firstItem="lca-4J-6lt" firstAttribute="trailing" secondItem="pCw-Vs-Dff" secondAttribute="trailing" constant="20" id="F10-wd-XKi"/>
+                            <constraint firstItem="21S-I8-TYd" firstAttribute="height" secondItem="JIz-DU-zhi" secondAttribute="height" multiplier="0.065" id="MvW-Ie-aqV"/>
+                            <constraint firstItem="pCw-Vs-Dff" firstAttribute="leading" secondItem="lca-4J-6lt" secondAttribute="leading" constant="20" id="XLx-MX-yuK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lca-4J-6lt"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="jtr-oW-Pl2" id="jed-25-OmS"/>
+                        <outlet property="mobileTextField" destination="mft-vS-qn7" id="gwO-xB-2HV"/>
+                        <outlet property="nameTextField" destination="21S-I8-TYd" id="XxD-w3-kxR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evf-gZ-fSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829" y="118"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="NBp-PK-F72">
+            <objects>
+                <viewController storyboardIdentifier="ChangePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WfC-y2-ZgY" customClass="ChangePasswordViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bRQ-Dj-jtH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="XiE-k2-RV7">
+                                <rect key="frame" x="20" y="74" width="374" height="244.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9iB-QP-Usi" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="blD-xX-NFL" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="93" width="374" height="58.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6PJ-Ua-cfZ" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                        <rect key="frame" x="0.0" y="186.5" width="374" height="58"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6PJ-Ua-cfZ" firstAttribute="height" secondItem="blD-xX-NFL" secondAttribute="height" id="GlH-Nu-rvZ"/>
+                                    <constraint firstItem="blD-xX-NFL" firstAttribute="height" secondItem="9iB-QP-Usi" secondAttribute="height" id="s87-XL-6lY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wTr-bj-e1V" firstAttribute="trailing" secondItem="XiE-k2-RV7" secondAttribute="trailing" constant="20" id="0J3-Fo-Zin"/>
+                            <constraint firstItem="XiE-k2-RV7" firstAttribute="leading" secondItem="wTr-bj-e1V" secondAttribute="leading" constant="20" id="Ucw-bL-nFp"/>
+                            <constraint firstItem="9iB-QP-Usi" firstAttribute="height" secondItem="bRQ-Dj-jtH" secondAttribute="height" multiplier="0.065" id="bHN-Ti-Noc"/>
+                            <constraint firstItem="XiE-k2-RV7" firstAttribute="top" secondItem="wTr-bj-e1V" secondAttribute="top" constant="30" id="glP-a9-jBS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wTr-bj-e1V"/>
+                    </view>
+                    <connections>
+                        <outlet property="currentPasswordTextField" destination="9iB-QP-Usi" id="fgB-JW-fY8"/>
+                        <outlet property="newPasswordTextField" destination="blD-xX-NFL" id="Hin-K1-esT"/>
+                        <outlet property="retypePasswordTextField" destination="6PJ-Ua-cfZ" id="xrG-14-gur"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p81-n0-E4i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1517" y="111"/>
+        </scene>
+        <!--Notifications View Controller-->
+        <scene sceneID="Eep-Mj-DOh">
+            <objects>
+                <viewController storyboardIdentifier="NotificationsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z9x-m4-7LA" customClass="NotificationsViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H8h-W9-ubY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5Mn-Ql-mhk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sZ9-Ly-BPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2264" y="116"/>
+        </scene>
+        <!--Setting List View Controller-->
+        <scene sceneID="zdu-27-Pio">
+            <objects>
+                <viewController storyboardIdentifier="SettingListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EOg-9y-Try" customClass="SettingListViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jfy-m5-liu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v64-JQ-Ffe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EOg-9y-Try" id="2dr-qA-SzE"/>
+                                    <outlet property="delegate" destination="EOg-9y-Try" id="zxl-oR-yPA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="v64-JQ-Ffe" firstAttribute="top" secondItem="Fp0-DK-f9V" secondAttribute="top" id="9gr-KT-ofH"/>
+                            <constraint firstItem="Fp0-DK-f9V" firstAttribute="trailing" secondItem="v64-JQ-Ffe" secondAttribute="trailing" id="Fw8-kU-2h8"/>
+                            <constraint firstItem="v64-JQ-Ffe" firstAttribute="leading" secondItem="Fp0-DK-f9V" secondAttribute="leading" id="Mw2-lA-Ggs"/>
+                            <constraint firstItem="Fp0-DK-f9V" firstAttribute="bottom" secondItem="v64-JQ-Ffe" secondAttribute="bottom" id="saE-uX-EtT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fp0-DK-f9V"/>
+                    </view>
+                    <connections>
+                        <outlet property="settingListTableView" destination="v64-JQ-Ffe" id="TiY-N4-apo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzd-di-XUy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2984" y="116"/>
+        </scene>
+        <!--Setting Detail View Controller-->
+        <scene sceneID="fnC-zz-wtu">
+            <objects>
+                <viewController storyboardIdentifier="SettingDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0kz-lo-rms" customClass="SettingDetailViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nYu-cq-DPm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="QHA-zB-fuj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9U6-TS-hcX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3655" y="118"/>
         </scene>
     </scenes>
 </document>

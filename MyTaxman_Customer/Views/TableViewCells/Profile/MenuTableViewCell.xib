@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MenuTableViewCell" customModule="MyTaxman_Customer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="377" height="81"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCg-G4-jjG">
+                    <rect key="frame" x="0.0" y="0.0" width="377" height="81"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovj-o0-jny">
+                            <rect key="frame" x="20" y="15" width="337" height="51"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="ovj-o0-jny" secondAttribute="trailing" constant="20" id="dfX-1j-Ff8"/>
+                        <constraint firstItem="ovj-o0-jny" firstAttribute="top" secondItem="BCg-G4-jjG" secondAttribute="top" constant="15" id="gKo-dw-zoB"/>
+                        <constraint firstItem="ovj-o0-jny" firstAttribute="leading" secondItem="BCg-G4-jjG" secondAttribute="leading" constant="20" id="os2-5n-45F"/>
+                        <constraint firstAttribute="bottom" secondItem="ovj-o0-jny" secondAttribute="bottom" constant="15" id="t80-3K-sWJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BCg-G4-jjG" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="54h-T2-DDB"/>
+                <constraint firstItem="BCg-G4-jjG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Buk-8k-pVY"/>
+                <constraint firstItem="BCg-G4-jjG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aCl-5T-dQs"/>
+                <constraint firstItem="BCg-G4-jjG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="yEl-99-npK"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="menuLabel" destination="ovj-o0-jny" id="c83-oW-PMh"/>
+            </connections>
+            <point key="canvasLocation" x="110.86956521739131" y="-174.44196428571428"/>
+        </view>
+    </objects>
+</document>

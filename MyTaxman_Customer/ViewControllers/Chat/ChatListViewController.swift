@@ -28,6 +28,8 @@ class ChatListViewController: UIViewController {
     func setupViews(){
         chatTableView.register(ChatTableViewCell.nib, forCellReuseIdentifier: ChatTableViewCell.identifier)
         chatTableView.tableFooterView = UIView()
+        chatTableView.delegate = self
+        chatTableView.dataSource = self
         chatTableView.backgroundColor = ColorManager.white.color
         chatTableView.reloadData()
     }

@@ -46,10 +46,13 @@ class ChatTableViewCell: UITableViewCell {
         nameLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
         
         jobStatusLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
-        jobStatusLabel.backgroundColor = ColorManager.liteBGTheme.color
+        jobStatusLabel.backgroundColor = ColorManager.textVeryLiteGreenColor.color
         jobStatusLabel.cornerRadius = 5
+        jobStatusLabel.textColor = ColorManager.textThickDarkGreenColor.color
         
         chatLabel.font  = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
+        chatLabel.textColor = ColorManager.lightGrey.color
+        
         
         lastMessageLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
     }
@@ -60,24 +63,24 @@ class ChatTableViewCell: UITableViewCell {
         var quote_status = ""
         switch data.quote_status ?? "" {
         case "0":
-            quote_status = "Some one is quoted"
+            quote_status = "Quote Received"
             break
         case "1":
             quote_status = "Hired"
             break
         case "2":
-            quote_status = "Customer quotes declined"
+            quote_status = "Declined"
             break
         case "3":
             quote_status = "Expired"
             break
         case "4":
-            quote_status = "Complete the task"
+            quote_status = "Completed"
             break
         default:
             break
         }
-        jobStatusLabel.text = " \(quote_status) "
+        jobStatusLabel.text = "\t\(quote_status)\t"
         chatLabel.text = data.business_name ?? ""
         lastMessageLabel.text = data.rmsg?.first?.recent_message ?? ""
     }

@@ -190,13 +190,13 @@ class JobListViewController: UIViewController {
         menuOptionVC.modalPresentationStyle = .fullScreen
         menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
         menuOptionVC.hireBusinessAction = {[weak self] in
-            
+            self?.redirectHirePage()
         }
         menuOptionVC.viewJobAction = {[weak self] in
-            
+            self?.redirectViewJobPage()
         }
         menuOptionVC.cancelJobAction = {[weak self] in
-            
+            self?.redirectCancelJobPage()
         }
         let navigationController = UINavigationController(rootViewController: menuOptionVC)
         navigationController.modalPresentationStyle = .overCurrentContext
@@ -207,6 +207,24 @@ class JobListViewController: UIViewController {
     }
 }
 
+extension JobListViewController{
+    func redirectHirePage(){
+        let hireVC = HireViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+        hireVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(hireVC, animated: true)
+    }
+    func redirectCancelJobPage(){
+        let cancelVC = CancelJobsListViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+        cancelVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(cancelVC, animated: true)
+    }
+    
+    func redirectViewJobPage(){
+        //        let hireVC = HireViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+        //        hireVC.hidesBottomBarWhenPushed = true
+        //        self.navigationController?.pushViewController(hireVC, animated: true)
+    }
+}
 extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

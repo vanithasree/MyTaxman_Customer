@@ -1,34 +1,37 @@
 //
-//  CancelJobsListViewController.swift
+//  HireViewController.swift
 //  MyTaxman_Customer
 //
-//  Created by Apple on 01/08/20.
+//  Created by Prem kumar on 08/08/20.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
 import UIKit
 
-class CancelJobsListViewController: UIViewController {
-    @IBOutlet var cancelJobTableView: UITableView!
+class HireViewController: UIViewController {
     
+    @IBOutlet var hireTableView: UITableView!
     @IBOutlet var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         setupViews()
     }
     
-    @IBAction func didTapCancelAction(_ sender: Any) {
+    
+    @IBAction func didTapSubmitAction(_ sender: Any) {
     }
     func setupViews() {
-        cancelJobTableView.delegate = self
-        cancelJobTableView.dataSource = self
-        cancelJobTableView.register(OptionTableViewCell.nib, forCellReuseIdentifier: OptionTableViewCell.identifier)
-        cancelJobTableView.register(JobHeaderView.nib, forHeaderFooterViewReuseIdentifier: JobHeaderView.identifier)
-        cancelJobTableView.estimatedRowHeight = UITableView.automaticDimension
-        cancelJobTableView.separatorStyle = .none
-        cancelJobTableView.tableFooterView = UIView()
-        cancelJobTableView.backgroundColor = .clear
+        hireTableView.delegate = self
+        hireTableView.dataSource = self
+        hireTableView.register(OptionTableViewCell.nib, forCellReuseIdentifier: OptionTableViewCell.identifier)
+        hireTableView.register(JobHeaderView.nib, forHeaderFooterViewReuseIdentifier: JobHeaderView.identifier)
+        hireTableView.estimatedRowHeight = UITableView.automaticDimension
+        hireTableView.separatorStyle = .none
+        hireTableView.tableFooterView = UIView()
+        hireTableView.backgroundColor = .clear
     }
     
     /*
@@ -45,7 +48,7 @@ class CancelJobsListViewController: UIViewController {
 
 
 
-extension CancelJobsListViewController : UITableViewDataSource {
+extension HireViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -65,12 +68,12 @@ extension CancelJobsListViewController : UITableViewDataSource {
             return UIView()
         }
         headerView.backgroundColor = .clear
-        headerView.titleLabel.text = "Please select a reason below:"
+        headerView.titleLabel.text = "Hire business\n\nWho did you hire?"
         return headerView
     }
 }
 
-extension CancelJobsListViewController : UITableViewDelegate {
+extension HireViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

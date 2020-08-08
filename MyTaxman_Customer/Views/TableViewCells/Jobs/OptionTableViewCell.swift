@@ -1,5 +1,5 @@
 //
-//  CompletedJobTableViewCell.swift
+//  OptionTableViewCell.swift
 //  MyTaxman_Customer
 //
 //  Created by Prem kumar on 08/08/20.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class CompletedJobTableViewCell: UITableViewCell {
+class OptionTableViewCell: UITableViewCell {
 
-    @IBOutlet var informationLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,7 +20,6 @@ class CompletedJobTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
     
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="JobDetailsTableViewCell" id="KGk-i7-Jjw" customClass="JobDetailsTableViewCell" customModule="MyTaxman_Customer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oA8-4H-6gF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open for quotes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0S-lF-cvf">
+                                <rect key="frame" x="30" y="5" width="285" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadioSelected" translatesAutoresizingMaskIntoConstraints="NO" id="P15-mR-7IS">
+                                <rect key="frame" x="10" y="8" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="667-f1-RpR"/>
+                                    <constraint firstAttribute="width" constant="15" id="r16-zU-IB7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires in 4 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQD-8O-TGE">
+                                <rect key="frame" x="10" y="35.5" width="305" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FQD-8O-TGE" firstAttribute="top" secondItem="f0S-lF-cvf" secondAttribute="bottom" constant="10" id="HoX-RJ-wtq"/>
+                            <constraint firstItem="f0S-lF-cvf" firstAttribute="top" secondItem="oA8-4H-6gF" secondAttribute="top" constant="5" id="PbD-yf-tWU"/>
+                            <constraint firstAttribute="trailing" secondItem="f0S-lF-cvf" secondAttribute="trailing" constant="5" id="Sg6-jQ-Nlo"/>
+                            <constraint firstItem="f0S-lF-cvf" firstAttribute="centerY" secondItem="P15-mR-7IS" secondAttribute="centerY" id="WDS-IF-AFE"/>
+                            <constraint firstItem="f0S-lF-cvf" firstAttribute="leading" secondItem="P15-mR-7IS" secondAttribute="trailing" constant="5" id="eNn-VH-Szb"/>
+                            <constraint firstItem="P15-mR-7IS" firstAttribute="leading" secondItem="FQD-8O-TGE" secondAttribute="leading" id="rDl-FO-ibX"/>
+                            <constraint firstAttribute="trailing" secondItem="FQD-8O-TGE" secondAttribute="trailing" constant="5" id="vuN-nr-lCS"/>
+                            <constraint firstItem="f0S-lF-cvf" firstAttribute="leading" secondItem="oA8-4H-6gF" secondAttribute="leading" constant="30" id="zbR-Qz-tRY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oA8-4H-6gF" secondAttribute="bottom" constant="1" id="92N-P8-5w4"/>
+                    <constraint firstAttribute="trailing" secondItem="oA8-4H-6gF" secondAttribute="trailing" id="Ccj-s3-GHe"/>
+                    <constraint firstItem="oA8-4H-6gF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="anD-uj-VdE"/>
+                    <constraint firstItem="oA8-4H-6gF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="iZ6-j8-ruh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="titleLabel" destination="f0S-lF-cvf" id="V6k-HX-Ocu"/>
+                <outlet property="userStatusImageView" destination="P15-mR-7IS" id="qOO-Nk-b51"/>
+                <outlet property="valueLabel" destination="FQD-8O-TGE" id="bmq-k7-f03"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="RadioSelected" width="15" height="15"/>
+    </resources>
+</document>

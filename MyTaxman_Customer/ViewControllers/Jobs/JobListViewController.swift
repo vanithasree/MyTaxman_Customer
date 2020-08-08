@@ -36,7 +36,7 @@ class JobListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getCustomerTaskListForActiveView()
-        //self.getCustomerTaskListForCompletedView()
+        self.getCustomerTaskListForCompletedView()
     }
     
     func setupViewUI() {
@@ -92,7 +92,8 @@ class JobListViewController: UIViewController {
             LoadingIndicator.shared.hide()
             if let result = result {
                 if result.code == "1" {
-                    self.activeList =  result.desc?.quotes ?? []
+                    let listItems = result.desc?.quotes ?? []
+                    self.activeList =  listItems.filter { $0.task_status == "0"}
                     self.closedList =  self.activeList.filter { $0.task_cancel_status == "1"}
                 }else {
                 }
@@ -188,7 +189,20 @@ class JobListViewController: UIViewController {
     func menuAction() {
         let menuOptionVC = JobMenuOptionViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
         menuOptionVC.modalPresentationStyle = .fullScreen
-        menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
+        
+        switch self.segmentView.index {
+        case 0:
+            menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
+        case 1:
+            menuOptionVC.optionList = ["View Job Details"]
+        case 2:
+            menuOptionVC.optionList =  ["View Job Details"]
+        default: break
+            
+        }
+        
+        
+        
         menuOptionVC.hireBusinessAction = {[weak self] in
             self?.redirectHirePage()
         }
@@ -220,9 +234,9 @@ extension JobListViewController{
     }
     
     func redirectViewJobPage(){
-        //        let hireVC = HireViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
-        //        hireVC.hidesBottomBarWhenPushed = true
-        //        self.navigationController?.pushViewController(hireVC, animated: true)
+        let jobDetail = JobDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+        jobDetail.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(jobDetail, animated: true)
     }
 }
 extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
@@ -263,7 +277,7 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
             cell.setCompleteValue(data : completedList[indexPath.row])
             break
         case 2:
-            cell.setValue(data : closedList[indexPath.row])
+            cell.setClosedListValue(data : closedList[indexPath.row])
             break
         default:
             break

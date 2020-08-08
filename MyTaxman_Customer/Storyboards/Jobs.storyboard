@@ -267,6 +267,36 @@
             </objects>
             <point key="canvasLocation" x="1946" y="104"/>
         </scene>
+        <!--Job Details View Controller-->
+        <scene sceneID="qIH-Zm-Lc3">
+            <objects>
+                <viewController storyboardIdentifier="JobDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oei-kC-A0v" customClass="JobDetailsViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g6R-SH-KfG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vBi-Do-HYf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vBi-Do-HYf" firstAttribute="top" secondItem="YHQ-33-4db" secondAttribute="top" id="BUo-Yg-LJP"/>
+                            <constraint firstItem="YHQ-33-4db" firstAttribute="bottom" secondItem="vBi-Do-HYf" secondAttribute="bottom" id="WL4-La-6NS"/>
+                            <constraint firstItem="vBi-Do-HYf" firstAttribute="leading" secondItem="YHQ-33-4db" secondAttribute="leading" id="hXA-Ac-muq"/>
+                            <constraint firstItem="YHQ-33-4db" firstAttribute="trailing" secondItem="vBi-Do-HYf" secondAttribute="trailing" id="whC-2H-UFm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YHQ-33-4db"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTableView" destination="vBi-Do-HYf" id="rYH-QZ-duj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1p-Et-uMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2610" y="99"/>
+        </scene>
     </scenes>
     <resources>
         <image name="fund" width="50" height="50"/>

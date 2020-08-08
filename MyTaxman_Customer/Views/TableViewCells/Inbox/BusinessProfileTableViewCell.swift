@@ -52,7 +52,7 @@ class BusinessProfileTableViewCell: UITableViewCell {
         statusLabel.font  = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
         statusLabel.backgroundColor = ColorManager.liteBGTheme.color
         statusLabel.cornerRadius = 5
-        statusLabel.text = "featured"
+        statusLabel.text = " featured "
         statusLabel.textColor = ColorManager.darkTheme.color
         
         ratingLabel.font  = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
@@ -86,30 +86,36 @@ class BusinessProfileTableViewCell: UITableViewCell {
         profileImageView.load(from: vendorProfile?.profile_pic ?? "")
         
         nameLabel.text = vendorProfile?.desc?.first?.vendorname ?? ""
-       /* if let isFeaturedValue = vendorProfile?.desc?.first?.featured, isFeaturedValue == "Yes" {
-            statusLabel.
-        }*/
         
         
-      //  statusLabel.isHidden = vendorProfile?.desc?.first?.featured
-
+        
+        if let isFeaturedValue = vendorProfile?.desc?.first?.featured,!isFeaturedValue.isEmpty ,isFeaturedValue == "Yes" {
+            statusLabel.isHidden = false
+        }
+        else {
+            statusLabel.isHidden = true
+        }
+        
+        
+        //  statusLabel.isHidden = vendorProfile?.desc?.first?.featured
+        
         ratingLabel.text = "\(vendorProfile?.average_Rating?.first?.average_rating ?? "0")\navg rating"
         let ratingAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: ratingLabel.text ?? "")
         ratingAttributedString.setColorForText(textForAttribute: "\(vendorProfile?.average_Rating?.first?.average_rating ?? "0")", withColor: ColorManager.darkText.color, withFont: UIFont(name:Font.FontName.PoppinsBold.rawValue, size: Utility.dynamicSize(16.0))!)
         ratingAttributedString.setLineSpaceForText(lineSpace: 3, alignment: ratingLabel.textAlignment)
         ratingLabel.attributedText = ratingAttributedString
-
+        
         reviewLabel.text = "\(vendorProfile?.review_Count?.first?.review_count ?? "0")\nreviews"
         let reviewAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: reviewLabel.text ?? "")
         reviewAttributedString.setColorForText(textForAttribute: "\(vendorProfile?.review_Count?.first?.review_count ?? "0")", withColor: ColorManager.darkText.color, withFont: UIFont(name:Font.FontName.PoppinsBold.rawValue, size: Utility.dynamicSize(16.0))!)
         reviewAttributedString.setLineSpaceForText(lineSpace: 3, alignment: reviewLabel.textAlignment)
         reviewLabel.attributedText = reviewAttributedString
-
+        
         jobsWonLabel.text = "\(vendorProfile?.job_Won?.first?.jobwon_count ?? "0")\njobs won"
         let jobsWonAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: jobsWonLabel.text ?? "")
         jobsWonAttributedString.setColorForText(textForAttribute: "\(vendorProfile?.job_Won?.first?.jobwon_count ?? "0")", withColor: ColorManager.darkText.color, withFont: UIFont(name:Font.FontName.PoppinsBold.rawValue, size: Utility.dynamicSize(16.0))!)
         jobsWonAttributedString.setLineSpaceForText(lineSpace: 3, alignment: jobsWonLabel.textAlignment)
         jobsWonLabel.attributedText = jobsWonAttributedString
-
+        
     }
 }

@@ -22,6 +22,26 @@ extension UIView {
         layer.shadowOffset = CGSize(width: 1, height: 0)
         layer.masksToBounds = false
     }
+    func setCardView() {
+        /* layer.cornerRadius = 5.0
+         layer.borderColor  =  ColorManager.lightGrey.color.cgColor
+         layer.borderWidth = 1.0
+         layer.shadowOpacity = 0.5
+         layer.shadowColor =  UIColor.lightGray.cgColor
+         layer.shadowRadius = 5.0
+         layer.shadowOffset = CGSize(width:2, height: 2)
+         layer.masksToBounds = true*/
+        
+        
+        
+        self.backgroundColor = .white
+        layer.cornerRadius = 10.0
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        layer.shadowRadius = 6.0
+        layer.shadowOpacity = 0.7
+        
+}
     
     var cornerRadius: CGFloat{
         set{

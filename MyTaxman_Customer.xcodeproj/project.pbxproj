@@ -13,6 +13,9 @@
 		181B01EE24DB1C7D001CDEF5 /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B01ED24DB1C7D001CDEF5 /* CallKit.framework */; };
 		181B01F024DB1C96001CDEF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B01EF24DB1C96001CDEF5 /* CoreGraphics.framework */; };
 		181B01F224DB1C9C001CDEF5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B01F124DB1C9C001CDEF5 /* CoreImage.framework */; };
+		181B01F624DF39C1001CDEF5 /* JobDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B01F524DF39C0001CDEF5 /* JobDetailsViewController.swift */; };
+		181B01F924DF3A8E001CDEF5 /* JobDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B01F724DF3A8E001CDEF5 /* JobDetailsTableViewCell.swift */; };
+		181B01FA24DF3A8E001CDEF5 /* JobDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181B01F824DF3A8E001CDEF5 /* JobDetailsTableViewCell.xib */; };
 		1826253024CCA41F00DF7A4B /* PageSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */; };
 		1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */; };
 		1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */; };
@@ -192,6 +195,9 @@
 		181B01ED24DB1C7D001CDEF5 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		181B01EF24DB1C96001CDEF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		181B01F124DB1C9C001CDEF5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		181B01F524DF39C0001CDEF5 /* JobDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsViewController.swift; sourceTree = "<group>"; };
+		181B01F724DF3A8E001CDEF5 /* JobDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		181B01F824DF3A8E001CDEF5 /* JobDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSixViewController.swift; sourceTree = "<group>"; };
 		1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesViewController.swift; sourceTree = "<group>"; };
 		1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -446,6 +452,8 @@
 				3B1AFF7D24DE8C45006DC145 /* CompletedJobTableViewCell.xib */,
 				3B1D01C124DEFB1F00CBA58D /* OptionTableViewCell.swift */,
 				3B1D01C324DEFB2900CBA58D /* OptionTableViewCell.xib */,
+				181B01F724DF3A8E001CDEF5 /* JobDetailsTableViewCell.swift */,
+				181B01F824DF3A8E001CDEF5 /* JobDetailsTableViewCell.xib */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -764,6 +772,7 @@
 				3B1AFF7124DE7F74006DC145 /* JobMenuOptionViewController.swift */,
 				1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */,
 				3B1D01C924DEFCCA00CBA58D /* HireViewController.swift */,
+				181B01F524DF39C0001CDEF5 /* JobDetailsViewController.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -1030,6 +1039,7 @@
 				3B1AFF6C24DE6B45006DC145 /* JobNotificationTableViewCell.xib in Resources */,
 				3B6B6E6C24D97D5000D70E5F /* NoDataView.xib in Resources */,
 				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
+				181B01FA24DF3A8E001CDEF5 /* JobDetailsTableViewCell.xib in Resources */,
 				18F6AA5824CB4F62005F3855 /* Poppins-Medium.ttf in Resources */,
 				3B1AFF7E24DE8C45006DC145 /* CompletedJobTableViewCell.xib in Resources */,
 				1867F02624D94D9C00A69418 /* incoming.wav in Resources */,
@@ -1238,12 +1248,14 @@
 				1826254A24CDD33B00DF7A4B /* LeadApiManager.swift in Sources */,
 				3B1D01C624DEFBEB00CBA58D /* JobHeaderView.swift in Sources */,
 				1857C75E24CF37BE00E1DDAD /* JobsListModel.swift in Sources */,
+				181B01F924DF3A8E001CDEF5 /* JobDetailsTableViewCell.swift in Sources */,
 				1888977824C728C1000DFAB3 /* LoginViewController.swift in Sources */,
 				3BF05BD424C9634600E16081 /* UIDeviceExtension.swift in Sources */,
 				1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */,
 				3BF05BE624C96AED00E16081 /* UserDetails.swift in Sources */,
 				3BF05BE724C96AED00E16081 /* ColorManager.swift in Sources */,
 				3B1AFF7C24DE8C3C006DC145 /* CompletedJobTableViewCell.swift in Sources */,
+				181B01F624DF39C1001CDEF5 /* JobDetailsViewController.swift in Sources */,
 				3BF05BD524C9634600E16081 /* UIViewExtension.swift in Sources */,
 				3BF05BE524C96AED00E16081 /* FontManager.swift in Sources */,
 				1826254824CDD29900DF7A4B /* LeadsViewModel.swift in Sources */,

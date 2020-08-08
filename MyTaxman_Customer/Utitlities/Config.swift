@@ -20,8 +20,9 @@ enum Constant {
         let totalWidth = boundWidth - (offset + offset) - ((column - 1) * minItemSpacing)
         return totalWidth / column
     }
-        
+    
     static let devURLBaseString = "http://sunrisetechs.com/demo/MyTaxman/index.php"
+    static let imageBaseUrlString = "http://sunrisetechs.com/demo/MyTaxman/"
     
     static let k_deviceToken = "k_deviceToken"
     

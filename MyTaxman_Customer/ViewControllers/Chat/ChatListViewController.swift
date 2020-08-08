@@ -53,7 +53,7 @@ extension ChatListViewController: UITableViewDataSource {
         let noDataView : NoDataView = UIView.fromNib()
         noDataView.frame = tableView.bounds
         tableView.backgroundView = noDataView
-        noDataView.setData(information: "No data found")
+        noDataView.setData(information: "You can start messaging with a business once they have sent you a quote")
         return 0
     }
     
@@ -71,7 +71,7 @@ extension ChatListViewController: UITableViewDataSource {
 
 extension ChatListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Utility.dynamicSize(120)
+        return Utility.dynamicSize(100)
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let inboxDetailsVC = InboxDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)

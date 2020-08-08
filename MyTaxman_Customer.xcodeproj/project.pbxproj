@@ -90,6 +90,15 @@
 		3B1AFF7A24DE8B1D006DC145 /* ClosedJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7924DE8B1D006DC145 /* ClosedJobTableViewCell.xib */; };
 		3B1AFF7C24DE8C3C006DC145 /* CompletedJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7B24DE8C3C006DC145 /* CompletedJobTableViewCell.swift */; };
 		3B1AFF7E24DE8C45006DC145 /* CompletedJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7D24DE8C45006DC145 /* CompletedJobTableViewCell.xib */; };
+		3B1AFF8124DE9975006DC145 /* MenuProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF8024DE9975006DC145 /* MenuProfileHeaderView.swift */; };
+		3B1AFF8324DE9A82006DC145 /* MenuProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF8224DE9A82006DC145 /* MenuProfileHeaderView.xib */; };
+		3B1AFF8624DE9EC3006DC145 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF8524DE9EC3006DC145 /* MenuTableViewCell.swift */; };
+		3B1AFF8824DE9ECC006DC145 /* MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF8724DE9ECC006DC145 /* MenuTableViewCell.xib */; };
+		3B4917C424DEB5E4003E0761 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917C324DEB5E4003E0761 /* EditProfileViewController.swift */; };
+		3B4917C624DEB5F3003E0761 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917C524DEB5F3003E0761 /* ChangePasswordViewController.swift */; };
+		3B4917C824DEB613003E0761 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917C724DEB613003E0761 /* NotificationsViewController.swift */; };
+		3B4917CA24DEB627003E0761 /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917C924DEB627003E0761 /* SettingListViewController.swift */; };
+		3B4917CC24DEB649003E0761 /* SettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917CB24DEB648003E0761 /* SettingDetailViewController.swift */; };
 		3B6B6E5024D9742D00D70E5F /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */; };
 		3B6B6E5124D9742D00D70E5F /* InboxListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */; };
 		3B6B6E5424D9744300D70E5F /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */; };
@@ -263,6 +272,15 @@
 		3B1AFF7924DE8B1D006DC145 /* ClosedJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosedJobTableViewCell.xib; sourceTree = "<group>"; };
 		3B1AFF7B24DE8C3C006DC145 /* CompletedJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedJobTableViewCell.swift; sourceTree = "<group>"; };
 		3B1AFF7D24DE8C45006DC145 /* CompletedJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletedJobTableViewCell.xib; sourceTree = "<group>"; };
+		3B1AFF8024DE9975006DC145 /* MenuProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileHeaderView.swift; sourceTree = "<group>"; };
+		3B1AFF8224DE9A82006DC145 /* MenuProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuProfileHeaderView.xib; sourceTree = "<group>"; };
+		3B1AFF8524DE9EC3006DC145 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		3B1AFF8724DE9ECC006DC145 /* MenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuTableViewCell.xib; sourceTree = "<group>"; };
+		3B4917C324DEB5E4003E0761 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		3B4917C524DEB5F3003E0761 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		3B4917C724DEB613003E0761 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		3B4917C924DEB627003E0761 /* SettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
+		3B4917CB24DEB648003E0761 /* SettingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailViewController.swift; sourceTree = "<group>"; };
 		3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxListModel.swift; sourceTree = "<group>"; };
 		3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
@@ -672,6 +690,7 @@
 		18B2E62824C89CFF002A9CCE /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				3B1AFF8424DE9EA5006DC145 /* Profile */,
 				3BBFD2C624D28C21004B7AE4 /* Inbox */,
 				1826253324CCBB3100DF7A4B /* Jobs */,
 			);
@@ -681,6 +700,7 @@
 		18B2E62924C89D07002A9CCE /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				3B1AFF7F24DE9950006DC145 /* Profile */,
 				3B6B6E6D24D97D5800D70E5F /* NoDataView */,
 				187DDF0C24D68D1900CBE610 /* Jobs */,
 			);
@@ -714,6 +734,11 @@
 			isa = PBXGroup;
 			children = (
 				18F6AA6624CC079B005F3855 /* SettingsViewController.swift */,
+				3B4917C324DEB5E4003E0761 /* EditProfileViewController.swift */,
+				3B4917C524DEB5F3003E0761 /* ChangePasswordViewController.swift */,
+				3B4917C724DEB613003E0761 /* NotificationsViewController.swift */,
+				3B4917C924DEB627003E0761 /* SettingListViewController.swift */,
+				3B4917CB24DEB648003E0761 /* SettingDetailViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -733,6 +758,24 @@
 			children = (
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		3B1AFF7F24DE9950006DC145 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3B1AFF8024DE9975006DC145 /* MenuProfileHeaderView.swift */,
+				3B1AFF8224DE9A82006DC145 /* MenuProfileHeaderView.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		3B1AFF8424DE9EA5006DC145 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3B1AFF8524DE9EC3006DC145 /* MenuTableViewCell.swift */,
+				3B1AFF8724DE9ECC006DC145 /* MenuTableViewCell.xib */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		3B6B6E5224D9743200D70E5F /* Inbox */ = {
@@ -967,6 +1010,7 @@
 				3B6B6E6224D9748700D70E5F /* ChatTableViewCell.xib in Resources */,
 				3B1AFF7624DE8247006DC145 /* JobOptionTableViewCell.xib in Resources */,
 				18F6AA6124CC0758005F3855 /* Settings.storyboard in Resources */,
+				3B1AFF8324DE9A82006DC145 /* MenuProfileHeaderView.xib in Resources */,
 				3B1AFF6C24DE6B45006DC145 /* JobNotificationTableViewCell.xib in Resources */,
 				3B6B6E6C24D97D5000D70E5F /* NoDataView.xib in Resources */,
 				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
@@ -979,6 +1023,7 @@
 				1867F02724D94D9C00A69418 /* ringback.wav in Resources */,
 				18F6AA6E24CC085F005F3855 /* Jobs.storyboard in Resources */,
 				3B6B6E5A24D9746C00D70E5F /* LeftViewCell.xib in Resources */,
+				3B1AFF8824DE9ECC006DC145 /* MenuTableViewCell.xib in Resources */,
 				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,
 				3BF05BAB24C95F2600E16081 /* Poppins-Black.ttf in Resources */,
 				18F6AA5F24CC074B005F3855 /* Inbox.storyboard in Resources */,
@@ -1161,6 +1206,8 @@
 				3BF05BEF24C972F900E16081 /* LoginModel.swift in Sources */,
 				3B6B6E5C24D9746C00D70E5F /* LeftViewCell.swift in Sources */,
 				1826253024CCA41F00DF7A4B /* PageSixViewController.swift in Sources */,
+				3B4917C624DEB5F3003E0761 /* ChangePasswordViewController.swift in Sources */,
+				3B4917C824DEB613003E0761 /* NotificationsViewController.swift in Sources */,
 				18F6AA6A24CC07C1005F3855 /* JobListViewController.swift in Sources */,
 				3BF05BE024C96AEC00E16081 /* StringConstants.swift in Sources */,
 				3BF05BC524C9634600E16081 /* SliderExtension.swift in Sources */,
@@ -1195,12 +1242,14 @@
 				3BF05BCA24C9634600E16081 /* ArrayExtension.swift in Sources */,
 				3B6B6E5124D9742D00D70E5F /* InboxListModel.swift in Sources */,
 				3B8274DA24D51AB9000E1617 /* InboxDetailsViewController.swift in Sources */,
+				3B4917CC24DEB649003E0761 /* SettingDetailViewController.swift in Sources */,
 				187DDF1024D68D4C00CBE610 /* VendorInfoView.swift in Sources */,
 				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,
 				1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */,
 				3B6B6E6524D9748700D70E5F /* ChatTableViewCell.swift in Sources */,
 				3B6B6E5D24D9746C00D70E5F /* RightViewCell.swift in Sources */,
 				1826253B24CD414C00DF7A4B /* FinancialServiceViewController.swift in Sources */,
+				3B1AFF8124DE9975006DC145 /* MenuProfileHeaderView.swift in Sources */,
 				3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */,
 				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,
 				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
@@ -1218,6 +1267,7 @@
 				3BD5F06A24D9BB7500966C63 /* VendorProfileModel.swift in Sources */,
 				1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */,
 				3BF05BC624C9634600E16081 /* UIImageExtension.swift in Sources */,
+				3B4917CA24DEB627003E0761 /* SettingListViewController.swift in Sources */,
 				3B1AFF6D24DE6B45006DC145 /* JobNotificationTableViewCell.swift in Sources */,
 				1826254424CDB94200DF7A4B /* JobsModel.swift in Sources */,
 				3BF05BCC24C9634600E16081 /* UILabelExtension.swift in Sources */,
@@ -1225,6 +1275,7 @@
 				18B2E63124C8AB46002A9CCE /* PageTwoViewController.swift in Sources */,
 				18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */,
 				3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */,
+				3B1AFF8624DE9EC3006DC145 /* MenuTableViewCell.swift in Sources */,
 				1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */,
 				3B6B6E6724D974A200D70E5F /* InboxApiManager.swift in Sources */,
 				3BF05BCB24C9634600E16081 /* StringExtension.swift in Sources */,
@@ -1235,6 +1286,7 @@
 				3B1AFF6B24DE6B45006DC145 /* JobQuoteTableViewCell.swift in Sources */,
 				3BF05BE324C96AEC00E16081 /* Config.swift in Sources */,
 				3BFB7CFB24D98A8400065135 /* ChatTextInputView.swift in Sources */,
+				3B4917C424DEB5E4003E0761 /* EditProfileViewController.swift in Sources */,
 				1826253F24CD481100DF7A4B /* AuditServiceViewController.swift in Sources */,
 				1867F02324D88E7000A69418 /* CallViewController.swift in Sources */,
 				3BF05BCE24C9634600E16081 /* UIButtonExtension.swift in Sources */,

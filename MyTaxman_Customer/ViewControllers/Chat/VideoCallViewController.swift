@@ -46,9 +46,6 @@ class VideoCallViewController: UIViewController {
         callStatusLabel.setLabelCustomProperties(titleText: "", textColor: ColorManager.textLiteGreenColor.color, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0)), numberOfLines: 0, alignment: .center)
         
         
-        acceptBtn.setDarkGreenTheme(btn: acceptBtn, title: "Accept")
-        declineBtn.setDarkGreenTheme(btn: declineBtn, title: "Decline")
-        
         print(call?.remoteUserId!)
         print(call.userInfo)
         
@@ -62,10 +59,22 @@ class VideoCallViewController: UIViewController {
             callStatusLabel.text = "Calling..."
             
         }
-        
-        
+        /*//  Converted to Swift 5.2 by Swiftify v5.2.19376 - https://swiftify.com/
+         localVideoView.addSubview(videoController().localView())
+         localVideoFullscreenGestureRecognizer.require(toFail: switchCameraGestureRecognizer)
+         localVideoFullscreenGestureRecognizer.require(toFail: pauseResumeVideoRecognizer)
+         switchCameraGestureRecognizer.require(toFail: pauseResumeVideoRecognizer)
+         videoController().localView().addGestureRecognizer(localVideoFullscreenGestureRecognizer)
+         videoController().localView().addGestureRecognizer(pauseResumeVideoRecognizer)
+         videoController().remoteView().addGestureRecognizer(remoteVideoFullscreenGestureRecognizer)
+         videoPaused = false*/
         
         if call.details.isVideoOffered == true {
+            localVideoView.addSubview(self.videoController.localView())
+            
+            // localVideoFullscreenGestureRecognizer.require(toFail: switchCameraGestureRecognizer)
+            //self.videoController.localView().addGestureRecognizer(localVideoFullscreenGestureRecognizer)
+            //self.videoController.remoteView().addGestureRecognizer(remoteVideoFullscreenGestureRecognizer)
             
         }
     }
@@ -109,9 +118,24 @@ extension VideoCallViewController : SINCallDelegate {
     func callDidEnd(_ call: SINCall)
     {
         print("Call ended")
+        self.dismiss(animated: true, completion: nil)
+        
         //        audioController.stopPlayingSoundFile()
         //        stopCallDurationTimer()
         //        self.dismiss(animated: true, completion: nil)
         
     }
+    func callDidAddVideoTrack(_ call: SINCall!) {
+        self.remoteVideoView.addSubview(self.videoController.remoteView())
+        self.remoteVideoView.isHidden = true
+    }
+    
+    func callDidPauseVideoTrack(_ call: SINCall!) {
+        self.remoteVideoView.isHidden = true
+    }
+    
+    func callDidResumeVideoTrack(_ call: SINCall!) {
+        self.remoteVideoView.isHidden = false
+    }
+    
 }

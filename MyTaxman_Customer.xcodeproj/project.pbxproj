@@ -10,6 +10,9 @@
 		139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */; };
 		1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */; };
 		181B01EC24DA9175001CDEF5 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */; };
+		181B01EE24DB1C7D001CDEF5 /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B01ED24DB1C7D001CDEF5 /* CallKit.framework */; };
+		181B01F024DB1C96001CDEF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B01EF24DB1C96001CDEF5 /* CoreGraphics.framework */; };
+		181B01F224DB1C9C001CDEF5 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181B01F124DB1C9C001CDEF5 /* CoreImage.framework */; };
 		1826253024CCA41F00DF7A4B /* PageSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */; };
 		1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */; };
 		1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */; };
@@ -161,6 +164,9 @@
 /* Begin PBXFileReference section */
 		1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelJobsListViewController.swift; sourceTree = "<group>"; };
 		181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		181B01ED24DB1C7D001CDEF5 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
+		181B01EF24DB1C96001CDEF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		181B01F124DB1C9C001CDEF5 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		1826252F24CCA41F00DF7A4B /* PageSixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSixViewController.swift; sourceTree = "<group>"; };
 		1826253124CCA82900DF7A4B /* GetPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesViewController.swift; sourceTree = "<group>"; };
 		1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
@@ -310,10 +316,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1867F01B24D8856000A69418 /* CoreVideo.framework in Frameworks */,
+				181B01F224DB1C9C001CDEF5 /* CoreImage.framework in Frameworks */,
+				181B01F024DB1C96001CDEF5 /* CoreGraphics.framework in Frameworks */,
+				181B01EE24DB1C7D001CDEF5 /* CallKit.framework in Frameworks */,
 				1867F02124D8857800A69418 /* QuartzCore.framework in Frameworks */,
 				1867F01F24D8857100A69418 /* OpenGLES.framework in Frameworks */,
 				1867F01D24D8856600A69418 /* GLKit.framework in Frameworks */,
-				1867F01B24D8856000A69418 /* CoreVideo.framework in Frameworks */,
 				1867F01924D8855700A69418 /* CoreMedia.framework in Frameworks */,
 				1867F01724D8855100A69418 /* VideoToolbox.framework in Frameworks */,
 				1867F01524D8854700A69418 /* AudioToolbox.framework in Frameworks */,
@@ -347,6 +356,9 @@
 		07C4425314996773865BA38C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				181B01F124DB1C9C001CDEF5 /* CoreImage.framework */,
+				181B01EF24DB1C96001CDEF5 /* CoreGraphics.framework */,
+				181B01ED24DB1C7D001CDEF5 /* CallKit.framework */,
 				1867F02024D8857800A69418 /* QuartzCore.framework */,
 				1867F01E24D8857000A69418 /* OpenGLES.framework */,
 				1867F01C24D8856600A69418 /* GLKit.framework */,

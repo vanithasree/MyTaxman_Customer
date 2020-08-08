@@ -11,12 +11,13 @@ import IQKeyboardManagerSwift
 import GooglePlaces
 import Sinch
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var client: SINClient!
-   
+    
     var player: AVAudioPlayer?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -32,23 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             redirectToGetStartPage()
         }
         
-        func onUserDidLogin(_ userId: String)
-        {
-            // self.push?.registerUserNotificationSettings()
-            print("calling initSinch")
-            self.initSinchClient(withUserId: userId)
-        }
+        
         
         NotificationCenter.default.addObserver(forName: Notification.Name("UserDidLoginNotification"), object: nil, queue: nil, using: {(_ note: Notification) -> Void in
             print("Got notification")
             let userId = note.userInfo!["userId"] as? String
             UserDefaults.standard.set(userId, forKey: "userId")
             UserDefaults.standard.synchronize()
-            onUserDidLogin(userId!)
+            self.onUserDidLogin(userId!)
         })
         // Override point for customization after application launch.
         return true
     }
+    
     
     // MARK: UISceneSession Lifecycle
     @available(iOS 13.0, *)
@@ -81,6 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = initialVC
     }
     
+    func onUserDidLogin(_ userId: String)
+    {
+        // self.push?.registerUserNotificationSettings()
+        print("calling initSinch")
+        self.initSinchClient(withUserId: userId)
+    }
 }
 
 extension AppDelegate : SINClientDelegate {

@@ -302,7 +302,13 @@ extension JobListViewController : JobDetailsActionButtonDelegate {
 }
 extension JobListViewController : SINCallClientDelegate, SINCallDelegate {
     func client(_ client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
-        self.redirectToCallVC(call: call)
+        if call.details.isVideoOffered {
+            self.redirectToVideoCallVC(call: call)
+        }
+        else {
+            self.redirectToCallVC(call: call)
+        }
+        
     }
     
     /*func client(_ client: SINCallClient!, localNotificationForIncomingCall call: SINCall!) -> SINLocalNotification! {

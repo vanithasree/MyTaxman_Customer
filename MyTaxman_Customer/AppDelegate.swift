@@ -97,7 +97,7 @@ extension AppDelegate : SINClientDelegate {
                                   userId: userId)
             client.delegate = self
             client.setSupportCalling(true)
-           // client.enableManagedPushNotifications()
+            // client.enableManagedPushNotifications()
             client.start()
             client.startListeningOnActiveConnection()
             
@@ -116,18 +116,18 @@ extension AppDelegate : SINClientDelegate {
     func client(_ client: SINClient, logMessage message: String, area: String, severity: SINLogSeverity, timestamp: Date) {
         print("\(message)")
     }
-
+    
     func callDidProgress(call: SINCall!) {
-
+        
     }
-
+    
     func callDidEstablish(call: SINCall!) {
-//        callStatus.text = "Call Connected"
+        //        callStatus.text = "Call Connected"
         print("Call Connected")
     }
-
+    
     func callDidEnd(call: SINCall!) {
-
+        
     }
     func client(client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
         //        call.delegate = self;

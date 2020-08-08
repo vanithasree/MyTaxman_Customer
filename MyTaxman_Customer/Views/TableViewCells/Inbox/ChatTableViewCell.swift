@@ -95,7 +95,7 @@ class ChatTableViewCell: UITableViewCell {
         default:
             break
         }
-        jobStatusLabel.text = "\t\(quote_status)\t"
+        jobStatusLabel.text = "  \(quote_status)  "
         chatLabel.text = data.category ?? ""
         lastMessageLabel.text = data.rmsg?.first?.recent_message ?? ""
         

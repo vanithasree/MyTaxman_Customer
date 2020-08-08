@@ -36,8 +36,8 @@ class JobsTableViewCell: UITableViewCell {
     }
     
     func setCellViewUI() {
-        quoteTitleLabel.setMainTitle(titleText: "Test")
-        quoteStatusMessageLabel.setPopupTitle(titleText: "Welcome")
+        quoteTitleLabel.setMainTitle(titleText: "")
+        quoteStatusMessageLabel.setPopupTitle(titleText: "")
         
         jobTableView.register(QuoteTableViewCell.nib, forCellReuseIdentifier: QuoteTableViewCell.identifier)
         jobTableView.register(JobNotificationTableViewCell.nib, forCellReuseIdentifier: JobNotificationTableViewCell.identifier)
@@ -64,6 +64,18 @@ class JobsTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
+    func setValue(data : Quotes) {
+        quoteTitleLabel.text = ""
+        onlineUserImageView.load(from: "")
+        quoteStatusMessageLabel.text = ""
+    }
+    
+    func setCompleteValue(data : Ilist) {
+        quoteTitleLabel.text = ""
+        onlineUserImageView.load(from: "")
+        quoteStatusMessageLabel.text = ""
+    }
+        
 }
 
 extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {

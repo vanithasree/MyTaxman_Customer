@@ -208,11 +208,24 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
         guard let cell : JobsTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobsTableViewCell.identifier) as? JobsTableViewCell else {
             return UITableViewCell()
         }
-        cell.backgroundColor = .yellow
+        cell.backgroundColor = .clear
         cell.selectionStyle = .none
         cell.menuAction = {[weak self] in
         }
         cell.seemoreAction = {[weak self] in
+        }
+        switch self.segmentView.index {
+        case 0:
+            cell.setValue(data : activeList[indexPath.row])
+            break
+        case 1:
+            cell.setCompleteValue(data : completedList[indexPath.row])
+            break
+        case 2:
+            cell.setValue(data : closedList[indexPath.row])
+            break
+        default:
+            break
         }
         return cell
     }

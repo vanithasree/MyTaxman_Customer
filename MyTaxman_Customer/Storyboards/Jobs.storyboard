@@ -179,6 +179,94 @@
             </objects>
             <point key="canvasLocation" x="552" y="104"/>
         </scene>
+        <!--Cancel Jobs List View Controller-->
+        <scene sceneID="AG2-1i-WHl">
+            <objects>
+                <viewController storyboardIdentifier="CancelJobsListViewController" id="QoW-Yf-cyO" customClass="CancelJobsListViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sN7-rp-5aF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HiJ-WC-Eyv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="751"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="QoW-Yf-cyO" id="02C-Lw-dXa"/>
+                                    <outlet property="delegate" destination="QoW-Yf-cyO" id="8C6-qT-PJG"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dL-wT-Fub">
+                                <rect key="frame" x="0.0" y="795" width="414" height="67"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapCancelAction:" destination="QoW-Yf-cyO" eventType="touchUpInside" id="V4T-tX-B6B"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8dL-wT-Fub" firstAttribute="leading" secondItem="asL-bd-8ZB" secondAttribute="leading" id="HlD-P8-CT2"/>
+                            <constraint firstItem="HiJ-WC-Eyv" firstAttribute="top" secondItem="asL-bd-8ZB" secondAttribute="top" id="Kp1-N1-870"/>
+                            <constraint firstItem="8dL-wT-Fub" firstAttribute="height" secondItem="sN7-rp-5aF" secondAttribute="height" multiplier="0.075" id="Vrf-b8-8dh"/>
+                            <constraint firstItem="asL-bd-8ZB" firstAttribute="trailing" secondItem="HiJ-WC-Eyv" secondAttribute="trailing" id="nNH-S7-Xti"/>
+                            <constraint firstItem="HiJ-WC-Eyv" firstAttribute="leading" secondItem="asL-bd-8ZB" secondAttribute="leading" id="pKX-zo-8gO"/>
+                            <constraint firstItem="asL-bd-8ZB" firstAttribute="bottom" secondItem="8dL-wT-Fub" secondAttribute="bottom" id="qJr-Na-KaZ"/>
+                            <constraint firstItem="asL-bd-8ZB" firstAttribute="trailing" secondItem="8dL-wT-Fub" secondAttribute="trailing" id="r6Y-cA-6vH"/>
+                            <constraint firstItem="8dL-wT-Fub" firstAttribute="top" secondItem="HiJ-WC-Eyv" secondAttribute="bottom" id="xkq-kQ-FFf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="asL-bd-8ZB"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelJobTableView" destination="HiJ-WC-Eyv" id="dI0-tF-4Si"/>
+                        <outlet property="submitButton" destination="8dL-wT-Fub" id="r2h-h0-AwC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s3R-Q3-QFL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="104"/>
+        </scene>
+        <!--Hire View Controller-->
+        <scene sceneID="B2V-as-Fed">
+            <objects>
+                <viewController storyboardIdentifier="HireViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7nP-e0-t6c" customClass="HireViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lpr-UU-7AS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AH9-Vk-sMW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="751"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z07-P4-dg2">
+                                <rect key="frame" x="0.0" y="795" width="414" height="67"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapSubmitAction:" destination="7nP-e0-t6c" eventType="touchUpInside" id="cjT-zI-RZr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="S7F-MQ-eq5" firstAttribute="trailing" secondItem="z07-P4-dg2" secondAttribute="trailing" id="E39-Xi-uNO"/>
+                            <constraint firstItem="S7F-MQ-eq5" firstAttribute="bottom" secondItem="z07-P4-dg2" secondAttribute="bottom" id="LjK-mc-7CU"/>
+                            <constraint firstItem="z07-P4-dg2" firstAttribute="top" secondItem="AH9-Vk-sMW" secondAttribute="bottom" id="PHe-5b-C14"/>
+                            <constraint firstItem="z07-P4-dg2" firstAttribute="leading" secondItem="S7F-MQ-eq5" secondAttribute="leading" id="bxT-CH-acK"/>
+                            <constraint firstItem="AH9-Vk-sMW" firstAttribute="leading" secondItem="S7F-MQ-eq5" secondAttribute="leading" id="d5L-ah-8zM"/>
+                            <constraint firstItem="AH9-Vk-sMW" firstAttribute="top" secondItem="S7F-MQ-eq5" secondAttribute="top" id="onz-q2-xPU"/>
+                            <constraint firstItem="S7F-MQ-eq5" firstAttribute="trailing" secondItem="AH9-Vk-sMW" secondAttribute="trailing" id="roF-d8-c8l"/>
+                            <constraint firstItem="z07-P4-dg2" firstAttribute="height" secondItem="lpr-UU-7AS" secondAttribute="height" multiplier="0.075" id="wNc-KR-XTX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S7F-MQ-eq5"/>
+                    </view>
+                    <connections>
+                        <outlet property="hireTableView" destination="AH9-Vk-sMW" id="Xvu-06-oes"/>
+                        <outlet property="submitButton" destination="z07-P4-dg2" id="Do8-LF-5Up"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lch-BQ-4ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1946" y="104"/>
+        </scene>
     </scenes>
     <resources>
         <image name="fund" width="50" height="50"/>

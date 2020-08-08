@@ -25,18 +25,18 @@ class ChatViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupViews()
         requestChat()
-
     }
     
     func setupViews(){
         InputView.backgroundColor = ColorManager.backgroundGrey.color
         chatTextView.backgroundColor = ColorManager.white.color
         chatTextView.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(17.0))
-//        chatTextView.placeholder = "Write a message"
         chatTextView.delegate = self
         doOnMain {
             self.chatTextView.cornerRadius = self.chatTextView.frame.height / 2
         }
+        chatTableView.dataSource = self
+        chatTableView.delegate = self
         chatTableView.register(LeftViewCell.nib, forCellReuseIdentifier: LeftViewCell.identifier)
         chatTableView.register(RightViewCell.nib, forCellReuseIdentifier: RightViewCell.identifier)
         chatTableView.rowHeight = UITableView.automaticDimension
@@ -71,7 +71,7 @@ class ChatViewController: UIViewController {
     }
 }
 
-extension ChatViewController: UITableViewDataSource {
+extension ChatViewController: UITableViewDataSource , UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         if (chatList.count > 0){
             tableView.backgroundView = nil
@@ -117,7 +117,9 @@ extension ChatViewController {
                     self.chatList = result.desc ?? []
                     doOnMain {
                         self.chatTableView.reloadData()
-                        self.chatTableView.scrollToBottom()
+                        if self.chatList.count > 0 {
+                            self.chatTableView.scrollToBottom()
+                        }
                     }
                 }else{
                     print("No response found.")

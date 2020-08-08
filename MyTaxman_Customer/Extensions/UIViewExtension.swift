@@ -129,7 +129,7 @@ extension UIImageView {
     ///
     /// - Parameter urlString: URL String of image.
     /// - Parameter placeholderImages: placeholder images
-    func load(from urlString: String?, orLocalImages: String = "welcomeAvatar") {
+    func load(from urlString: String?, orLocalImages: String = "profile") {
         
         
         let placeholder = UIImage(named: orLocalImages)

@@ -131,6 +131,54 @@
             </objects>
             <point key="canvasLocation" x="-201.44927536231884" y="103.79464285714285"/>
         </scene>
+        <!--Job Menu Option View Controller-->
+        <scene sceneID="USm-R4-XYw">
+            <objects>
+                <viewController storyboardIdentifier="JobMenuOptionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2M2-1m-bsZ" customClass="JobMenuOptionViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7gK-KE-Y1j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7Z-Yg-dfs">
+                                <rect key="frame" x="0.0" y="612" width="414" height="250"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5I1-8l-aEg">
+                                        <rect key="frame" x="0.0" y="20" width="414" height="230"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="2M2-1m-bsZ" id="eQ9-yK-JAi"/>
+                                            <outlet property="delegate" destination="2M2-1m-bsZ" id="AHG-S0-aMy"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5I1-8l-aEg" secondAttribute="trailing" id="4fx-Dp-rda"/>
+                                    <constraint firstAttribute="bottom" secondItem="5I1-8l-aEg" secondAttribute="bottom" id="7Nc-5u-Uzj"/>
+                                    <constraint firstAttribute="height" constant="250" id="96m-IH-x9k"/>
+                                    <constraint firstItem="5I1-8l-aEg" firstAttribute="leading" secondItem="d7Z-Yg-dfs" secondAttribute="leading" id="Kpr-tg-bMs"/>
+                                    <constraint firstItem="5I1-8l-aEg" firstAttribute="top" secondItem="d7Z-Yg-dfs" secondAttribute="top" constant="20" id="gnD-D0-kJb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="d7Z-Yg-dfs" firstAttribute="leading" secondItem="ucQ-hr-n0F" secondAttribute="leading" id="PZ8-Tv-tx7"/>
+                            <constraint firstItem="ucQ-hr-n0F" firstAttribute="bottom" secondItem="d7Z-Yg-dfs" secondAttribute="bottom" id="X9q-S8-y7C"/>
+                            <constraint firstItem="ucQ-hr-n0F" firstAttribute="trailing" secondItem="d7Z-Yg-dfs" secondAttribute="trailing" id="wHX-9c-5oi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ucQ-hr-n0F"/>
+                    </view>
+                    <connections>
+                        <outlet property="bgView" destination="d7Z-Yg-dfs" id="S8x-eP-bvP"/>
+                        <outlet property="contentViewHeightConstraints" destination="96m-IH-x9k" id="8q7-3h-CFF"/>
+                        <outlet property="optionTableView" destination="5I1-8l-aEg" id="LzF-YT-2wc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Esu-Ve-ZGv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="552" y="104"/>
+        </scene>
     </scenes>
     <resources>
         <image name="fund" width="50" height="50"/>

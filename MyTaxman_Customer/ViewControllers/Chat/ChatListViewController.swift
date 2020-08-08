@@ -66,7 +66,6 @@ extension ChatListViewController: UITableViewDataSource {
         cell.setValue(data: inboxList[indexPath.row])
         return cell
     }
-    
 }
 
 extension ChatListViewController: UITableViewDelegate {

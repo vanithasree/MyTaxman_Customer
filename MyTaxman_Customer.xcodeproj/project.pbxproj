@@ -83,6 +83,9 @@
 		3B1AFF6E24DE6B45006DC145 /* JobQuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6824DE6B44006DC145 /* JobQuoteTableViewCell.xib */; };
 		3B1AFF6F24DE6B45006DC145 /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6924DE6B44006DC145 /* JobsTableViewCell.swift */; };
 		3B1AFF7024DE6B45006DC145 /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6A24DE6B44006DC145 /* JobsTableViewCell.xib */; };
+		3B1AFF7224DE7F74006DC145 /* JobMenuOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7124DE7F74006DC145 /* JobMenuOptionViewController.swift */; };
+		3B1AFF7424DE8241006DC145 /* JobOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7324DE8241006DC145 /* JobOptionTableViewCell.swift */; };
+		3B1AFF7624DE8247006DC145 /* JobOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7524DE8247006DC145 /* JobOptionTableViewCell.xib */; };
 		3B6B6E5024D9742D00D70E5F /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */; };
 		3B6B6E5124D9742D00D70E5F /* InboxListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */; };
 		3B6B6E5424D9744300D70E5F /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */; };
@@ -249,6 +252,9 @@
 		3B1AFF6824DE6B44006DC145 /* JobQuoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobQuoteTableViewCell.xib; sourceTree = "<group>"; };
 		3B1AFF6924DE6B44006DC145 /* JobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
 		3B1AFF6A24DE6B44006DC145 /* JobsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsTableViewCell.xib; sourceTree = "<group>"; };
+		3B1AFF7124DE7F74006DC145 /* JobMenuOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobMenuOptionViewController.swift; sourceTree = "<group>"; };
+		3B1AFF7324DE8241006DC145 /* JobOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOptionTableViewCell.swift; sourceTree = "<group>"; };
+		3B1AFF7524DE8247006DC145 /* JobOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobOptionTableViewCell.xib; sourceTree = "<group>"; };
 		3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxListModel.swift; sourceTree = "<group>"; };
 		3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
@@ -396,6 +402,8 @@
 				3B1AFF6624DE6B43006DC145 /* JobNotificationTableViewCell.xib */,
 				3B1AFF6824DE6B44006DC145 /* JobQuoteTableViewCell.xib */,
 				3B1AFF6524DE6B43006DC145 /* JobQuoteTableViewCell.swift */,
+				3B1AFF7324DE8241006DC145 /* JobOptionTableViewCell.swift */,
+				3B1AFF7524DE8247006DC145 /* JobOptionTableViewCell.xib */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -702,6 +710,7 @@
 			isa = PBXGroup;
 			children = (
 				18F6AA6924CC07C1005F3855 /* JobListViewController.swift */,
+				3B1AFF7124DE7F74006DC145 /* JobMenuOptionViewController.swift */,
 				1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */,
 			);
 			path = Jobs;
@@ -943,6 +952,7 @@
 			files = (
 				18F6AA5D24CC06FC005F3855 /* Tabbar.storyboard in Resources */,
 				3B6B6E6224D9748700D70E5F /* ChatTableViewCell.xib in Resources */,
+				3B1AFF7624DE8247006DC145 /* JobOptionTableViewCell.xib in Resources */,
 				18F6AA6124CC0758005F3855 /* Settings.storyboard in Resources */,
 				3B1AFF6C24DE6B45006DC145 /* JobNotificationTableViewCell.xib in Resources */,
 				3B6B6E6C24D97D5000D70E5F /* NoDataView.xib in Resources */,
@@ -1181,6 +1191,7 @@
 				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
 				1826254C24CDEE6F00DF7A4B /* TaxReturnViewController.swift in Sources */,
 				3B8274D424D51A6B000E1617 /* QuoteDetailsViewController.swift in Sources */,
+				3B1AFF7224DE7F74006DC145 /* JobMenuOptionViewController.swift in Sources */,
 				18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */,
 				3B6B6E5424D9744300D70E5F /* InboxViewModel.swift in Sources */,
 				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
@@ -1203,6 +1214,7 @@
 				3B6B6E6724D974A200D70E5F /* InboxApiManager.swift in Sources */,
 				3BF05BCB24C9634600E16081 /* StringExtension.swift in Sources */,
 				3B6B6E5024D9742D00D70E5F /* ChatModel.swift in Sources */,
+				3B1AFF7424DE8241006DC145 /* JobOptionTableViewCell.swift in Sources */,
 				3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */,
 				3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */,
 				3B1AFF6B24DE6B45006DC145 /* JobQuoteTableViewCell.swift in Sources */,

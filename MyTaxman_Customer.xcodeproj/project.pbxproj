@@ -86,6 +86,10 @@
 		3B1AFF7224DE7F74006DC145 /* JobMenuOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7124DE7F74006DC145 /* JobMenuOptionViewController.swift */; };
 		3B1AFF7424DE8241006DC145 /* JobOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7324DE8241006DC145 /* JobOptionTableViewCell.swift */; };
 		3B1AFF7624DE8247006DC145 /* JobOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7524DE8247006DC145 /* JobOptionTableViewCell.xib */; };
+		3B1AFF7824DE8B13006DC145 /* ClosedJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7724DE8B13006DC145 /* ClosedJobTableViewCell.swift */; };
+		3B1AFF7A24DE8B1D006DC145 /* ClosedJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7924DE8B1D006DC145 /* ClosedJobTableViewCell.xib */; };
+		3B1AFF7C24DE8C3C006DC145 /* CompletedJobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7B24DE8C3C006DC145 /* CompletedJobTableViewCell.swift */; };
+		3B1AFF7E24DE8C45006DC145 /* CompletedJobTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF7D24DE8C45006DC145 /* CompletedJobTableViewCell.xib */; };
 		3B6B6E5024D9742D00D70E5F /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */; };
 		3B6B6E5124D9742D00D70E5F /* InboxListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */; };
 		3B6B6E5424D9744300D70E5F /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */; };
@@ -255,6 +259,10 @@
 		3B1AFF7124DE7F74006DC145 /* JobMenuOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobMenuOptionViewController.swift; sourceTree = "<group>"; };
 		3B1AFF7324DE8241006DC145 /* JobOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOptionTableViewCell.swift; sourceTree = "<group>"; };
 		3B1AFF7524DE8247006DC145 /* JobOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobOptionTableViewCell.xib; sourceTree = "<group>"; };
+		3B1AFF7724DE8B13006DC145 /* ClosedJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedJobTableViewCell.swift; sourceTree = "<group>"; };
+		3B1AFF7924DE8B1D006DC145 /* ClosedJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClosedJobTableViewCell.xib; sourceTree = "<group>"; };
+		3B1AFF7B24DE8C3C006DC145 /* CompletedJobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedJobTableViewCell.swift; sourceTree = "<group>"; };
+		3B1AFF7D24DE8C45006DC145 /* CompletedJobTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompletedJobTableViewCell.xib; sourceTree = "<group>"; };
 		3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxListModel.swift; sourceTree = "<group>"; };
 		3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
@@ -404,6 +412,10 @@
 				3B1AFF6524DE6B43006DC145 /* JobQuoteTableViewCell.swift */,
 				3B1AFF7324DE8241006DC145 /* JobOptionTableViewCell.swift */,
 				3B1AFF7524DE8247006DC145 /* JobOptionTableViewCell.xib */,
+				3B1AFF7724DE8B13006DC145 /* ClosedJobTableViewCell.swift */,
+				3B1AFF7924DE8B1D006DC145 /* ClosedJobTableViewCell.xib */,
+				3B1AFF7B24DE8C3C006DC145 /* CompletedJobTableViewCell.swift */,
+				3B1AFF7D24DE8C45006DC145 /* CompletedJobTableViewCell.xib */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -951,6 +963,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F6AA5D24CC06FC005F3855 /* Tabbar.storyboard in Resources */,
+				3B1AFF7A24DE8B1D006DC145 /* ClosedJobTableViewCell.xib in Resources */,
 				3B6B6E6224D9748700D70E5F /* ChatTableViewCell.xib in Resources */,
 				3B1AFF7624DE8247006DC145 /* JobOptionTableViewCell.xib in Resources */,
 				18F6AA6124CC0758005F3855 /* Settings.storyboard in Resources */,
@@ -958,6 +971,7 @@
 				3B6B6E6C24D97D5000D70E5F /* NoDataView.xib in Resources */,
 				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
 				18F6AA5824CB4F62005F3855 /* Poppins-Medium.ttf in Resources */,
+				3B1AFF7E24DE8C45006DC145 /* CompletedJobTableViewCell.xib in Resources */,
 				1867F02624D94D9C00A69418 /* incoming.wav in Resources */,
 				3BF05BA424C95EE900E16081 /* Poppins-Light.ttf in Resources */,
 				3B1AFF7024DE6B45006DC145 /* JobsTableViewCell.xib in Resources */,
@@ -1163,6 +1177,7 @@
 				1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */,
 				3BF05BE624C96AED00E16081 /* UserDetails.swift in Sources */,
 				3BF05BE724C96AED00E16081 /* ColorManager.swift in Sources */,
+				3B1AFF7C24DE8C3C006DC145 /* CompletedJobTableViewCell.swift in Sources */,
 				3BF05BD524C9634600E16081 /* UIViewExtension.swift in Sources */,
 				3BF05BE524C96AED00E16081 /* FontManager.swift in Sources */,
 				1826254824CDD29900DF7A4B /* LeadsViewModel.swift in Sources */,
@@ -1230,6 +1245,7 @@
 				18F6AA5624CA0E63005F3855 /* ContactInfoViewController.swift in Sources */,
 				1888977C24C72919000DFAB3 /* GetStartedViewController.swift in Sources */,
 				1826253924CD362A00DF7A4B /* AccountServiceViewController.swift in Sources */,
+				3B1AFF7824DE8B13006DC145 /* ClosedJobTableViewCell.swift in Sources */,
 				1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */,
 				181B01EC24DA9175001CDEF5 /* VideoCallViewController.swift in Sources */,
 				1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */,

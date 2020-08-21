@@ -111,6 +111,7 @@
 		3B4917C824DEB613003E0761 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917C724DEB613003E0761 /* NotificationsViewController.swift */; };
 		3B4917CA24DEB627003E0761 /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917C924DEB627003E0761 /* SettingListViewController.swift */; };
 		3B4917CC24DEB649003E0761 /* SettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917CB24DEB648003E0761 /* SettingDetailViewController.swift */; };
+		3B5AF94D24F020E9009FD397 /* ClosedJobListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF94C24F020E9009FD397 /* ClosedJobListModel.swift */; };
 		3B6B6E5024D9742D00D70E5F /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */; };
 		3B6B6E5124D9742D00D70E5F /* InboxListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */; };
 		3B6B6E5424D9744300D70E5F /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */; };
@@ -305,6 +306,7 @@
 		3B4917C724DEB613003E0761 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		3B4917C924DEB627003E0761 /* SettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
 		3B4917CB24DEB648003E0761 /* SettingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailViewController.swift; sourceTree = "<group>"; };
+		3B5AF94C24F020E9009FD397 /* ClosedJobListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedJobListModel.swift; sourceTree = "<group>"; };
 		3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxListModel.swift; sourceTree = "<group>"; };
 		3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 			children = (
 				1826254324CDB94200DF7A4B /* JobsModel.swift */,
 				1857C75D24CF37BD00E1DDAD /* JobsListModel.swift */,
+				3B5AF94C24F020E9009FD397 /* ClosedJobListModel.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -1354,6 +1357,7 @@
 				3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */,
 				3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */,
 				3B1AFF6B24DE6B45006DC145 /* JobQuoteTableViewCell.swift in Sources */,
+				3B5AF94D24F020E9009FD397 /* ClosedJobListModel.swift in Sources */,
 				3BF05BE324C96AEC00E16081 /* Config.swift in Sources */,
 				3BFB7CFB24D98A8400065135 /* ChatTextInputView.swift in Sources */,
 				3B4917C424DEB5E4003E0761 /* EditProfileViewController.swift in Sources */,

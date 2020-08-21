@@ -135,8 +135,8 @@ class LeadApiManager {
         }
     }
     
-    func getCusClosedTaskList(input: Parameters, handler: @escaping (_ result: CompletedTaskListBase?, _ error: AlertMessage?)->()) {
-        APIManager.shared().call(type: LeadsApi.closedtask, params: input) { (result: CompletedTaskListBase?,message: AlertMessage?) in
+    func getCusClosedTaskList(input: Parameters, handler: @escaping (_ result: ClosedJobListBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: LeadsApi.closedtask, params: input) { (result: ClosedJobListBase?,message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {

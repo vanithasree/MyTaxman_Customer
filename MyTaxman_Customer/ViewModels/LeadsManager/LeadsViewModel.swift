@@ -27,7 +27,7 @@ class LeadViewModel {
         LeadApiManager().getCusCompletedTaskList(input: input, handler: handler)
     }
     
-    func getCustomerTaskListForClosedTab(input: Parameters, handler: @escaping (_ user: CompletedTaskListBase?, _ error: AlertMessage?)->()) {
+    func getCustomerTaskListForClosedTab(input: Parameters, handler: @escaping (_ user: ClosedJobListBase?, _ error: AlertMessage?)->()) {
         LeadApiManager().getCusClosedTaskList(input: input, handler: handler)
     }
 }

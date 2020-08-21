@@ -24,7 +24,7 @@ class JobListViewController: BaseViewController {
     
     var activeList : [Quotes] = []
     var completedList : [Ilist] = []
-    var closedList : [Quotes] = []
+    var closedList : [Received_quotes] = []
     var no_of_vendor_count : String = "0"
     
     override func viewDidLoad() {
@@ -36,9 +36,9 @@ class JobListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.getCustomerTaskListForActiveView()
-        //        self.getCustomerTaskListForCompletedView()
-        //        self.getCustomerTaskListForClosedView()
+//        self.getCustomerTaskListForActiveView()
+//        self.getCustomerTaskListForCompletedView()
+        self.getCustomerTaskListForClosedView()
     }
     
     func setupViewUI() {
@@ -114,9 +114,6 @@ class JobListViewController: BaseViewController {
                     doOnMain {
                         self.jobsListTableView.reloadData()
                     }
-                    //                    let listItems = result.desc?.quotes ?? []
-                    //                    self.activeList =  listItems.filter { $0.task_status == "0"}
-                    //                    self.closedList =  self.activeList.filter { $0.task_cancel_status == "1"}
                 }else {
                     self.presentAlert(withTitle: "", message: "")
                 }
@@ -154,11 +151,11 @@ class JobListViewController: BaseViewController {
         let params: Parameters = [
             "customerid": UserDetails.shared.userId ,
         ]
-        leadViewModel.getCustomerTaskListForClosedTab(input: params) { (result: CompletedTaskListBase?, alert: AlertMessage?) in
+        leadViewModel.getCustomerTaskListForClosedTab(input: params) { (result: ClosedJobListBase?, alert: AlertMessage?) in
             LoadingIndicator.shared.hide()
             if let result = result {
                 if result.code == "1"{
-                    //                    self.closedList = result.desc?.ilist ?? []
+                    self.closedList = result.received_quotes ?? []
                     doOnMain {
                         self.jobsListTableView.reloadData()
                     }
@@ -317,10 +314,10 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
             cell.setValue(data : activeList[indexPath.row])
             break
         case 1:
-            cell.setCompleteValue(data : completedList[indexPath.row])
+//            cell.setCompleteValue(data : completedList[indexPath.row])
             break
         case 2:
-            cell.setClosedListValue(data : closedList[indexPath.row])
+//            cell.setClosedListValue(data : closedList[indexPath.row])
             break
         default:
             break

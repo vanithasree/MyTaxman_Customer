@@ -335,12 +335,15 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch self.segmentView.index {
         case 0:
+            var height = 0
+            if ((activeList[indexPath.row].task_status == "0") && (activeList[indexPath.row].received_quotes == "4")) {
+                height = 44
+            }
             if activeList[indexPath.row].vendor?.count == 0 {
-                return 200
+                return CGFloat(210 + height)
             }
             let count = activeList[indexPath.row].vendor?.count ?? 0
-            print(count * 120)
-            return CGFloat(200 + (count * 120))
+            return CGFloat(210 + (count * 120) + height)
         case 1:
             return UITableView.automaticDimension
         case 2:

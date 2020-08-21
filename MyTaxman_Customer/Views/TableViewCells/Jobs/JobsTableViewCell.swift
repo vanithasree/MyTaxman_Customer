@@ -27,7 +27,13 @@ class JobsTableViewCell: UITableViewCell {
     @IBOutlet var notifcationImageView: UIImageView!
     @IBOutlet var notificationHeightConstraints: NSLayoutConstraint!
     @IBOutlet var jobListHeightConstraints: NSLayoutConstraint!
+    
+    @IBOutlet var submitButton: UIButton!
+    @IBOutlet var buttonHeightConstraints: NSLayoutConstraint!
+    
     var menuAction : (() ->Void)?
+    var submitAction : (() ->Void)?
+
     var no_of_vendor_count : String = ""
     var jobType : JobType = .active
     
@@ -56,6 +62,11 @@ class JobsTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+    }
+    
+    
+    @IBAction func didTapSubmitAction(_ sender: Any) {
+        submitAction?()
     }
     
     @IBAction func onTappedActionBtn(_ sender: UIButton) {
@@ -92,7 +103,7 @@ class JobsTableViewCell: UITableViewCell {
         //        jobTableView.rowHeight = UITableView.automaticDimension
         jobTableView.tableFooterView = UIView()
         jobTableView.backgroundColor = .clear
-        jobTableView.separatorStyle = .singleLine
+        jobTableView.separatorStyle = .none
         jobTableView.delegate = self
         jobTableView.dataSource = self
         
@@ -105,6 +116,11 @@ class JobsTableViewCell: UITableViewCell {
         notificationLabel.numberOfLines = 0
         displaySeemore(show: false)
         //        listUpdateConstraints(height: 0)
+        submitButton.setDarkGreenTheme(btn: submitButton, title: "COMPLETE THE TASK")
+        doOnMain {
+            self.buttonHeightConstraints.constant = 0
+            self.buttonHeightConstraints.isActive = true
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -166,8 +182,11 @@ class JobsTableViewCell: UITableViewCell {
         quoteStatusMessageLabel.text = statusString
         seeMoreButton.setTitle("See more", for: .normal)
         displaySeemore(show: false)
+        if (data.task_status == "0" && data.received_quotes == "4") {
+            self.buttonHeightConstraints.constant = CGFloat(44)
+            self.buttonHeightConstraints.isActive = true
+        }
         let count = data.vendor?.count ?? 0
-        
         self.jobListHeightConstraints.constant = CGFloat(count * 120)
         self.jobListHeightConstraints.isActive = true
         doOnMain {

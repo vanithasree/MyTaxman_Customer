@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import Alamofire
+
 /// Menu item
 struct MenuItem {
     let title: String!
 }
-class SettingsViewController: UIViewController {
+class SettingsViewController: BaseViewController {
     
     var menuList : [MenuItem] = [.init(title: "Change Password"),
                                  .init(title: "Notifications"),
                                  .init(title: "Settings")]
     @IBOutlet var profileTableView: UITableView!
-
+    
+    private var settingsViewModel = SettingsViewModel()
+    var profileDetails : [CustomerProfileDesc] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,14 +31,44 @@ class SettingsViewController: UIViewController {
     }
     
     func setupViews() {
+        isTransparent = true
+        
         profileTableView.delegate = self
         profileTableView.dataSource = self
         profileTableView.register(MenuTableViewCell.nib, forCellReuseIdentifier: MenuTableViewCell.identifier)
         profileTableView.register(MenuProfileHeaderView.nib, forHeaderFooterViewReuseIdentifier: MenuProfileHeaderView.identifier)
         profileTableView.estimatedRowHeight = UITableView.automaticDimension
-        profileTableView.separatorStyle = .none
+        profileTableView.separatorStyle = .singleLine
         profileTableView.tableFooterView = UIView()
         profileTableView.backgroundColor = .clear
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getCustomerProfileDetails()
+    }
+    
+    func getCustomerProfileDetails() {
+        LoadingIndicator.shared.show(forView: self.view)
+        let params: Parameters = [
+            "customerid": UserDetails.shared.userId
+        ]
+        
+        settingsViewModel.getCustProfileDetails(input: params) { (result: CustomerProfileBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if result.code == "1" {
+                    self.profileDetails = result.desc ?? []
+                    
+                }
+                doOnMain {
+                    self.profileTableView.reloadData()
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
+        
+        
     }
     /*
      // MARK: - Navigation
@@ -59,7 +95,22 @@ extension SettingsViewController : UITableViewDataSource {
         }
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
-        cell.setMenu(item: menuList[indexPath.row])
+        if self.profileDetails.count > 0 {
+            if let updatedDate = self.profileDetails.first?.profile_updated_on, !updatedDate.isEmpty {
+                
+                let date = updatedDate.toDate(withFormat: "yyyy-MM-dd HH:mm:ss")
+                let activityDate = "\(date?.toString(format: "dd MMM yyyy") ?? "")"
+                cell.setMenu(item: menuList[indexPath.row], updatedDate: activityDate)
+            }
+            
+        }
+        else {
+            cell.setMenu(item: menuList[indexPath.row])
+        }
+        
+        cell.changePasswordAction = {[weak self] in
+            self?.redirectEditProfile()
+        }
         return cell
     }
     
@@ -67,21 +118,23 @@ extension SettingsViewController : UITableViewDataSource {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: MenuProfileHeaderView.identifier) as? MenuProfileHeaderView else{
             return UIView()
         }
-        headerView.backgroundColor = .clear
-        headerView.editAction = {[weak self] in
-            self?.redirectEditProfile()
+        if self.profileDetails.count > 0 {
+            headerView.setCellData(customerDetails: self.profileDetails.first!)
         }
+        
+        headerView.backgroundColor = .clear
+        
         return headerView
     }
 }
 
 extension SettingsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 70
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return Utility.dynamicSize(300)
+        return Utility.dynamicSize(250)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -105,12 +158,14 @@ extension SettingsViewController {
     func redirectEditProfile() {
         let editProfileVC = EditProfileViewController.instantiateFromAppStoryboard(appStoryboard: .Settings)
         editProfileVC.hidesBottomBarWhenPushed = true
+        editProfileVC.profileDetail = self.profileDetails.first
         self.navigationController?.pushViewController(editProfileVC, animated: true)
     }
     
     func redirectChangePassword() {
         let passwordVC = ChangePasswordViewController.instantiateFromAppStoryboard(appStoryboard: .Settings)
         passwordVC.hidesBottomBarWhenPushed = true
+        passwordVC.profileDetail = self.profileDetails.first
         self.navigationController?.pushViewController(passwordVC, animated: true)
     }
     

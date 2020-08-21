@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 import TweeTextField
 class ChangePasswordViewController: UIViewController {
     @IBOutlet var currentPasswordTextField: TweeAttributedTextField!
     @IBOutlet var newPasswordTextField: TweeAttributedTextField!
     @IBOutlet var retypePasswordTextField: TweeAttributedTextField!
+    
+    private var authViewModel = AuthViewModel()
+    private var settingsViewModel = SettingsViewModel()
+    
+    var profileDetail : CustomerProfileDesc?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +29,81 @@ class ChangePasswordViewController: UIViewController {
         currentPasswordTextField.setTextFieldProperties(placeholderString:"Current Password", isSecureText: false)
         newPasswordTextField.setTextFieldProperties(placeholderString:"New Password", isSecureText: false)
         retypePasswordTextField.setTextFieldProperties(placeholderString:"Retype Password", isSecureText: false)
+        
+        let rightBarButtonItem = UIBarButtonItem(title: "SAVE", style: .plain, target: self, action: #selector(saveChanges))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
+    @objc func saveChanges() {
+        self.view.endEditing(true)
+        let currentPassword:ValidationMessage = authViewModel.validatePassword(currentPasswordTextField.text)
+        let newPassword : ValidationMessage = authViewModel.validateNewPassword(newPasswordTextField.text)
+        let conformPassword : ValidationMessage = authViewModel.validateConfirmPassword(newPasswordTextField.text, password: retypePasswordTextField.text)
+        
+        if currentPassword.status && newPassword.status && conformPassword.status  {
+            let params: Parameters = [
+                "customerid" : UserDetails.shared.userId,
+                "oldpassword" : currentPasswordTextField.text,
+                "newpassword" : newPasswordTextField.text,
+                "retypepassword" : retypePasswordTextField.text,
+                "profile_updated_on" : Date().dateAndTimetoString()
+            ]
+            LoadingIndicator.shared.show(forView: self.view)
+            settingsViewModel.changeCusPasswordCredentials(input: params) { (result: ChangePasswordBase?, alert: AlertMessage?) in
+                LoadingIndicator.shared.hide()
+                if let result = result {
+                    if result.code == "1" {
+                        
+                        self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                            doOnMain {
+                                self.navigationController?.popToRootViewController(animated: true)
+                            }
+                        }
+                    }
+                    else {
+                        
+                    }
+                } else if let alert = alert {
+                    self.presentAlert(withTitle: "", message: alert.errorMessage)
+                }
+            }
+            
+        }
+        else {
+            self.validateTextFieldForChangePassword(textField: currentPasswordTextField)
+            self.validateTextFieldForChangePassword(textField: newPasswordTextField)
+            self.validateTextFieldForChangePassword(textField: retypePasswordTextField)
+        }
+    }
+    
+    
+    func validateTextFieldForChangePassword(textField:TweeAttributedTextField) {
+        
+        if textField == currentPasswordTextField {
+            let currentPassword:ValidationMessage = authViewModel.validatePassword(currentPasswordTextField.text)
+            if currentPassword.status == false {
+                textField.showInfo(currentPassword.errorMessage ?? "")
+            } else {
+                textField.hideInfo()
+            }
+        }
+        else if textField == newPasswordTextField {
+            let passwordValidation:ValidationMessage = authViewModel.validateNewPassword(newPasswordTextField.text)
+            if passwordValidation.status == false {
+                textField.showInfo(passwordValidation.errorMessage ?? "")
+            } else {
+                textField.hideInfo()
+            }
+        }
+        else  if textField == retypePasswordTextField {
+            let passwordValidation:ValidationMessage = authViewModel.validateConfirmPassword(newPasswordTextField.text, password: retypePasswordTextField.text)
+            if passwordValidation.status == false {
+                textField.showInfo(passwordValidation.errorMessage ?? "")
+            } else {
+                textField.hideInfo()
+            }
+        }
+    }
     /*
      // MARK: - Navigation
      

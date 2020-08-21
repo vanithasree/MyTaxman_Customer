@@ -18,18 +18,31 @@
                     <rect key="frame" x="0.0" y="0.0" width="377" height="81"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovj-o0-jny">
-                            <rect key="frame" x="20" y="15" width="337" height="51"/>
+                            <rect key="frame" x="20" y="5" width="280.5" height="71"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYw-nZ-wSW">
+                            <rect key="frame" x="310.5" y="12" width="56.5" height="57"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="SYw-nZ-wSW" secondAttribute="height" id="0iZ-G5-kQM"/>
+                            </constraints>
+                            <state key="normal" image="editProfile"/>
+                            <connections>
+                                <action selector="onTapPasswordBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="66K-Z8-nn0"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="ovj-o0-jny" secondAttribute="trailing" constant="20" id="dfX-1j-Ff8"/>
-                        <constraint firstItem="ovj-o0-jny" firstAttribute="top" secondItem="BCg-G4-jjG" secondAttribute="top" constant="15" id="gKo-dw-zoB"/>
+                        <constraint firstItem="SYw-nZ-wSW" firstAttribute="width" secondItem="BCg-G4-jjG" secondAttribute="width" multiplier="0.15" id="7dK-oI-Tug"/>
+                        <constraint firstItem="SYw-nZ-wSW" firstAttribute="centerY" secondItem="BCg-G4-jjG" secondAttribute="centerY" id="ToO-kv-CU7"/>
+                        <constraint firstAttribute="trailing" secondItem="SYw-nZ-wSW" secondAttribute="trailing" constant="10" id="esN-7X-Brq"/>
+                        <constraint firstItem="ovj-o0-jny" firstAttribute="top" secondItem="BCg-G4-jjG" secondAttribute="top" constant="5" id="gKo-dw-zoB"/>
                         <constraint firstItem="ovj-o0-jny" firstAttribute="leading" secondItem="BCg-G4-jjG" secondAttribute="leading" constant="20" id="os2-5n-45F"/>
-                        <constraint firstAttribute="bottom" secondItem="ovj-o0-jny" secondAttribute="bottom" constant="15" id="t80-3K-sWJ"/>
+                        <constraint firstAttribute="bottom" secondItem="ovj-o0-jny" secondAttribute="bottom" constant="5" id="t80-3K-sWJ"/>
+                        <constraint firstItem="SYw-nZ-wSW" firstAttribute="leading" secondItem="ovj-o0-jny" secondAttribute="trailing" constant="10" id="wFq-FZ-aJI"/>
                     </constraints>
                 </view>
             </subviews>
@@ -45,9 +58,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="changePasswordBtn" destination="SYw-nZ-wSW" id="Sqt-Qk-Vyy"/>
                 <outlet property="menuLabel" destination="ovj-o0-jny" id="c83-oW-PMh"/>
             </connections>
             <point key="canvasLocation" x="110.86956521739131" y="-174.44196428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="editProfile" width="50" height="50"/>
+    </resources>
 </document>

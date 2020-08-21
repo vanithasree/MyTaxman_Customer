@@ -203,6 +203,19 @@ class AuthViewModel {
         }
     }
     
+    func validateNewPassword(_ password: String?) -> ValidationMessage {
+        guard let password = password, !password.isBlank else {
+            return (ValidationMessage(status: false, errorMessage: "Please enter new password", tag: 10))
+        }
+        
+        if password.isValidPassword {
+            return (ValidationMessage(status: true, errorMessage: "", tag: 10))
+        } else {
+            return (ValidationMessage(status: false, errorMessage: "Password should be minimum 6 characters", tag: 10))
+            //            return (ValidationMessage(status: false, errorMessage: "Password should be 5 to 16, must use uppercase, lowercase, numbers and symbols !@#$%^&*()\\-_=+{}|?>.<,:;~`’", tag: 5))
+        }
+    }
+    
     func validateConfirmPassword(_ confirmPassword: String?, password: String?) -> ValidationMessage {
         guard let confirmPassword = confirmPassword, !confirmPassword.isBlank else {
             return (ValidationMessage(status: false, errorMessage: conformPasswordRequired, tag: 6))
@@ -213,8 +226,6 @@ class AuthViewModel {
         }
         return (ValidationMessage(status: true, errorMessage: "", tag: 6))
     }
-    
-    
     
     
     func validateMeterNumber(_ name: String?) -> ValidationMessage {
@@ -326,6 +337,6 @@ extension AuthViewModel {
     func requestOtpVerification(input: Parameters, handler: @escaping (_ user: OtpVerifyBase?, _ error: AlertMessage?)->()) {
         AuthApiManager().requestOtpVerification(input: input, handler: handler)
     }
-
+    
 }
 

@@ -94,7 +94,7 @@ let mobileNumberRequired = "Please enter Mobile number!"// field is required"
 let phoneNumberIsEmpty = "Please enter Phone number!"// field is required"
 let emailRequired = "Please enter Email address!" //"Email field is required"
 let passwordRequired = "Please enter Password!"//"Password field is required"
-let conformPasswordRequired = "Please enter Confirm password!"// field is required"
+let conformPasswordRequired = "Please enter Retype password!"// field is required"
 let passwordSame = "Password and Confirm password should be same"
 
 let meterNumberRequired = "Meter number field is required"

@@ -30,6 +30,9 @@ class SettingListViewController: UIViewController {
     }
     
     func setupViews() {
+        
+        self.title = "Settings"
+        
         settingListTableView.delegate = self
         settingListTableView.dataSource = self
         settingListTableView.register(MenuTableViewCell.nib, forCellReuseIdentifier: MenuTableViewCell.identifier)
@@ -69,7 +72,7 @@ extension SettingListViewController : UITableViewDataSource {
 
 extension SettingListViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 70
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -96,6 +99,16 @@ extension SettingListViewController {
     func redirectDetailsPage(pageType: settingPageType) {
         let detailVC = SettingDetailViewController.instantiateFromAppStoryboard(appStoryboard: .Settings)
         detailVC.pageType = pageType
+        switch pageType {
+        case .about:
+            detailVC.urlString = Constant.imageBaseUrlString+"connect/Mytaxman/home/terms"
+        case .terms:
+            detailVC.urlString = Constant.imageBaseUrlString+"connect/Mytaxman/home/terms"
+        case .help:
+            detailVC.urlString = Constant.imageBaseUrlString+"connect/Mytaxman/"
+        default:
+            break
+        }
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
     

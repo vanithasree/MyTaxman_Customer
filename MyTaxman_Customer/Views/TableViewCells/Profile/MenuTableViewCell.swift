@@ -10,7 +10,8 @@ import UIKit
 
 class MenuTableViewCell: UITableViewCell {
     @IBOutlet var menuLabel: UILabel!
-    
+    @IBOutlet weak var changePasswordBtn: UIButton!
+    var changePasswordAction : (() ->Void)?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +25,7 @@ class MenuTableViewCell: UITableViewCell {
     
     func setupViews(){
         menuLabel.textColor = ColorManager.darkText.color
-        menuLabel.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0))
+        menuLabel.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(18.0))
         menuLabel.numberOfLines = 0
     }
     
@@ -36,10 +37,16 @@ class MenuTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
-    func setMenu(item : MenuItem){
+    @IBAction func onTapPasswordBtn(_ sender: UIButton) {
+        changePasswordAction?()
+    }
+    
+    func setMenu(item : MenuItem, updatedDate:String = ""){
         menuLabel.text = item.title
+        changePasswordBtn.isHidden = true
         if item.title == "Change Password" {
-            menuLabel.text = "\(item.title ?? "")\nLast Changed on "
+            changePasswordBtn.isHidden = false
+            menuLabel.text = "\(item.title ?? "")\nLast Changed on \(updatedDate)"
             let balanceAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: menuLabel.text ?? "")
             balanceAttributedString.setColorForText(textForAttribute: "Last Changed on", withColor: ColorManager.darkText.color, withFont: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0))!)
             balanceAttributedString.setLineSpaceForText(lineSpace: 5, alignment: menuLabel.textAlignment)

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BE434D524EF98F4000F6C22 /* SettingsApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434D424EF98F4000F6C22 /* SettingsApiManager.swift */; };
+		0BE434D824EF99C9000F6C22 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434D724EF99C9000F6C22 /* SettingsModel.swift */; };
+		0BE434DB24EF9A4C000F6C22 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434DA24EF9A4C000F6C22 /* SettingsViewModel.swift */; };
+		0BE434DD24EFD652000F6C22 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434DC24EFD652000F6C22 /* EditProfile.swift */; };
 		139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */; };
 		1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */; };
 		181B01EC24DA9175001CDEF5 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */; };
@@ -190,6 +194,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BE434D424EF98F4000F6C22 /* SettingsApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsApiManager.swift; sourceTree = "<group>"; };
+		0BE434D724EF99C9000F6C22 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		0BE434DA24EF9A4C000F6C22 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		0BE434DC24EFD652000F6C22 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelJobsListViewController.swift; sourceTree = "<group>"; };
 		181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		181B01ED24DB1C7D001CDEF5 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
@@ -433,6 +441,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0BE434D324EF98E0000F6C22 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0BE434D424EF98F4000F6C22 /* SettingsApiManager.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0BE434D624EF99BC000F6C22 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0BE434D724EF99C9000F6C22 /* SettingsModel.swift */,
+				0BE434DC24EFD652000F6C22 /* EditProfile.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0BE434D924EF9A40000F6C22 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0BE434DA24EF9A4C000F6C22 /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		1826253324CCBB3100DF7A4B /* Jobs */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,6 +613,7 @@
 		1888977024C7285A000DFAB3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0BE434D924EF9A40000F6C22 /* Settings */,
 				3B6B6E5524D9744A00D70E5F /* Inbox */,
 				3BF05BF324C9920400E16081 /* Auth */,
 				18B2E63924C8ABC5002A9CCE /* LeadsManager */,
@@ -590,6 +624,7 @@
 		1888977124C72860000DFAB3 /* ApiManagers */ = {
 			isa = PBXGroup;
 			children = (
+				0BE434D324EF98E0000F6C22 /* Settings */,
 				3B6B6E6824D974A700D70E5F /* Inbox */,
 				3BF05BF624C9935800E16081 /* Auth */,
 			);
@@ -865,6 +900,7 @@
 		3BF05BEC24C9707100E16081 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0BE434D624EF99BC000F6C22 /* Settings */,
 				3B6B6E5224D9743200D70E5F /* Inbox */,
 				1826254224CDB93000DF7A4B /* Jobs */,
 				3BF05BED24C9708B00E16081 /* Auth */,
@@ -1276,6 +1312,7 @@
 				3B4917CC24DEB649003E0761 /* SettingDetailViewController.swift in Sources */,
 				187DDF1024D68D4C00CBE610 /* VendorInfoView.swift in Sources */,
 				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,
+				0BE434D524EF98F4000F6C22 /* SettingsApiManager.swift in Sources */,
 				1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */,
 				3B6B6E6524D9748700D70E5F /* ChatTableViewCell.swift in Sources */,
 				3B6B6E5D24D9746C00D70E5F /* RightViewCell.swift in Sources */,
@@ -1289,6 +1326,7 @@
 				3B1AFF7224DE7F74006DC145 /* JobMenuOptionViewController.swift in Sources */,
 				18B2E63524C8AB5B002A9CCE /* PageFourViewController.swift in Sources */,
 				3B6B6E5424D9744300D70E5F /* InboxViewModel.swift in Sources */,
+				0BE434D824EF99C9000F6C22 /* SettingsModel.swift in Sources */,
 				18B2E62324C89AA5002A9CCE /* AppStoryboards.swift in Sources */,
 				18F6AA6724CC079B005F3855 /* SettingsViewController.swift in Sources */,
 				3B1AFF6F24DE6B45006DC145 /* JobsTableViewCell.swift in Sources */,
@@ -1306,6 +1344,7 @@
 				18B2E63124C8AB46002A9CCE /* PageTwoViewController.swift in Sources */,
 				18B2E62F24C8AB38002A9CCE /* PageOneViewController.swift in Sources */,
 				3B04BB2E24CB4D4C00C61E50 /* GradientExtension.swift in Sources */,
+				0BE434DD24EFD652000F6C22 /* EditProfile.swift in Sources */,
 				3B1AFF8624DE9EC3006DC145 /* MenuTableViewCell.swift in Sources */,
 				1826253224CCA82900DF7A4B /* GetPlacesViewController.swift in Sources */,
 				3B6B6E6724D974A200D70E5F /* InboxApiManager.swift in Sources */,
@@ -1334,6 +1373,7 @@
 				181B01EC24DA9175001CDEF5 /* VideoCallViewController.swift in Sources */,
 				1826254124CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift in Sources */,
 				18B2E63324C8AB50002A9CCE /* PageThreeViewController.swift in Sources */,
+				0BE434DB24EF9A4C000F6C22 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

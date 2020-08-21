@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JobCompletedReviewTableViewCell" customModule="MyTaxman_Customer">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="98"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBO-ps-lQy">
+                    <rect key="frame" x="0.0" y="0.0" width="382" height="98"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLb-jY-b2P">
+                            <rect key="frame" x="10" y="10" width="362" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rjx-I4-9JO" customClass="FloatRatingView" customModule="FloatRatingView">
+                            <rect key="frame" x="5" y="36" width="153" height="20"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="4eG-Mb-F1a"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="StarFull"/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="StarEmpty"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdx-T8-hE5">
+                            <rect key="frame" x="10" y="61" width="362" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="rjx-I4-9JO" firstAttribute="leading" secondItem="DBO-ps-lQy" secondAttribute="leading" constant="5" id="64p-dM-Mdo"/>
+                        <constraint firstAttribute="trailing" secondItem="iLb-jY-b2P" secondAttribute="trailing" constant="10" id="PP7-fA-gMO"/>
+                        <constraint firstItem="iLb-jY-b2P" firstAttribute="leading" secondItem="DBO-ps-lQy" secondAttribute="leading" constant="10" id="UHT-bf-Krt"/>
+                        <constraint firstItem="rjx-I4-9JO" firstAttribute="top" secondItem="iLb-jY-b2P" secondAttribute="bottom" constant="5" id="VmH-Gk-quo"/>
+                        <constraint firstItem="Fdx-T8-hE5" firstAttribute="leading" secondItem="DBO-ps-lQy" secondAttribute="leading" constant="10" id="cHC-NE-IhM"/>
+                        <constraint firstItem="rjx-I4-9JO" firstAttribute="width" secondItem="DBO-ps-lQy" secondAttribute="width" multiplier="0.4" id="fYm-h4-7zI"/>
+                        <constraint firstAttribute="trailing" secondItem="Fdx-T8-hE5" secondAttribute="trailing" constant="10" id="la5-Ws-kGW"/>
+                        <constraint firstItem="Fdx-T8-hE5" firstAttribute="top" secondItem="rjx-I4-9JO" secondAttribute="bottom" constant="5" id="mgf-NN-sRx"/>
+                        <constraint firstItem="iLb-jY-b2P" firstAttribute="top" secondItem="DBO-ps-lQy" secondAttribute="top" constant="10" id="vOH-EM-3ti"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DBO-ps-lQy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MA9-En-0wq"/>
+                <constraint firstItem="DBO-ps-lQy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="S46-Jt-Ubw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DBO-ps-lQy" secondAttribute="trailing" id="jpT-bV-FFq"/>
+                <constraint firstItem="DBO-ps-lQy" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="tyV-Yw-mAX"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="commentsLabel" destination="Fdx-T8-hE5" id="ylg-WZ-2xh"/>
+                <outlet property="nameLabel" destination="iLb-jY-b2P" id="wUu-fQ-gt2"/>
+                <outlet property="ratingView" destination="rjx-I4-9JO" id="s5D-H7-A9F"/>
+            </connections>
+            <point key="canvasLocation" x="114.49275362318842" y="-181.47321428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="StarEmpty" width="22" height="22"/>
+        <image name="StarFull" width="22" height="22"/>
+    </resources>
+</document>

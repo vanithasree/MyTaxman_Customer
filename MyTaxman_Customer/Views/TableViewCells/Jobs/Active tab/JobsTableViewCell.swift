@@ -33,9 +33,9 @@ class JobsTableViewCell: UITableViewCell {
     
     var menuAction : (() ->Void)?
     var submitAction : (() ->Void)?
-
+    
     var no_of_vendor_count : String = ""
-    var jobType : JobType = .active
+    //    var jobType : JobType = .active
     
     var vendorList : [Vendor] = []{
         didSet{
@@ -97,8 +97,6 @@ class JobsTableViewCell: UITableViewCell {
         descriptionLabel.numberOfLines = 1
         
         jobTableView.register(JobQuoteTableViewCell.nib, forCellReuseIdentifier: JobQuoteTableViewCell.identifier)
-        jobTableView.register(JobNotificationTableViewCell.nib, forCellReuseIdentifier: JobNotificationTableViewCell.identifier)
-        jobTableView.register(ClosedJobTableViewCell.nib, forCellReuseIdentifier: ClosedJobTableViewCell.identifier)
         
         //        jobTableView.rowHeight = UITableView.automaticDimension
         jobTableView.tableFooterView = UIView()
@@ -142,40 +140,40 @@ class JobsTableViewCell: UITableViewCell {
         }
     }
     
-    func setClosedListValue(data : Quotes) {
-        jobType = .closed
-        self.vendorList = []
-        quoteTitleLabel.text = data.category ?? ""
-        onlineUserImageView.image = UIImage(named: "RadioSelected")
-        if let value = data.cancel_description, !value.isEmpty {
-            descriptionLabel.text = "Reason: \(value)"
-        }else {
-            descriptionLabel.text = "Reason: "
-        }
-        quoteStatusMessageLabel.text = "EXPIRED"
-        listUpdateConstraints(height: 0)
-        doOnMain {
-            self.jobTableView.reloadData()
-        }
-    }
+    //    func setClosedListValue(data : Quotes) {
+    //        jobType = .closed
+    //        self.vendorList = []
+    //        quoteTitleLabel.text = data.category ?? ""
+    //        onlineUserImageView.image = UIImage(named: "RadioSelected")
+    //        if let value = data.cancel_description, !value.isEmpty {
+    //            descriptionLabel.text = "Reason: \(value)"
+    //        }else {
+    //            descriptionLabel.text = "Reason: "
+    //        }
+    //        quoteStatusMessageLabel.text = "EXPIRED"
+    //        listUpdateConstraints(height: 0)
+    //        doOnMain {
+    //            self.jobTableView.reloadData()
+    //        }
+    //    }
     
     func setValue(data : Quotes) {
-        jobType = .active
+        //        jobType = .active
         self.vendorList = data.vendor ?? []
         quoteTitleLabel.text = data.category ?? ""
         onlineUserImageView.image = UIImage(named: "RadioSelected")
         descriptionLabel.text = data.description ?? ""
-//        let taskStatus = data.task_status ?? "0"
-//        let quoteStatus = data.vendor?.first?.quote_status ?? "0"
+        //        let taskStatus = data.task_status ?? "0"
+        //        let quoteStatus = data.vendor?.first?.quote_status ?? "0"
         var statusString : String = ""
-//        switch quoteStatus {
-//        case "1":
-//            statusString = "Hired"
-//        default: break
-//        }
+        //        switch quoteStatus {
+        //        case "1":
+        //            statusString = "Hired"
+        //        default: break
+        //        }
         let result = data.vendor?.filter({ (obj) -> Bool in
-             return obj.quote_status == "1"
-         })
+            return obj.quote_status == "1"
+        })
         if (result?.count ?? 0 != 0) {
             statusString = "Hired"
         }else {
@@ -207,64 +205,75 @@ class JobsTableViewCell: UITableViewCell {
         }
     }
     
-    func setCompleteValue(data : Ilist) {
-        jobType = .completed
-        self.vendorList = []
-        onlineUserImageView.image = UIImage(named: "RadioSelected")
-        quoteTitleLabel.text = data.category ?? ""
-        quoteStatusMessageLabel.text = "REVIEWED"
-        descriptionLabel.text = ""
-        listUpdateConstraints(height: 0)
-        doOnMain {
-            self.jobTableView.reloadData()
-        }
-    }
+    //    func setCompleteValue(data : Ilist) {
+    //        jobType = .completed
+    //        self.vendorList = []
+    //        onlineUserImageView.image = UIImage(named: "RadioSelected")
+    //        quoteTitleLabel.text = data.category ?? ""
+    //        quoteStatusMessageLabel.text = "REVIEWED"
+    //        descriptionLabel.text = ""
+    //        listUpdateConstraints(height: 0)
+    //        doOnMain {
+    //            self.jobTableView.reloadData()
+    //        }
+    //    }
 }
 
 extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch jobType {
-        case .active:
-            return self.vendorList.count
-        case .completed:
-            return 0
-        case .closed:
-            return 0
-        }
+        //        switch jobType {
+        //        case .active:
+        //            return self.vendorList.count
+        //        case .completed:
+        //            return 0
+        //        case .closed:
+        //            return 0
+        //        }
+        return self.vendorList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch jobType {
-        case .active:
-            guard let cell : JobQuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobQuoteTableViewCell.identifier) as? JobQuoteTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.backgroundColor = .clear
-            cell.selectionStyle = .none
-            cell.setValue(data: self.vendorList[indexPath.row])
-            return cell
-            
-        case .completed:
+        guard let cell : JobQuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobQuoteTableViewCell.identifier) as? JobQuoteTableViewCell else {
             return UITableViewCell()
-        case .closed:
-            guard let cell : ClosedJobTableViewCell = tableView.dequeueReusableCell(withIdentifier: ClosedJobTableViewCell.identifier) as? ClosedJobTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.backgroundColor = .clear
-            cell.selectionStyle = .none
-            return cell
         }
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
+        cell.setValue(data: self.vendorList[indexPath.row])
+        return cell
+        //        switch jobType {
+        //        case .active:
+        //            guard let cell : JobQuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobQuoteTableViewCell.identifier) as? JobQuoteTableViewCell else {
+        //                return UITableViewCell()
+        //            }
+        //            cell.backgroundColor = .clear
+        //            cell.selectionStyle = .none
+        //            cell.setValue(data: self.vendorList[indexPath.row])
+        //            return cell
+        //
+        //        case .completed:
+        //            return UITableViewCell()
+        //        case .closed:
+        ////            guard let cell : ClosedJobTableViewCell = tableView.dequeueReusableCell(withIdentifier: ClosedJobTableViewCell.identifier) as? ClosedJobTableViewCell else {
+        ////                return UITableViewCell()
+        ////            }
+        ////            cell.backgroundColor = .clear
+        ////            cell.selectionStyle = .none
+        ////            return cell
+        //            return UITableViewCell()
+        //        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch jobType {
-        case .active:
-            return 120
-        case .completed:
-            return UITableView.automaticDimension
-        case .closed:
-            return UITableView.automaticDimension
-        }
+        return 120
+        //        switch jobType {
+        //
+        //        case .active:
+        //            return 120
+        //        case .completed:
+        //            return UITableView.automaticDimension
+        //        case .closed:
+        //            return UITableView.automaticDimension
+        //        }
     }
 }

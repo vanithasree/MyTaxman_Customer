@@ -24,7 +24,7 @@ class JobListViewController: BaseViewController {
     
     var activeList : [Quotes] = []
     var completedList : [Ilist] = []
-    var closedList : [Quotes] = []
+    var closedList : [ClosedJobListDesc] = []
     var no_of_vendor_count : String = "0"
     
     override func viewDidLoad() {
@@ -37,8 +37,8 @@ class JobListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getCustomerTaskListForActiveView()
-        //        self.getCustomerTaskListForCompletedView()
-        //        self.getCustomerTaskListForClosedView()
+        self.getCustomerTaskListForCompletedView()
+        self.getCustomerTaskListForClosedView()
     }
     
     func setupViewUI() {
@@ -68,6 +68,8 @@ class JobListViewController: BaseViewController {
         
         self.setUpSegmentViewControl(segmentControl: segmentView, bgColor: .white, titles: ["Active","Completed", "Closed"])
         jobsListTableView.register(JobsTableViewCell.nib, forCellReuseIdentifier: JobsTableViewCell.identifier)
+        jobsListTableView.register(CompletedJobTableViewCell.nib, forCellReuseIdentifier: CompletedJobTableViewCell.identifier)
+        jobsListTableView.register(ClosedJobTableViewCell.nib, forCellReuseIdentifier: ClosedJobTableViewCell.identifier)
         jobsListTableView.tableFooterView = UIView()
         jobsListTableView.backgroundColor = ColorManager.white.color
         jobsListTableView.separatorStyle = .none
@@ -114,9 +116,6 @@ class JobListViewController: BaseViewController {
                     doOnMain {
                         self.jobsListTableView.reloadData()
                     }
-                    //                    let listItems = result.desc?.quotes ?? []
-                    //                    self.activeList =  listItems.filter { $0.task_status == "0"}
-                    //                    self.closedList =  self.activeList.filter { $0.task_cancel_status == "1"}
                 }else {
                     self.presentAlert(withTitle: "", message: "")
                 }
@@ -148,17 +147,16 @@ class JobListViewController: BaseViewController {
         }
     }
     
-    
     func getCustomerTaskListForClosedView() {
         LoadingIndicator.shared.show(forView: self.view)
         let params: Parameters = [
             "customerid": UserDetails.shared.userId ,
         ]
-        leadViewModel.getCustomerTaskListForClosedTab(input: params) { (result: CompletedTaskListBase?, alert: AlertMessage?) in
+        leadViewModel.getCustomerTaskListForClosedTab(input: params) { (result: ClosedJobListBase?, alert: AlertMessage?) in
             LoadingIndicator.shared.hide()
             if let result = result {
                 if result.code == "1"{
-                    //                    self.closedList = result.desc?.ilist ?? []
+                    self.closedList = result.desc ?? []
                     doOnMain {
                         self.jobsListTableView.reloadData()
                     }
@@ -231,13 +229,20 @@ class JobListViewController: BaseViewController {
          }*/
     }
     
-    func menuAction() {
+    func menuAction(data : Quotes?, complete: Ilist?, closed: ClosedJobListDesc?) {
         let menuOptionVC = JobMenuOptionViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
         menuOptionVC.modalPresentationStyle = .fullScreen
         
         switch self.segmentView.index {
         case 0:
-            menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
+            let result = data?.vendor?.filter({ (obj) -> Bool in
+                return obj.quote_status == "1"
+            })
+            if result?.count != 0 {
+                menuOptionVC.optionList = ["View Job Details"]
+            }else {
+                menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
+            }
         case 1:
             menuOptionVC.optionList = ["View Job Details"]
         case 2:
@@ -302,29 +307,49 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell : JobsTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobsTableViewCell.identifier) as? JobsTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.backgroundColor = .clear
-        cell.selectionStyle = .none
-        cell.no_of_vendor_count = no_of_vendor_count
-        cell.menuAction = {[weak self] in
-            self?.menuAction()
-        }
+        
         switch self.segmentView.index {
         case 0:
+            guard let cell : JobsTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobsTableViewCell.identifier) as? JobsTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.backgroundColor = .clear
+            cell.selectionStyle = .none
+            cell.vendorList = []
+            cell.no_of_vendor_count = no_of_vendor_count
+            cell.menuAction = {[weak self] in
+                self?.menuAction(data: self?.activeList[indexPath.row], complete: nil, closed: nil)
+            }
             cell.setValue(data : activeList[indexPath.row])
-            break
+            cell.layoutIfNeeded()
+            return cell
         case 1:
-            cell.setCompleteValue(data : completedList[indexPath.row])
-            break
+            guard let cell : CompletedJobTableViewCell = tableView.dequeueReusableCell(withIdentifier: CompletedJobTableViewCell.identifier) as? CompletedJobTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.backgroundColor = .clear
+            cell.selectionStyle = .none
+            cell.layoutIfNeeded()
+            cell.menuAction = {[weak self] in
+                self?.menuAction(data: nil, complete: self?.completedList[indexPath.row], closed: nil)
+            }
+            cell.setValue(data : completedList[indexPath.row])
+            return cell
         case 2:
-            cell.setClosedListValue(data : closedList[indexPath.row])
-            break
+            guard let cell : ClosedJobTableViewCell = tableView.dequeueReusableCell(withIdentifier: ClosedJobTableViewCell.identifier) as? ClosedJobTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.backgroundColor = .clear
+            cell.selectionStyle = .none
+            cell.layoutIfNeeded()
+            cell.menuAction = {[weak self] in
+                self?.menuAction(data: nil, complete: nil, closed: self?.closedList[indexPath.row])
+            }
+            cell.setValue(data : closedList[indexPath.row])
+            return cell
         default:
-            break
+            return UITableViewCell()
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -333,12 +358,24 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch self.segmentView.index {
         case 0:
-            if activeList[indexPath.row].vendor?.count == 0 {
-                return 200
+            var height = 0
+            if ((activeList[indexPath.row].task_status == "0") && (activeList[indexPath.row].received_quotes == "4")) {
+                height = 44
             }
-            return CGFloat(210 + (activeList[indexPath.row].vendor?.count ?? 0 * 120))
+            let completeResult = activeList[indexPath.row].vendor?.filter({ (obj) -> Bool in
+                return obj.quote_status == "4"
+            })
+            if (completeResult?.count ?? 0 != 0) {
+                height = height + 50
+            }
+            if activeList[indexPath.row].vendor?.count == 0 {
+                return CGFloat(210 + height)
+            }
+            let count = activeList[indexPath.row].vendor?.count ?? 0
+            return CGFloat(210 + (count * 120) + height)
         case 1:
-            return UITableView.automaticDimension
+            let count = completedList[indexPath.row].rmsg?.count ?? 0
+            return CGFloat(100 + (count * 100))
         case 2:
             return UITableView.automaticDimension
         default:

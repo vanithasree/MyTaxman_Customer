@@ -85,8 +85,6 @@
 		3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B14A58824CC053700FC235D /* OtpViewController.swift */; };
 		3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F6AA6B24CC0819005F3855 /* TabBarViewController.swift */; };
 		3B1AFF6B24DE6B45006DC145 /* JobQuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6524DE6B43006DC145 /* JobQuoteTableViewCell.swift */; };
-		3B1AFF6C24DE6B45006DC145 /* JobNotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6624DE6B43006DC145 /* JobNotificationTableViewCell.xib */; };
-		3B1AFF6D24DE6B45006DC145 /* JobNotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6724DE6B43006DC145 /* JobNotificationTableViewCell.swift */; };
 		3B1AFF6E24DE6B45006DC145 /* JobQuoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6824DE6B44006DC145 /* JobQuoteTableViewCell.xib */; };
 		3B1AFF6F24DE6B45006DC145 /* JobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6924DE6B44006DC145 /* JobsTableViewCell.swift */; };
 		3B1AFF7024DE6B45006DC145 /* JobsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B1AFF6A24DE6B44006DC145 /* JobsTableViewCell.xib */; };
@@ -111,6 +109,9 @@
 		3B4917C824DEB613003E0761 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917C724DEB613003E0761 /* NotificationsViewController.swift */; };
 		3B4917CA24DEB627003E0761 /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917C924DEB627003E0761 /* SettingListViewController.swift */; };
 		3B4917CC24DEB649003E0761 /* SettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4917CB24DEB648003E0761 /* SettingDetailViewController.swift */; };
+		3B4B382324F05D2000263135 /* JobCompletedReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B382224F05D2000263135 /* JobCompletedReviewTableViewCell.swift */; };
+		3B4B382624F05EEA00263135 /* JobCompletedReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4B382524F05EEA00263135 /* JobCompletedReviewTableViewCell.xib */; };
+		3B5AF94D24F020E9009FD397 /* ClosedJobListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5AF94C24F020E9009FD397 /* ClosedJobListModel.swift */; };
 		3B6B6E5024D9742D00D70E5F /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */; };
 		3B6B6E5124D9742D00D70E5F /* InboxListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */; };
 		3B6B6E5424D9744300D70E5F /* InboxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */; };
@@ -279,8 +280,6 @@
 		3B04BB2D24CB4D4C00C61E50 /* GradientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		3B14A58824CC053700FC235D /* OtpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpViewController.swift; sourceTree = "<group>"; };
 		3B1AFF6524DE6B43006DC145 /* JobQuoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQuoteTableViewCell.swift; sourceTree = "<group>"; };
-		3B1AFF6624DE6B43006DC145 /* JobNotificationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobNotificationTableViewCell.xib; sourceTree = "<group>"; };
-		3B1AFF6724DE6B43006DC145 /* JobNotificationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobNotificationTableViewCell.swift; sourceTree = "<group>"; };
 		3B1AFF6824DE6B44006DC145 /* JobQuoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobQuoteTableViewCell.xib; sourceTree = "<group>"; };
 		3B1AFF6924DE6B44006DC145 /* JobsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewCell.swift; sourceTree = "<group>"; };
 		3B1AFF6A24DE6B44006DC145 /* JobsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsTableViewCell.xib; sourceTree = "<group>"; };
@@ -305,6 +304,9 @@
 		3B4917C724DEB613003E0761 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		3B4917C924DEB627003E0761 /* SettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
 		3B4917CB24DEB648003E0761 /* SettingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailViewController.swift; sourceTree = "<group>"; };
+		3B4B382224F05D2000263135 /* JobCompletedReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCompletedReviewTableViewCell.swift; sourceTree = "<group>"; };
+		3B4B382524F05EEA00263135 /* JobCompletedReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobCompletedReviewTableViewCell.xib; sourceTree = "<group>"; };
+		3B5AF94C24F020E9009FD397 /* ClosedJobListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedJobListModel.swift; sourceTree = "<group>"; };
 		3B6B6E4E24D9742C00D70E5F /* ChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		3B6B6E4F24D9742D00D70E5F /* InboxListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxListModel.swift; sourceTree = "<group>"; };
 		3B6B6E5324D9744300D70E5F /* InboxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewModel.swift; sourceTree = "<group>"; };
@@ -471,18 +473,11 @@
 			children = (
 				1826253424CCBB4E00DF7A4B /* AddressTableViewCell.swift */,
 				1826253524CCBB4E00DF7A4B /* AddressTableViewCell.xib */,
-				3B1AFF6924DE6B44006DC145 /* JobsTableViewCell.swift */,
-				3B1AFF6A24DE6B44006DC145 /* JobsTableViewCell.xib */,
-				3B1AFF6724DE6B43006DC145 /* JobNotificationTableViewCell.swift */,
-				3B1AFF6624DE6B43006DC145 /* JobNotificationTableViewCell.xib */,
-				3B1AFF6824DE6B44006DC145 /* JobQuoteTableViewCell.xib */,
-				3B1AFF6524DE6B43006DC145 /* JobQuoteTableViewCell.swift */,
+				3B4B381F24F05C7D00263135 /* Active tab */,
 				3B1AFF7324DE8241006DC145 /* JobOptionTableViewCell.swift */,
 				3B1AFF7524DE8247006DC145 /* JobOptionTableViewCell.xib */,
-				3B1AFF7724DE8B13006DC145 /* ClosedJobTableViewCell.swift */,
-				3B1AFF7924DE8B1D006DC145 /* ClosedJobTableViewCell.xib */,
-				3B1AFF7B24DE8C3C006DC145 /* CompletedJobTableViewCell.swift */,
-				3B1AFF7D24DE8C45006DC145 /* CompletedJobTableViewCell.xib */,
+				3B4B382024F05C8900263135 /* Closed tab */,
+				3B4B382124F05CAA00263135 /* Completed tab */,
 				3B1D01C124DEFB1F00CBA58D /* OptionTableViewCell.swift */,
 				3B1D01C324DEFB2900CBA58D /* OptionTableViewCell.xib */,
 				181B01F724DF3A8E001CDEF5 /* JobDetailsTableViewCell.swift */,
@@ -496,6 +491,7 @@
 			children = (
 				1826254324CDB94200DF7A4B /* JobsModel.swift */,
 				1857C75D24CF37BD00E1DDAD /* JobsListModel.swift */,
+				3B5AF94C24F020E9009FD397 /* ClosedJobListModel.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -837,6 +833,37 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		3B4B381F24F05C7D00263135 /* Active tab */ = {
+			isa = PBXGroup;
+			children = (
+				3B1AFF6924DE6B44006DC145 /* JobsTableViewCell.swift */,
+				3B1AFF6A24DE6B44006DC145 /* JobsTableViewCell.xib */,
+				3B1AFF6824DE6B44006DC145 /* JobQuoteTableViewCell.xib */,
+				3B1AFF6524DE6B43006DC145 /* JobQuoteTableViewCell.swift */,
+			);
+			path = "Active tab";
+			sourceTree = "<group>";
+		};
+		3B4B382024F05C8900263135 /* Closed tab */ = {
+			isa = PBXGroup;
+			children = (
+				3B1AFF7924DE8B1D006DC145 /* ClosedJobTableViewCell.xib */,
+				3B1AFF7724DE8B13006DC145 /* ClosedJobTableViewCell.swift */,
+			);
+			path = "Closed tab";
+			sourceTree = "<group>";
+		};
+		3B4B382124F05CAA00263135 /* Completed tab */ = {
+			isa = PBXGroup;
+			children = (
+				3B1AFF7D24DE8C45006DC145 /* CompletedJobTableViewCell.xib */,
+				3B1AFF7B24DE8C3C006DC145 /* CompletedJobTableViewCell.swift */,
+				3B4B382524F05EEA00263135 /* JobCompletedReviewTableViewCell.xib */,
+				3B4B382224F05D2000263135 /* JobCompletedReviewTableViewCell.swift */,
+			);
+			path = "Completed tab";
+			sourceTree = "<group>";
+		};
 		3B6B6E5224D9743200D70E5F /* Inbox */ = {
 			isa = PBXGroup;
 			children = (
@@ -1072,7 +1099,6 @@
 				18F6AA6124CC0758005F3855 /* Settings.storyboard in Resources */,
 				3B1D01C424DEFB2900CBA58D /* OptionTableViewCell.xib in Resources */,
 				3B1AFF8324DE9A82006DC145 /* MenuProfileHeaderView.xib in Resources */,
-				3B1AFF6C24DE6B45006DC145 /* JobNotificationTableViewCell.xib in Resources */,
 				3B6B6E6C24D97D5000D70E5F /* NoDataView.xib in Resources */,
 				18B2E61F24C8956D002A9CCE /* Leads.storyboard in Resources */,
 				181B01FA24DF3A8E001CDEF5 /* JobDetailsTableViewCell.xib in Resources */,
@@ -1089,6 +1115,7 @@
 				1888977624C728AD000DFAB3 /* Auth.storyboard in Resources */,
 				3BF05BAB24C95F2600E16081 /* Poppins-Black.ttf in Resources */,
 				18F6AA5F24CC074B005F3855 /* Inbox.storyboard in Resources */,
+				3B4B382624F05EEA00263135 /* JobCompletedReviewTableViewCell.xib in Resources */,
 				3BFB7D0224D9962900065135 /* BusinessProfileTableViewCell.xib in Resources */,
 				18B2E62D24C89D21002A9CCE /* LeadsCollectionViewCell.xib in Resources */,
 				1888974924C7281F000DFAB3 /* LaunchScreen.storyboard in Resources */,
@@ -1276,6 +1303,7 @@
 				3B1D01C224DEFB1F00CBA58D /* OptionTableViewCell.swift in Sources */,
 				3BF05BC524C9634600E16081 /* SliderExtension.swift in Sources */,
 				1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */,
+				3B4B382324F05D2000263135 /* JobCompletedReviewTableViewCell.swift in Sources */,
 				3BF05BCF24C9634600E16081 /* DateExtension.swift in Sources */,
 				3B6B6E6B24D97D5000D70E5F /* NoDataView.swift in Sources */,
 				18B2E62124C89586002A9CCE /* LeadsDashboardViewController.swift in Sources */,
@@ -1337,7 +1365,6 @@
 				1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */,
 				3BF05BC624C9634600E16081 /* UIImageExtension.swift in Sources */,
 				3B4917CA24DEB627003E0761 /* SettingListViewController.swift in Sources */,
-				3B1AFF6D24DE6B45006DC145 /* JobNotificationTableViewCell.swift in Sources */,
 				1826254424CDB94200DF7A4B /* JobsModel.swift in Sources */,
 				3BF05BCC24C9634600E16081 /* UILabelExtension.swift in Sources */,
 				3B8274D824D51A90000E1617 /* BusinessProfileViewController.swift in Sources */,
@@ -1354,6 +1381,7 @@
 				3B14A58924CC053700FC235D /* OtpViewController.swift in Sources */,
 				3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */,
 				3B1AFF6B24DE6B45006DC145 /* JobQuoteTableViewCell.swift in Sources */,
+				3B5AF94D24F020E9009FD397 /* ClosedJobListModel.swift in Sources */,
 				3BF05BE324C96AEC00E16081 /* Config.swift in Sources */,
 				3BFB7CFB24D98A8400065135 /* ChatTextInputView.swift in Sources */,
 				3B4917C424DEB5E4003E0761 /* EditProfileViewController.swift in Sources */,

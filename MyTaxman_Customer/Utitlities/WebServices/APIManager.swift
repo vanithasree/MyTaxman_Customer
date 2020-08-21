@@ -135,8 +135,9 @@ class APIManager {
                                             if let jsonData = data.data {
                                                 do {
                                                     let jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? NSDictionary
-                                                    print("Response:", jsonDict ?? [:])
-                                                    
+//                                                    print("Response:", jsonDict ?? [:])
+                                                    self.jsonToString(json: jsonDict ?? [:])
+
                                                     let result = try decoder.decode(T.self, from: jsonData)
                                                     handler(result, nil)
                                                 } catch let error {
@@ -162,8 +163,9 @@ class APIManager {
                                                     do {
                                                         
                                                         let jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? NSDictionary
-                                                        print("Response:", jsonDict ?? [:])
-                                                        
+//                                                        print("Response:", jsonDict ?? [:])
+                                                        self.jsonToString(json: jsonDict ?? [:])
+
                                                         let result = try decoder.decode(T.self, from: jsonData)
                                                         handler(result, nil)
                                                     } catch let error {
@@ -222,8 +224,9 @@ class APIManager {
                     do {
                         
                         let jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? NSDictionary
-                        print("Response:", jsonDict ?? [:])
-                        
+//                        print("Response:", jsonDict ?? [:])
+                        self.jsonToString(json: jsonDict ?? [:])
+
                         let result = try decoder.decode(T.self, from: jsonData)
                         handler(result, nil)
                     } catch let error {
@@ -260,7 +263,8 @@ class APIManager {
                         do {
                             
                             let jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? NSDictionary
-                            print("Response:", jsonDict ?? [:])
+//                            print("Response:", jsonDict ?? [:])
+                            self.jsonToString(json: jsonDict ?? [:])
                             
                             let result = try decoder.decode(T.self, from: jsonData)
                             handler(result, nil)
@@ -307,8 +311,9 @@ class APIManager {
                                                 do {
                                                     
                                                     let jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? NSDictionary
-                                                    print("Response:", jsonDict ?? [:])
-                                                    
+//                                                    print("Response:", jsonDict ?? [:])
+                                                    self.jsonToString(json: jsonDict ?? [:])
+
                                                     let result = try decoder.decode(T.self, from: jsonData)
                                                     handler(result, nil)
                                                 } catch let error {
@@ -343,8 +348,9 @@ class APIManager {
                                                     do {
                                                         
                                                         let jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? NSDictionary
-                                                        print("Response:", jsonDict ?? [:])
-                                                        
+//                                                        print("Response:", jsonDict ?? [:])
+                                                        self.jsonToString(json: jsonDict ?? [:])
+
                                                         let result = try decoder.decode(T.self, from: jsonData)
                                                         handler(result, nil)
                                                     } catch let error {
@@ -390,7 +396,8 @@ class APIManager {
                         do {
                             
                             let jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? NSDictionary
-                            print("Response:", jsonDict ?? [:])
+//                            print("Response:", jsonDict ?? [:])
+                            self.jsonToString(json: jsonDict ?? [:])
                             
                             let result = try decoder.decode(T.self, from: jsonData)
                             handler(result, nil)
@@ -432,7 +439,9 @@ class APIManager {
                             do {
                                 
                                 let jsonDict = try JSONSerialization.jsonObject(with: jsonData) as? NSDictionary
-                                print("Response:", jsonDict ?? [:])
+//                                print("Response:", jsonDict ?? [:])
+                                self.jsonToString(json: jsonDict ?? [:])
+                                
                                 
                                 let result = try decoder.decode(T.self, from: jsonData)
                                 handler(result, nil)
@@ -478,6 +487,18 @@ class APIManager {
             UIApplication.shared.windows.first?.rootViewController = navigatinC
             UIApplication.shared.windows.first?.makeKeyAndVisible()
         }
+    }
+    
+    func jsonToString(json: AnyObject){
+        do {
+            let data1 =  try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) // first of all convert json to the data
+            let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
+            print(convertedString ?? "") // <-- here is ur string
+
+        } catch let myJSONError {
+            print(myJSONError)
+        }
+
     }
 }
 

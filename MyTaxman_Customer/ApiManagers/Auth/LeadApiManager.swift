@@ -17,6 +17,7 @@ enum LeadsApi {
     
     case custasklist
     case completedtask
+    case closedtask
 }
 // MARK: - EndPointType
 extension LeadsApi: EndPointType {
@@ -50,6 +51,8 @@ extension LeadsApi: EndPointType {
             return "/custasklist"
         case .completedtask:
             return "/completedtask"
+        case .closedtask:
+            return "/closedtask"
         }
     }
     
@@ -121,6 +124,7 @@ class LeadApiManager {
             }
         }
     }
+    
     func getCusCompletedTaskList(input: Parameters, handler: @escaping (_ result: CompletedTaskListBase?, _ error: AlertMessage?)->()) {
         APIManager.shared().call(type: LeadsApi.completedtask, params: input) { (result: CompletedTaskListBase?,message: AlertMessage?) in
             if let result = result {
@@ -131,4 +135,14 @@ class LeadApiManager {
         }
     }
     
+    func getCusClosedTaskList(input: Parameters, handler: @escaping (_ result: CompletedTaskListBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: LeadsApi.closedtask, params: input) { (result: CompletedTaskListBase?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+
 }

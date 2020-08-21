@@ -105,7 +105,7 @@ extension UILabel {
         self.numberOfLines = 0
         self.text = titleText
         self.backgroundColor = .clear
-        self.textColor = ColorManager.textColor.color
+        self.textColor = ColorManager.darkText.color
         self.adjustsFontForContentSizeCategory = false
     }
     

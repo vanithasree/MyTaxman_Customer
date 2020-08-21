@@ -37,8 +37,8 @@ class JobListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getCustomerTaskListForActiveView()
-//        self.getCustomerTaskListForCompletedView()
-//        self.getCustomerTaskListForClosedView()
+        //        self.getCustomerTaskListForCompletedView()
+        //        self.getCustomerTaskListForClosedView()
     }
     
     func setupViewUI() {
@@ -227,13 +227,20 @@ class JobListViewController: BaseViewController {
          }*/
     }
     
-    func menuAction() {
+    func menuAction(data : Quotes?) {
         let menuOptionVC = JobMenuOptionViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
         menuOptionVC.modalPresentationStyle = .fullScreen
         
         switch self.segmentView.index {
         case 0:
-            menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
+            let result = data?.vendor?.filter({ (obj) -> Bool in
+                return obj.quote_status == "1"
+            })
+            if result?.count != 0 {
+                menuOptionVC.optionList = ["View Job Details"]
+            }else {
+                menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
+            }
         case 1:
             menuOptionVC.optionList = ["View Job Details"]
         case 2:
@@ -306,17 +313,17 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
         cell.vendorList = []
         cell.no_of_vendor_count = no_of_vendor_count
         cell.menuAction = {[weak self] in
-            self?.menuAction()
+            self?.menuAction(data: self?.activeList[indexPath.row])
         }
         switch self.segmentView.index {
         case 0:
             cell.setValue(data : activeList[indexPath.row])
             break
         case 1:
-//            cell.setCompleteValue(data : completedList[indexPath.row])
+            //            cell.setCompleteValue(data : completedList[indexPath.row])
             break
         case 2:
-//            cell.setClosedListValue(data : closedList[indexPath.row])
+            //            cell.setClosedListValue(data : closedList[indexPath.row])
             break
         default:
             break

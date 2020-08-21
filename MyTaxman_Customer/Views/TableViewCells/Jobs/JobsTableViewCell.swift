@@ -165,29 +165,34 @@ class JobsTableViewCell: UITableViewCell {
         quoteTitleLabel.text = data.category ?? ""
         onlineUserImageView.image = UIImage(named: "RadioSelected")
         descriptionLabel.text = data.description ?? ""
-        let taskStatus = data.task_status ?? "0"
-        let quoteStatus = data.vendor?.first?.quote_status ?? "0"
+//        let taskStatus = data.task_status ?? "0"
+//        let quoteStatus = data.vendor?.first?.quote_status ?? "0"
         var statusString : String = ""
-        switch (taskStatus, quoteStatus) {
-        case ("0", "0"):
-            statusString = "OPEN FOR QUOTES"
-        case ("0", "1"):
-            statusString = "HIRED"
-        case ("0", "2"):
-            statusString = "DECLINED"
-        case ("0", "3"):
-            statusString = "EXPIRED"
-        default: break
+//        switch quoteStatus {
+//        case "1":
+//            statusString = "Hired"
+//        default: break
+//        }
+        let result = data.vendor?.filter({ (obj) -> Bool in
+             return obj.quote_status == "1"
+         })
+        if (result?.count ?? 0 != 0) {
+            statusString = "Hired"
+        }else {
+            if (Int(data.received_quotes ?? "0") ?? 0 >= 4) {
+                statusString = "MAX QUOTES RECEIVED"
+            }else {
+                statusString = "OPEN FOR QUOTES"
+            }
         }
         quoteStatusMessageLabel.text = statusString
         seeMoreButton.setTitle("See more", for: .normal)
         displaySeemore(show: false)
         
-        let result = data.vendor?.filter({ (obj) -> Bool in
+        let completeResult = data.vendor?.filter({ (obj) -> Bool in
             return obj.quote_status == "4"
         })
-        
-        if (data.task_status == "0" && (result?.count ?? 0 != 0)) {
+        if (completeResult?.count ?? 0 != 0) {
             self.buttonHeightConstraints.constant = CGFloat(44)
             self.buttonHeightConstraints.isActive = true
         }else {

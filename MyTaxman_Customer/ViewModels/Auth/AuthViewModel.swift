@@ -205,7 +205,7 @@ class AuthViewModel {
     
     func validateNewPassword(_ password: String?) -> ValidationMessage {
         guard let password = password, !password.isBlank else {
-            return (ValidationMessage(status: false, errorMessage: "Please enter new password", tag: 10))
+            return (ValidationMessage(status: false, errorMessage: "Please enter new password!", tag: 10))
         }
         
         if password.isValidPassword {

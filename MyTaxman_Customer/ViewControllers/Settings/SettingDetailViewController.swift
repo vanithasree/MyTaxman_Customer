@@ -24,7 +24,6 @@ class SettingDetailViewController: UIViewController {
         versionLabel.setHeaderTitle(titleText: "Version \(Bundle.main.versionNumber)")
         copyrightsLbael.setHeaderTitle(titleText: "© 2020 MyTaxman Pvt Ltd")
         self.setDataBasedOnSelected()
-        
         // Do any additional setup after loading the view.
     }
     func setDataBasedOnSelected() {

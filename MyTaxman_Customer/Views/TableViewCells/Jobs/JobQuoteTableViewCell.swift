@@ -38,11 +38,16 @@ class JobQuoteTableViewCell: UITableViewCell {
         doOnMain {
             self.profileImageView.cornerRadius = self.profileImageView.frame.size.width / 2
         }
+        nameLabel.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
+        statusLabel.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
+        descriptionLabel.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14.0))
+
     }
     
     func setValue(data: Vendor){
         nameLabel.text = data.vendorname ?? ""
         statusLabel.text = data.featured ?? "" == "Yes" ? "Featured" : ""
         profileImageView.load(from: "\(data.baseurl ?? "")\(data.profile_pic ?? "")")
+        descriptionLabel.text = data.additional_comments ?? ""
     }
 }

@@ -31,9 +31,8 @@ class JobsTableViewCell: UITableViewCell {
     var no_of_vendor_count : String = ""
     var jobType : JobType = .active
     
-    var vendorList : [Vendor] = [] {
-        didSet {
-            self.listUpdateConstraints(height: CGFloat(self.vendorList.count * 120))
+    var vendorList : [Vendor] = []{
+        didSet{
             doOnMain {
                 self.jobTableView.reloadData()
             }
@@ -53,6 +52,10 @@ class JobsTableViewCell: UITableViewCell {
             self.jobListHeightConstraints.constant = height
             self.jobListHeightConstraints.isActive = true
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
     @IBAction func onTappedActionBtn(_ sender: UIButton) {
@@ -76,7 +79,6 @@ class JobsTableViewCell: UITableViewCell {
     
     func setCellViewUI() {
         objectContainerView.setCardView()
-        objectContainerView.backgroundColor = .white
         
         quoteTitleLabel.setLabelCustomProperties(titleText: "", textColor: .black   , font:  UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0)), numberOfLines: 1, alignment: .natural)
         quoteStatusMessageLabel.setLabelCustomProperties(titleText: "", textColor: ColorManager.darkText.color, font:  UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(12.0)), numberOfLines: 1, alignment: .left)
@@ -87,14 +89,14 @@ class JobsTableViewCell: UITableViewCell {
         jobTableView.register(JobNotificationTableViewCell.nib, forCellReuseIdentifier: JobNotificationTableViewCell.identifier)
         jobTableView.register(ClosedJobTableViewCell.nib, forCellReuseIdentifier: ClosedJobTableViewCell.identifier)
         
-        jobTableView.rowHeight = UITableView.automaticDimension
+        //        jobTableView.rowHeight = UITableView.automaticDimension
         jobTableView.tableFooterView = UIView()
-        jobTableView.backgroundColor = ColorManager.white.color
-        jobTableView.separatorStyle = .none
+        jobTableView.backgroundColor = .clear
+        jobTableView.separatorStyle = .singleLine
         jobTableView.delegate = self
         jobTableView.dataSource = self
         
-        vendorList = []
+        self.vendorList = []
         
         seeMoreButton.setFooterTitle(title: "")
         seeMoreButton.setTitleColor(ColorManager.mediumTheme.color, for: .normal)
@@ -102,7 +104,7 @@ class JobsTableViewCell: UITableViewCell {
         notificationLabel.setCaptionTitle(titleText: "")
         notificationLabel.numberOfLines = 0
         displaySeemore(show: false)
-//        listUpdateConstraints(height: 0)
+        //        listUpdateConstraints(height: 0)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -125,8 +127,8 @@ class JobsTableViewCell: UITableViewCell {
     }
     
     func setClosedListValue(data : Quotes) {
-        vendorList = []
         jobType = .closed
+        self.vendorList = []
         quoteTitleLabel.text = data.category ?? ""
         onlineUserImageView.image = UIImage(named: "RadioSelected")
         if let value = data.cancel_description, !value.isEmpty {
@@ -142,8 +144,8 @@ class JobsTableViewCell: UITableViewCell {
     }
     
     func setValue(data : Quotes) {
-        vendorList = data.vendor ?? []
         jobType = .active
+        self.vendorList = data.vendor ?? []
         quoteTitleLabel.text = data.category ?? ""
         onlineUserImageView.image = UIImage(named: "RadioSelected")
         descriptionLabel.text = data.description ?? ""
@@ -164,11 +166,18 @@ class JobsTableViewCell: UITableViewCell {
         quoteStatusMessageLabel.text = statusString
         seeMoreButton.setTitle("See more", for: .normal)
         displaySeemore(show: false)
+        let count = data.vendor?.count ?? 0
+        
+        self.jobListHeightConstraints.constant = CGFloat(count * 120)
+        self.jobListHeightConstraints.isActive = true
+        doOnMain {
+            self.jobTableView.reloadData()
+        }
     }
     
     func setCompleteValue(data : Ilist) {
-        vendorList = []
         jobType = .completed
+        self.vendorList = []
         onlineUserImageView.image = UIImage(named: "RadioSelected")
         quoteTitleLabel.text = data.category ?? ""
         quoteStatusMessageLabel.text = "REVIEWED"
@@ -185,7 +194,7 @@ extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch jobType {
         case .active:
-            return vendorList.count
+            return self.vendorList.count
         case .completed:
             return 0
         case .closed:
@@ -199,11 +208,9 @@ extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {
             guard let cell : JobQuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobQuoteTableViewCell.identifier) as? JobQuoteTableViewCell else {
                 return UITableViewCell()
             }
-            cell.backgroundColor = .yellow
+            cell.backgroundColor = .clear
             cell.selectionStyle = .none
-            if vendorList.count > indexPath.row {
-                cell.setValue(data: vendorList[indexPath.row])
-            }
+            cell.setValue(data: self.vendorList[indexPath.row])
             return cell
             
         case .completed:
@@ -212,7 +219,7 @@ extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {
             guard let cell : ClosedJobTableViewCell = tableView.dequeueReusableCell(withIdentifier: ClosedJobTableViewCell.identifier) as? ClosedJobTableViewCell else {
                 return UITableViewCell()
             }
-            cell.backgroundColor = .yellow
+            cell.backgroundColor = .clear
             cell.selectionStyle = .none
             return cell
         }
@@ -221,7 +228,7 @@ extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch jobType {
         case .active:
-            return 100
+            return 120
         case .completed:
             return UITableView.automaticDimension
         case .closed:

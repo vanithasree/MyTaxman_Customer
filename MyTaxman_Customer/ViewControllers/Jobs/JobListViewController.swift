@@ -307,6 +307,7 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
         }
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
+        cell.vendorList = []
         cell.no_of_vendor_count = no_of_vendor_count
         cell.menuAction = {[weak self] in
             self?.menuAction()
@@ -324,6 +325,7 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
         default:
             break
         }
+        cell.layoutIfNeeded()
         return cell
     }
     
@@ -336,7 +338,9 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
             if activeList[indexPath.row].vendor?.count == 0 {
                 return 200
             }
-            return CGFloat(210 + (activeList[indexPath.row].vendor?.count ?? 0 * 120))
+            let count = activeList[indexPath.row].vendor?.count ?? 0
+            print(count * 120)
+            return CGFloat(200 + (count * 120))
         case 1:
             return UITableView.automaticDimension
         case 2:

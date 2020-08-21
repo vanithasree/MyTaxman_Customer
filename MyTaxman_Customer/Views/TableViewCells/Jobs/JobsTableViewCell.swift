@@ -182,8 +182,16 @@ class JobsTableViewCell: UITableViewCell {
         quoteStatusMessageLabel.text = statusString
         seeMoreButton.setTitle("See more", for: .normal)
         displaySeemore(show: false)
-        if (data.task_status == "0" && data.received_quotes == "4") {
+        
+        let result = data.vendor?.filter({ (obj) -> Bool in
+            return obj.quote_status == "4"
+        })
+        
+        if (data.task_status == "0" && (result?.count ?? 0 != 0)) {
             self.buttonHeightConstraints.constant = CGFloat(44)
+            self.buttonHeightConstraints.isActive = true
+        }else {
+            self.buttonHeightConstraints.constant = CGFloat(0)
             self.buttonHeightConstraints.isActive = true
         }
         let count = data.vendor?.count ?? 0

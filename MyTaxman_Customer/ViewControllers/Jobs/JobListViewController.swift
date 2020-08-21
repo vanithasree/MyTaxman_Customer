@@ -36,9 +36,9 @@ class JobListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        self.getCustomerTaskListForActiveView()
+        self.getCustomerTaskListForActiveView()
 //        self.getCustomerTaskListForCompletedView()
-        self.getCustomerTaskListForClosedView()
+//        self.getCustomerTaskListForClosedView()
     }
     
     func setupViewUI() {
@@ -144,7 +144,6 @@ class JobListViewController: BaseViewController {
             }
         }
     }
-    
     
     func getCustomerTaskListForClosedView() {
         LoadingIndicator.shared.show(forView: self.view)

@@ -28,20 +28,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Vanithasree..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIq-o2-GRb">
-                                                <rect key="frame" x="20" y="5" width="236" height="35"/>
+                                                <rect key="frame" x="20" y="0.0" width="236" height="35"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fund" translatesAutoresizingMaskIntoConstraints="NO" id="CZt-YN-0Ue">
-                                                <rect key="frame" x="261" y="10" width="25" height="25"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hand" translatesAutoresizingMaskIntoConstraints="NO" id="CZt-YN-0Ue">
+                                                <rect key="frame" x="261" y="5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="71U-Om-PsA"/>
                                                     <constraint firstAttribute="height" constant="25" id="irW-Vl-Yag"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let;s Get Started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V98-yU-hAQ">
-                                                <rect key="frame" x="20" y="50" width="171" height="28"/>
+                                                <rect key="frame" x="20" y="45" width="171" height="28"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                                             <constraint firstItem="jYS-1h-pRr" firstAttribute="bottom" secondItem="s3m-rb-9jb" secondAttribute="bottom" id="Czg-51-5Af"/>
                                             <constraint firstItem="jYS-1h-pRr" firstAttribute="top" secondItem="s3m-rb-9jb" secondAttribute="top" id="I2V-pC-ikA"/>
                                             <constraint firstAttribute="height" constant="80" id="MxF-MP-DDz"/>
-                                            <constraint firstItem="MIq-o2-GRb" firstAttribute="top" secondItem="kVG-aa-LGp" secondAttribute="top" constant="5" id="Nif-qN-aq2"/>
+                                            <constraint firstItem="MIq-o2-GRb" firstAttribute="top" secondItem="kVG-aa-LGp" secondAttribute="top" id="Nif-qN-aq2"/>
                                             <constraint firstItem="jYS-1h-pRr" firstAttribute="top" secondItem="kVG-aa-LGp" secondAttribute="top" constant="10" id="TFk-FN-MQ2"/>
                                             <constraint firstItem="MIq-o2-GRb" firstAttribute="centerY" secondItem="CZt-YN-0Ue" secondAttribute="centerY" id="ikc-ER-Ap2"/>
                                             <constraint firstAttribute="trailing" secondItem="jYS-1h-pRr" secondAttribute="trailing" constant="10" id="iwz-dI-b5G"/>
@@ -299,7 +299,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fund" width="50" height="50"/>
+        <image name="hand" width="30" height="30"/>
         <image name="phone.circle" catalog="system" width="64" height="60"/>
         <image name="video" catalog="system" width="64" height="40"/>
     </resources>

@@ -11,7 +11,7 @@ import Alamofire
 import BetterSegmentedControl
 import Sinch
 
-class JobListViewController: UIViewController {
+class JobListViewController: BaseViewController {
     
     @IBOutlet weak var videoCallBtn: UIButton!
     @IBOutlet weak var callBtn: UIButton!
@@ -41,10 +41,11 @@ class JobListViewController: UIViewController {
     
     func setupViewUI() {
         
+        isTransparent = true
         self.nameTitleLabel.setHeaderTitle(titleText: "")
-        self.nameTitleLabel.textColor = ColorManager.textLiteGreenColor.color
-        self.descriptionLabel.textColor = ColorManager.textLiteGreenColor.color
-        self.descriptionLabel.setLabelCustomProperties(titleText: "Let's Get Started", textColor: ColorManager.textLiteGreenColor.color, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(15.0)), numberOfLines: 1, alignment: .left)
+        self.nameTitleLabel.textColor = ColorManager.textDarkGreenColor.color
+        self.descriptionLabel.textColor = ColorManager.textDarkGreenColor.color
+        self.descriptionLabel.setLabelCustomProperties(titleText: "Let's Get Started", textColor: ColorManager.textDarkGreenColor.color, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(15.0)), numberOfLines: 1, alignment: .left)
         if let name = UserDetails.shared.userLoginData?.customername, !name.isEmpty {
             if name.count >= 10 {
                 self.nameTitleLabel.text = "Hello" + " " + name.prefix(10) + "..."
@@ -53,6 +54,16 @@ class JobListViewController: UIViewController {
                 self.nameTitleLabel.text = "Hello" + " " + name + "..."
             }
         }
+        
+        self.videoCallBtn.isHidden = true
+        self.callBtn.isHidden = true
+        
+        let image = UIImage(named: "add")!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        let rightBarButtonItem = UIBarButtonItem(image:image, style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        
+        
         self.setUpSegmentViewControl(segmentControl: segmentView, bgColor: .white, titles: ["Active","Completed", "Closed"])
         jobsListTableView.register(JobsTableViewCell.nib, forCellReuseIdentifier: JobsTableViewCell.identifier)
         jobsListTableView.tableFooterView = UIView()
@@ -62,6 +73,10 @@ class JobListViewController: UIViewController {
         jobsListTableView.rowHeight = UITableView.automaticDimension
         jobsListTableView.delegate = self
         jobsListTableView.dataSource = self
+    }
+    
+    @objc func addTapped(){
+        self.redirectToSubmitTaskVC()
     }
     
     func setUpSegmentViewControl(segmentControl : BetterSegmentedControl, bgColor:UIColor, titles:[String]) {
@@ -218,6 +233,10 @@ class JobListViewController: UIViewController {
     }
     
     func seeMoreAction() {
+    }
+    func redirectToSubmitTaskVC() {
+        let submitANewJobVC = LeadsDashboardViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(submitANewJobVC, animated: true)
     }
 }
 

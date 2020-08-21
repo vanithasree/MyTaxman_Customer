@@ -18,13 +18,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="368" height="118"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8kM-kB-kBu">
-                            <rect key="frame" x="10" y="15" width="88.5" height="88"/>
+                            <rect key="frame" x="10" y="29.5" width="59" height="59"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="8kM-kB-kBu" secondAttribute="height" multiplier="1:1" id="KlF-QP-ISX"/>
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8zC-PL-SMU">
-                            <rect key="frame" x="108.5" y="24.5" width="89" height="20.5"/>
+                            <rect key="frame" x="79" y="24.5" width="89" height="20.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtF-fU-bmR">
                                     <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
@@ -41,11 +41,11 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RqY-Mw-fyE">
-                            <rect key="frame" x="108.5" y="50" width="110" height="18"/>
+                            <rect key="frame" x="79" y="50" width="110.5" height="18"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8x-Lq-KME">
-                            <rect key="frame" x="108.5" y="73" width="42" height="20.5"/>
+                            <rect key="frame" x="79" y="73" width="42" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -53,9 +53,9 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="8kM-kB-kBu" firstAttribute="height" secondItem="T9G-is-fG1" secondAttribute="height" multiplier="0.5" id="7Df-hl-4F7"/>
                         <constraint firstItem="x8x-Lq-KME" firstAttribute="top" secondItem="RqY-Mw-fyE" secondAttribute="bottom" constant="5" id="8Se-ch-wGC"/>
                         <constraint firstItem="RqY-Mw-fyE" firstAttribute="width" secondItem="T9G-is-fG1" secondAttribute="width" multiplier="0.3" id="CtK-PR-HNN"/>
-                        <constraint firstItem="8kM-kB-kBu" firstAttribute="width" secondItem="T9G-is-fG1" secondAttribute="width" multiplier="0.24" id="FXn-IB-2vd"/>
                         <constraint firstItem="RqY-Mw-fyE" firstAttribute="height" secondItem="T9G-is-fG1" secondAttribute="height" multiplier="0.15" id="Gdw-6m-SKF"/>
                         <constraint firstItem="x8x-Lq-KME" firstAttribute="leading" secondItem="8kM-kB-kBu" secondAttribute="trailing" constant="10" id="RiU-bA-SCF"/>
                         <constraint firstItem="RqY-Mw-fyE" firstAttribute="leading" secondItem="8kM-kB-kBu" secondAttribute="trailing" constant="10" id="XmA-Sw-Vag"/>

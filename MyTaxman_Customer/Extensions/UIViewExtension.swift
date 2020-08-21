@@ -36,12 +36,12 @@ extension UIView {
         
         self.backgroundColor = .white
         layer.cornerRadius = 10.0
-        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowColor = UIColor.lightGray.cgColor
         layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        layer.shadowRadius = 6.0
-        layer.shadowOpacity = 0.7
+        layer.shadowRadius = 2.0
+        layer.shadowOpacity = 0.5
         
-}
+    }
     
     var cornerRadius: CGFloat{
         set{
@@ -130,15 +130,15 @@ extension UIView {
         }
     }
     
-   /* func makeGradientLayer(`for` object : UIView, startPoint : CGPoint, endPoint : CGPoint, gradientColors : [Any]) -> CAGradientLayer {
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.colors = gradientColors
-        gradient.locations = [0.0 , 1.0]
-        gradient.startPoint = startPoint
-        gradient.endPoint = endPoint
-        gradient.frame = CGRect(x: 0, y: 0, width: object.frame.size.width, height: object.frame.size.height)
-        return gradient
-    }*/
+    /* func makeGradientLayer(`for` object : UIView, startPoint : CGPoint, endPoint : CGPoint, gradientColors : [Any]) -> CAGradientLayer {
+     let gradient: CAGradientLayer = CAGradientLayer()
+     gradient.colors = gradientColors
+     gradient.locations = [0.0 , 1.0]
+     gradient.startPoint = startPoint
+     gradient.endPoint = endPoint
+     gradient.frame = CGRect(x: 0, y: 0, width: object.frame.size.width, height: object.frame.size.height)
+     return gradient
+     }*/
     
     
 }
@@ -180,9 +180,9 @@ extension UIImageView {
 
 
 class AnimationUtility: UIViewController, CAAnimationDelegate {
-
+    
     static let kSlideAnimationDuration: CFTimeInterval = 0.4
-
+    
     static func viewSlideInFromRight(toLeft views: UIView) {
         var transition: CATransition? = nil
         transition = CATransition.init()
@@ -190,10 +190,10 @@ class AnimationUtility: UIViewController, CAAnimationDelegate {
         transition?.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition?.type = CATransitionType.push
         transition?.subtype = CATransitionSubtype.fromRight
-//        transition?.delegate = (self as! CAAnimationDelegate)
+        //        transition?.delegate = (self as! CAAnimationDelegate)
         views.layer.add(transition!, forKey: nil)
     }
-
+    
     static func viewSlideInFromLeft(toRight views: UIView) {
         var transition: CATransition? = nil
         transition = CATransition.init()
@@ -201,10 +201,10 @@ class AnimationUtility: UIViewController, CAAnimationDelegate {
         transition?.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition?.type = CATransitionType.push
         transition?.subtype = CATransitionSubtype.fromLeft
-//        transition?.delegate = (self as! CAAnimationDelegate)
+        //        transition?.delegate = (self as! CAAnimationDelegate)
         views.layer.add(transition!, forKey: nil)
     }
-
+    
     static func viewSlideInFromTop(toBottom views: UIView) {
         var transition: CATransition? = nil
         transition = CATransition.init()
@@ -212,10 +212,10 @@ class AnimationUtility: UIViewController, CAAnimationDelegate {
         transition?.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition?.type = CATransitionType.push
         transition?.subtype = CATransitionSubtype.fromBottom
-//        transition?.delegate = (self as! CAAnimationDelegate)
+        //        transition?.delegate = (self as! CAAnimationDelegate)
         views.layer.add(transition!, forKey: nil)
     }
-
+    
     static func viewSlideInFromBottom(toTop views: UIView) {
         var transition: CATransition? = nil
         transition = CATransition.init()
@@ -223,7 +223,7 @@ class AnimationUtility: UIViewController, CAAnimationDelegate {
         transition?.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition?.type = CATransitionType.push
         transition?.subtype = CATransitionSubtype.fromTop
-//        transition?.delegate = (self as! CAAnimationDelegate)
+        //        transition?.delegate = (self as! CAAnimationDelegate)
         views.layer.add(transition!, forKey: nil)
     }
 }

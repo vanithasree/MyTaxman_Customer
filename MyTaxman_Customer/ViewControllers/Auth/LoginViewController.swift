@@ -36,6 +36,9 @@ class LoginViewController: BaseViewController {
     func resetTextFields() {
         self.userNameTextField.text = ""
         self.passwordTextField.text = ""
+        
+        self.userNameTextField.text = "9894909595"
+        self.passwordTextField.text = "Qq123456"
     }
     
     func setupViews() {
@@ -65,6 +68,7 @@ class LoginViewController: BaseViewController {
         eyeShowButton.tintColor = ColorManager.darkBGTheme.color
         passwordTextField.rightView = eyeShowButton
         passwordTextField.rightViewMode = .always
+        
     }
     
     //MARK: - Button Actions
@@ -115,12 +119,12 @@ class LoginViewController: BaseViewController {
                         }else {
                             self.presentAlert(withTitle: "", message: result.desc ?? "") {}
                         }
-//                        else {
-//                            //self.presentAlert(withTitle: "", message: result.desc ?? "") {
-//                            UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
-//                            self.redirectToDashBoardScreen()
-//                            //                            }
-//                        }
+                        //                        else {
+                        //                            //self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                        //                            UserDetails.shared.setUserLoginData(data: try! JSONEncoder().encode(result.customerid?.first))
+                        //                            self.redirectToDashBoardScreen()
+                        //                            //                            }
+                        //                        }
                     } else if let success = result.code, success == "4" {
                         self.presentAlert(withTitle: "", message: result.desc ?? "") {
                             self.redirectToContactRegisterInfoScreen()
@@ -190,7 +194,7 @@ extension LoginViewController : UITextFieldDelegate {
         }
     }
     
-   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let existText = textField.text, let textRange = Range(range, in: existText) else { return false }
         let newText = existText.replacingCharacters(in: textRange, with: string)
         switch textField {

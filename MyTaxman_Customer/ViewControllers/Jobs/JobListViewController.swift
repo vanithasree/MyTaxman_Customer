@@ -25,6 +25,7 @@ class JobListViewController: BaseViewController {
     var activeList : [Quotes] = []
     var completedList : [Ilist] = []
     var closedList : [Quotes] = []
+    var no_of_vendor_count : String = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,8 @@ class JobListViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getCustomerTaskListForActiveView()
-        self.getCustomerTaskListForCompletedView()
+        //        self.getCustomerTaskListForCompletedView()
+        //        self.getCustomerTaskListForClosedView()
     }
     
     func setupViewUI() {
@@ -46,6 +48,7 @@ class JobListViewController: BaseViewController {
         self.nameTitleLabel.textColor = ColorManager.textDarkGreenColor.color
         self.descriptionLabel.textColor = ColorManager.textDarkGreenColor.color
         self.descriptionLabel.setLabelCustomProperties(titleText: "Let's Get Started", textColor: ColorManager.textDarkGreenColor.color, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(15.0)), numberOfLines: 1, alignment: .left)
+        
         if let name = UserDetails.shared.userLoginData?.customername, !name.isEmpty {
             if name.count >= 10 {
                 self.nameTitleLabel.text = "Hello" + " " + name.prefix(10) + "..."
@@ -61,7 +64,6 @@ class JobListViewController: BaseViewController {
         let image = UIImage(named: "add")!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         let rightBarButtonItem = UIBarButtonItem(image:image, style: .plain, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = rightBarButtonItem
-        
         
         
         self.setUpSegmentViewControl(segmentControl: segmentView, bgColor: .white, titles: ["Active","Completed", "Closed"])
@@ -107,13 +109,16 @@ class JobListViewController: BaseViewController {
             LoadingIndicator.shared.hide()
             if let result = result {
                 if result.code == "1" {
-                    let listItems = result.desc?.quotes ?? []
-                    self.activeList =  listItems.filter { $0.task_status == "0"}
-                    self.closedList =  self.activeList.filter { $0.task_cancel_status == "1"}
+                    self.no_of_vendor_count = result.no_of_vendor_count ?? "0"
+                    self.activeList = result.desc?.quotes ?? []
+                    doOnMain {
+                        self.jobsListTableView.reloadData()
+                    }
+                    //                    let listItems = result.desc?.quotes ?? []
+                    //                    self.activeList =  listItems.filter { $0.task_status == "0"}
+                    //                    self.closedList =  self.activeList.filter { $0.task_cancel_status == "1"}
                 }else {
-                }
-                doOnMain {
-                    self.jobsListTableView.reloadData()
+                    self.presentAlert(withTitle: "", message: "")
                 }
             } else if let alert = alert {
                 self.presentAlert(withTitle: "", message: alert.errorMessage)
@@ -131,9 +136,34 @@ class JobListViewController: BaseViewController {
             if let result = result {
                 if result.code == "1"{
                     self.completedList = result.desc?.ilist ?? []
+                    doOnMain {
+                        self.jobsListTableView.reloadData()
+                    }
+                }else {
+                    self.presentAlert(withTitle: "", message: "Try again")
                 }
-                doOnMain {
-                    self.jobsListTableView.reloadData()
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
+        }
+    }
+    
+    
+    func getCustomerTaskListForClosedView() {
+        LoadingIndicator.shared.show(forView: self.view)
+        let params: Parameters = [
+            "customerid": UserDetails.shared.userId ,
+        ]
+        leadViewModel.getCustomerTaskListForClosedTab(input: params) { (result: CompletedTaskListBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if result.code == "1"{
+                    //                    self.closedList = result.desc?.ilist ?? []
+                    doOnMain {
+                        self.jobsListTableView.reloadData()
+                    }
+                }else {
+                    self.presentAlert(withTitle: "", message: "Try again")
                 }
             } else if let alert = alert {
                 self.presentAlert(withTitle: "", message: alert.errorMessage)
@@ -215,9 +245,6 @@ class JobListViewController: BaseViewController {
         default: break
             
         }
-        
-        
-        
         menuOptionVC.hireBusinessAction = {[weak self] in
             self?.redirectHirePage()
         }
@@ -232,8 +259,6 @@ class JobListViewController: BaseViewController {
         self.tabBarController?.present(navigationController, animated: true, completion: {})
     }
     
-    func seeMoreAction() {
-    }
     func redirectToSubmitTaskVC() {
         let submitANewJobVC = LeadsDashboardViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(submitANewJobVC, animated: true)
@@ -282,11 +307,9 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
         }
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
+        cell.no_of_vendor_count = no_of_vendor_count
         cell.menuAction = {[weak self] in
             self?.menuAction()
-        }
-        cell.seemoreAction = {[weak self] in
-            self?.seeMoreAction()
         }
         switch self.segmentView.index {
         case 0:
@@ -308,7 +331,19 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        switch self.segmentView.index {
+        case 0:
+            if activeList[indexPath.row].vendor?.count == 0 {
+                return 200
+            }
+            return CGFloat(210 + (activeList[indexPath.row].vendor?.count ?? 0 * 120))
+        case 1:
+            return UITableView.automaticDimension
+        case 2:
+            return UITableView.automaticDimension
+        default:
+            return UITableView.automaticDimension
+        }
     }
 }
 

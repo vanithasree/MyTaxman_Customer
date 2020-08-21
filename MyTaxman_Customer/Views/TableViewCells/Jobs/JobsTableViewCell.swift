@@ -7,7 +7,11 @@
 //
 
 import UIKit
-
+enum JobType {
+    case active
+    case completed
+    case closed
+}
 
 class JobsTableViewCell: UITableViewCell {
     
@@ -19,11 +23,24 @@ class JobsTableViewCell: UITableViewCell {
     @IBOutlet weak var actionBtn: UIButton!
     @IBOutlet var jobTableView: UITableView!
     @IBOutlet var seeMoreButton: UIButton!
-    
-    var isFromTabIdentityValue : Int = 0
-    
+    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet var notifcationImageView: UIImageView!
+    @IBOutlet var notificationHeightConstraints: NSLayoutConstraint!
+    @IBOutlet var jobListHeightConstraints: NSLayoutConstraint!
     var menuAction : (() ->Void)?
-    var seemoreAction : (() ->Void)?
+    var no_of_vendor_count : String = ""
+    var jobType : JobType = .active
+    
+    var vendorList : [Vendor] = [] {
+        didSet {
+            self.listUpdateConstraints(height: CGFloat(self.vendorList.count * 120))
+            doOnMain {
+                self.jobTableView.reloadData()
+            }
+        }
+    }
+    
+    var isSeemore : Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,23 +48,42 @@ class JobsTableViewCell: UITableViewCell {
         setCellViewUI()
     }
     
+    func listUpdateConstraints(height: CGFloat) {
+        doOnMain {
+            self.jobListHeightConstraints.constant = height
+            self.jobListHeightConstraints.isActive = true
+        }
+    }
+    
     @IBAction func onTappedActionBtn(_ sender: UIButton) {
         menuAction?()
     }
     
-    @IBAction func didTapSeemoreAction(_ sender: Any) {
-        seemoreAction?()
+    @IBAction func didTapSeemoreAction(_ sender: UIButton) {
+        isSeemore = !isSeemore
+        if isSeemore {
+            print("selected")
+            displaySeemore(show: true)
+            seeMoreButton.setTitle("See less", for: .normal)
+            notificationLabel.text = "\(no_of_vendor_count) experts notified of your job"
+        }else {
+            print("un selected")
+            displaySeemore(show: false)
+            notificationLabel.text = ""
+            seeMoreButton.setTitle("See more", for: .normal)
+        }
     }
     
     func setCellViewUI() {
         objectContainerView.setCardView()
         objectContainerView.backgroundColor = .white
         
-        quoteTitleLabel.setLabelCustomProperties(titleText: "", textColor: .black   , font:  UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0)), numberOfLines: 0, alignment: .natural)
+        quoteTitleLabel.setLabelCustomProperties(titleText: "", textColor: .black   , font:  UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0)), numberOfLines: 1, alignment: .natural)
         quoteStatusMessageLabel.setLabelCustomProperties(titleText: "", textColor: ColorManager.darkText.color, font:  UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(12.0)), numberOfLines: 1, alignment: .left)
         descriptionLabel.setCaptionTitle(titleText: "")
+        descriptionLabel.numberOfLines = 1
         
-        jobTableView.register(QuoteTableViewCell.nib, forCellReuseIdentifier: QuoteTableViewCell.identifier)
+        jobTableView.register(JobQuoteTableViewCell.nib, forCellReuseIdentifier: JobQuoteTableViewCell.identifier)
         jobTableView.register(JobNotificationTableViewCell.nib, forCellReuseIdentifier: JobNotificationTableViewCell.identifier)
         jobTableView.register(ClosedJobTableViewCell.nib, forCellReuseIdentifier: ClosedJobTableViewCell.identifier)
         
@@ -58,12 +94,19 @@ class JobsTableViewCell: UITableViewCell {
         jobTableView.delegate = self
         jobTableView.dataSource = self
         
-        seeMoreButton.setFooterTitle(title: "See more")
+        vendorList = []
+        
+        seeMoreButton.setFooterTitle(title: "")
+        seeMoreButton.setTitleColor(ColorManager.mediumTheme.color, for: .normal)
+        
+        notificationLabel.setCaptionTitle(titleText: "")
+        notificationLabel.numberOfLines = 0
+        displaySeemore(show: false)
+//        listUpdateConstraints(height: 0)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     static var nib: UINib {
@@ -74,31 +117,39 @@ class JobsTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
+    func displaySeemore(show: Bool) {
+        doOnMain {
+            self.notificationHeightConstraints.constant = show ? 25 : 0
+            self.notificationHeightConstraints.isActive = true
+        }
+    }
+    
     func setClosedListValue(data : Quotes) {
+        vendorList = []
+        jobType = .closed
         quoteTitleLabel.text = data.category ?? ""
         onlineUserImageView.image = UIImage(named: "RadioSelected")
-        
         if let value = data.cancel_description, !value.isEmpty {
             descriptionLabel.text = "Reason: \(value)"
-        }
-        else {
+        }else {
             descriptionLabel.text = "Reason: "
         }
-        
         quoteStatusMessageLabel.text = "EXPIRED"
-        
-        self.isFromTabIdentityValue = 3
-        self.jobTableView.reloadData()
+        listUpdateConstraints(height: 0)
+        doOnMain {
+            self.jobTableView.reloadData()
+        }
     }
     
     func setValue(data : Quotes) {
+        vendorList = data.vendor ?? []
+        jobType = .active
         quoteTitleLabel.text = data.category ?? ""
         onlineUserImageView.image = UIImage(named: "RadioSelected")
-        descriptionLabel.text = ""
+        descriptionLabel.text = data.description ?? ""
         let taskStatus = data.task_status ?? "0"
         let quoteStatus = data.vendor?.first?.quote_status ?? "0"
         var statusString : String = ""
-        
         switch (taskStatus, quoteStatus) {
         case ("0", "0"):
             statusString = "OPEN FOR QUOTES"
@@ -109,58 +160,72 @@ class JobsTableViewCell: UITableViewCell {
         case ("0", "3"):
             statusString = "EXPIRED"
         default: break
-            
         }
         quoteStatusMessageLabel.text = statusString
-        self.isFromTabIdentityValue = 1
-        self.jobTableView.reloadData()
+        seeMoreButton.setTitle("See more", for: .normal)
+        displaySeemore(show: false)
     }
     
     func setCompleteValue(data : Ilist) {
+        vendorList = []
+        jobType = .completed
         onlineUserImageView.image = UIImage(named: "RadioSelected")
         quoteTitleLabel.text = data.category ?? ""
         quoteStatusMessageLabel.text = "REVIEWED"
         descriptionLabel.text = ""
+        listUpdateConstraints(height: 0)
+        doOnMain {
+            self.jobTableView.reloadData()
+        }
     }
-    
 }
 
 extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch jobType {
+        case .active:
+            return vendorList.count
+        case .completed:
+            return 0
+        case .closed:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        switch self.isFromTabIdentityValue {
-        case 3:
+        switch jobType {
+        case .active:
+            guard let cell : JobQuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobQuoteTableViewCell.identifier) as? JobQuoteTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.backgroundColor = .yellow
+            cell.selectionStyle = .none
+            if vendorList.count > indexPath.row {
+                cell.setValue(data: vendorList[indexPath.row])
+            }
+            return cell
+            
+        case .completed:
+            return UITableViewCell()
+        case .closed:
             guard let cell : ClosedJobTableViewCell = tableView.dequeueReusableCell(withIdentifier: ClosedJobTableViewCell.identifier) as? ClosedJobTableViewCell else {
                 return UITableViewCell()
             }
             cell.backgroundColor = .yellow
             cell.selectionStyle = .none
             return cell
-            
-        default:
-            guard let cell : QuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: QuoteTableViewCell.identifier) as? QuoteTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.backgroundColor = .yellow
-            cell.selectionStyle = .none
-            return cell
         }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        switch jobType {
+        case .active:
+            return 100
+        case .completed:
+            return UITableView.automaticDimension
+        case .closed:
+            return UITableView.automaticDimension
+        }
     }
 }

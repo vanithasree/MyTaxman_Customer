@@ -76,6 +76,7 @@ struct Quotes : Codable {
     let vendor_review : String?
     let vendor_review_givenon : String?
     let vendor : [Vendor]?
+    
 
     enum CodingKeys: String, CodingKey {
 
@@ -180,6 +181,9 @@ struct Vendor : Codable {
     let expertscount : String?
     let vendor_avg_rating : String?
     let success_quote_count : String?
+    let baseurl : String?
+
+    
 
     enum CodingKeys: String, CodingKey {
 
@@ -209,6 +213,7 @@ struct Vendor : Codable {
         case expertscount = "expertscount"
         case vendor_avg_rating = "vendor_avg_rating"
         case success_quote_count = "success_quote_count"
+        case baseurl = "baseurl"
     }
 
     init(from decoder: Decoder) throws {
@@ -239,6 +244,7 @@ struct Vendor : Codable {
         expertscount = try values.decodeIfPresent(String.self, forKey: .expertscount)
         vendor_avg_rating = try values.decodeIfPresent(String.self, forKey: .vendor_avg_rating)
         success_quote_count = try values.decodeIfPresent(String.self, forKey: .success_quote_count)
+        baseurl = try values.decodeIfPresent(String.self, forKey: .baseurl)        
     }
 
 }

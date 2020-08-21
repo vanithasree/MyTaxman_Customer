@@ -34,5 +34,15 @@ class JobQuoteTableViewCell: UITableViewCell {
     }
     
     func setCellViewUI() {
+        profileImageView.contentMode = .scaleAspectFill
+        doOnMain {
+            self.profileImageView.cornerRadius = self.profileImageView.frame.size.width / 2
+        }
+    }
+    
+    func setValue(data: Vendor){
+        nameLabel.text = data.vendorname ?? ""
+        statusLabel.text = data.featured ?? "" == "Yes" ? "Featured" : ""
+        profileImageView.load(from: "\(data.baseurl ?? "")\(data.profile_pic ?? "")")
     }
 }

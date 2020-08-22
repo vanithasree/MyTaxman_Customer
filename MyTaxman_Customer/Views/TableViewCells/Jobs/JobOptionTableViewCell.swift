@@ -31,7 +31,8 @@ class JobOptionTableViewCell: UITableViewCell {
     }
     
     func setCellViewUI() {
-        self.optionNameLabel.setMainTitle(titleText: "")
+        self.optionNameLabel.setCaptionTitle(titleText: "")
+        self.optionNameLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0))
     }
     
     func setValue(){

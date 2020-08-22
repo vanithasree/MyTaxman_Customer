@@ -84,13 +84,13 @@ extension JobMenuOptionViewController : UITableViewDataSource, UITableViewDelega
         cell.optionNameLabel.text = optionList[indexPath.row]
         switch optionList[indexPath.row] {
         case "Hire Business":
-            cell.optionImageView.image = UIImage(named: "")
+            cell.optionImageView.image = UIImage(named: "hire")
             break
         case "View Job Details":
-            cell.optionImageView.image = UIImage(named: "")
+            cell.optionImageView.image = UIImage(named: "viewJob")
             break
         case "Cancel Job":
-            cell.optionImageView.image = UIImage(named: "")
+            cell.optionImageView.image = UIImage(named: "cancel")
             break
         default:
             break

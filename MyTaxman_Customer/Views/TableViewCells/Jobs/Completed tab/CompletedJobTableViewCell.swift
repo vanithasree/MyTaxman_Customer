@@ -18,6 +18,7 @@ class CompletedJobTableViewCell: UITableViewCell {
     @IBOutlet var reviewTitleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var ratingView: FloatRatingView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -44,6 +45,7 @@ class CompletedJobTableViewCell: UITableViewCell {
         ratingView.backgroundColor = UIColor.clear
         ratingView.tintColor = .yellow
         ratingView.type = .wholeRatings
+        ratingView.editable = false
     }
     
     func setValue(data: Ilist) {

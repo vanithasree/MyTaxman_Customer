@@ -79,6 +79,22 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func presentAlertWithCancel(withTitle title: String, message : String, okayButtonTapped: (() -> ())? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "Yes", style: .default) { action in
+            print("You've pressed OK Button")
+            if okayButtonTapped != nil {
+                okayButtonTapped?()
+            }
+        }
+        alertController.addAction(OKAction)
+        let CancelAction = UIAlertAction(title: "No", style: .default) { action in
+            print("You've pressed Cancel Button")
+        }
+        alertController.addAction(CancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func presentAlert(withTitle title: String, message : String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default) { action in

@@ -305,6 +305,16 @@ extension JobListViewController{
         jobDetail.closedJobDetails = closed
         self.navigationController?.pushViewController(jobDetail, animated: true)
     }
+    func submitAction(data: Quotes?){
+        self.presentAlertWithCancel(withTitle: "", message: "Are you sure the job is completed?") {
+            doOnMain {
+                let reviewVC = SubmitReviewViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
+                reviewVC.getData = data
+                reviewVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(reviewVC, animated: true)
+            }
+        }
+    }
 }
 extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -337,6 +347,9 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
             cell.no_of_vendor_count = no_of_vendor_count
             cell.menuAction = {[weak self] in
                 self?.menuAction(data: self?.activeList[indexPath.row], complete: nil, closed: nil)
+            }
+            cell.submitAction = {[weak self] in
+                self?.submitAction(data: self?.activeList[indexPath.row])
             }
             cell.setValue(data : activeList[indexPath.row])
             cell.layoutIfNeeded()
@@ -371,6 +384,7 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        submitAction(data: activeList[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

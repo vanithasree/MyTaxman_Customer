@@ -46,6 +46,7 @@ class JobQuoteTableViewCell: UITableViewCell {
         ratingView.backgroundColor = UIColor.clear
         ratingView.tintColor = .yellow
         ratingView.type = .wholeRatings
+        ratingView.editable = false
     }
     
     func setValue(data: Vendor){

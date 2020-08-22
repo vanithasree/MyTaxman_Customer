@@ -134,6 +134,114 @@
             </objects>
             <point key="canvasLocation" x="-201.44927536231884" y="103.79464285714285"/>
         </scene>
+        <!--Submit Review View Controller-->
+        <scene sceneID="FAn-Os-Lca">
+            <objects>
+                <viewController storyboardIdentifier="SubmitReviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eu0-8O-aRx" customClass="SubmitReviewViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OmG-Ec-bOK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqT-ve-b3l">
+                                <rect key="frame" x="0.0" y="804" width="414" height="58"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="didTapSubmitAction:" destination="eu0-8O-aRx" eventType="touchUpInside" id="xB0-iC-ddh"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfile" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-Zf-TXR">
+                                <rect key="frame" x="140" y="64" width="134" height="134.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gxn-Zf-TXR" secondAttribute="height" multiplier="1:1" id="C1w-LS-f0u"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btH-1R-42w">
+                                <rect key="frame" x="10" y="218" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-oH-Ob6">
+                                <rect key="frame" x="20" y="251" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umz-7d-HIW" customClass="FloatRatingView" customModule="FloatRatingView">
+                                <rect key="frame" x="103.5" y="285.5" width="207" height="44.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="StarEmpty"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="StarFull"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minRating">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxRating">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rKz-QN-VHx">
+                                <rect key="frame" x="20" y="346.5" width="374" height="134.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ag-Kx-Lva">
+                                <rect key="frame" x="20" y="505" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gxn-Zf-TXR" firstAttribute="top" secondItem="Xdi-9i-2SV" secondAttribute="top" constant="20" id="2Nu-qq-9Hg"/>
+                            <constraint firstItem="rKz-QN-VHx" firstAttribute="top" secondItem="Umz-7d-HIW" secondAttribute="bottom" multiplier="1.05" id="3ZC-9t-qpY"/>
+                            <constraint firstItem="Xdi-9i-2SV" firstAttribute="trailing" secondItem="yqT-ve-b3l" secondAttribute="trailing" id="3cf-oE-UJp"/>
+                            <constraint firstItem="Xdi-9i-2SV" firstAttribute="trailing" secondItem="dD8-oH-Ob6" secondAttribute="trailing" constant="20" id="67c-jM-kJu"/>
+                            <constraint firstItem="9Ag-Kx-Lva" firstAttribute="top" secondItem="rKz-QN-VHx" secondAttribute="bottom" multiplier="1.05" id="6Y6-ji-ZCR"/>
+                            <constraint firstItem="Xdi-9i-2SV" firstAttribute="bottom" secondItem="yqT-ve-b3l" secondAttribute="bottom" id="CsE-na-8QZ"/>
+                            <constraint firstItem="rKz-QN-VHx" firstAttribute="leading" secondItem="Xdi-9i-2SV" secondAttribute="leading" constant="20" id="DFG-Em-9q6"/>
+                            <constraint firstItem="yqT-ve-b3l" firstAttribute="leading" secondItem="Xdi-9i-2SV" secondAttribute="leading" id="Emd-Ez-ID4"/>
+                            <constraint firstItem="gxn-Zf-TXR" firstAttribute="height" secondItem="OmG-Ec-bOK" secondAttribute="height" multiplier="0.15" id="MZk-63-jBi"/>
+                            <constraint firstItem="dD8-oH-Ob6" firstAttribute="top" secondItem="btH-1R-42w" secondAttribute="bottom" multiplier="1.05" id="Oqa-zD-nCe"/>
+                            <constraint firstItem="rKz-QN-VHx" firstAttribute="height" secondItem="OmG-Ec-bOK" secondAttribute="height" multiplier="0.15" id="PLB-LE-kVi"/>
+                            <constraint firstItem="Xdi-9i-2SV" firstAttribute="trailing" secondItem="9Ag-Kx-Lva" secondAttribute="trailing" constant="20" id="Poo-Yy-UZK"/>
+                            <constraint firstItem="Umz-7d-HIW" firstAttribute="centerX" secondItem="OmG-Ec-bOK" secondAttribute="centerX" id="Vb0-2N-8zC"/>
+                            <constraint firstItem="Xdi-9i-2SV" firstAttribute="trailing" secondItem="btH-1R-42w" secondAttribute="trailing" constant="10" id="WLg-mv-Obw"/>
+                            <constraint firstItem="9Ag-Kx-Lva" firstAttribute="leading" secondItem="Xdi-9i-2SV" secondAttribute="leading" constant="20" id="XoI-xJ-EtT"/>
+                            <constraint firstItem="btH-1R-42w" firstAttribute="leading" secondItem="Xdi-9i-2SV" secondAttribute="leading" constant="10" id="YGr-H8-Npp"/>
+                            <constraint firstItem="yqT-ve-b3l" firstAttribute="height" secondItem="OmG-Ec-bOK" secondAttribute="height" multiplier="0.065" id="Zg7-DQ-1RZ"/>
+                            <constraint firstItem="btH-1R-42w" firstAttribute="top" secondItem="gxn-Zf-TXR" secondAttribute="bottom" multiplier="1.1" id="bF9-BY-m5V"/>
+                            <constraint firstItem="Umz-7d-HIW" firstAttribute="height" secondItem="OmG-Ec-bOK" secondAttribute="height" multiplier="0.05" id="dL1-V9-Zup"/>
+                            <constraint firstItem="dD8-oH-Ob6" firstAttribute="leading" secondItem="Xdi-9i-2SV" secondAttribute="leading" constant="20" id="l95-Lg-7aF"/>
+                            <constraint firstItem="Umz-7d-HIW" firstAttribute="top" secondItem="dD8-oH-Ob6" secondAttribute="bottom" multiplier="1.05" id="qXO-iZ-yQU"/>
+                            <constraint firstItem="gxn-Zf-TXR" firstAttribute="centerX" secondItem="OmG-Ec-bOK" secondAttribute="centerX" id="s4f-mg-36Z"/>
+                            <constraint firstItem="Umz-7d-HIW" firstAttribute="width" secondItem="OmG-Ec-bOK" secondAttribute="width" multiplier="0.5" id="sjP-j4-1Cf"/>
+                            <constraint firstItem="Xdi-9i-2SV" firstAttribute="trailing" secondItem="rKz-QN-VHx" secondAttribute="trailing" constant="20" id="tZd-U6-SIu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xdi-9i-2SV"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentsTextView" destination="rKz-QN-VHx" id="I5H-0r-h77"/>
+                        <outlet property="informationLabel" destination="9Ag-Kx-Lva" id="Ei2-iD-wDV"/>
+                        <outlet property="profileImageView" destination="gxn-Zf-TXR" id="b59-Ql-W4z"/>
+                        <outlet property="ratingView" destination="Umz-7d-HIW" id="Wa3-Uj-xx0"/>
+                        <outlet property="subTitleLabel" destination="dD8-oH-Ob6" id="tpq-Pb-noH"/>
+                        <outlet property="submitButton" destination="yqT-ve-b3l" id="0N5-Ee-rIx"/>
+                        <outlet property="titleLabel" destination="btH-1R-42w" id="1NW-0g-D4k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWc-tn-M8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-80" y="886"/>
+        </scene>
         <!--Job Menu Option View Controller-->
         <scene sceneID="USm-R4-XYw">
             <objects>
@@ -378,8 +486,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="StarEmpty" width="22" height="22"/>
+        <image name="StarFull" width="22" height="22"/>
         <image name="hand" width="30" height="30"/>
         <image name="phone.circle" catalog="system" width="64" height="60"/>
+        <image name="userProfile" width="50" height="50"/>
         <image name="video" catalog="system" width="64" height="40"/>
     </resources>
 </document>

@@ -233,6 +233,8 @@ class JobListViewController: BaseViewController {
         let menuOptionVC = JobMenuOptionViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
         menuOptionVC.modalPresentationStyle = .fullScreen
         
+        var choosenJobType : JobChoosenType = .activeJob
+        
         switch self.segmentView.index {
         case 0:
             let result = data?.vendor?.filter({ (obj) -> Bool in
@@ -243,10 +245,14 @@ class JobListViewController: BaseViewController {
             }else {
                 menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
             }
+            choosenJobType = .activeJob
+            
         case 1:
             menuOptionVC.optionList = ["View Job Details"]
+            choosenJobType = .completedJob
         case 2:
             menuOptionVC.optionList =  ["View Job Details"]
+            choosenJobType = .closedJob
         default: break
             
         }
@@ -254,7 +260,8 @@ class JobListViewController: BaseViewController {
             self?.redirectHirePage()
         }
         menuOptionVC.viewJobAction = {[weak self] in
-            self?.redirectViewJobPage()
+            
+            self?.redirectViewJobPage(isFrom: choosenJobType, data: data, complete: complete, closed: closed)
         }
         menuOptionVC.cancelJobAction = {[weak self] in
             self?.redirectCancelJobPage()
@@ -282,9 +289,13 @@ extension JobListViewController{
         self.navigationController?.pushViewController(cancelVC, animated: true)
     }
     
-    func redirectViewJobPage(){
+    func redirectViewJobPage(isFrom jobChoosenType:JobChoosenType,data : Quotes?, complete: Ilist?, closed: ClosedJobListDesc?) {
         let jobDetail = JobDetailsViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
         jobDetail.hidesBottomBarWhenPushed = true
+        jobDetail.jobType = jobChoosenType
+        jobDetail.activeJobDetails = data
+        jobDetail.completedJobDetails = complete
+        jobDetail.closedJobDetails = closed
         self.navigationController?.pushViewController(jobDetail, animated: true)
     }
 }

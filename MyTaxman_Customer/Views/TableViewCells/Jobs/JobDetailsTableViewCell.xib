@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,20 +22,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open for quotes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0S-lF-cvf">
-                                <rect key="frame" x="30" y="5" width="285" height="20.5"/>
+                                <rect key="frame" x="30" y="15" width="124.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadioSelected" translatesAutoresizingMaskIntoConstraints="NO" id="P15-mR-7IS">
-                                <rect key="frame" x="10" y="8" width="15" height="15"/>
+                                <rect key="frame" x="10" y="18" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="667-f1-RpR"/>
                                     <constraint firstAttribute="width" constant="15" id="r16-zU-IB7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires in 4 days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQD-8O-TGE">
-                                <rect key="frame" x="10" y="35.5" width="305" height="21"/>
+                                <rect key="frame" x="20" y="50.5" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNg-wG-MEg">
+                                <rect key="frame" x="159.5" y="10.5" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="duz-EQ-8hj"/>
+                                    <constraint firstAttribute="width" constant="30" id="ecK-EF-ymR"/>
+                                </constraints>
+                                <state key="normal" image="editProfile"/>
+                                <connections>
+                                    <action selector="onTappedEditBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="w1n-SM-VQj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcI-Tz-P0g">
+                                <rect key="frame" x="0.0" y="98" width="320" height="1"/>
+                                <color key="backgroundColor" name="textColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hhi-yT-V9J"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,12 +64,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FQD-8O-TGE" firstAttribute="top" secondItem="f0S-lF-cvf" secondAttribute="bottom" constant="10" id="HoX-RJ-wtq"/>
-                            <constraint firstItem="f0S-lF-cvf" firstAttribute="top" secondItem="oA8-4H-6gF" secondAttribute="top" constant="5" id="PbD-yf-tWU"/>
-                            <constraint firstAttribute="trailing" secondItem="f0S-lF-cvf" secondAttribute="trailing" constant="5" id="Sg6-jQ-Nlo"/>
+                            <constraint firstItem="FQD-8O-TGE" firstAttribute="top" secondItem="f0S-lF-cvf" secondAttribute="bottom" constant="15" id="HoX-RJ-wtq"/>
+                            <constraint firstItem="f0S-lF-cvf" firstAttribute="top" secondItem="oA8-4H-6gF" secondAttribute="top" constant="15" id="PbD-yf-tWU"/>
                             <constraint firstItem="f0S-lF-cvf" firstAttribute="centerY" secondItem="P15-mR-7IS" secondAttribute="centerY" id="WDS-IF-AFE"/>
+                            <constraint firstAttribute="bottom" secondItem="xcI-Tz-P0g" secondAttribute="bottom" id="byc-iG-vsh"/>
+                            <constraint firstItem="f0S-lF-cvf" firstAttribute="centerY" secondItem="FNg-wG-MEg" secondAttribute="centerY" id="e3M-vv-bjK"/>
                             <constraint firstItem="f0S-lF-cvf" firstAttribute="leading" secondItem="P15-mR-7IS" secondAttribute="trailing" constant="5" id="eNn-VH-Szb"/>
-                            <constraint firstItem="P15-mR-7IS" firstAttribute="leading" secondItem="FQD-8O-TGE" secondAttribute="leading" id="rDl-FO-ibX"/>
+                            <constraint firstAttribute="trailing" secondItem="xcI-Tz-P0g" secondAttribute="trailing" id="k94-Gf-wAL"/>
+                            <constraint firstItem="FNg-wG-MEg" firstAttribute="leading" secondItem="f0S-lF-cvf" secondAttribute="trailing" constant="5" id="kla-e7-rqr"/>
+                            <constraint firstItem="xcI-Tz-P0g" firstAttribute="leading" secondItem="oA8-4H-6gF" secondAttribute="leading" id="sDR-DT-ccz"/>
+                            <constraint firstItem="FQD-8O-TGE" firstAttribute="leading" secondItem="oA8-4H-6gF" secondAttribute="leading" constant="20" id="sYn-jX-BNG"/>
                             <constraint firstAttribute="trailing" secondItem="FQD-8O-TGE" secondAttribute="trailing" constant="5" id="vuN-nr-lCS"/>
                             <constraint firstItem="f0S-lF-cvf" firstAttribute="leading" secondItem="oA8-4H-6gF" secondAttribute="leading" constant="30" id="zbR-Qz-tRY"/>
                         </constraints>
@@ -62,7 +88,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="editBtn" destination="FNg-wG-MEg" id="7L3-0u-baM"/>
+                <outlet property="statusImageViewWidthConstraint" destination="r16-zU-IB7" id="RZv-Aj-xzc"/>
                 <outlet property="titleLabel" destination="f0S-lF-cvf" id="V6k-HX-Ocu"/>
+                <outlet property="titleLabelLeadingConstant" destination="zbR-Qz-tRY" id="nQU-8D-nAR"/>
                 <outlet property="userStatusImageView" destination="P15-mR-7IS" id="qOO-Nk-b51"/>
                 <outlet property="valueLabel" destination="FQD-8O-TGE" id="bmq-k7-f03"/>
             </connections>
@@ -71,5 +100,9 @@
     </objects>
     <resources>
         <image name="RadioSelected" width="15" height="15"/>
+        <image name="editProfile" width="50" height="50"/>
+        <namedColor name="textColor">
+            <color red="0.48199999332427979" green="0.53299999237060547" blue="0.6589999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

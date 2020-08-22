@@ -11,6 +11,7 @@
 		0BE434D824EF99C9000F6C22 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434D724EF99C9000F6C22 /* SettingsModel.swift */; };
 		0BE434DB24EF9A4C000F6C22 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434DA24EF9A4C000F6C22 /* SettingsViewModel.swift */; };
 		0BE434DD24EFD652000F6C22 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434DC24EFD652000F6C22 /* EditProfile.swift */; };
+		0BE434DF24F0A720000F6C22 /* EditJobDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434DE24F0A720000F6C22 /* EditJobDescriptionViewController.swift */; };
 		139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */; };
 		1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */; };
 		181B01EC24DA9175001CDEF5 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */; };
@@ -199,6 +200,7 @@
 		0BE434D724EF99C9000F6C22 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		0BE434DA24EF9A4C000F6C22 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		0BE434DC24EFD652000F6C22 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		0BE434DE24F0A720000F6C22 /* EditJobDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJobDescriptionViewController.swift; sourceTree = "<group>"; };
 		1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelJobsListViewController.swift; sourceTree = "<group>"; };
 		181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		181B01ED24DB1C7D001CDEF5 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
@@ -804,6 +806,7 @@
 				1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */,
 				3B1D01C924DEFCCA00CBA58D /* HireViewController.swift */,
 				181B01F524DF39C0001CDEF5 /* JobDetailsViewController.swift */,
+				0BE434DE24F0A720000F6C22 /* EditJobDescriptionViewController.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -1361,6 +1364,7 @@
 				3BF05BD324C9634600E16081 /* UIViewControllerExtension.swift in Sources */,
 				3BF05BE224C96AEC00E16081 /* GCDUtils.swift in Sources */,
 				3BF05BF824C9936400E16081 /* AuthApiManager.swift in Sources */,
+				0BE434DF24F0A720000F6C22 /* EditJobDescriptionViewController.swift in Sources */,
 				3BD5F06A24D9BB7500966C63 /* VendorProfileModel.swift in Sources */,
 				1888973F24C7281C000DFAB3 /* SceneDelegate.swift in Sources */,
 				3BF05BC624C9634600E16081 /* UIImageExtension.swift in Sources */,

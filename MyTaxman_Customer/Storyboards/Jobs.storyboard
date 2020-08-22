@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
         <array key="Poppins-Medium.ttf">
             <string>Poppins-Medium</string>
         </array>
@@ -296,6 +299,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1p-Et-uMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2610" y="99"/>
+        </scene>
+        <!--Edit Job Description View Controller-->
+        <scene sceneID="Ydl-bu-4bC">
+            <objects>
+                <viewController storyboardIdentifier="EditJobDescriptionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jnw-6H-RPK" customClass="EditJobDescriptionViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xcw-Vo-Zm8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhi-ip-Tes">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsO-V2-slh">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="25"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTappedNextBtn:" destination="Jnw-6H-RPK" eventType="touchUpInside" id="SL7-lt-uBl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ZsO-V2-slh" secondAttribute="trailing" id="0Pk-0T-lz3"/>
+                                    <constraint firstAttribute="height" constant="60" id="2wH-0R-I82"/>
+                                    <constraint firstItem="ZsO-V2-slh" firstAttribute="leading" secondItem="Yhi-ip-Tes" secondAttribute="leading" id="TKM-HT-UZ2"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZsO-V2-slh" secondAttribute="bottom" id="gDe-A4-siF"/>
+                                    <constraint firstItem="ZsO-V2-slh" firstAttribute="top" secondItem="Yhi-ip-Tes" secondAttribute="top" id="vyk-Hp-zKG"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Job Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8z-nM-LH9">
+                                <rect key="frame" x="20" y="64" width="154.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WbZ-w9-Ljd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vWW-Es-3bU">
+                                <rect key="frame" x="20" y="124" width="374" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Z0x-Zt-yqD"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Yhi-ip-Tes" secondAttribute="trailing" id="4aS-Hb-B3e"/>
+                            <constraint firstItem="R8z-nM-LH9" firstAttribute="leading" secondItem="KZk-32-q1p" secondAttribute="leading" constant="20" id="53G-4d-F1G"/>
+                            <constraint firstItem="vWW-Es-3bU" firstAttribute="top" secondItem="R8z-nM-LH9" secondAttribute="bottom" constant="20" id="OGX-2d-5LK"/>
+                            <constraint firstItem="R8z-nM-LH9" firstAttribute="top" secondItem="KZk-32-q1p" secondAttribute="top" constant="20" id="eex-xq-nUG"/>
+                            <constraint firstItem="KZk-32-q1p" firstAttribute="trailing" secondItem="vWW-Es-3bU" secondAttribute="trailing" constant="20" id="gPe-d3-EnB"/>
+                            <constraint firstItem="KZk-32-q1p" firstAttribute="bottom" secondItem="Yhi-ip-Tes" secondAttribute="bottom" id="qlz-FM-KEV"/>
+                            <constraint firstItem="Yhi-ip-Tes" firstAttribute="leading" secondItem="KZk-32-q1p" secondAttribute="leading" id="vzm-cU-5CJ"/>
+                            <constraint firstItem="vWW-Es-3bU" firstAttribute="leading" secondItem="KZk-32-q1p" secondAttribute="leading" constant="20" id="xh6-eo-zLH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KZk-32-q1p"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="vWW-Es-3bU" id="Eue-ys-GgZ"/>
+                        <outlet property="nextBtn" destination="ZsO-V2-slh" id="Dl0-YV-A2C"/>
+                        <outlet property="nextView" destination="Yhi-ip-Tes" id="iI9-Ok-e5f"/>
+                        <outlet property="titleLabel" destination="R8z-nM-LH9" id="hpa-3A-1xm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hTZ-W8-mdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3263.7681159420295" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>

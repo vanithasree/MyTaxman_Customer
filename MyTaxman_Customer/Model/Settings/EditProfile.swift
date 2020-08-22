@@ -118,4 +118,21 @@ struct ChangePasswordBase : Codable {
     }
     
 }
+struct EditDescriptionBase : Codable {
+    let code : String?
+    let desc : Bool?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case code = "code"
+        case desc = "desc"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        code = try values.decodeIfPresent(String.self, forKey: .code)
+        desc = try values.decodeIfPresent(Bool.self, forKey: .desc)
+    }
+    
+}
 

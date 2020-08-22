@@ -178,7 +178,7 @@ class JobsTableViewCell: UITableViewCell {
             self.buttonHeightConstraints.isActive = true
         }
         let count = data.vendor?.count ?? 0
-        self.jobListHeightConstraints.constant = CGFloat(count * 120)
+        self.jobListHeightConstraints.constant = CGFloat(count) * Utility.dynamicSize(120)
         self.jobListHeightConstraints.isActive = true
         doOnMain {
             self.jobTableView.reloadData()

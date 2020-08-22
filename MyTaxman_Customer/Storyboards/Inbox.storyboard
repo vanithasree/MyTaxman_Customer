@@ -180,22 +180,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCp-fv-rok">
                                 <rect key="frame" x="0.0" y="804.5" width="414" height="57.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-6W-mEH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbn-6W-mEH">
                                         <rect key="frame" x="20" y="6" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mbn-6W-mEH" secondAttribute="height" multiplier="1:1" id="TlS-2G-7rb"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" image="add"/>
                                         <connections>
                                             <action selector="didTapMediaAction:" destination="ffv-5g-3LP" eventType="touchUpInside" id="hFI-DH-W6S"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86I-Gy-yGr">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86I-Gy-yGr">
                                         <rect key="frame" x="348" y="6" width="46" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="86I-Gy-yGr" secondAttribute="height" multiplier="1:1" id="Qi6-NK-Y96"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" image="send"/>
                                         <connections>
                                             <action selector="didTapSendAction:" destination="ffv-5g-3LP" eventType="touchUpInside" id="IDl-lj-a1l"/>
                                         </connections>
@@ -516,9 +516,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="call" width="50" height="50"/>
+        <image name="add" width="30" height="30"/>
+        <image name="call" width="30" height="30"/>
         <image name="callerPic" width="50" height="50"/>
         <image name="hang" width="50" height="50"/>
+        <image name="send" width="30" height="30"/>
         <image name="whiteBg" width="621" height="1344"/>
     </resources>
 </document>

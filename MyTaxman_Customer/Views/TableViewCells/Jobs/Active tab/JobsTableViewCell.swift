@@ -31,6 +31,7 @@ class JobsTableViewCell: UITableViewCell {
     @IBOutlet var submitButton: UIButton!
     @IBOutlet var buttonHeightConstraints: NSLayoutConstraint!
     
+    @IBOutlet var notificationImageView: UIImageView!
     var menuAction : (() ->Void)?
     var submitAction : (() ->Void)?
     
@@ -93,12 +94,13 @@ class JobsTableViewCell: UITableViewCell {
         
         quoteTitleLabel.setLabelCustomProperties(titleText: "", textColor: .black   , font:  UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16.0)), numberOfLines: 1, alignment: .natural)
         quoteStatusMessageLabel.setLabelCustomProperties(titleText: "", textColor: ColorManager.darkText.color, font:  UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(12.0)), numberOfLines: 1, alignment: .left)
+        
         descriptionLabel.setCaptionTitle(titleText: "")
-        descriptionLabel.numberOfLines = 1
-        
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
+        descriptionLabel.textColor = ColorManager.darkText.color
+
         jobTableView.register(JobQuoteTableViewCell.nib, forCellReuseIdentifier: JobQuoteTableViewCell.identifier)
-        
-        //        jobTableView.rowHeight = UITableView.automaticDimension
         jobTableView.tableFooterView = UIView()
         jobTableView.backgroundColor = .clear
         jobTableView.separatorStyle = .none
@@ -107,11 +109,17 @@ class JobsTableViewCell: UITableViewCell {
         
         self.vendorList = []
         
+        notificationImageView.image = UIImage(named: "notification_bell")?.withRenderingMode(.alwaysTemplate)
+        notificationImageView.tintColor = ColorManager.darkTheme.color
+        
         seeMoreButton.setFooterTitle(title: "")
         seeMoreButton.setTitleColor(ColorManager.mediumTheme.color, for: .normal)
         
         notificationLabel.setCaptionTitle(titleText: "")
+        notificationLabel.font = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))
         notificationLabel.numberOfLines = 0
+        
+        seeMoreButton.setTitle("See more", for: .normal)
         displaySeemore(show: false)
         //        listUpdateConstraints(height: 0)
         submitButton.setDarkGreenTheme(btn: submitButton, title: "COMPLETE THE TASK")
@@ -140,37 +148,11 @@ class JobsTableViewCell: UITableViewCell {
         }
     }
     
-    //    func setClosedListValue(data : Quotes) {
-    //        jobType = .closed
-    //        self.vendorList = []
-    //        quoteTitleLabel.text = data.category ?? ""
-    //        onlineUserImageView.image = UIImage(named: "RadioSelected")
-    //        if let value = data.cancel_description, !value.isEmpty {
-    //            descriptionLabel.text = "Reason: \(value)"
-    //        }else {
-    //            descriptionLabel.text = "Reason: "
-    //        }
-    //        quoteStatusMessageLabel.text = "EXPIRED"
-    //        listUpdateConstraints(height: 0)
-    //        doOnMain {
-    //            self.jobTableView.reloadData()
-    //        }
-    //    }
-    
     func setValue(data : Quotes) {
-        //        jobType = .active
         self.vendorList = data.vendor ?? []
         quoteTitleLabel.text = data.category ?? ""
-        onlineUserImageView.image = UIImage(named: "RadioSelected")
         descriptionLabel.text = data.description ?? ""
-        //        let taskStatus = data.task_status ?? "0"
-        //        let quoteStatus = data.vendor?.first?.quote_status ?? "0"
         var statusString : String = ""
-        //        switch quoteStatus {
-        //        case "1":
-        //            statusString = "Hired"
-        //        default: break
-        //        }
         let result = data.vendor?.filter({ (obj) -> Bool in
             return obj.quote_status == "1"
         })
@@ -184,13 +166,11 @@ class JobsTableViewCell: UITableViewCell {
             }
         }
         quoteStatusMessageLabel.text = statusString
-        seeMoreButton.setTitle("See more", for: .normal)
-        displaySeemore(show: false)
-        
+  
         let completeResult = data.vendor?.filter({ (obj) -> Bool in
             return obj.quote_status == "4"
         })
-        if (completeResult?.count ?? 0 != 0) {
+        if (completeResult?.count ?? 0 != 0 && data.task_status == "0") {
             self.buttonHeightConstraints.constant = CGFloat(44)
             self.buttonHeightConstraints.isActive = true
         }else {
@@ -204,32 +184,11 @@ class JobsTableViewCell: UITableViewCell {
             self.jobTableView.reloadData()
         }
     }
-    
-    //    func setCompleteValue(data : Ilist) {
-    //        jobType = .completed
-    //        self.vendorList = []
-    //        onlineUserImageView.image = UIImage(named: "RadioSelected")
-    //        quoteTitleLabel.text = data.category ?? ""
-    //        quoteStatusMessageLabel.text = "REVIEWED"
-    //        descriptionLabel.text = ""
-    //        listUpdateConstraints(height: 0)
-    //        doOnMain {
-    //            self.jobTableView.reloadData()
-    //        }
-    //    }
 }
 
 extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //        switch jobType {
-        //        case .active:
-        //            return self.vendorList.count
-        //        case .completed:
-        //            return 0
-        //        case .closed:
-        //            return 0
-        //        }
         return self.vendorList.count
     }
     
@@ -241,39 +200,9 @@ extension JobsTableViewCell : UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         cell.setValue(data: self.vendorList[indexPath.row])
         return cell
-        //        switch jobType {
-        //        case .active:
-        //            guard let cell : JobQuoteTableViewCell = tableView.dequeueReusableCell(withIdentifier: JobQuoteTableViewCell.identifier) as? JobQuoteTableViewCell else {
-        //                return UITableViewCell()
-        //            }
-        //            cell.backgroundColor = .clear
-        //            cell.selectionStyle = .none
-        //            cell.setValue(data: self.vendorList[indexPath.row])
-        //            return cell
-        //
-        //        case .completed:
-        //            return UITableViewCell()
-        //        case .closed:
-        ////            guard let cell : ClosedJobTableViewCell = tableView.dequeueReusableCell(withIdentifier: ClosedJobTableViewCell.identifier) as? ClosedJobTableViewCell else {
-        ////                return UITableViewCell()
-        ////            }
-        ////            cell.backgroundColor = .clear
-        ////            cell.selectionStyle = .none
-        ////            return cell
-        //            return UITableViewCell()
-        //        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-        //        switch jobType {
-        //
-        //        case .active:
-        //            return 120
-        //        case .completed:
-        //            return UITableView.automaticDimension
-        //        case .closed:
-        //            return UITableView.automaticDimension
-        //        }
+        return Utility.dynamicSize(120)
     }
 }

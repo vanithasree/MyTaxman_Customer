@@ -68,7 +68,6 @@ class LoginViewController: BaseViewController {
         eyeShowButton.tintColor = ColorManager.darkBGTheme.color
         passwordTextField.rightView = eyeShowButton
         passwordTextField.rightViewMode = .always
-        
     }
     
     //MARK: - Button Actions

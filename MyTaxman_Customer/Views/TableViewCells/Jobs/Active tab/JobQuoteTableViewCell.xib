@@ -58,7 +58,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8x-Lq-KME">
-                            <rect key="frame" x="67.5" y="59.5" width="42" height="20.5"/>
+                            <rect key="frame" x="67.5" y="59.5" width="290.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -68,10 +68,11 @@
                     <constraints>
                         <constraint firstItem="8kM-kB-kBu" firstAttribute="height" secondItem="T9G-is-fG1" secondAttribute="height" multiplier="0.5" id="7Df-hl-4F7"/>
                         <constraint firstItem="x8x-Lq-KME" firstAttribute="top" secondItem="RqY-Mw-fyE" secondAttribute="bottom" constant="5" id="8Se-ch-wGC"/>
-                        <constraint firstItem="RqY-Mw-fyE" firstAttribute="width" secondItem="T9G-is-fG1" secondAttribute="width" multiplier="0.3" id="CtK-PR-HNN"/>
-                        <constraint firstItem="RqY-Mw-fyE" firstAttribute="height" secondItem="T9G-is-fG1" secondAttribute="height" multiplier="0.15" id="Gdw-6m-SKF"/>
+                        <constraint firstItem="RqY-Mw-fyE" firstAttribute="width" secondItem="T9G-is-fG1" secondAttribute="width" multiplier="0.35" id="CtK-PR-HNN"/>
+                        <constraint firstItem="RqY-Mw-fyE" firstAttribute="height" secondItem="T9G-is-fG1" secondAttribute="height" multiplier="0.25" id="Gdw-6m-SKF"/>
                         <constraint firstItem="x8x-Lq-KME" firstAttribute="leading" secondItem="8kM-kB-kBu" secondAttribute="trailing" constant="10" id="RiU-bA-SCF"/>
                         <constraint firstItem="RqY-Mw-fyE" firstAttribute="leading" secondItem="8kM-kB-kBu" secondAttribute="trailing" constant="10" id="XmA-Sw-Vag"/>
+                        <constraint firstAttribute="trailing" secondItem="x8x-Lq-KME" secondAttribute="trailing" constant="10" id="eOs-BG-oIa"/>
                         <constraint firstItem="8kM-kB-kBu" firstAttribute="leading" secondItem="T9G-is-fG1" secondAttribute="leading" constant="10" id="g0W-1g-xLm"/>
                         <constraint firstItem="8kM-kB-kBu" firstAttribute="centerY" secondItem="T9G-is-fG1" secondAttribute="centerY" id="gbC-1i-9DR"/>
                         <constraint firstItem="RqY-Mw-fyE" firstAttribute="centerY" secondItem="8kM-kB-kBu" secondAttribute="centerY" id="kNy-Ge-gFM"/>

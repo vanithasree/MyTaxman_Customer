@@ -277,6 +277,7 @@ class JobListViewController: BaseViewController {
     
     func redirectToSubmitTaskVC() {
         let submitANewJobVC = LeadsDashboardViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        submitANewJobVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(submitANewJobVC, animated: true)
     }
 }
@@ -375,24 +376,25 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch self.segmentView.index {
         case 0:
-            var height = 0
-            if ((activeList[indexPath.row].task_status == "0") && (activeList[indexPath.row].received_quotes == "4")) {
-                height = 44
-            }
+            var height : CGFloat = 0
+//            if ((activeList[indexPath.row].task_status == "0") && (activeList[indexPath.row].received_quotes == "4")) {
+//                height = 44
+//            }
+            height = (activeList[indexPath.row].description ?? "").Dynamicheight(withConstrainedWidth: tableView.frame.size.width - 40, font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))!)
+            
             let completeResult = activeList[indexPath.row].vendor?.filter({ (obj) -> Bool in
                 return obj.quote_status == "4"
             })
-            if (completeResult?.count ?? 0 != 0) {
+            if (completeResult?.count ?? 0 != 0 && activeList[indexPath.row].task_status == "0") {
                 height = height + 50
             }
             if activeList[indexPath.row].vendor?.count == 0 {
-                return CGFloat(210 + height)
+                return CGFloat(180 + height)
             }
-            let count = activeList[indexPath.row].vendor?.count ?? 0
-            return CGFloat(210 + (count * 120) + height)
+            let count: CGFloat = CGFloat(activeList[indexPath.row].vendor?.count ?? 0)
+            return CGFloat(180 + height) + (count * Utility.dynamicSize(120))
         case 1:
-            let count = completedList[indexPath.row].rmsg?.count ?? 0
-            return CGFloat(100 + (count * 100))
+            return UITableView.automaticDimension
         case 2:
             return UITableView.automaticDimension
         default:

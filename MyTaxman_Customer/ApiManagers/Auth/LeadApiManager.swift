@@ -21,6 +21,7 @@ enum LeadsApi {
     
     case cus_posttask_edit
     case cuscanceltask
+    case hire_technician
     
 }
 // MARK: - EndPointType
@@ -61,6 +62,8 @@ extension LeadsApi: EndPointType {
             return "/cus_posttask_edit"
         case .cuscanceltask:
             return "/cuscanceltask"
+        case .hire_technician:
+            return "/hire_technician"
         }
     }
     
@@ -171,5 +174,15 @@ class LeadApiManager {
                }
            }
        }
+    
+    func hireTechnician(input: Parameters, handler: @escaping (_ result: ChangePasswordBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: LeadsApi.hire_technician, params: input) { (result: ChangePasswordBase?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
 
 }

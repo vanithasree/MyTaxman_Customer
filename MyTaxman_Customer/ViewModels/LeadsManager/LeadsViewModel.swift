@@ -36,6 +36,9 @@ class LeadViewModel {
     func cancelCustomerTask(input: Parameters, handler: @escaping (_ user: ChangePasswordBase?, _ error: AlertMessage?)->()) {
         LeadApiManager().cancelTask(input: input, handler: handler)
     }
+    func hireVendorTechnician(input: Parameters, handler: @escaping (_ user: ChangePasswordBase?, _ error: AlertMessage?)->()) {
+        LeadApiManager().hireTechnician(input: input, handler: handler)
+    }
 }
 
 

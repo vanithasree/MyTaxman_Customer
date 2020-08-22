@@ -261,7 +261,7 @@ class JobListViewController: BaseViewController {
             
         }
         menuOptionVC.hireBusinessAction = {[weak self] in
-            self?.redirectHirePage()
+            self?.redirectHirePage(vendors: data?.vendor ?? [])
         }
         menuOptionVC.viewJobAction = {[weak self] in
             
@@ -282,9 +282,10 @@ class JobListViewController: BaseViewController {
 }
 
 extension JobListViewController{
-    func redirectHirePage(){
+    func redirectHirePage(vendors:[Vendor]){
         let hireVC = HireViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
         hireVC.hidesBottomBarWhenPushed = true
+        hireVC.vendorList = vendors
         self.navigationController?.pushViewController(hireVC, animated: true)
     }
     func redirectCancelJobPage(taskId : String){

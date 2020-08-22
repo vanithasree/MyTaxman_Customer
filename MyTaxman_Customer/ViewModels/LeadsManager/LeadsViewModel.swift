@@ -39,6 +39,10 @@ class LeadViewModel {
     func hireVendorTechnician(input: Parameters, handler: @escaping (_ user: ChangePasswordBase?, _ error: AlertMessage?)->()) {
         LeadApiManager().hireTechnician(input: input, handler: handler)
     }
+    
+    func customerReviewSubmit(input: Parameters, handler: @escaping (_ user: SubmitReviewBase?, _ error: AlertMessage?)->()) {
+        LeadApiManager().customerReviewSubmit(input: input, handler: handler)
+    }
 }
 
 

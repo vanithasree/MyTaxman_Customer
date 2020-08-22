@@ -19,6 +19,8 @@ enum LeadsApi {
     case completedtask
     case closedtask
     
+    case customer_review_submit
+
     case cus_posttask_edit
     case cuscanceltask
     case hire_technician
@@ -64,6 +66,8 @@ extension LeadsApi: EndPointType {
             return "/cuscanceltask"
         case .hire_technician:
             return "/hire_technician"
+        case .customer_review_submit:
+            return "/customer_review_submit"
         }
     }
     
@@ -177,6 +181,16 @@ class LeadApiManager {
     
     func hireTechnician(input: Parameters, handler: @escaping (_ result: ChangePasswordBase?, _ error: AlertMessage?)->()) {
         APIManager.shared().call(type: LeadsApi.hire_technician, params: input) { (result: ChangePasswordBase?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+    
+    func customerReviewSubmit(input: Parameters, handler: @escaping (_ result: SubmitReviewBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: LeadsApi.customer_review_submit, params: input) { (result: SubmitReviewBase?,message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {

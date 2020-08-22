@@ -41,9 +41,8 @@ class JobMenuOptionViewController: BaseViewController {
         optionTableView.register(JobOptionTableViewCell.nib, forCellReuseIdentifier: JobOptionTableViewCell.identifier)
         optionTableView.tableFooterView = UIView()
         optionTableView.backgroundColor = ColorManager.white.color
-        
         doOnMain {
-            self.contentViewHeightConstraints.constant = CGFloat((self.optionList.count * 60) + 20)
+            self.contentViewHeightConstraints.constant = CGFloat((self.optionList.count * 60) + 50)
             self.contentViewHeightConstraints.isActive = true
         }
     }

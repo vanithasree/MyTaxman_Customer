@@ -8,6 +8,7 @@
 
 import UIKit
 import FloatRatingView
+import Alamofire
 class SubmitReviewViewController: BaseViewController {
     var getData: Quotes?
     @IBOutlet var submitButton: UIButton!
@@ -17,6 +18,7 @@ class SubmitReviewViewController: BaseViewController {
     @IBOutlet var ratingView: FloatRatingView!
     @IBOutlet var commentsTextView: UITextView!
     @IBOutlet var informationLabel: UILabel!
+    private var leadViewModel = LeadViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +58,33 @@ class SubmitReviewViewController: BaseViewController {
             self.presentAlert(withTitle: "", message: "Please give rating") {
             }
         }else {
-            
+            submitReviewAction()
+        }
+    }
+    func submitReviewAction() {
+        LoadingIndicator.shared.show(forView: self.view)
+        let params: Parameters = [
+            "vendorid": getData?.vendor?.first?.vendorid ?? "",
+            "taskid": getData?.taskid ?? "",
+            "review": commentsTextView.text ?? "",
+            "device_currentdatetime": Date().toString(format: "yyyy-MM-dd HH:mm:ss"),
+            "star_given": "\(ratingView.rating)"
+        ]
+        leadViewModel.customerReviewSubmit(input: params) { (result: SubmitReviewBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if result.code == "1"{
+                    self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                        doOnMain {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
+                }else {
+                    self.presentAlert(withTitle: "", message: result.desc ?? "")
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
+            }
         }
     }
     

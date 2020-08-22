@@ -20,6 +20,7 @@ enum LeadsApi {
     case closedtask
     
     case cus_posttask_edit
+    case cuscanceltask
     
 }
 // MARK: - EndPointType
@@ -58,6 +59,8 @@ extension LeadsApi: EndPointType {
             return "/closedtask"
         case .cus_posttask_edit:
             return "/cus_posttask_edit"
+        case .cuscanceltask:
+            return "/cuscanceltask"
         }
     }
     
@@ -159,5 +162,14 @@ class LeadApiManager {
             }
         }
     }
+    func cancelTask(input: Parameters, handler: @escaping (_ result: ChangePasswordBase?, _ error: AlertMessage?)->()) {
+           APIManager.shared().call(type: LeadsApi.cuscanceltask, params: input) { (result: ChangePasswordBase?,message: AlertMessage?) in
+               if let result = result {
+                   handler(result, nil)
+               } else {
+                   handler(nil, message!)
+               }
+           }
+       }
 
 }

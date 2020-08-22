@@ -10,9 +10,15 @@ import UIKit
 
 class OptionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleTabel: UILabel!
+    @IBOutlet weak var selectOrUnselectImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setCellViewUI()
+    }
+    func setCellViewUI() {
+        titleTabel.setLabelCustomProperties(titleText: "", textColor: .black, font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(15)), numberOfLines: 0, alignment: .left)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

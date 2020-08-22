@@ -67,14 +67,14 @@ class JobDetailsViewController: UIViewController {
             completedDetailList = [DetailsData.init(title: "STATUS", value: self.completedJobDetails?.task_submitted_on ?? "", isStatusImageViewVisible: true), DetailsData.init(title: "Location", value: self.completedJobDetails?.service_location ?? "", isStatusImageViewVisible: false), DetailsData.init(title: "Description", value: self.completedJobDetails?.description ?? "", isStatusImageViewVisible: false),DetailsData.init(title: self.completedJobDetails?.page1_title ?? "", value: self.completedJobDetails?.page1 ?? "", isStatusImageViewVisible: false), DetailsData.init(title: self.completedJobDetails?.page2_title ?? "", value: self.completedJobDetails?.page2 ?? "", isStatusImageViewVisible: false), DetailsData.init(title: self.completedJobDetails?.page3_title ?? "", value: self.completedJobDetails?.page3 ?? "", isStatusImageViewVisible: false), DetailsData.init(title: self.completedJobDetails?.page4_title ?? "", value: self.completedJobDetails?.page4 ?? "", isStatusImageViewVisible: false), DetailsData.init(title: self.completedJobDetails?.page5_title ?? "", value: self.completedJobDetails?.page5 ?? "", isStatusImageViewVisible: false), DetailsData.init(title: self.completedJobDetails?.page6_title ?? "", value: self.completedJobDetails?.page6 ?? "", isStatusImageViewVisible: false), DetailsData.init(title: self.completedJobDetails?.page7_title ?? "", value: self.completedJobDetails?.page7 ?? "", isStatusImageViewVisible: false)]
             
             
-             self.completedDetailList = self.completedDetailList.filter { $0.title != "" }
+            self.completedDetailList = self.completedDetailList.filter { $0.title != "" }
             
             
         case .closedJob:
             closedDetailList = [DetailsData.init(title: "STATUS", value: self.closedJobDetails?.task_submitted_on ?? "", isStatusImageViewVisible: true), DetailsData.init(title: "Location", value: self.closedJobDetails?.service_location ?? "", isStatusImageViewVisible: false), DetailsData.init(title: "Description", value: self.closedJobDetails?.description ?? "", isStatusImageViewVisible: false),DetailsData.init(title: self.closedJobDetails?.page1_title ?? "", value: self.closedJobDetails?.page1 ?? "", isStatusImageViewVisible: false), DetailsData.init(title: self.closedJobDetails?.page2_title ?? "", value: self.closedJobDetails?.page2 ?? "", isStatusImageViewVisible: false)]
             
-       
-             self.closedDetailList = self.closedDetailList.filter { $0.title != "" }
+            
+            self.closedDetailList = self.closedDetailList.filter { $0.title != "" }
             
             
         }
@@ -106,7 +106,7 @@ class JobDetailsViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-  
+    
     func redirectViewJobPageForEdit() {
         let descVC = EditJobDescriptionViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
         descVC.jobType = self.jobType
@@ -155,7 +155,7 @@ extension JobDetailsViewController : UITableViewDataSource, UITableViewDelegate 
         else {
             cell.editBtn.isHidden = true
         }
-
+        
         switch self.jobType {
         case .activeJob:
             cell.titleLabel.text = self.activeDetailsList[indexPath.row].title
@@ -223,6 +223,6 @@ extension JobDetailsViewController : DescriptionDoneDelegate {
         doOnMain {
             self.detailTableView.reloadData()
         }
-       
+        
     }
 }

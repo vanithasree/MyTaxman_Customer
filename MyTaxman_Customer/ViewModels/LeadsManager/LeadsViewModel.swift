@@ -33,6 +33,9 @@ class LeadViewModel {
     func editJobDesc(input: Parameters, handler: @escaping (_ user: EditDescriptionBase?, _ error: AlertMessage?)->()) {
         LeadApiManager().editTaskDescription(input: input, handler: handler)
     }
+    func cancelCustomerTask(input: Parameters, handler: @escaping (_ user: ChangePasswordBase?, _ error: AlertMessage?)->()) {
+        LeadApiManager().cancelTask(input: input, handler: handler)
+    }
 }
 
 

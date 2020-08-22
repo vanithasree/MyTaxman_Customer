@@ -234,6 +234,7 @@ class JobListViewController: BaseViewController {
         menuOptionVC.modalPresentationStyle = .fullScreen
         
         var choosenJobType : JobChoosenType = .activeJob
+        var taskId : String = ""
         
         switch self.segmentView.index {
         case 0:
@@ -246,13 +247,16 @@ class JobListViewController: BaseViewController {
                 menuOptionVC.optionList = ["Hire Business", "View Job Details", "Cancel Job"]
             }
             choosenJobType = .activeJob
+            taskId = data?.taskid ?? ""
             
         case 1:
             menuOptionVC.optionList = ["View Job Details"]
             choosenJobType = .completedJob
+            taskId = complete?.taskid ?? ""
         case 2:
             menuOptionVC.optionList =  ["View Job Details"]
             choosenJobType = .closedJob
+            taskId = closed?.taskid ?? ""
         default: break
             
         }
@@ -264,7 +268,7 @@ class JobListViewController: BaseViewController {
             self?.redirectViewJobPage(isFrom: choosenJobType, data: data, complete: complete, closed: closed)
         }
         menuOptionVC.cancelJobAction = {[weak self] in
-            self?.redirectCancelJobPage()
+            self?.redirectCancelJobPage(taskId: taskId)
         }
         let navigationController = UINavigationController(rootViewController: menuOptionVC)
         navigationController.modalPresentationStyle = .overCurrentContext
@@ -283,9 +287,10 @@ extension JobListViewController{
         hireVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(hireVC, animated: true)
     }
-    func redirectCancelJobPage(){
+    func redirectCancelJobPage(taskId : String){
         let cancelVC = CancelJobsListViewController.instantiateFromAppStoryboard(appStoryboard: .Jobs)
         cancelVC.hidesBottomBarWhenPushed = true
+        cancelVC.taskId = taskId
         self.navigationController?.pushViewController(cancelVC, animated: true)
     }
     

@@ -24,6 +24,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteBg" translatesAutoresizingMaskIntoConstraints="NO" id="tJz-fH-ADY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qI-DR-H5J">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
@@ -32,6 +35,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Vanithasree..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIq-o2-GRb">
                                                 <rect key="frame" x="20" y="0.0" width="236" height="35"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -89,14 +93,14 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMQ-kp-5UL" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                         <rect key="frame" x="10" y="80" width="394" height="57.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4iY-At-ibL">
                                         <rect key="frame" x="0.0" y="142.5" width="414" height="675.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="hMQ-kp-5UL" firstAttribute="height" secondItem="0qI-DR-H5J" secondAttribute="height" multiplier="0.07" id="36U-Ne-3BE"/>
                                     <constraint firstItem="4iY-At-ibL" firstAttribute="top" secondItem="hMQ-kp-5UL" secondAttribute="bottom" constant="5" id="38K-mL-PRV"/>
@@ -114,9 +118,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="U5x-t4-quS" firstAttribute="trailing" secondItem="tJz-fH-ADY" secondAttribute="trailing" id="0SS-hY-7Ah"/>
+                            <constraint firstItem="tJz-fH-ADY" firstAttribute="leading" secondItem="U5x-t4-quS" secondAttribute="leading" id="394-yK-xa2"/>
                             <constraint firstItem="U5x-t4-quS" firstAttribute="bottom" secondItem="0qI-DR-H5J" secondAttribute="bottom" id="AN2-D0-zXU"/>
                             <constraint firstItem="0qI-DR-H5J" firstAttribute="leading" secondItem="U5x-t4-quS" secondAttribute="leading" id="DAp-ZO-LsY"/>
                             <constraint firstItem="U5x-t4-quS" firstAttribute="trailing" secondItem="0qI-DR-H5J" secondAttribute="trailing" id="dfw-V7-T6k"/>
+                            <constraint firstItem="U5x-t4-quS" firstAttribute="bottom" secondItem="tJz-fH-ADY" secondAttribute="bottom" id="k5Z-2u-63E"/>
+                            <constraint firstItem="tJz-fH-ADY" firstAttribute="top" secondItem="U5x-t4-quS" secondAttribute="top" id="rg4-tF-sjy"/>
                             <constraint firstItem="0qI-DR-H5J" firstAttribute="top" secondItem="U5x-t4-quS" secondAttribute="top" id="yJF-dF-qu7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U5x-t4-quS"/>
@@ -492,5 +500,6 @@
         <image name="phone.circle" catalog="system" width="64" height="60"/>
         <image name="userProfile" width="50" height="50"/>
         <image name="video" catalog="system" width="64" height="40"/>
+        <image name="whiteBg" width="621" height="1344"/>
     </resources>
 </document>

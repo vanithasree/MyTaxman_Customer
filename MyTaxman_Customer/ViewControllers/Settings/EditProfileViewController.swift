@@ -18,6 +18,7 @@ class EditProfileViewController: UIViewController {
     var profileDetail : CustomerProfileDesc?
     private var authViewModel = AuthViewModel()
     private var settingsViewModel = SettingsViewModel()
+    var delegate : ApiLoadDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,7 @@ class EditProfileViewController: UIViewController {
                         
                         self.presentAlert(withTitle: "", message: result.desc ?? "") {
                             doOnMain {
+                                self.delegate?.getStatus(value: true)
                                 self.navigationController?.popToRootViewController(animated: true)
                             }
                             

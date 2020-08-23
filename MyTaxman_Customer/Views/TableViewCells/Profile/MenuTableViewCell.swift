@@ -23,7 +23,9 @@ class MenuTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
     func setupViews(){
+        self.changePasswordBtn.isHidden = true
         menuLabel.textColor = ColorManager.darkText.color
         menuLabel.font = UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(18.0))
         menuLabel.numberOfLines = 0
@@ -41,11 +43,10 @@ class MenuTableViewCell: UITableViewCell {
         changePasswordAction?()
     }
     
-    func setMenu(item : MenuItem, updatedDate:String = ""){
+    func setMenu(item : MenuItem, updatedDate:String = "") {
         menuLabel.text = item.title
-        changePasswordBtn.isHidden = true
         if item.title == "Change Password" {
-            changePasswordBtn.isHidden = false
+            
             menuLabel.text = "\(item.title ?? "")\nLast Changed on \(updatedDate)"
             let balanceAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: menuLabel.text ?? "")
             balanceAttributedString.setColorForText(textForAttribute: "Last Changed on", withColor: ColorManager.darkText.color, withFont: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(16.0))!)

@@ -24,7 +24,7 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vjc-lc-0ih">
-                            <rect key="frame" x="20" y="150" width="381" height="51"/>
+                            <rect key="frame" x="20" y="150" width="381" height="81.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjP-Ig-o1p">
                                     <rect key="frame" x="0.0" y="0.0" width="381" height="20.5"/>
@@ -38,16 +38,35 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuJ-v3-NFb">
+                                    <rect key="frame" x="0.0" y="61" width="381" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                         </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcS-Sk-5b1">
+                            <rect key="frame" x="351" y="220" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="7Y3-W6-Rpe"/>
+                                <constraint firstAttribute="width" constant="50" id="X0v-6k-2xB"/>
+                            </constraints>
+                            <state key="normal" image="editProfile"/>
+                            <connections>
+                                <action selector="didTapEditAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="5yT-iw-tBM"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="HoO-3K-6OG" firstAttribute="height" secondItem="4zZ-Jd-2e2" secondAttribute="height" multiplier="0.4" id="1pZ-eg-UB5"/>
+                        <constraint firstAttribute="bottom" secondItem="OcS-Sk-5b1" secondAttribute="bottom" constant="5" id="6xz-IC-JvK"/>
                         <constraint firstItem="Vjc-lc-0ih" firstAttribute="top" secondItem="HoO-3K-6OG" secondAttribute="bottom" constant="30" id="8Eq-3c-Lek"/>
                         <constraint firstItem="HoO-3K-6OG" firstAttribute="top" secondItem="4zZ-Jd-2e2" secondAttribute="top" constant="10" id="8JK-Aw-mUC"/>
                         <constraint firstItem="Vjc-lc-0ih" firstAttribute="leading" secondItem="4zZ-Jd-2e2" secondAttribute="leading" constant="20" id="TlD-eu-fep"/>
                         <constraint firstItem="HoO-3K-6OG" firstAttribute="centerX" secondItem="4zZ-Jd-2e2" secondAttribute="centerX" id="XHB-l6-Txz"/>
+                        <constraint firstAttribute="trailing" secondItem="OcS-Sk-5b1" secondAttribute="trailing" constant="20" id="dX7-uX-GBJ"/>
                         <constraint firstAttribute="trailing" secondItem="Vjc-lc-0ih" secondAttribute="trailing" constant="20" id="iEE-Dt-h9s"/>
                     </constraints>
                 </view>
@@ -64,7 +83,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="editButton" destination="OcS-Sk-5b1" id="8Ax-jE-MTN"/>
                 <outlet property="emailLabel" destination="oGV-XN-xke" id="UOy-sf-0ro"/>
+                <outlet property="mobileNumberLabel" destination="GuJ-v3-NFb" id="LFC-pA-XaI"/>
                 <outlet property="nameLabel" destination="mjP-Ig-o1p" id="GX6-xB-YHE"/>
                 <outlet property="profileImageView" destination="HoO-3K-6OG" id="v6y-5F-T0d"/>
             </connections>
@@ -72,6 +93,7 @@
         </view>
     </objects>
     <resources>
+        <image name="editProfile" width="50" height="50"/>
         <image name="userProfile" width="50" height="50"/>
     </resources>
 </document>

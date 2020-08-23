@@ -71,7 +71,7 @@ class JobListViewController: BaseViewController {
         jobsListTableView.register(CompletedJobTableViewCell.nib, forCellReuseIdentifier: CompletedJobTableViewCell.identifier)
         jobsListTableView.register(ClosedJobTableViewCell.nib, forCellReuseIdentifier: ClosedJobTableViewCell.identifier)
         jobsListTableView.tableFooterView = UIView()
-        jobsListTableView.backgroundColor = ColorManager.white.color
+        jobsListTableView.backgroundColor = .clear
         jobsListTableView.separatorStyle = .none
         jobsListTableView.estimatedRowHeight = 500
         jobsListTableView.rowHeight = UITableView.automaticDimension

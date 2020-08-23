@@ -18,6 +18,7 @@ class ChangePasswordViewController: UIViewController {
     private var settingsViewModel = SettingsViewModel()
     
     var profileDetail : CustomerProfileDesc?
+    var delegate : ApiLoadDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +44,9 @@ class ChangePasswordViewController: UIViewController {
         if currentPassword.status && newPassword.status && conformPassword.status  {
             let params: Parameters = [
                 "customerid" : UserDetails.shared.userId,
-                "oldpassword" : currentPasswordTextField.text,
-                "newpassword" : newPasswordTextField.text,
-                "retypepassword" : retypePasswordTextField.text,
+                "oldpassword" : currentPasswordTextField.text ?? "",
+                "newpassword" : newPasswordTextField.text ?? "",
+                "retypepassword" : retypePasswordTextField.text ?? "",
                 "profile_updated_on" : Date().dateAndTimetoString()
             ]
             LoadingIndicator.shared.show(forView: self.view)
@@ -53,9 +54,9 @@ class ChangePasswordViewController: UIViewController {
                 LoadingIndicator.shared.hide()
                 if let result = result {
                     if result.code == "1" {
-                        
                         self.presentAlert(withTitle: "", message: result.desc ?? "") {
                             doOnMain {
+                                self.delegate?.getStatus(value: true)
                                 self.navigationController?.popToRootViewController(animated: true)
                             }
                         }
@@ -67,7 +68,6 @@ class ChangePasswordViewController: UIViewController {
                     self.presentAlert(withTitle: "", message: alert.errorMessage)
                 }
             }
-            
         }
         else {
             self.validateTextFieldForChangePassword(textField: currentPasswordTextField)

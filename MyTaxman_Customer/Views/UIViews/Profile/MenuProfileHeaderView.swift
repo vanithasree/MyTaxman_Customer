@@ -12,9 +12,9 @@ class MenuProfileHeaderView: UITableViewHeaderFooterView {
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
-    // @IBOutlet var mobileNumberLabel: UILabel!
-    //    @IBOutlet var editButton: UIButton!
-    //    var editAction : (() ->Void)?
+     @IBOutlet var mobileNumberLabel: UILabel!
+        @IBOutlet var editButton: UIButton!
+        var editAction : (() ->Void)?
     
     /*
      // Only override draw() if you perform custom drawing.
@@ -30,8 +30,10 @@ class MenuProfileHeaderView: UITableViewHeaderFooterView {
     }
     
     func setupViews() {
+        self.backgroundColor = ColorManager.backgroundGrey.color
         self.nameLabel.setLabelCustomProperties(titleText: "", textColor: ColorManager.darkText.color, font: UIFont(name:Font.FontName.PoppinsBold.rawValue, size: Utility.dynamicSize(15.0)), numberOfLines: 0, alignment: .center)
         self.emailLabel.setLabelCustomProperties(titleText: "", textColor: ColorManager.darkText.color, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(15.0)), numberOfLines: 0, alignment: .center)
+        self.mobileNumberLabel.setLabelCustomProperties(titleText: "", textColor: ColorManager.darkText.color, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(15.0)), numberOfLines: 0, alignment: .center)
         
     }
     
@@ -39,6 +41,7 @@ class MenuProfileHeaderView: UITableViewHeaderFooterView {
         
         nameLabel.text = customerDetails.customername ?? ""
         emailLabel.text = customerDetails.email ?? ""
+        mobileNumberLabel.text = customerDetails.mobile ?? ""
         /*   if let profilePic = customerDetails.profile_pic, !profilePic.isEmpty {
          profileImageView.load(from: Constant.imageBaseUrlString + profilePic)
          }
@@ -57,7 +60,7 @@ class MenuProfileHeaderView: UITableViewHeaderFooterView {
         return String(describing: self)
     }
     
-    /* @IBAction func didTapEditAction(_ sender: Any) {
+     @IBAction func didTapEditAction(_ sender: Any) {
      editAction?()
-     }*/
+     }
 }

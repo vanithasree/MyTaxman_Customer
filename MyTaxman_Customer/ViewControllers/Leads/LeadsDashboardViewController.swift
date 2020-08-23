@@ -42,8 +42,8 @@ class LeadsDashboardViewController: BaseViewController {
         leadsCollectionView.dataSource = self
         leadsCollectionView.backgroundColor = .clear
         
-     
-//        self.collectionView.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
+        
+        //        self.collectionView.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
         
         
         serviceDataListArray.append(ServicesList(imageName: "Tax", title: "Tax Returns"))
@@ -54,8 +54,16 @@ class LeadsDashboardViewController: BaseViewController {
         serviceDataListArray.append(ServicesList(imageName: "legal", title: "Legal Advice"))
         
         titleLabel.setLabelCustomProperties(titleText: "What are you looking for?", textColor: ColorManager.textDarkGreenColor.color, font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(20.0)), numberOfLines: 1, alignment: .center)
+        let rightBarButtonItem =  UIBarButtonItem(title: "HELP", style: .plain, target: self, action: #selector(helpTapped))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
         
         
+    }
+    @objc func helpTapped() {
+        let detailVC = SettingDetailViewController.instantiateFromAppStoryboard(appStoryboard: .Settings)
+        detailVC.pageType = .help
+        detailVC.urlString =  Constant.imageBaseUrlString+"connect/Mytaxman/"
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
     
@@ -209,7 +217,9 @@ extension LeadsDashboardViewController{
             
             LeadsManager.shared.postJobsParams = jobsParams
             LeadsManager.shared.postJobsParams?.category = categoryName
-            
+            if UserDetails.shared.isLoggedIn {
+                LeadsManager.shared.postJobsParams?.customerid = UserDetails.shared.userId ?? ""
+            }
             print(LeadsManager.shared.postJobsParams)
             
         } catch {

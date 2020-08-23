@@ -32,12 +32,13 @@ class PageThreeViewController: UIViewController {
     }
     
     func setViewUI() {
-        self.setRadioButtonPropertiesForPageThree(radioBtn: firstBtn, titleString: "Less than $18,200", tag: 1)
-        self.setRadioButtonPropertiesForPageThree(radioBtn: secondBtn, titleString: "$18,200 to $37,000", tag: 2)
-        self.setRadioButtonPropertiesForPageThree(radioBtn: thirdBtn, titleString: "$37,001 to $87,000", tag: 3)
-        self.setRadioButtonPropertiesForPageThree(radioBtn: fourthBtn, titleString: "More than $180,0001", tag: 4)
-        self.setRadioButtonPropertiesForPageThree(radioBtn: fifthBtn, titleString: "I'm not sure", tag: 5)
-        titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText:"What is your annual turnover?")
+        self.setRadioButtonPropertiesForPageThree(radioBtn: firstBtn, titleString: "$37,001 to $90,000", tag: 1)
+        self.setRadioButtonPropertiesForPageThree(radioBtn: secondBtn, titleString: "$90,001 to $180,000", tag: 2)
+        self.setRadioButtonPropertiesForPageThree(radioBtn: thirdBtn, titleString: "More than $180,000", tag: 3)
+        self.setRadioButtonPropertiesForPageThree(radioBtn: fourthBtn, titleString: "I'm not sure", tag: 4)
+        //self.setRadioButtonPropertiesForPageThree(radioBtn: fifthBtn, titleString: "I'm not sure", tag: 5)
+        self.fifthBtn.isHidden = true
+        titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText:"What is your annual turnover / revenue?")
     
         
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")

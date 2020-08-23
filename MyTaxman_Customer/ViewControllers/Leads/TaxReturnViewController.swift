@@ -22,8 +22,8 @@ class TaxReturnViewController: UIViewController {
     @IBOutlet weak var fifthBtn: DLRadioButton!
     
     @IBOutlet weak var otherView: UIView!
-    
     @IBOutlet weak var otherTextField: TweeAttributedTextField!
+    var otherTextStringValue : String = ""
     
     var pageThreeValueForIndividual : String = ""
     
@@ -45,6 +45,10 @@ class TaxReturnViewController: UIViewController {
         self.setRadioButtonPropertiesForIndividualService(radioBtn: fifthBtn, titleString: "Other (Please specify)", tag: 5)
         otherTextField.setTextFieldProperties(placeholderString: "Other", isSecureText: false)
         otherTextField.delegate = self
+        otherView.backgroundColor = ColorManager.backgroundGrey.color
+        otherTextField.backgroundColor = .clear
+        otherView.cornerRadius = 5.0
+        self.otherView.isHidden = true
         
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
         checkIsPageThreeForIndividualValueChoosen()
@@ -66,10 +70,10 @@ class TaxReturnViewController: UIViewController {
         radioBtn.setOptionChooseTheme(btn: radioBtn, title:titleString)
         radioBtn.marginWidth = 10.0
         radioBtn.tag = tag
-        radioBtn.isMultipleSelectionEnabled = true
-        radioBtn.isIconSquare = true
-        radioBtn.icon = UIImage(named: "Check")!
-        radioBtn.iconSelected = UIImage(named: "Checkbox")!
+        radioBtn.isMultipleSelectionEnabled = false
+        radioBtn.isIconSquare = false
+        radioBtn.icon = UIImage(named: "Radio")!
+        radioBtn.iconSelected = UIImage(named: "RadioSelected")!
     }
     
     
@@ -101,7 +105,16 @@ class TaxReturnViewController: UIViewController {
                 self.checkIsPageThreeForIndividualValueChoosen()
             }
         } else {
+            
+            if fifthBtn.isSelected {
+                self.otherView.isHidden = false
+            }
+            else {
+                self.otherView.isHidden = true
+            }
+            
             self.pageThreeValueForIndividual = radioButton.selected()!.titleLabel!.text ?? ""
+            LeadsManager.shared.postJobsParams?.page3 = self.pageThreeValueForIndividual
             self.checkIsPageThreeForIndividualValueChoosen()
             print(String(format: "%@ is selected.\n", radioButton.selected()!.titleLabel!.text!));
         }
@@ -121,8 +134,21 @@ class TaxReturnViewController: UIViewController {
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        if let value = LeadsManager.shared.postJobsParams?.page3 {
-            self.redirectToPageThreeScreenFromIndividual()
+        if fifthBtn.isSelected {
+            if self.otherTextStringValue.isEmpty {
+                self.showToast(message: "Please specify the reason")
+                return
+            }
+            else {
+                if let value = LeadsManager.shared.postJobsParams?.page3 {
+                    self.redirectToPageThreeScreenFromIndividual()
+                }
+            }
+        }
+        else {
+            if let value = LeadsManager.shared.postJobsParams?.page3 {
+                self.redirectToPageThreeScreenFromIndividual()
+            }
         }
     }
 }
@@ -130,6 +156,8 @@ extension TaxReturnViewController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let textField = textField as? TweeAttributedTextField {
             self.pageThreeValueForIndividual = textField.text ?? ""
+            self.otherTextStringValue = self.pageThreeValueForIndividual
+            LeadsManager.shared.postJobsParams?.page3 = self.pageThreeValueForIndividual
         }
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {

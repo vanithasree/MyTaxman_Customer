@@ -12,13 +12,17 @@ import TweeTextField
 
 class EmployeeOrContractViewController: UIViewController {
     
+    @IBOutlet weak var otherTextField: TweeAttributedTextField!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var otherView: UIView!
     
     @IBOutlet weak var thirdBtn: DLRadioButton!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var nextView: UIView!
     @IBOutlet weak var secondBtn: DLRadioButton!
     @IBOutlet weak var firstBtn: DLRadioButton!
+    
+    var otherStringValue : String = ""
     
     var pageTwoValueForIndividual : String = ""
     
@@ -35,6 +39,11 @@ class EmployeeOrContractViewController: UIViewController {
         self.setRadioButtonPropertiesForEmpOrContractScreen(radioBtn: thirdBtn, titleString: "Other (Please Specify)", tag: 3)
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
         checkIsPageTwoValueForIndividualChoosen()
+        self.otherView.isHidden = true
+        self.otherView.backgroundColor = ColorManager.backgroundGrey.color
+        self.otherTextField.delegate = self
+        self.otherView.cornerRadius = 5.0
+        otherTextField.backgroundColor = .clear
         
     }
     func checkIsPageTwoValueForIndividualChoosen() {
@@ -68,13 +77,12 @@ class EmployeeOrContractViewController: UIViewController {
                     let buttonsArray = radioButton.selectedButtons().compactMap { $0.tag == 3}
                     print(buttonsArray)
                     if buttonsArray.contains(true) {
-                        
-                        /* self.otherView.isHidden = false*/
+                        self.otherView.isHidden = false
                         self.pageTwoValueForIndividual = ""
-                        self.checkIsPageTwoValueForIndividualChoosen()
+                        self.nextView.isHidden = false
                     }
                     else {
-                        /* self.otherView.isHidden = true*/
+                        self.otherView.isHidden = true
                         self.pageTwoValueForIndividual = button.titleLabel!.text ?? ""
                         LeadsManager.shared.postJobsParams?.page2 = self.pageTwoValueForIndividual
                         self.checkIsPageTwoValueForIndividualChoosen()
@@ -82,9 +90,9 @@ class EmployeeOrContractViewController: UIViewController {
                 }
             }
             else {
-                /*  self.pageOneValueForAccountService = ""
-                 self.otherView.isHidden = true
-                 self.checkAccountServiceValueisChoosen()*/
+                self.pageTwoValueForIndividual = ""
+                self.otherView.isHidden = true
+                self.checkIsPageTwoValueForIndividualChoosen()
             }
         } else {
             /*   self.pageOneValueForAccountService = radioButton.selected()!.titleLabel!.text ?? ""
@@ -94,8 +102,21 @@ class EmployeeOrContractViewController: UIViewController {
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        if let value = LeadsManager.shared.postJobsParams?.page2 {
-            self.redirectToTaxReturnTypeScreen()
+        if thirdBtn.isSelected {
+            if self.otherStringValue.isEmpty {
+                self.showToast(message: "Please specify the reason")
+                return
+            }
+            else {
+                if let value = LeadsManager.shared.postJobsParams?.page2 {
+                    self.redirectToTaxReturnTypeScreen()
+                }
+            }
+        }
+        else {
+            if let value = LeadsManager.shared.postJobsParams?.page2 {
+                self.redirectToTaxReturnTypeScreen()
+            }
         }
     }
     
@@ -113,4 +134,19 @@ class EmployeeOrContractViewController: UIViewController {
      }
      */
     
+}
+extension EmployeeOrContractViewController : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            self.otherStringValue = textField.text ?? ""
+            self.pageTwoValueForIndividual = textField.text  ?? ""
+            LeadsManager.shared.postJobsParams?.page2 = self.pageTwoValueForIndividual
+            
+        }
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            textField.hideInfo()
+        }
+    }
 }

@@ -18,6 +18,7 @@ class SuperFundsServiceViewController: UIViewController {
     @IBOutlet weak var nextView: UIView!
     
     var superFundValue : String = ""
+    var otherStringValue : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ class SuperFundsServiceViewController: UIViewController {
         titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText:"Which service do you need?")
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
         checkIsSuperFundValueChoosen()
+    
         
     }
     

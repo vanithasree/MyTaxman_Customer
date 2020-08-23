@@ -48,7 +48,7 @@ class PageTwoViewController: UIViewController {
     
     func setViewUIProperties() {
         
-        self.setRadioButtonPropertiesForPageTwo(radioBtn: firstBtn, titleString: "Sole trade", tag: 1)
+        self.setRadioButtonPropertiesForPageTwo(radioBtn: firstBtn, titleString: "Sole trader", tag: 1)
         self.setRadioButtonPropertiesForPageTwo(radioBtn: secondBtn, titleString: "Partnership", tag: 2)
         self.setRadioButtonPropertiesForPageTwo(radioBtn: thirdBtn, titleString: "Company", tag: 3)
          self.setRadioButtonPropertiesForPageTwo(radioBtn: fourthBtn, titleString: "Trust", tag: 4)

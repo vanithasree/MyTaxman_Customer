@@ -417,6 +417,7 @@
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="logSelectedButtonForPageThreeWithRadioButton:" destination="Wr4-Nw-zZK" eventType="touchUpInside" id="jvE-Jj-6RA"/>
                                                     <outletCollection property="otherButtons" destination="lAD-iB-xng" id="Pjg-Dd-8Lu"/>
                                                     <outletCollection property="otherButtons" destination="48l-Om-VVo" id="oBc-34-LjK"/>
                                                     <outletCollection property="otherButtons" destination="5ee-jc-SyB" id="zbN-d3-KWW"/>
@@ -629,10 +630,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xH3-8e-oTS">
-                                        <rect key="frame" x="30" y="61.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="61.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vC2-RV-dW3" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="None">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -650,16 +651,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="vC2-RV-dW3" firstAttribute="centerY" secondItem="xH3-8e-oTS" secondAttribute="centerY" id="KZN-D7-Gbz"/>
-                                            <constraint firstAttribute="height" constant="50" id="Trx-DQ-iNQ"/>
+                                            <constraint firstAttribute="height" constant="40" id="Trx-DQ-iNQ"/>
                                             <constraint firstAttribute="trailing" secondItem="vC2-RV-dW3" secondAttribute="trailing" constant="10" id="gjg-hU-w2x"/>
                                             <constraint firstItem="vC2-RV-dW3" firstAttribute="leading" secondItem="xH3-8e-oTS" secondAttribute="leading" id="vBV-ip-n8L"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LX-cW-otm">
-                                        <rect key="frame" x="30" y="121.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="111.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33R-bl-flE" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="MYOB">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -704,10 +705,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T1G-7u-fPv">
-                                        <rect key="frame" x="30" y="188.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="166.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHd-hn-wV2" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Xero">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -727,14 +728,13 @@
                                             <constraint firstItem="PHd-hn-wV2" firstAttribute="leading" secondItem="T1G-7u-fPv" secondAttribute="leading" id="ByV-jw-haI"/>
                                             <constraint firstItem="PHd-hn-wV2" firstAttribute="centerY" secondItem="T1G-7u-fPv" secondAttribute="centerY" id="CrX-fi-or5"/>
                                             <constraint firstAttribute="trailing" secondItem="PHd-hn-wV2" secondAttribute="trailing" constant="10" id="jW0-ye-0yW"/>
-                                            <constraint firstAttribute="height" constant="50" id="wPa-0z-jdj"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgP-5o-Wq9">
-                                        <rect key="frame" x="30" y="252.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="217.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdt-Wc-FbG" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Sasu">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -754,14 +754,13 @@
                                             <constraint firstItem="fdt-Wc-FbG" firstAttribute="leading" secondItem="qgP-5o-Wq9" secondAttribute="leading" id="63s-aO-YsZ"/>
                                             <constraint firstItem="fdt-Wc-FbG" firstAttribute="centerY" secondItem="qgP-5o-Wq9" secondAttribute="centerY" id="McZ-Gk-OB5"/>
                                             <constraint firstAttribute="trailing" secondItem="fdt-Wc-FbG" secondAttribute="trailing" constant="10" id="Q62-VE-Bql"/>
-                                            <constraint firstAttribute="height" constant="50" id="xbz-kW-MG2"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRA-Ro-RD6">
-                                        <rect key="frame" x="30" y="312.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="267.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1g-rh-kRO" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Quickbooks">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -779,16 +778,15 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="S1g-rh-kRO" secondAttribute="trailing" constant="10" id="K5y-Bp-nBx"/>
-                                            <constraint firstAttribute="height" constant="50" id="PmQ-Cb-Tll"/>
                                             <constraint firstItem="S1g-rh-kRO" firstAttribute="leading" secondItem="uRA-Ro-RD6" secondAttribute="leading" id="qLi-XW-l8M"/>
                                             <constraint firstItem="S1g-rh-kRO" firstAttribute="centerY" secondItem="uRA-Ro-RD6" secondAttribute="centerY" id="rSR-4w-flW"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vif-u3-aVe">
-                                        <rect key="frame" x="30" y="372.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="317.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5g-8s-9sC" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Excel">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -807,15 +805,14 @@
                                         <constraints>
                                             <constraint firstItem="l5g-8s-9sC" firstAttribute="centerY" secondItem="Vif-u3-aVe" secondAttribute="centerY" id="cwl-sb-h3h"/>
                                             <constraint firstItem="l5g-8s-9sC" firstAttribute="leading" secondItem="Vif-u3-aVe" secondAttribute="leading" id="das-9c-erk"/>
-                                            <constraint firstAttribute="height" constant="50" id="gq4-OX-gaX"/>
                                             <constraint firstAttribute="trailing" secondItem="l5g-8s-9sC" secondAttribute="trailing" constant="10" id="oe9-EY-ERi"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w1o-tU-gks">
-                                        <rect key="frame" x="30" y="432.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="367.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEr-Ni-yKA" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Other(Please specify)">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -834,22 +831,21 @@
                                         <constraints>
                                             <constraint firstItem="fEr-Ni-yKA" firstAttribute="centerY" secondItem="w1o-tU-gks" secondAttribute="centerY" id="Jxz-kq-gzn"/>
                                             <constraint firstAttribute="trailing" secondItem="fEr-Ni-yKA" secondAttribute="trailing" constant="10" id="Sm7-sN-MxZ"/>
-                                            <constraint firstAttribute="height" constant="50" id="acc-0Q-x7S"/>
                                             <constraint firstItem="fEr-Ni-yKA" firstAttribute="leading" secondItem="w1o-tU-gks" secondAttribute="leading" id="kZg-7d-biy"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKj-qG-qXE">
-                                        <rect key="frame" x="30" y="502.5" width="354" height="30"/>
+                                        <rect key="frame" x="30" y="417.5" width="354" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGu-Ko-2b5" customClass="TweeAttributedTextField" customModule="TweeTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="LrG-j4-BEN"/>
+                                            <constraint firstAttribute="height" constant="40" id="LrG-j4-BEN"/>
                                             <constraint firstAttribute="trailing" secondItem="eGu-Ko-2b5" secondAttribute="trailing" id="SJJ-HQ-I1Y"/>
                                             <constraint firstItem="eGu-Ko-2b5" firstAttribute="leading" secondItem="kKj-qG-qXE" secondAttribute="leading" id="lZV-Ne-V0a"/>
                                             <constraint firstItem="eGu-Ko-2b5" firstAttribute="top" secondItem="kKj-qG-qXE" secondAttribute="top" id="viu-GM-20d"/>
@@ -881,7 +877,7 @@
                                     <constraint firstItem="Vif-u3-aVe" firstAttribute="trailing" secondItem="w1o-tU-gks" secondAttribute="trailing" id="Xkq-B4-z8y"/>
                                     <constraint firstItem="T1G-7u-fPv" firstAttribute="height" secondItem="qgP-5o-Wq9" secondAttribute="height" id="Z5s-WH-qPe"/>
                                     <constraint firstAttribute="trailing" secondItem="wiA-3I-czX" secondAttribute="trailing" constant="30" id="aFL-IF-tJy"/>
-                                    <constraint firstItem="kKj-qG-qXE" firstAttribute="top" secondItem="w1o-tU-gks" secondAttribute="bottom" constant="20" id="b7p-1N-orS"/>
+                                    <constraint firstItem="kKj-qG-qXE" firstAttribute="top" secondItem="w1o-tU-gks" secondAttribute="bottom" constant="10" id="b7p-1N-orS"/>
                                     <constraint firstItem="qgP-5o-Wq9" firstAttribute="trailing" secondItem="uRA-Ro-RD6" secondAttribute="trailing" id="cZo-6P-8XU"/>
                                     <constraint firstItem="uRA-Ro-RD6" firstAttribute="top" secondItem="qgP-5o-Wq9" secondAttribute="bottom" constant="10" id="ctt-w2-nrz"/>
                                     <constraint firstItem="w1o-tU-gks" firstAttribute="leading" secondItem="kKj-qG-qXE" secondAttribute="leading" id="ega-wS-yYj"/>
@@ -1260,6 +1256,7 @@
                         <outlet property="addressTextField" destination="TbR-qo-rx0" id="d4H-n8-AMj"/>
                         <outlet property="nextBtn" destination="5HO-et-Tqf" id="ErU-2e-O7G"/>
                         <outlet property="nextView" destination="jgQ-h7-FyZ" id="gVN-Dc-ZlU"/>
+                        <outlet property="titleLabel" destination="UpK-Cm-UAL" id="hRl-44-8JH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXf-io-olg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1363,6 +1360,7 @@
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="logSelectedButtonForAccountServiceWithRadioButton:" destination="142-6v-LSK" eventType="touchUpInside" id="VNe-aG-KhB"/>
                                                     <outletCollection property="otherButtons" destination="uZT-kn-qTe" id="vab-Og-EyL"/>
                                                     <outletCollection property="otherButtons" destination="e4c-7J-XKd" id="9Fg-YV-Qty"/>
                                                     <outletCollection property="otherButtons" destination="TCN-l4-KvJ" id="tzT-PM-qnl"/>
@@ -1429,17 +1427,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jm2-Kt-3pA">
-                                        <rect key="frame" x="30" y="378.5" width="354" height="30"/>
+                                        <rect key="frame" x="30" y="378.5" width="354" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-NY-2u4" customClass="TweeAttributedTextField" customModule="TweeTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="2z4-sR-h0l"/>
+                                            <constraint firstAttribute="height" constant="40" id="2z4-sR-h0l"/>
                                             <constraint firstAttribute="bottom" secondItem="i5j-NY-2u4" secondAttribute="bottom" id="Cd8-N9-4fl"/>
                                             <constraint firstItem="i5j-NY-2u4" firstAttribute="top" secondItem="Jm2-Kt-3pA" secondAttribute="top" id="CgE-Au-HbV"/>
                                             <constraint firstAttribute="trailing" secondItem="i5j-NY-2u4" secondAttribute="trailing" id="Jlz-mI-hFy"/>
@@ -1671,10 +1669,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pV4-yj-McW">
-                                        <rect key="frame" x="30" y="378.5" width="354" height="30"/>
+                                        <rect key="frame" x="30" y="378.5" width="354" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3oR-I3-usa" customClass="TweeAttributedTextField" customModule="TweeTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -1684,7 +1682,7 @@
                                             <constraint firstAttribute="trailing" secondItem="3oR-I3-usa" secondAttribute="trailing" id="Db6-T3-Xo3"/>
                                             <constraint firstItem="3oR-I3-usa" firstAttribute="top" secondItem="pV4-yj-McW" secondAttribute="top" id="EWD-Xo-YeY"/>
                                             <constraint firstItem="3oR-I3-usa" firstAttribute="leading" secondItem="pV4-yj-McW" secondAttribute="leading" id="Iny-vw-C4g"/>
-                                            <constraint firstAttribute="height" constant="30" id="mIK-wg-cFd"/>
+                                            <constraint firstAttribute="height" constant="40" id="mIK-wg-cFd"/>
                                             <constraint firstAttribute="bottom" secondItem="3oR-I3-usa" secondAttribute="bottom" id="ner-8I-EZx"/>
                                         </constraints>
                                     </view>
@@ -2181,6 +2179,87 @@
             </objects>
             <point key="canvasLocation" x="2965" y="812"/>
         </scene>
+        <!--Logged In Info View Controller-->
+        <scene sceneID="fdD-vU-rfc">
+            <objects>
+                <viewController storyboardIdentifier="LoggedInInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R2E-nw-9uc" customClass="LoggedInInfoViewController" customModule="MyTaxman_Customer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vmz-7t-Was">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZM-ES-6cd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wve-ih-NyT">
+                                        <rect key="frame" x="20" y="20" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILo-YS-HDk">
+                                        <rect key="frame" x="20" y="61" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moe-Tt-L0S">
+                                        <rect key="frame" x="20" y="102" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oO9-as-9BV">
+                                        <rect key="frame" x="20" y="143" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZ6-nI-kHI">
+                                        <rect key="frame" x="0.0" y="744.5" width="414" height="73.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="onTappedSubmitBtn:" destination="R2E-nw-9uc" eventType="touchUpInside" id="Wjs-CN-1AD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="moe-Tt-L0S" firstAttribute="leading" secondItem="oO9-as-9BV" secondAttribute="leading" id="23V-Bi-DRY"/>
+                                    <constraint firstItem="Wve-ih-NyT" firstAttribute="top" secondItem="FZM-ES-6cd" secondAttribute="top" constant="20" id="Ai4-nW-nSR"/>
+                                    <constraint firstAttribute="trailing" secondItem="sZ6-nI-kHI" secondAttribute="trailing" id="Gk6-70-ysW"/>
+                                    <constraint firstItem="Wve-ih-NyT" firstAttribute="leading" secondItem="ILo-YS-HDk" secondAttribute="leading" id="QiS-Qq-uL5"/>
+                                    <constraint firstItem="moe-Tt-L0S" firstAttribute="top" secondItem="ILo-YS-HDk" secondAttribute="bottom" constant="20" id="VVL-3m-1vA"/>
+                                    <constraint firstItem="ILo-YS-HDk" firstAttribute="top" secondItem="Wve-ih-NyT" secondAttribute="bottom" constant="20" id="d0v-vU-CgH"/>
+                                    <constraint firstItem="ILo-YS-HDk" firstAttribute="leading" secondItem="moe-Tt-L0S" secondAttribute="leading" id="ddB-Wx-8uF"/>
+                                    <constraint firstItem="oO9-as-9BV" firstAttribute="top" secondItem="moe-Tt-L0S" secondAttribute="bottom" constant="20" id="e4r-6W-A5s"/>
+                                    <constraint firstItem="sZ6-nI-kHI" firstAttribute="height" secondItem="FZM-ES-6cd" secondAttribute="height" multiplier="0.09" id="hOG-Jo-YIF"/>
+                                    <constraint firstItem="sZ6-nI-kHI" firstAttribute="leading" secondItem="FZM-ES-6cd" secondAttribute="leading" id="lLP-eY-z0c"/>
+                                    <constraint firstAttribute="bottom" secondItem="sZ6-nI-kHI" secondAttribute="bottom" id="pna-3l-awC"/>
+                                    <constraint firstItem="Wve-ih-NyT" firstAttribute="leading" secondItem="FZM-ES-6cd" secondAttribute="leading" constant="20" id="qzX-nx-HO1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y7r-98-CWT" firstAttribute="trailing" secondItem="FZM-ES-6cd" secondAttribute="trailing" id="Zhs-zm-O1Y"/>
+                            <constraint firstItem="FZM-ES-6cd" firstAttribute="top" secondItem="Y7r-98-CWT" secondAttribute="top" id="dgL-eM-Ftz"/>
+                            <constraint firstItem="FZM-ES-6cd" firstAttribute="leading" secondItem="Y7r-98-CWT" secondAttribute="leading" id="f6h-Qe-NGq"/>
+                            <constraint firstItem="Y7r-98-CWT" firstAttribute="bottom" secondItem="FZM-ES-6cd" secondAttribute="bottom" id="jTt-nT-F4L"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y7r-98-CWT"/>
+                    </view>
+                    <connections>
+                        <outlet property="captionLabel" destination="oO9-as-9BV" id="pxu-aI-Wwt"/>
+                        <outlet property="headerLabel" destination="ILo-YS-HDk" id="cNU-5O-NBK"/>
+                        <outlet property="headerTitleLabel" destination="Wve-ih-NyT" id="u0D-16-vrV"/>
+                        <outlet property="mailLabek" destination="moe-Tt-L0S" id="WXY-VD-ynh"/>
+                        <outlet property="submitBtn" destination="sZ6-nI-kHI" id="qHp-XE-XnA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XYh-uW-B2Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3836" y="830"/>
+        </scene>
         <!--Employee Or Contract View Controller-->
         <scene sceneID="10b-Ly-ULG">
             <objects>
@@ -2289,10 +2368,29 @@
                                             <constraint firstItem="eJo-2l-bmV" firstAttribute="centerY" secondItem="HPP-3q-wFC" secondAttribute="centerY" id="Ba0-eI-pNz"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4f-PC-ckc">
+                                        <rect key="frame" x="30" y="251.5" width="354" height="40"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1cc-3w-CxM" customClass="TweeAttributedTextField" customModule="TweeTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="1cc-3w-CxM" firstAttribute="top" secondItem="d4f-PC-ckc" secondAttribute="top" id="3BD-rV-Wxx"/>
+                                            <constraint firstAttribute="height" constant="40" id="RPH-V1-pok"/>
+                                            <constraint firstAttribute="trailing" secondItem="1cc-3w-CxM" secondAttribute="trailing" id="adl-im-DQu"/>
+                                            <constraint firstItem="1cc-3w-CxM" firstAttribute="leading" secondItem="d4f-PC-ckc" secondAttribute="leading" id="cHx-HT-XdD"/>
+                                            <constraint firstAttribute="bottom" secondItem="1cc-3w-CxM" secondAttribute="bottom" id="jio-QA-I3s"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="ueo-Ew-g0b" firstAttribute="leading" secondItem="HPP-3q-wFC" secondAttribute="leading" id="4bn-Yc-71i"/>
+                                    <constraint firstItem="d4f-PC-ckc" firstAttribute="top" secondItem="HPP-3q-wFC" secondAttribute="bottom" constant="20" id="ChL-2y-SI0"/>
                                     <constraint firstItem="fC5-bP-jdN" firstAttribute="height" secondItem="uaP-d0-IX4" secondAttribute="height" multiplier="0.09" id="Eie-vp-BB1"/>
                                     <constraint firstItem="ueo-Ew-g0b" firstAttribute="trailing" secondItem="HPP-3q-wFC" secondAttribute="trailing" id="FRm-gK-bhx"/>
                                     <constraint firstItem="hgX-tr-qgc" firstAttribute="top" secondItem="2dP-9R-KMx" secondAttribute="bottom" multiplier="1.5" id="I44-mS-h9w"/>
@@ -2306,10 +2404,12 @@
                                     <constraint firstAttribute="bottom" secondItem="fC5-bP-jdN" secondAttribute="bottom" id="hap-HE-izR"/>
                                     <constraint firstAttribute="trailing" secondItem="fC5-bP-jdN" secondAttribute="trailing" id="iKf-bO-BU7"/>
                                     <constraint firstItem="hgX-tr-qgc" firstAttribute="height" secondItem="ueo-Ew-g0b" secondAttribute="height" id="ihU-8N-V8b"/>
+                                    <constraint firstItem="HPP-3q-wFC" firstAttribute="trailing" secondItem="d4f-PC-ckc" secondAttribute="trailing" id="s2u-PW-OPR"/>
                                     <constraint firstItem="ueo-Ew-g0b" firstAttribute="top" secondItem="hgX-tr-qgc" secondAttribute="bottom" constant="10" id="sUd-Xd-2cP"/>
                                     <constraint firstAttribute="trailing" secondItem="2dP-9R-KMx" secondAttribute="trailing" constant="30" id="uU3-hA-G9c"/>
                                     <constraint firstItem="fC5-bP-jdN" firstAttribute="leading" secondItem="uaP-d0-IX4" secondAttribute="leading" id="v7H-Nc-Ykn"/>
                                     <constraint firstItem="2dP-9R-KMx" firstAttribute="top" secondItem="uaP-d0-IX4" secondAttribute="top" constant="20" id="vqC-N9-Bea"/>
+                                    <constraint firstItem="HPP-3q-wFC" firstAttribute="leading" secondItem="d4f-PC-ckc" secondAttribute="leading" id="wSV-qr-Akj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2326,6 +2426,8 @@
                         <outlet property="firstBtn" destination="JTo-H5-p8H" id="An5-1w-Opj"/>
                         <outlet property="nextBtn" destination="fJu-MF-G9F" id="SOh-FY-624"/>
                         <outlet property="nextView" destination="fC5-bP-jdN" id="r1c-Rz-KcU"/>
+                        <outlet property="otherTextField" destination="1cc-3w-CxM" id="fJI-l4-NW6"/>
+                        <outlet property="otherView" destination="d4f-PC-ckc" id="oai-1L-lvs"/>
                         <outlet property="secondBtn" destination="Yug-qr-6PH" id="BIo-wQ-Oib"/>
                         <outlet property="thirdBtn" destination="eJo-2l-bmV" id="VfK-dL-pLb"/>
                         <outlet property="titleLabel" destination="2dP-9R-KMx" id="8sz-8k-ccY"/>
@@ -2353,10 +2455,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lag-Kv-LyY">
-                                        <rect key="frame" x="30" y="61.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="49" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92X-QX-XLz" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Single income with simple deductions">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -2373,20 +2475,20 @@
                                         <constraints>
                                             <constraint firstItem="92X-QX-XLz" firstAttribute="leading" secondItem="lag-Kv-LyY" secondAttribute="leading" id="7CS-GQ-1cP"/>
                                             <constraint firstItem="92X-QX-XLz" firstAttribute="centerY" secondItem="lag-Kv-LyY" secondAttribute="centerY" id="Jye-zt-9Lx"/>
-                                            <constraint firstAttribute="height" constant="50" id="Sk9-9S-8ux"/>
+                                            <constraint firstAttribute="height" constant="40" id="Sk9-9S-8ux"/>
                                             <constraint firstAttribute="trailing" secondItem="92X-QX-XLz" secondAttribute="trailing" constant="10" id="Xbm-vS-CKV"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJU-rX-U8s">
-                                        <rect key="frame" x="30" y="121.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="99" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOC-nv-oxS" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Multiple incomes with simple deductions">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="logSelectedButtonForTaxReturnIndividualWithRadioButton:" destination="dQv-7v-2UT" eventType="touchDragInside" id="xZa-4W-IYt"/>
+                                                    <action selector="logSelectedButtonForTaxReturnIndividualWithRadioButton:" destination="dQv-7v-2UT" eventType="touchUpInside" id="wUR-KG-11a"/>
                                                     <outletCollection property="otherButtons" destination="92X-QX-XLz" id="eHR-Bo-COP"/>
                                                     <outletCollection property="otherButtons" destination="zxd-vT-rmO" id="xNt-kk-RTG"/>
                                                     <outletCollection property="otherButtons" destination="pT7-Is-229" id="YNl-9c-wyY"/>
@@ -2424,10 +2526,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kNo-wn-Gwr">
-                                        <rect key="frame" x="30" y="188.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="153" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxd-vT-rmO" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Single income with complex deductions (Shares, Captil gains, rental income)">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -2444,15 +2546,14 @@
                                         <constraints>
                                             <constraint firstItem="zxd-vT-rmO" firstAttribute="centerY" secondItem="kNo-wn-Gwr" secondAttribute="centerY" id="FcT-Xb-242"/>
                                             <constraint firstItem="zxd-vT-rmO" firstAttribute="leading" secondItem="kNo-wn-Gwr" secondAttribute="leading" id="bV6-1Y-TvD"/>
-                                            <constraint firstAttribute="height" constant="50" id="joo-hH-E8g"/>
                                             <constraint firstAttribute="trailing" secondItem="zxd-vT-rmO" secondAttribute="trailing" constant="10" id="sV6-2a-6nj"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjY-cj-7VP">
-                                        <rect key="frame" x="30" y="252.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="202.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pT7-Is-229" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Multiple incomes with complex deductions (Shares, Captial gains, rental income)">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -2467,17 +2568,16 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="FNV-BA-doR"/>
                                             <constraint firstItem="pT7-Is-229" firstAttribute="centerY" secondItem="NjY-cj-7VP" secondAttribute="centerY" id="JjV-KQ-E9c"/>
                                             <constraint firstAttribute="trailing" secondItem="pT7-Is-229" secondAttribute="trailing" constant="10" id="Lvf-ib-3qF"/>
                                             <constraint firstItem="pT7-Is-229" firstAttribute="leading" secondItem="NjY-cj-7VP" secondAttribute="leading" id="TrN-O6-R8y"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBE-r1-OD5">
-                                        <rect key="frame" x="30" y="312.5" width="354" height="50"/>
+                                        <rect key="frame" x="30" y="252.5" width="354" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hju-H8-nIz" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="8" width="344" height="34"/>
+                                                <rect key="frame" x="0.0" y="3" width="344" height="34"/>
                                                 <state key="normal" title="Other(Please specify)">
                                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -2492,17 +2592,16 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2YJ-FF-dFJ"/>
                                             <constraint firstItem="hju-H8-nIz" firstAttribute="centerY" secondItem="fBE-r1-OD5" secondAttribute="centerY" id="GWn-DA-HeD"/>
                                             <constraint firstAttribute="trailing" secondItem="hju-H8-nIz" secondAttribute="trailing" constant="10" id="Xcq-tr-G1p"/>
                                             <constraint firstItem="hju-H8-nIz" firstAttribute="leading" secondItem="fBE-r1-OD5" secondAttribute="leading" id="hxk-7W-vFB"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHW-hv-DgT">
-                                        <rect key="frame" x="30" y="382.5" width="354" height="30"/>
+                                        <rect key="frame" x="30" y="312.5" width="354" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2P4-80-IKh" customClass="TweeAttributedTextField" customModule="TweeTextField">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -2510,7 +2609,7 @@
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="2P4-80-IKh" firstAttribute="top" secondItem="UHW-hv-DgT" secondAttribute="top" id="QSL-sH-RtM"/>
-                                            <constraint firstAttribute="height" constant="30" id="RN2-Os-rK6"/>
+                                            <constraint firstAttribute="height" constant="40" id="RN2-Os-rK6"/>
                                             <constraint firstAttribute="trailing" secondItem="2P4-80-IKh" secondAttribute="trailing" id="b68-Jp-Inn"/>
                                             <constraint firstItem="2P4-80-IKh" firstAttribute="leading" secondItem="UHW-hv-DgT" secondAttribute="leading" id="gHq-FK-1pG"/>
                                             <constraint firstAttribute="bottom" secondItem="2P4-80-IKh" secondAttribute="bottom" id="zSf-GY-D59"/>
@@ -2541,7 +2640,7 @@
                                     <constraint firstItem="w1l-Li-UhK" firstAttribute="top" secondItem="d77-8F-krg" secondAttribute="top" constant="20" id="hLh-On-wlo"/>
                                     <constraint firstItem="lag-Kv-LyY" firstAttribute="trailing" secondItem="vJU-rX-U8s" secondAttribute="trailing" id="kkA-Yh-Z1L"/>
                                     <constraint firstItem="NjY-cj-7VP" firstAttribute="top" secondItem="kNo-wn-Gwr" secondAttribute="bottom" multiplier="1.1" constant="-10" id="qU2-FZ-p5z"/>
-                                    <constraint firstItem="lag-Kv-LyY" firstAttribute="top" secondItem="w1l-Li-UhK" secondAttribute="bottom" multiplier="1.5" id="rWI-fP-kOL"/>
+                                    <constraint firstItem="lag-Kv-LyY" firstAttribute="top" secondItem="w1l-Li-UhK" secondAttribute="bottom" multiplier="1.2" id="rWI-fP-kOL"/>
                                     <constraint firstItem="kNo-wn-Gwr" firstAttribute="height" secondItem="NjY-cj-7VP" secondAttribute="height" id="sTF-gp-UVc"/>
                                     <constraint firstItem="6fo-gO-F59" firstAttribute="leading" secondItem="d77-8F-krg" secondAttribute="leading" id="uG2-Xc-QcW"/>
                                     <constraint firstItem="kNo-wn-Gwr" firstAttribute="leading" secondItem="NjY-cj-7VP" secondAttribute="leading" id="uvb-jH-NyR"/>

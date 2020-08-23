@@ -24,6 +24,7 @@ class FinancialServiceViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     var financialServiceValue : String = ""
+    var otherStringValue : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,10 @@ class FinancialServiceViewController: UIViewController {
         self.setRadioButtonPropertiesForFinancialService(radioBtn: fifthBtn, titleString: "Other (Please Specify)", tag: 5)
         
         otherTextField.setTextFieldProperties(placeholderString: "Other", isSecureText: false)
+        otherTextField.delegate = self
+        otherView.backgroundColor = ColorManager.backgroundGrey.color
+        otherTextField.backgroundColor = .clear
+        otherView.cornerRadius = 5.0
         
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
         checkIsFinancialServiceIsChoosen()
@@ -107,8 +112,37 @@ class FinancialServiceViewController: UIViewController {
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-        if let value = LeadsManager.shared.postJobsParams?.page1, !value.isEmpty {
-            self.redirectToPageThreeScreen()
+        if fifthBtn.isSelected {
+            if self.otherStringValue.isEmpty {
+                self.showToast(message: "Please specify the reason")
+                return
+            }
+            else {
+                if let value = LeadsManager.shared.postJobsParams?.page1, !value.isEmpty {
+                    self.redirectToPageThreeScreen()
+                }
+            }
+        }
+        else {
+            if let value = LeadsManager.shared.postJobsParams?.page1, !value.isEmpty {
+                self.redirectToPageThreeScreen()
+            }
+        }
+    }
+}
+
+extension FinancialServiceViewController : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            self.otherStringValue = textField.text ?? ""
+            self.financialServiceValue = textField.text  ?? ""
+            LeadsManager.shared.postJobsParams?.page1 = self.financialServiceValue
+            
+        }
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            textField.hideInfo()
         }
     }
 }

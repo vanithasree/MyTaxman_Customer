@@ -32,7 +32,7 @@ class PageSixViewController: UIViewController {
     func setUpViewUI() {
         
         self.setRadioButtonPropertiesForPageSix(radioBtn: firstBtn, titleString: "Correspondence", tag: 1)
-        self.setRadioButtonPropertiesForPageSix(radioBtn: secondBtn, titleString: "Face toface", tag: 2)
+        self.setRadioButtonPropertiesForPageSix(radioBtn: secondBtn, titleString: "Face to face", tag: 2)
         self.setRadioButtonPropertiesForPageSix(radioBtn: thirdBtn, titleString: "Both", tag: 3)
         titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText:"What type of consultation\ndo you prefer?")
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")

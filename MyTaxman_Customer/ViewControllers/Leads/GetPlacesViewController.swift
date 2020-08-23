@@ -13,16 +13,16 @@ import TweeTextField
 
 class GetPlacesViewController: UIViewController {
     
-    var fetcher: GMSAutocompleteFetcher?
-    var addressArray : [String] = []
     
+    
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addressTextField: TweeAttributedTextField!
-    
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var nextView: UIView!
     @IBOutlet weak var addressTableView: UITableView!
     
     var locationAddress : String = ""
+    var autocompleteResults :[GApiResponse.Autocomplete] = []
     
     
     override func viewDidLoad() {
@@ -41,9 +41,11 @@ class GetPlacesViewController: UIViewController {
     
     func setViewUI() {
         
+        titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText: "Where do you want it?")
+        
         addressTextField?.addTarget(self, action: #selector(textFieldDidChange(textField:)),
                                     for: .editingChanged)
-        addressTextField.setTextFieldProperties(placeholderString: "Location", isSecureText: false)
+        addressTextField.setTextFieldProperties(placeholderString: "Choose Location", isSecureText: false)
         
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
         checkifLocationChoosen()
@@ -58,24 +60,12 @@ class GetPlacesViewController: UIViewController {
         self.addressTableView.estimatedRowHeight = 200
         self.addressTableView.rowHeight = UITableView.automaticDimension
         
-        // Set up the autocomplete filter.
-        let filter = GMSAutocompleteFilter()
-        filter.type = .noFilter
-        filter.country = "au"
         
-        
-        // Create a new session token.
-        let token: GMSAutocompleteSessionToken = GMSAutocompleteSessionToken.init()
-        
-        // Create the fetcher.
-        fetcher = GMSAutocompleteFetcher(bounds: nil, filter: filter)
-        fetcher?.delegate = self
-        fetcher?.provide(token)
         
     }
     
     func showOrHideTableView() {
-        self.addressTableView.isHidden = self.addressArray.count > 0 ? false : true
+        self.addressTableView.isHidden = self.autocompleteResults.count > 0 ? false : true
         
     }
     
@@ -90,7 +80,26 @@ class GetPlacesViewController: UIViewController {
     }
     
     @objc func textFieldDidChange(textField: UITextField) {
-        fetcher?.sourceTextHasChanged(textField.text!)
+        //  fetcher?.sourceTextHasChanged(textField.text!)
+        if let text = textField.text {
+            self.showResults(string:text)
+        }
+    }
+    
+    func showResults(string:String){
+        var input = GInput()
+        input.keyword = string
+        GoogleApi.shared.callApi(input: input) { (response) in
+            if response.isValidFor(.autocomplete) {
+                DispatchQueue.main.async {
+                    
+                    self.autocompleteResults = response.data as! [GApiResponse.Autocomplete]
+                    self.showOrHideTableView()
+                    self.addressTableView.reloadData()
+                    
+                }
+            } else { print(response.error ?? "ERROR") }
+        }
     }
     
     
@@ -109,6 +118,10 @@ class GetPlacesViewController: UIViewController {
         contactInfoVC.getPageType = .contact
         self.navigationController?.pushViewController(contactInfoVC, animated: true)
     }
+    func redirectToUserLoggedInScreen() {
+        let loggedIn = LoggedInInfoViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
+        self.navigationController?.pushViewController(loggedIn, animated: true)
+    }
     
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
@@ -118,7 +131,7 @@ class GetPlacesViewController: UIViewController {
         
         print(LeadsManager.shared.postJobsParams)
         if UserDetails.shared.isLoggedIn {
-            
+            self.redirectToUserLoggedInScreen()
         }
         else {
             self.redirectToContactInfoScreen()
@@ -126,31 +139,6 @@ class GetPlacesViewController: UIViewController {
     }
 }
 
-extension GetPlacesViewController: GMSAutocompleteFetcherDelegate {
-    func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
-        let resultsStr = NSMutableString()
-        self.addressArray.removeAll()
-        for prediction in predictions {
-            if !prediction.attributedPrimaryText.string.isEmpty {
-                resultsStr.appendFormat("%@", prediction.attributedFullText.string)
-            }
-            //resultsStr.appendFormat("Place ID: %@\n", prediction.placeID)
-            
-        }
-        
-        self.addressArray.append(resultsStr as String)
-        self.addressArray = self.addressArray.filter({ $0 != ""})
-        print(self.addressArray)
-        self.showOrHideTableView()
-        self.addressTableView.reloadData()
-        
-    }
-    
-    func didFailAutocompleteWithError(_ error: Error) {
-        print(error)
-        //resultText?.text = error.localizedDescription
-    }
-}
 
 extension GetPlacesViewController : UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -158,7 +146,7 @@ extension GetPlacesViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.addressArray.count
+        return self.autocompleteResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -167,12 +155,12 @@ extension GetPlacesViewController : UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        cell.addresLabel.text = self.addressArray[indexPath.row]
+        cell.addresLabel.text =    self.autocompleteResults[indexPath.row].formattedAddress
         cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.locationAddress = self.addressArray[indexPath.row]
+        self.locationAddress = self.autocompleteResults[indexPath.row].formattedAddress
         self.addressTextField.text = self.locationAddress
         self.checkifLocationChoosen()
     }

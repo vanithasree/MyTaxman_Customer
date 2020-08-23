@@ -29,6 +29,7 @@ class PageFourViewController: UIViewController {
     @IBOutlet weak var nextBtn: UIButton!
     
     var pageFourValue:String = ""
+    var otherTextFieldValue : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +49,14 @@ class PageFourViewController: UIViewController {
         
         titleLabel.setTitleForPageScreenTitle(label: titleLabel, titleText:"What accounting systems do you use?")
         otherTextField.setTextFieldProperties(placeholderString:"Other", isSecureText: false)
+        otherTextField.delegate = self
+        otheView.backgroundColor = ColorManager.backgroundGrey.color
+        otheView.cornerRadius = 5.0
+        
         
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
         checkIsPageFourValueChoosen()
         showOrHideOthersView(value: true)
-        
-        
     }
     
     func showOrHideOthersView(value:Bool) {
@@ -89,7 +92,8 @@ class PageFourViewController: UIViewController {
             if radioButton.tag == 7 {
                 self.showOrHideOthersView(value: false)
                 self.pageFourValue = ""
-                self.checkIsPageFourValueChoosen()
+                self.nextView.isHidden = false
+                //self.checkIsPageFourValueChoosen()
             }
             else {
                 self.showOrHideOthersView(value: true)
@@ -103,11 +107,25 @@ class PageFourViewController: UIViewController {
     }
     
     @IBAction func onTappedNextBtn(_ sender: UIButton) {
-       
+        if seventhBtn.isSelected == true {
+            if self.otherTextFieldValue.isEmpty {
+                self.showToast(message: "Please specify the reason")
+                return
+            }
+            else {
+                if let value = LeadsManager.shared.postJobsParams?.page5, !value.isEmpty {
+                    print(LeadsManager.shared.postJobsParams)
+                    self.redirectToPageFiveScreen()
+                }
+            }
+        }
+        else {
             if let value = LeadsManager.shared.postJobsParams?.page5, !value.isEmpty {
-                 print(LeadsManager.shared.postJobsParams)
+                print(LeadsManager.shared.postJobsParams)
                 self.redirectToPageFiveScreen()
             }
+        }
+        
     }
     
     func redirectToPageFiveScreen() {
@@ -125,4 +143,18 @@ class PageFourViewController: UIViewController {
      }
      */
     
+}
+extension PageFourViewController : UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            self.otherTextFieldValue = textField.text ?? ""
+            self.pageFourValue = textField.text  ?? ""
+            LeadsManager.shared.postJobsParams?.page5 = self.pageFourValue
+        }
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if let textField = textField as? TweeAttributedTextField {
+            textField.hideInfo()
+        }
+    }
 }

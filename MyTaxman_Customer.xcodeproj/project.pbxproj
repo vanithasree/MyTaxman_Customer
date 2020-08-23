@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BB5878C24F1FEFE007F5722 /* LoggedInInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB5878B24F1FEFE007F5722 /* LoggedInInfoViewController.swift */; };
 		0BE434D524EF98F4000F6C22 /* SettingsApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434D424EF98F4000F6C22 /* SettingsApiManager.swift */; };
 		0BE434D824EF99C9000F6C22 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434D724EF99C9000F6C22 /* SettingsModel.swift */; };
 		0BE434DB24EF9A4C000F6C22 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434DA24EF9A4C000F6C22 /* SettingsViewModel.swift */; };
 		0BE434DD24EFD652000F6C22 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434DC24EFD652000F6C22 /* EditProfile.swift */; };
 		0BE434DF24F0A720000F6C22 /* EditJobDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434DE24F0A720000F6C22 /* EditJobDescriptionViewController.swift */; };
+		0BE434E424F1E887000F6C22 /* GoogleApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434E124F1E886000F6C22 /* GoogleApiHelper.swift */; };
+		0BE434E524F1E887000F6C22 /* GoogleApiHelper+Nearby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434E224F1E887000F6C22 /* GoogleApiHelper+Nearby.swift */; };
+		0BE434E624F1E887000F6C22 /* NearByEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434E324F1E887000F6C22 /* NearByEnum.swift */; };
 		139CB5B5A7B2BBDCDDF3EA53 /* Pods_MyTaxman_CustomerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7AEA97E077DD7C30DEC2B40 /* Pods_MyTaxman_CustomerTests.framework */; };
 		1818C1BD24D54B28009808CE /* CancelJobsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */; };
 		181B01EC24DA9175001CDEF5 /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */; };
@@ -195,11 +199,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BB5878B24F1FEFE007F5722 /* LoggedInInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInfoViewController.swift; sourceTree = "<group>"; };
 		0BE434D424EF98F4000F6C22 /* SettingsApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsApiManager.swift; sourceTree = "<group>"; };
 		0BE434D724EF99C9000F6C22 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		0BE434DA24EF9A4C000F6C22 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		0BE434DC24EFD652000F6C22 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		0BE434DE24F0A720000F6C22 /* EditJobDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditJobDescriptionViewController.swift; sourceTree = "<group>"; };
+		0BE434E124F1E886000F6C22 /* GoogleApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleApiHelper.swift; sourceTree = "<group>"; };
+		0BE434E224F1E887000F6C22 /* GoogleApiHelper+Nearby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleApiHelper+Nearby.swift"; sourceTree = "<group>"; };
+		0BE434E324F1E887000F6C22 /* NearByEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByEnum.swift; sourceTree = "<group>"; };
 		1818C1BC24D54B28009808CE /* CancelJobsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelJobsListViewController.swift; sourceTree = "<group>"; };
 		181B01EB24DA9175001CDEF5 /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
 		181B01ED24DB1C7D001CDEF5 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
@@ -468,6 +476,16 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		0BE434E024F1E609000F6C22 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				0BE434E124F1E886000F6C22 /* GoogleApiHelper.swift */,
+				0BE434E224F1E887000F6C22 /* GoogleApiHelper+Nearby.swift */,
+				0BE434E324F1E887000F6C22 /* NearByEnum.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		1826253324CCBB3100DF7A4B /* Jobs */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +551,7 @@
 		1888973B24C7281C000DFAB3 /* MyTaxman_Customer */ = {
 			isa = PBXGroup;
 			children = (
+				0BE434E024F1E609000F6C22 /* Source */,
 				18B2E62424C89ADF002A9CCE /* Extensions */,
 				1888977324C7286C000DFAB3 /* Libararies */,
 				1888977224C72866000DFAB3 /* Utitlities */,
@@ -703,6 +722,7 @@
 				1826254024CD4B0100DF7A4B /* LegalAdviceServiceViewController.swift */,
 				1826254524CDC79000DF7A4B /* EmployeeOrContractViewController.swift */,
 				1826254B24CDEE6F00DF7A4B /* TaxReturnViewController.swift */,
+				0BB5878B24F1FEFE007F5722 /* LoggedInInfoViewController.swift */,
 			);
 			path = Leads;
 			sourceTree = "<group>";
@@ -1296,11 +1316,13 @@
 				3B6B6E5C24D9746C00D70E5F /* LeftViewCell.swift in Sources */,
 				1826253024CCA41F00DF7A4B /* PageSixViewController.swift in Sources */,
 				3B4917C624DEB5F3003E0761 /* ChangePasswordViewController.swift in Sources */,
+				0BB5878C24F1FEFE007F5722 /* LoggedInInfoViewController.swift in Sources */,
 				3B4917C824DEB613003E0761 /* NotificationsViewController.swift in Sources */,
 				18F6AA6A24CC07C1005F3855 /* JobListViewController.swift in Sources */,
 				3BF05BE024C96AEC00E16081 /* StringConstants.swift in Sources */,
 				3B1D01C224DEFB1F00CBA58D /* OptionTableViewCell.swift in Sources */,
 				3BF05BC524C9634600E16081 /* SliderExtension.swift in Sources */,
+				0BE434E524F1E887000F6C22 /* GoogleApiHelper+Nearby.swift in Sources */,
 				1826253624CCBB4E00DF7A4B /* AddressTableViewCell.swift in Sources */,
 				3BF05BCF24C9634600E16081 /* DateExtension.swift in Sources */,
 				3B6B6E6B24D97D5000D70E5F /* NoDataView.swift in Sources */,
@@ -1346,6 +1368,7 @@
 				3B1AFF8124DE9975006DC145 /* MenuProfileHeaderView.swift in Sources */,
 				3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */,
 				18B2E62C24C89D21002A9CCE /* LeadsCollectionViewCell.swift in Sources */,
+				0BE434E424F1E887000F6C22 /* GoogleApiHelper.swift in Sources */,
 				3BF05BCD24C9634600E16081 /* Validations.swift in Sources */,
 				1826254C24CDEE6F00DF7A4B /* TaxReturnViewController.swift in Sources */,
 				3B8274D424D51A6B000E1617 /* QuoteDetailsViewController.swift in Sources */,
@@ -1382,6 +1405,7 @@
 				3B14A58C24CC113500FC235D /* TabBarViewController.swift in Sources */,
 				3B1AFF6B24DE6B45006DC145 /* JobQuoteTableViewCell.swift in Sources */,
 				3B5AF94D24F020E9009FD397 /* ClosedJobListModel.swift in Sources */,
+				0BE434E624F1E887000F6C22 /* NearByEnum.swift in Sources */,
 				3BF05BE324C96AEC00E16081 /* Config.swift in Sources */,
 				3BFB7CFB24D98A8400065135 /* ChatTextInputView.swift in Sources */,
 				3B4917C424DEB5E4003E0761 /* EditProfileViewController.swift in Sources */,
@@ -1567,8 +1591,9 @@
 			baseConfigurationReference = 204D9835D667B4F26C12E8EA /* Pods-MyTaxman_Customer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9MKQJ3567U;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KYSQMV7X4U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -1661,8 +1686,9 @@
 					"-Xlinker",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuya.chat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunrise.taxmancustomerdev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = TaxmanCustomer_Dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1673,8 +1699,9 @@
 			baseConfigurationReference = 5EB8A480B1904D8FE5D8DEB4 /* Pods-MyTaxman_Customer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9MKQJ3567U;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KYSQMV7X4U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -1767,8 +1794,9 @@
 					"-Xlinker",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuya.chat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunrise.taxmancustomerdev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = TaxmanCustomer_Dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

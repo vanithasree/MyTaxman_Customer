@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         
-        GMSPlacesClient.provideAPIKey("AIzaSyBXugsG-nxQoQMEbIUAEaspFtS7-4rnOFk")
+        GoogleApi.shared.initialiseWithKey("AIzaSyBXugsG-nxQoQMEbIUAEaspFtS7-4rnOFk")
+        
+        //GMSPlacesClient.provideAPIKey("AIzaSyBXugsG-nxQoQMEbIUAEaspFtS7-4rnOFk")
         
         if UserDetails.shared.isLoggedIn {
             redirectToHomePage()

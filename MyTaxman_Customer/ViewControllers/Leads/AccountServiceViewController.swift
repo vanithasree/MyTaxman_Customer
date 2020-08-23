@@ -24,6 +24,7 @@ class AccountServiceViewController: UIViewController {
     @IBOutlet weak var otherTextField: TweeAttributedTextField!
     
     var pageOneValueForAccountService : String = ""
+    var otherStringValue : String = ""
     
     
     override func viewDidLoad() {
@@ -45,8 +46,11 @@ class AccountServiceViewController: UIViewController {
         titleLabek.setTitleForPageScreenTitle(label: titleLabek, titleText:"Which service do you need?")
         nextBtn.setDarkGreenTheme(btn: nextBtn, title: "Next")
         checkAccountServiceValueisChoosen()
-        self.otherView.backgroundColor = .white
+        self.otherView.backgroundColor = ColorManager.backgroundGrey.color
+        self.otherTextField.delegate = self
+        self.otherTextField.backgroundColor = .clear
         self.otherView.isHidden = true
+      
         
     }
     
@@ -76,17 +80,19 @@ class AccountServiceViewController: UIViewController {
                 for button in radioButton.selectedButtons() {
                     print(String(format: "%@ is selected.\n", button.titleLabel!.text!));
                     print(button.tag)
+                         LeadsManager.shared.postJobsParams?.page1 = button.titleLabel!.text ?? ""
                     
                     let buttonsArray = radioButton.selectedButtons().compactMap { $0.tag == 5}
                     print(buttonsArray)
                     if buttonsArray.contains(true) {
                         self.otherView.isHidden = false
+                        self.nextview.isHidden = false
                         self.pageOneValueForAccountService = ""
-                        self.checkAccountServiceValueisChoosen()
                     }
                     else {
                         self.otherView.isHidden = true
                         self.pageOneValueForAccountService = button.titleLabel!.text ?? ""
+                         LeadsManager.shared.postJobsParams?.page1 = self.pageOneValueForAccountService
                         self.checkAccountServiceValueisChoosen()
                     }
                 }
@@ -115,12 +121,28 @@ class AccountServiceViewController: UIViewController {
      }
      */
     func redirectToPagethreeScreen() {
+        print(LeadsManager.shared.postJobsParams?.page1)
         let pageThreeVC = PageThreeViewController.instantiateFromAppStoryboard(appStoryboard: .Leads)
         self.navigationController?.pushViewController(pageThreeVC, animated: true)
     }
     
     @IBAction func onTapNextBtn(_ sender: UIButton) {
-        self.redirectToPagethreeScreen()
+        if fifthBtn.isSelected {
+            if self.otherStringValue.isEmpty {
+                self.showToast(message: "Please specify the reason")
+                return
+            }
+            else {
+                if let value = LeadsManager.shared.postJobsParams?.page1 {
+                    self.redirectToPagethreeScreen()
+                }
+            }
+        }
+        else {
+            if let value = LeadsManager.shared.postJobsParams?.page1 {
+                self.redirectToPagethreeScreen()
+            }
+        }
     }
     
     
@@ -130,6 +152,8 @@ extension AccountServiceViewController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let textField = textField as? TweeAttributedTextField {
             self.pageOneValueForAccountService = textField.text ?? ""
+            self.otherStringValue = textField.text ?? ""
+            LeadsManager.shared.postJobsParams?.page1 = self.pageOneValueForAccountService
         }
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {

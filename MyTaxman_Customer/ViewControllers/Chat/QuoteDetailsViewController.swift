@@ -78,7 +78,7 @@ extension QuoteDetailsViewController: UITableViewDataSource {
             cell.setValue(data: quoteDetailList[indexPath.row], index: indexPath.row, inbox: inbox)
             break
         case 1:
-            cell.setValue(data: jobDetailList[indexPath.row], index: indexPath.row, inbox: inbox)
+            cell.setJobDetailValue(data: jobDetailList[indexPath.row], index: indexPath.row, inbox: inbox)
         default:
             break
         }

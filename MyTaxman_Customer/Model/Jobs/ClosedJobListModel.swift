@@ -236,3 +236,22 @@ struct Received_quotes : Codable {
     }
 
 }
+
+
+struct SubmitReviewBase : Codable {
+    let desc : String?
+    let code : String?
+
+    enum CodingKeys: String, CodingKey {
+
+        case desc = "desc"
+        case code = "code"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        desc = try values.decodeIfPresent(String.self, forKey: .desc)
+        code = try values.decodeIfPresent(String.self, forKey: .code)
+    }
+
+}

@@ -38,7 +38,9 @@ class ChatTableViewCell: UITableViewCell {
     
     func setupViews(){
         
-        profileImageView.cornerRadius = profileImageView.frame.size.width / 2
+        doOnMain {
+            self.profileImageView.cornerRadius = self.profileImageView.frame.size.width / 2
+        }
         profileImageView.contentMode = .scaleAspectFill
         
         //deliveryStatusImageView.contentMode = .scaleAspectFit

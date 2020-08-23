@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NotificationsViewController: UIViewController {
     @IBOutlet weak var newMessageLabel: UILabel!
@@ -24,6 +25,8 @@ class NotificationsViewController: UIViewController {
     @IBOutlet weak var newsLetterLabel: UILabel!
     
     var profileDetail : CustomerProfileDesc?
+    private var settingsViewModel = SettingsViewModel()
+    var delegate : ApiLoadDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewUI()
@@ -72,7 +75,7 @@ class NotificationsViewController: UIViewController {
     }
     
     @objc func saveTheChanges() {
-        
+        self.updateChanges()
     }
     func setData() {
         if let detail = profileDetail {
@@ -88,6 +91,37 @@ class NotificationsViewController: UIViewController {
             }
             else {
                 self.messageSwitch.setOn(false, animated: true)
+            }
+        }
+    }
+    
+    func updateChanges() {
+        let params: Parameters = [
+            "customerid" : UserDetails.shared.userId ,
+            "newsletter_notification": newsLetterSwitch.isOn ? "True" : "False",
+            "newmessage_notification": messageSwitch.isOn ? "True" : "False",
+            "from_time": "12:00 PM",
+            "to_time": "2:00 PM",
+            "time_zone": "Centeral Time Zone",
+            "profile_updated_on": Date().dateAndTimetoString()
+        ]
+        LoadingIndicator.shared.show(forView: self.view)
+        settingsViewModel.editCustomerNewsNotifications(input: params) { (result: ChangePasswordBase?, alert: AlertMessage?) in
+            LoadingIndicator.shared.hide()
+            if let result = result {
+                if result.code == "1" {
+                    self.presentAlert(withTitle: "", message: result.desc ?? "") {
+                        doOnMain {
+                            self.delegate?.getStatus(value: true)
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+                    }
+                }
+                else {
+                    
+                }
+            } else if let alert = alert {
+                self.presentAlert(withTitle: "", message: alert.errorMessage)
             }
         }
     }

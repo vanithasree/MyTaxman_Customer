@@ -21,4 +21,7 @@ class SettingsViewModel {
     func changeCusPasswordCredentials(input: Parameters, handler: @escaping (_ user: ChangePasswordBase?, _ error: AlertMessage?)->()) {
         SettingsApiManager().changeCustomerPassword(input: input, handler: handler)
     }
+    func editCustomerNewsNotifications(input: Parameters, handler: @escaping (_ user: ChangePasswordBase?, _ error: AlertMessage?)->()) {
+          SettingsApiManager().editNewsLetterNotifications(input: input, handler: handler)
+      }
 }

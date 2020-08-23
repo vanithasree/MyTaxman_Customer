@@ -187,6 +187,7 @@ extension SettingsViewController {
         let notificationVC = NotificationsViewController.instantiateFromAppStoryboard(appStoryboard: .Settings)
         notificationVC.hidesBottomBarWhenPushed = true
         notificationVC.profileDetail = self.profileDetails.first
+        notificationVC.delegate = self
         self.navigationController?.pushViewController(notificationVC, animated: true)
     }
     

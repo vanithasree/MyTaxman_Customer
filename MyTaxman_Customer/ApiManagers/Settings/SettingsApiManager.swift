@@ -14,6 +14,7 @@ enum SettingsApi {
     case cusprofile
     case cuseditprofile
     case cuschangepassword
+    case cusprofile_notificationupdate
     
 }
 
@@ -43,6 +44,8 @@ extension SettingsApi: EndPointType {
             return "/cusprofile"
         case .cuschangepassword:
             return "/cuschangepassword"
+        case .cusprofile_notificationupdate:
+            return "/cusprofile_notificationupdate"
             
         }
     }
@@ -108,6 +111,15 @@ class SettingsApiManager {
     }
     func changeCustomerPassword(input: Parameters, handler: @escaping (_ result: ChangePasswordBase?, _ error: AlertMessage?)->()) {
         APIManager.shared().call(type: SettingsApi.cuschangepassword, params: input) { (result: ChangePasswordBase?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
+    func editNewsLetterNotifications(input: Parameters, handler: @escaping (_ result: ChangePasswordBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: SettingsApi.cusprofile_notificationupdate, params: input) { (result: ChangePasswordBase?,message: AlertMessage?) in
             if let result = result {
                 handler(result, nil)
             } else {

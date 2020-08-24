@@ -8,22 +8,44 @@
 
 import UIKit
 import BetterSegmentedControl
-class InboxDetailsViewController: UIViewController {
-
+class InboxDetailsViewController: BaseViewController {
+    
+    
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var chatHeaderView: UIView!
+   @IBOutlet weak var voiceCallBtn: UIButton!
+    @IBOutlet weak var videoCallBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet var segmentControl: BetterSegmentedControl!
     @IBOutlet var containerView: UIView!
     @IBOutlet var scrollView: UIScrollView!
     private lazy var viewControllers: [UIViewController] = {
-         return self.preparedViewControllers()
-     }()
+        return self.preparedViewControllers()
+    }()
     var inbox: Inboxlist?
+    var quoteDetailList : [DetailsData] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        isTransparent = true
         doOnMain {
             self.setupScrollView()
         }
+        
+        nameLabel.setLabelCustomProperties(titleText: inbox?.vendorname ?? "", textColor: .black, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(16)), numberOfLines: 0, alignment: .left)
+        valueLabel.setLabelCustomProperties(titleText: inbox?.customername ?? "", textColor: .lightGray, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(14)), numberOfLines: 0, alignment: .left)
+        
+        
         self.setUpSegmentViewControl(segmentControl: segmentControl, bgColor: .white, titles: ["Quote Details","Chat", "Business Profile"])
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.isHideNavigationBar = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.isHideNavigationBar = false
     }
     
     private func preparedViewControllers() -> [UIViewController] {
@@ -32,13 +54,17 @@ class InboxDetailsViewController: UIViewController {
         
         let chatVC = ChatViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
         chatVC.inbox = inbox
-
+        
         let businessVC = BusinessProfileViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
         businessVC.inbox = inbox
-
+        
         return [
             quoteDetailsVC,chatVC,businessVC
         ]
+    }
+    
+    @IBAction func onTappedBackBtn(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     func setUpSegmentViewControl(segmentControl : BetterSegmentedControl, bgColor:UIColor, titles:[String]) {
         
@@ -60,7 +86,7 @@ class InboxDetailsViewController: UIViewController {
                                   .cornerRadius(10)]
         segmentControl.addTarget(self, action: #selector(self.controlValueChanged(_:)), for: .valueChanged)
     }
-
+    
     @IBAction func controlValueChanged(_ sender: BetterSegmentedControl) {
         print("The selected index is \(sender.index)")
         let width = self.view.frame.size.width
@@ -89,15 +115,17 @@ class InboxDetailsViewController: UIViewController {
         }
     }
     
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }
 
 extension InboxDetailsViewController: UIScrollViewDelegate {

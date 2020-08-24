@@ -391,9 +391,9 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
         switch self.segmentView.index {
         case 0:
             var height : CGFloat = 0
-//            if ((activeList[indexPath.row].task_status == "0") && (activeList[indexPath.row].received_quotes == "4")) {
-//                height = 44
-//            }
+            //            if ((activeList[indexPath.row].task_status == "0") && (activeList[indexPath.row].received_quotes == "4")) {
+            //                height = 44
+            //            }
             height = (activeList[indexPath.row].description ?? "").Dynamicheight(withConstrainedWidth: tableView.frame.size.width - 40, font: UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(14.0))!)
             
             let completeResult = activeList[indexPath.row].vendor?.filter({ (obj) -> Bool in

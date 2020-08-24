@@ -179,9 +179,9 @@ struct Inboxlist : Codable {
     let task_cancel_status : String?
     let chatid : String?
     let rmsg : [InboxListRmsg]?
-
+    
     enum CodingKeys: String, CodingKey {
-
+        
         case quoteid = "quoteid"
         case customerid = "customerid"
         case vendorid = "vendorid"
@@ -211,7 +211,7 @@ struct Inboxlist : Codable {
         case chatid = "chatid"
         case rmsg = "rmsg"
     }
-
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         quoteid = try values.decodeIfPresent(String.self, forKey: .quoteid)
@@ -243,7 +243,7 @@ struct Inboxlist : Codable {
         chatid = try values.decodeIfPresent(String.self, forKey: .chatid)
         rmsg = try values.decodeIfPresent([InboxListRmsg].self, forKey: .rmsg)
     }
-
+    
 }
 struct InboxListRmsg : Codable {
     let recent_message : String?

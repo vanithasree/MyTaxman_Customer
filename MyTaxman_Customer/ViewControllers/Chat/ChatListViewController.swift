@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-class ChatListViewController: UIViewController {
+class ChatListViewController: BaseViewController {
     
     @IBOutlet var chatTableView: UITableView!
     private var inboxViewModel = InboxViewModel()
@@ -16,6 +16,7 @@ class ChatListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Inbox"
+        isTransparent = true
         // Do any additional setup after loading the view.
         setupViews()
     }

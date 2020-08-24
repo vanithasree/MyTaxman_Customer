@@ -365,9 +365,9 @@ struct PostJobForLoggedInCustomer : Codable {
     let tasks_quotes_details : [Tasks_quotes_details]?
     let quotes : [QuotesForTask]?
     let desc : String?
-
+    
     enum CodingKeys: String, CodingKey {
-
+        
         case code = "code"
         case customerid = "customerid"
         case customer_tasks = "customer_tasks"
@@ -375,7 +375,7 @@ struct PostJobForLoggedInCustomer : Codable {
         case quotes = "quotes"
         case desc = "desc"
     }
-
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         code = try values.decodeIfPresent(String.self, forKey: .code)
@@ -385,7 +385,7 @@ struct PostJobForLoggedInCustomer : Codable {
         quotes = try values.decodeIfPresent([QuotesForTask].self, forKey: .quotes)
         desc = try values.decodeIfPresent(String.self, forKey: .desc)
     }
-
+    
 }
 struct Customer_tasks : Codable {
     let page6 : String?
@@ -418,9 +418,9 @@ struct Customer_tasks : Codable {
     let task_cancel_on : String?
     let service_location : String?
     let page1 : String?
-
+    
     enum CodingKeys: String, CodingKey {
-
+        
         case page6 = "page6"
         case taskid = "taskid"
         case page4_title = "page4_title"
@@ -452,7 +452,7 @@ struct Customer_tasks : Codable {
         case service_location = "service_location"
         case page1 = "page1"
     }
-
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         page6 = try values.decodeIfPresent(String.self, forKey: .page6)
@@ -486,12 +486,12 @@ struct Customer_tasks : Codable {
         service_location = try values.decodeIfPresent(String.self, forKey: .service_location)
         page1 = try values.decodeIfPresent(String.self, forKey: .page1)
     }
-
+    
 }
 
 struct Tasks_quotes_details : Codable {
     let received_quotes : String?
-  /*  let taskid : String?
+    let taskid : String?
     let customerid : String?
     let category : String?
     let page1_title : String?
@@ -520,13 +520,13 @@ struct Tasks_quotes_details : Codable {
     let task_cancel_on : String?
     let task_submitted_on : String?
     let vendor_review : String?
-    let vendor_review_givenon : String?*/
+    let vendor_review_givenon : String?
     
-
+    
     enum CodingKeys: String, CodingKey {
-
+        
         case received_quotes = "received_quotes"
-     /*   case taskid = "taskid"
+        case taskid = "taskid"
         case customerid = "customerid"
         case category = "category"
         case page1_title = "page1_title"
@@ -555,14 +555,14 @@ struct Tasks_quotes_details : Codable {
         case task_cancel_on = "task_cancel_on"
         case task_submitted_on = "task_submitted_on"
         case vendor_review = "vendor_review"
-        case vendor_review_givenon = "vendor_review_givenon"*/
+        case vendor_review_givenon = "vendor_review_givenon"
         
     }
-
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         received_quotes = try values.decodeIfPresent(String.self, forKey: .received_quotes)
-        /*taskid = try values.decodeIfPresent(String.self, forKey: .taskid)
+        taskid = try values.decodeIfPresent(String.self, forKey: .taskid)
         customerid = try values.decodeIfPresent(String.self, forKey: .customerid)
         category = try values.decodeIfPresent(String.self, forKey: .category)
         page1_title = try values.decodeIfPresent(String.self, forKey: .page1_title)
@@ -591,7 +591,25 @@ struct Tasks_quotes_details : Codable {
         task_cancel_on = try values.decodeIfPresent(String.self, forKey: .task_cancel_on)
         task_submitted_on = try values.decodeIfPresent(String.self, forKey: .task_submitted_on)
         vendor_review = try values.decodeIfPresent(String.self, forKey: .vendor_review)
-        vendor_review_givenon = try values.decodeIfPresent(String.self, forKey: .vendor_review_givenon)*/
+        vendor_review_givenon = try values.decodeIfPresent(String.self, forKey: .vendor_review_givenon)
+    }
+    
+}
+
+struct CustomerJobDetailBase : Codable {
+    let code : String?
+    let desc : [Quotes]?
+
+    enum CodingKeys: String, CodingKey {
+
+        case code = "code"
+        case desc = "desc"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        code = try values.decodeIfPresent(String.self, forKey: .code)
+        desc = try values.decodeIfPresent([Quotes].self, forKey: .desc)
     }
 
 }

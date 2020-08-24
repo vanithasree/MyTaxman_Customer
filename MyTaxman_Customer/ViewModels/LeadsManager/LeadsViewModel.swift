@@ -43,6 +43,9 @@ class LeadViewModel {
     func customerReviewSubmit(input: Parameters, handler: @escaping (_ user: SubmitReviewBase?, _ error: AlertMessage?)->()) {
         LeadApiManager().customerReviewSubmit(input: input, handler: handler)
     }
+    func getTaskDetailList(input: Parameters, handler: @escaping (_ user: CustomerJobDetailBase?, _ error: AlertMessage?)->()) {
+        LeadApiManager().getTaskDetail(input: input, handler: handler)
+    }
 }
 
 

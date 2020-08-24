@@ -20,10 +20,11 @@ enum LeadsApi {
     case closedtask
     
     case customer_review_submit
-
+    
     case cus_posttask_edit
     case cuscanceltask
     case hire_technician
+    case custaskdetail
     
 }
 // MARK: - EndPointType
@@ -68,6 +69,8 @@ extension LeadsApi: EndPointType {
             return "/hire_technician"
         case .customer_review_submit:
             return "/customer_review_submit"
+        case .custaskdetail:
+            return "/custaskdetail"
         }
     }
     
@@ -170,14 +173,14 @@ class LeadApiManager {
         }
     }
     func cancelTask(input: Parameters, handler: @escaping (_ result: ChangePasswordBase?, _ error: AlertMessage?)->()) {
-           APIManager.shared().call(type: LeadsApi.cuscanceltask, params: input) { (result: ChangePasswordBase?,message: AlertMessage?) in
-               if let result = result {
-                   handler(result, nil)
-               } else {
-                   handler(nil, message!)
-               }
-           }
-       }
+        APIManager.shared().call(type: LeadsApi.cuscanceltask, params: input) { (result: ChangePasswordBase?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
     
     func hireTechnician(input: Parameters, handler: @escaping (_ result: ChangePasswordBase?, _ error: AlertMessage?)->()) {
         APIManager.shared().call(type: LeadsApi.hire_technician, params: input) { (result: ChangePasswordBase?,message: AlertMessage?) in
@@ -198,5 +201,15 @@ class LeadApiManager {
             }
         }
     }
-
+    
+    
+    func getTaskDetail(input: Parameters, handler: @escaping (_ result: CustomerJobDetailBase?, _ error: AlertMessage?)->()) {
+        APIManager.shared().call(type: LeadsApi.custaskdetail, params: input) { (result: CustomerJobDetailBase?,message: AlertMessage?) in
+            if let result = result {
+                handler(result, nil)
+            } else {
+                handler(nil, message!)
+            }
+        }
+    }
 }

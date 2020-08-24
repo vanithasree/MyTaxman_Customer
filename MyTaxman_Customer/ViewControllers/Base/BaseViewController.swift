@@ -22,7 +22,8 @@ class BaseViewController: UIViewController {
                 navigationController?.navigationBar.isTranslucent = true
                 navigationItem.titleView = nil
                 
-                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+                
                 //self.navigationController!.navigationBar.topItem!.title = "";
                 
             } else {

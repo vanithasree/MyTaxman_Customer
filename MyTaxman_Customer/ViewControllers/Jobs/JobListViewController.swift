@@ -204,16 +204,16 @@ class JobListViewController: BaseViewController {
     }
     
     func redirectToCallVC(call : SINCall?) {
-        let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+       /* let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
         callVC.call = call
         callVC.modalPresentationStyle = .fullScreen
-        self.present(callVC, animated: true, completion: nil)
+        self.present(callVC, animated: true, completion: nil)*/
     }
     func redirectToVideoCallVC(call : SINCall?) {
-        let callVC = VideoCallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+      /*  let callVC = VideoCallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
         callVC.call = call
         callVC.modalPresentationStyle = .fullScreen
-        self.present(callVC, animated: true, completion: nil)
+        self.present(callVC, animated: true, completion: nil)*/
     }
     
     // MARK: - Action handlers

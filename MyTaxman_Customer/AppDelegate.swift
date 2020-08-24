@@ -10,13 +10,23 @@ import UIKit
 import IQKeyboardManagerSwift
 import GooglePlaces
 import Sinch
+import CallKit
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var client: SINClient!
+    
+    
+    class var shared : AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    var push: SINManagedPush?
+    var client: SINClient?
+    var callProviderDelegate : CallProviderDelegate?
+    var sinCallManager : SinCallManager?
     
     var player: AVAudioPlayer?
     
@@ -89,6 +99,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate : SINClientDelegate {
+    func initDelegates(){
+        if let client = client, sinCallManager == nil{
+            sinCallManager = SinCallManager(client: client)
+            callProviderDelegate = CallProviderDelegate(callManager: sinCallManager ?? SinCallManager(client: client))
+        }else{
+            print("We have a problem in app delegate!")
+        }
+    }
     func initSinchClient(withUserId userId: String) {
         
         if client == nil {
@@ -97,11 +115,14 @@ extension AppDelegate : SINClientDelegate {
                                   applicationSecret: "KlD0ud20WEebaDd5rioVTA==",
                                   environmentHost: "clientapi.sinch.com",
                                   userId: userId)
-            client.delegate = self
-            client.setSupportCalling(true)
-            // client.enableManagedPushNotifications()
-            client.start()
-            client.startListeningOnActiveConnection()
+            client?.setSupportCalling(true)
+            // client?.setSupportMessaging(false)
+            client?.enableManagedPushNotifications()
+            client?.delegate = self
+            client?.call().delegate = self
+            client?.start()
+            client?.startListeningOnActiveConnection()
+            initDelegates()
             
         }
     }
@@ -134,8 +155,113 @@ extension AppDelegate : SINClientDelegate {
     func client(client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
         //        call.delegate = self;
         //        call.answer()
-        
         print("Incoming call coming")
+        print("Received a call from: \(call.remoteUserId ?? "")")
+        sinCallManager?.currentCall = call
+        NotificationCenter.default.post(name: NSNotification.Name.init("inComingCall"), object: call, userInfo: ["callObj":call])
         
     }
+    
+}
+extension AppDelegate : SINCallClientDelegate {
+    
+    /* func client(_ client: SINCallClient!, localNotificationForIncomingCall call: SINCall!) -> SINLocalNotification! {
+     let notification = SINLocalNotification()
+     notification.alertBody = "Incoming call from : \(call.remoteUserId!)"
+     return notification
+     }*/
+    
+    // this func is called when app is in foreground/or comes to foreground
+    func client(_ client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
+        print("Received a call from: \(call.remoteUserId ?? "")")
+        
+        sinCallManager?.currentCall = call
+        
+        NotificationCenter.default.post(name: NSNotification.Name.init("inComingCall"), object: call, userInfo: ["callObj":call])
+    }
+    
+    // this func is called when app is in background
+    func client(_ client: SINCallClient!, willReceiveIncomingCall call: SINCall!) {
+        print("Received a call from: \(call.remoteUserId ?? "")")
+        
+        if UIApplication.shared.applicationState != .active {
+            callProviderDelegate?.inComingCall(call: call)
+            sinCallManager?.isComingFromCX = true
+        }
+    }
+}
+extension AppDelegate : SINManagedPushDelegate {
+    func managedPush(_ managedPush: SINManagedPush!, didReceiveIncomingPushWithPayload payload: [AnyHashable : Any]!, forType pushType: String!) {
+        handleRemoteNotification(userInfo: payload)
+    }
+    
+    func handleRemoteNotification(userInfo: [AnyHashable : Any]) {
+        print(userInfo)
+        let result = client?.relayRemotePushNotification(userInfo)
+        
+        guard let resultIsCall = result?.isCall(), let callCancelled = result?.call().isTimedOut else { return }
+        
+        if let aps = userInfo[AnyHashable("aps")] as? NSDictionary {
+            if let alert = aps.value(forKey: "alert") as? NSDictionary{
+                if let callState = alert.value(forKey: "loc-key") as? String{
+                    if callState.compare(SINCH_CALL_STATES.Cancelled.rawValue) == ComparisonResult.orderedSame{
+                        if let call = sinCallManager?.currentCall {
+                            sinCallManager?.endingThe(call: call)
+                        }
+                        if UIApplication.shared.applicationState != UIApplication.State.active{
+                            
+                            /* DispatchQueue.global(qos: .userInitiated).async
+                             {
+                             NotificationCenter.default.post(name: NSNotification.Name.init("openCxCallVC"), object: nil, userInfo: ["userId":result?.call().remoteUserId as! String])
+                             
+                             }*/
+                            NotificationCenter.default.post(name: NSNotification.Name.init("openCxCallVC"), object: nil, userInfo: ["userId":result?.call().remoteUserId as! String])
+                            
+                            
+                        }
+                    }else{
+                        // post a notification to dismiss cxcallcontroller
+                    }
+                }
+            }
+        }
+    }
+}
+// MARK:- UNUserNotificationCenterDelegate
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let userInfo = response.notification.request.content.userInfo
+        print("didReceive ======", userInfo)
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        let userInfo = notification.request.content.userInfo
+        print("willPresent ======", userInfo)
+        completionHandler([.alert, .sound, .badge])
+    }
+    func application( _ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data ) {
+        
+        var token: String = ""
+        for i in 0..<deviceToken.count {
+            token += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
+        }
+        
+        UserDefaults.standard.setValue(token, forKey: "kDeviceToken")
+        UserDefaults.standard.synchronize()
+        self.push?.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+        
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register the notification APNS Token")
+    }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        self.push?.application(application, didReceiveRemoteNotification: userInfo)
+    }
+    
+    
 }

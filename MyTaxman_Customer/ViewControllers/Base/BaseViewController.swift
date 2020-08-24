@@ -7,8 +7,19 @@
 //
 
 import UIKit
+import Sinch
+import CallKit
 
 class BaseViewController: UIViewController {
+    
+    var client : SINClient? {
+        return AppDelegate.shared.client
+    }
+    
+    public var audioController : SINAudioController {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return (appDelegate.client?.audioController())!
+    }
     
     var isTransparent: Bool = false {
         didSet{
@@ -45,8 +56,40 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDetails.shared.isLoggedIn {
+            
+            NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"), object: nil, userInfo: ["userId": "suyambu"])
+            NotificationCenter.default.addObserver(self, selector: #selector(openVcWhenCallComes(notification:)), name: NSNotification.Name.init("inComingCall"), object: nil)
+            //NotificationCenter.default.addObserver(self, selector: #selector(sendCallStatusToSystem(_:)), name: NSNotification.Name.init("openCxCallVC"), object: nil)
+        }
         
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func openVcWhenCallComes(notification : Notification){
+        print(notification)
+        guard
+            let call = notification.object as? SINCall else {return}
+        
+        if (self.client?.isStarted())!{
+            AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call().callUser(withId: call.remoteUserId)
+            let vc = UIStoryboard(name: "Inbox", bundle: nil).instantiateViewController(withIdentifier: "CallViewController") as! CallViewController
+            vc.isInComingCall = true
+            vc.hidesBottomBarWhenPushed = true
+            vc.userId = call.remoteUserId
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
+        
+    }
+    func path(forSound soundName: String) -> String? {
+        var stringUrl = ""
+        if let audioPath = Bundle.main.path(forResource: soundName, ofType: "wav") {
+            //print("===: ",audioPath)
+            stringUrl = audioPath
+        }
+        return stringUrl
     }
     
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B474B5324F35A7700E37AEF /* CallProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B474B5224F35A7700E37AEF /* CallProviderDelegate.swift */; };
+		0B474B5524F35A8200E37AEF /* SinCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B474B5424F35A8200E37AEF /* SinCallManager.swift */; };
+		0B474B5924F35A9100E37AEF /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B474B5824F35A9100E37AEF /* Helper.swift */; };
 		0BB5878C24F1FEFE007F5722 /* LoggedInInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB5878B24F1FEFE007F5722 /* LoggedInInfoViewController.swift */; };
 		0BE434D524EF98F4000F6C22 /* SettingsApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434D424EF98F4000F6C22 /* SettingsApiManager.swift */; };
 		0BE434D824EF99C9000F6C22 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE434D724EF99C9000F6C22 /* SettingsModel.swift */; };
@@ -199,6 +202,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B474B5224F35A7700E37AEF /* CallProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallProviderDelegate.swift; sourceTree = "<group>"; };
+		0B474B5424F35A8200E37AEF /* SinCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinCallManager.swift; sourceTree = "<group>"; };
+		0B474B5824F35A9100E37AEF /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		0BB5878B24F1FEFE007F5722 /* LoggedInInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInfoViewController.swift; sourceTree = "<group>"; };
 		0BE434D424EF98F4000F6C22 /* SettingsApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsApiManager.swift; sourceTree = "<group>"; };
 		0BE434D724EF99C9000F6C22 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -451,6 +457,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0B474B5124F35A5E00E37AEF /* SinchCall */ = {
+			isa = PBXGroup;
+			children = (
+				0B474B5824F35A9100E37AEF /* Helper.swift */,
+				0B474B5424F35A8200E37AEF /* SinCallManager.swift */,
+				0B474B5224F35A7700E37AEF /* CallProviderDelegate.swift */,
+			);
+			path = SinchCall;
+			sourceTree = "<group>";
+		};
 		0BE434D324EF98E0000F6C22 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +567,7 @@
 		1888973B24C7281C000DFAB3 /* MyTaxman_Customer */ = {
 			isa = PBXGroup;
 			children = (
+				0B474B5124F35A5E00E37AEF /* SinchCall */,
 				0BE434E024F1E609000F6C22 /* Source */,
 				18B2E62424C89ADF002A9CCE /* Extensions */,
 				1888977324C7286C000DFAB3 /* Libararies */,
@@ -1334,6 +1351,7 @@
 				1857C75E24CF37BE00E1DDAD /* JobsListModel.swift in Sources */,
 				181B01F924DF3A8E001CDEF5 /* JobDetailsTableViewCell.swift in Sources */,
 				1888977824C728C1000DFAB3 /* LoginViewController.swift in Sources */,
+				0B474B5324F35A7700E37AEF /* CallProviderDelegate.swift in Sources */,
 				3BF05BD424C9634600E16081 /* UIDeviceExtension.swift in Sources */,
 				1888973D24C7281C000DFAB3 /* AppDelegate.swift in Sources */,
 				3BF05BE624C96AED00E16081 /* UserDetails.swift in Sources */,
@@ -1360,10 +1378,12 @@
 				3B4917CC24DEB649003E0761 /* SettingDetailViewController.swift in Sources */,
 				187DDF1024D68D4C00CBE610 /* VendorInfoView.swift in Sources */,
 				3BF05BE124C96AEC00E16081 /* ImageManager.swift in Sources */,
+				0B474B5524F35A8200E37AEF /* SinCallManager.swift in Sources */,
 				0BE434D524EF98F4000F6C22 /* SettingsApiManager.swift in Sources */,
 				1826254624CDC79000DF7A4B /* EmployeeOrContractViewController.swift in Sources */,
 				3B6B6E6524D9748700D70E5F /* ChatTableViewCell.swift in Sources */,
 				3B6B6E5D24D9746C00D70E5F /* RightViewCell.swift in Sources */,
+				0B474B5924F35A9100E37AEF /* Helper.swift in Sources */,
 				1826253B24CD414C00DF7A4B /* FinancialServiceViewController.swift in Sources */,
 				3B1AFF8124DE9975006DC145 /* MenuProfileHeaderView.swift in Sources */,
 				3BF05BDF24C96AEC00E16081 /* CameraHandler.swift in Sources */,
@@ -1593,6 +1613,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = KYSQMV7X4U;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1702,6 +1723,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = KYSQMV7X4U;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

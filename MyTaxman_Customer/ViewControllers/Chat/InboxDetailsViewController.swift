@@ -8,13 +8,17 @@
 
 import UIKit
 import BetterSegmentedControl
+import Alamofire
+import Sinch
+
+
 class InboxDetailsViewController: BaseViewController {
     
     
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var chatHeaderView: UIView!
-   @IBOutlet weak var voiceCallBtn: UIButton!
+    @IBOutlet weak var voiceCallBtn: UIButton!
     @IBOutlet weak var videoCallBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet var segmentControl: BetterSegmentedControl!
@@ -66,6 +70,22 @@ class InboxDetailsViewController: BaseViewController {
     @IBAction func onTappedBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func onTappedVoiceCallBtn(_ sender: UIButton) {
+        if (self.client?.isStarted())!{
+            AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call().callUser(withId: "vanithasree")
+            //AppDelegate.shared.sinCallManager?.startTheCall(withUserId: remoteClientName)
+            let vc = UIStoryboard(name: "Inbox", bundle: nil).instantiateViewController(withIdentifier: "CallViewController") as! CallViewController
+            vc.isInComingCall = false
+            vc.userId = "vanithasree"
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+    }
+    
+    @IBAction func onTappedVideoBtn(_ sender: UIButton) {
+    }
+    
     func setUpSegmentViewControl(segmentControl : BetterSegmentedControl, bgColor:UIColor, titles:[String]) {
         
         let normaFont = UIFont(name:Font.FontName.PoppinsRegular.rawValue, size: Utility.dynamicSize(15.0))

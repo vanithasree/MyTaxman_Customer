@@ -58,7 +58,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         if UserDetails.shared.isLoggedIn {
             
-            NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"), object: nil, userInfo: ["userId": "suyambu"])
+            NotificationCenter.default.post(name: NSNotification.Name("UserDidLoginNotification"), object: nil, userInfo: ["userId": UserDetails.shared.customerCallerId ])
             NotificationCenter.default.addObserver(self, selector: #selector(openVcWhenCallComes(notification:)), name: NSNotification.Name.init("inComingCall"), object: nil)
             //NotificationCenter.default.addObserver(self, selector: #selector(sendCallStatusToSystem(_:)), name: NSNotification.Name.init("openCxCallVC"), object: nil)
         }

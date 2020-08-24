@@ -73,12 +73,13 @@ class InboxDetailsViewController: BaseViewController {
     
     @IBAction func onTappedVoiceCallBtn(_ sender: UIButton) {
         if (self.client?.isStarted())!{
-            AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call().callUser(withId: "vanithasree")
+            AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call().callUser(withId: inbox?.vendorid ?? "")
             //AppDelegate.shared.sinCallManager?.startTheCall(withUserId: remoteClientName)
             let vc = UIStoryboard(name: "Inbox", bundle: nil).instantiateViewController(withIdentifier: "CallViewController") as! CallViewController
             vc.isInComingCall = false
-            vc.userId = "vanithasree"
+            vc.userId = inbox?.vendorid ?? ""
             self.navigationController?.pushViewController(vc, animated: true)
+            
             
         }
     }

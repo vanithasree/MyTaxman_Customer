@@ -37,6 +37,9 @@ struct UserDetails {
     var userId: String {
         userLoginData?.customerid ?? ""
     }
+    var customerCallerId: String {
+        userLoginData?.cus_callid ?? ""
+    }
     
     var accessToken: String {
 //        userLoginData?.result?.accessToken ?? ""

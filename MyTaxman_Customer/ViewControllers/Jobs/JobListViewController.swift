@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import BetterSegmentedControl
-import Sinch
+
 
 class JobListViewController: BaseViewController {
     
@@ -180,7 +180,7 @@ class JobListViewController: BaseViewController {
      */
     
     @IBAction func onTapVideoCallBtn(_ sender: UIButton) {
-        var client: SINClient {
+      /*  var client: SINClient {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             return appDelegate.client!
         }
@@ -188,33 +188,34 @@ class JobListViewController: BaseViewController {
         if client.isStarted() {
             weak var call: SINCall? = client.call()?.callUserVideo(withId: "Vanithasree_163")
             self.redirectToVideoCallVC(call: call)
-        }
+        }*/
+        
     }
     
     @IBAction func onTapCallBtn(_ sender: UIButton) {
-        var client: SINClient {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            return appDelegate.client!
-        }
-        client.call().delegate = self
-        if client.isStarted() {
-            weak var call: SINCall? = client.call().callUser(withId: "Vanithasree_163")
-            self.redirectToCallVC(call: call)
-        }
+        /*  var client: SINClient {
+         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+         return appDelegate.client!
+         }
+         client.call().delegate = self
+         if client.isStarted() {
+         weak var call: SINCall? = client.call().callUser(withId: "Vanithasree_163")
+         self.redirectToCallVC(call: call)
+         }*/
     }
     
-    func redirectToCallVC(call : SINCall?) {
-       /* let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
-        callVC.call = call
-        callVC.modalPresentationStyle = .fullScreen
-        self.present(callVC, animated: true, completion: nil)*/
-    }
-    func redirectToVideoCallVC(call : SINCall?) {
-      /*  let callVC = VideoCallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
-        callVC.call = call
-        callVC.modalPresentationStyle = .fullScreen
-        self.present(callVC, animated: true, completion: nil)*/
-    }
+    /* func redirectToCallVC(call : SINCall?) {
+     /* let callVC = CallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+     callVC.call = call
+     callVC.modalPresentationStyle = .fullScreen
+     self.present(callVC, animated: true, completion: nil)*/
+     }
+     func redirectToVideoCallVC(call : SINCall?) {
+     /*  let callVC = VideoCallViewController.instantiateFromAppStoryboard(appStoryboard: .Inbox)
+     callVC.call = call
+     callVC.modalPresentationStyle = .fullScreen
+     self.present(callVC, animated: true, completion: nil)*/
+     }*/
     
     // MARK: - Action handlers
     @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
@@ -417,29 +418,3 @@ extension JobListViewController : UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension JobListViewController : SINCallClientDelegate, SINCallDelegate {
-    func client(_ client: SINCallClient!, didReceiveIncomingCall call: SINCall!) {
-        if call.details.isVideoOffered {
-            self.redirectToVideoCallVC(call: call)
-        }
-        else {
-            self.redirectToCallVC(call: call)
-        }
-    }
-    
-    /*func client(_ client: SINCallClient!, localNotificationForIncomingCall call: SINCall!) -> SINLocalNotification! {
-     let notification = SINLocalNotification()
-     notification.alertAction = "Answer"
-     notification.alertBody = String(format: "Incoming call from %@", arguments: [call.remoteUserId])
-     return notification
-     }*/
-    
-    
-    func clientDidFail(_ client: SINClient!, error: Error!) {
-        print("Sinch client error: \(String(describing: error?.localizedDescription))")
-    }
-    
-    func client(_ client: SINClient, logMessage message: String, area: String, severity: SINLogSeverity, timestamp: Date) {
-        print("\(message)")
-    }
-}

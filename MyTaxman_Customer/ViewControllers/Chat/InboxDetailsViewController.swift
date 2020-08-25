@@ -73,11 +73,12 @@ class InboxDetailsViewController: BaseViewController {
     
     @IBAction func onTappedVoiceCallBtn(_ sender: UIButton) {
         if (self.client?.isStarted())!{
-            AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call().callUser(withId: inbox?.vendorid ?? "")
+            print(inbox?.ven_callid ?? "")
+            AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call().callUser(withId: inbox?.ven_callid ?? "")
             //AppDelegate.shared.sinCallManager?.startTheCall(withUserId: remoteClientName)
             let vc = UIStoryboard(name: "Inbox", bundle: nil).instantiateViewController(withIdentifier: "CallViewController") as! CallViewController
             vc.isInComingCall = false
-            vc.userId = inbox?.vendorid ?? ""
+            vc.userId = inbox?.ven_callid ?? ""
             self.navigationController?.pushViewController(vc, animated: true)
             
             
@@ -85,6 +86,15 @@ class InboxDetailsViewController: BaseViewController {
     }
     
     @IBAction func onTappedVideoBtn(_ sender: UIButton) {
+        if (self.client?.isStarted())!{
+            
+            AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call()?.callUserVideo(withId: inbox?.ven_callid ?? "")
+            
+            let vc = UIStoryboard(name: "Inbox", bundle: nil).instantiateViewController(withIdentifier: "VideoCallViewController") as! VideoCallViewController
+            //            vc.isInComingCall = false
+            //            vc.userId = inbox?.ven_callid ?? ""
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func setUpSegmentViewControl(segmentControl : BetterSegmentedControl, bgColor:UIColor, titles:[String]) {

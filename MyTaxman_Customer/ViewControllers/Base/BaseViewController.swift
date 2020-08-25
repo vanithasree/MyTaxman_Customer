@@ -20,6 +20,10 @@ class BaseViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return (appDelegate.client?.audioController())!
     }
+    public var videoController:SINVideoController {
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+        return (appDelegate.client?.videoController())!
+    }
     
     var isTransparent: Bool = false {
         didSet{
@@ -72,17 +76,31 @@ class BaseViewController: UIViewController {
             let call = notification.object as? SINCall else {return}
         
         if (self.client?.isStarted())!{
-            AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call().callUser(withId: call.remoteUserId)
-            let vc = UIStoryboard(name: "Inbox", bundle: nil).instantiateViewController(withIdentifier: "CallViewController") as! CallViewController
-            vc.isInComingCall = true
-            vc.hidesBottomBarWhenPushed = true
-            vc.userId = call.remoteUserId
-            self.navigationController?.pushViewController(vc, animated: true)
+            print("Incoming call ===\(call.direction.rawValue)")
+            print("Incoming call object===\(call)")
+            AppDelegate.shared.sinCallManager?.currentCall = call
+            
+            if AppDelegate.shared.sinCallManager?.currentCall?.details.isVideoOffered == false {
+                
+                //FIXME
+                // AppDelegate.shared.sinCallManager?.currentCall = AppDelegate.shared.sinCallManager?.client.call().callUser(withId: call.remoteUserId)
+                
+                let vc = UIStoryboard(name: "Inbox", bundle: nil).instantiateViewController(withIdentifier: "CallViewController") as! CallViewController
+                vc.isInComingCall = true
+                vc.hidesBottomBarWhenPushed = true
+                vc.userId = call.remoteUserId
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            else {
+                let vc = UIStoryboard(name: "Inbox", bundle: nil).instantiateViewController(withIdentifier: "VideoCallViewController") as! VideoCallViewController
+                //   vc.isInComingCall = true
+                vc.hidesBottomBarWhenPushed = true
+                //  vc.userId = call.remoteUserId
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
         }
-        
-        
-        
     }
+    
     func path(forSound soundName: String) -> String? {
         var stringUrl = ""
         if let audioPath = Bundle.main.path(forResource: soundName, ofType: "wav") {

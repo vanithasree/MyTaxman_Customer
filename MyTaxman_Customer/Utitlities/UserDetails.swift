@@ -38,7 +38,7 @@ struct UserDetails {
         userLoginData?.customerid ?? ""
     }
     var customerCallerId: String {
-        userLoginData?.cus_callid ?? ""
+        userLoginData?.customerid ?? ""
     }
     
     var accessToken: String {

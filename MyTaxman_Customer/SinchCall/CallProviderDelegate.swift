@@ -34,7 +34,7 @@ class CallProviderDelegate : NSObject{
         let config = CXProviderConfiguration(localizedName: APPLICATION_NAME)
         config.iconTemplateImageData = UIImage(named:"voipBlack")!.pngData()
         config.ringtoneSound = "incoming.wav"
-        config.supportsVideo = false
+        config.supportsVideo = true
         config.maximumCallsPerCallGroup = 1
         config.supportedHandleTypes = [.generic]
         return config

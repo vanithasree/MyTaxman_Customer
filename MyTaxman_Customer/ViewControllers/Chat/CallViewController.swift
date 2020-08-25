@@ -90,8 +90,16 @@ class CallViewController: BaseViewController {
         super.viewWillAppear(true)
         self.view.layoutIfNeeded()
         isHideNavigationBar = true
+        self.sinCallManager = AppDelegate.shared.sinCallManager
+        print(AppDelegate.shared.sinCallManager?.currentCall?.direction.rawValue)
+        print(sinCallManager.currentCall?.direction.rawValue)
         
         if sinCallManager.currentCall?.direction == .incoming{
+            
+            print(sinCallManager.client)
+            print(sinCallManager.currentCall)
+            print(sinCallManager.currentCallStatus)
+            
             self.isInComingCall = true
             self.nameLabel.text = sinCallManager.currentCall!.remoteUserId!
             self.audioController.startPlayingSoundFile(path(forSound: "incoming"), loop: true)
@@ -189,7 +197,7 @@ class CallViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sinCallManager = AppDelegate.shared.sinCallManager
+    
         
         // Do any additional setup after loading the view.
     }

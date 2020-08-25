@@ -37,8 +37,8 @@ class LoginViewController: BaseViewController {
         self.userNameTextField.text = ""
         self.passwordTextField.text = ""
         
-        self.userNameTextField.text = "9894909595"
-        self.passwordTextField.text = "Qq123456"
+        self.userNameTextField.text = "9884115691"
+        self.passwordTextField.text = "A1234567"
     }
     
     func setupViews() {

@@ -13,7 +13,9 @@ import Sinch
 
 let APPLICATION_KEY = "03987b9e-cdb1-4140-bb65-98d50f7c9374"
 let APPLICATION_SECRET = "KlD0ud20WEebaDd5rioVTA=="
+let HOST_NAME = "clientapi.sinch.com"
 let APPLICATION_NAME = "MyTaxman"
+
 
 
 public enum SINCH_CALL_STATES : String {

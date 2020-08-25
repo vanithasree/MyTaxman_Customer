@@ -184,12 +184,12 @@ extension QuoteDetailsViewController: UITableViewDataSource {
         
         headerView.titleLabel.setLabelCustomProperties(titleText: "Job Details".uppercased(), textColor: .black, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(20)), numberOfLines: 0, alignment: .center)
         
-      /*  let headerLabel = UILabel(frame: CGRect(x: 10, y: headerView.frame.origin.y + headerView.frame.height  - 50, width:
-            tableView.bounds.size.width, height: 30))
-        
-        headerLabel.setLabelCustomProperties(titleText: inbox?.category ?? "", textColor: .black, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(18)), numberOfLines: 0, alignment: .left)
-        
-        headerView.addSubview(headerLabel) */
+        /*  let headerLabel = UILabel(frame: CGRect(x: 10, y: headerView.frame.origin.y + headerView.frame.height  - 50, width:
+         tableView.bounds.size.width, height: 30))
+         
+         headerLabel.setLabelCustomProperties(titleText: inbox?.category ?? "", textColor: .black, font: UIFont(name:Font.FontName.PoppinsMedium.rawValue, size: Utility.dynamicSize(18)), numberOfLines: 0, alignment: .left)
+         
+         headerView.addSubview(headerLabel) */
         
         return headerView
     }

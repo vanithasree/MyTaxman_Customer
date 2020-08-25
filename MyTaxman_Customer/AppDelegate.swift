@@ -11,6 +11,7 @@ import IQKeyboardManagerSwift
 import GooglePlaces
 import Sinch
 import CallKit
+import PushKit
 
 
 @UIApplicationMain
@@ -110,12 +111,9 @@ extension AppDelegate : SINClientDelegate {
     func initSinchClient(withUserId userId: String) {
         
         if client == nil {
-            print("initializing client 2")
-            client = Sinch.client(withApplicationKey: "03987b9e-cdb1-4140-bb65-98d50f7c9374",
-                                  applicationSecret: "KlD0ud20WEebaDd5rioVTA==",
-                                  environmentHost: "clientapi.sinch.com",
-                                  userId: userId)
+            client = Sinch.client(withApplicationKey: APPLICATION_KEY, applicationSecret: APPLICATION_SECRET, environmentHost: HOST_NAME, userId: userId)
             client?.setSupportCalling(true)
+            client?.setSupportPushNotifications(true)
             // client?.setSupportMessaging(false)
             client?.enableManagedPushNotifications()
             client?.delegate = self
@@ -123,7 +121,6 @@ extension AppDelegate : SINClientDelegate {
             client?.start()
             client?.startListeningOnActiveConnection()
             initDelegates()
-            
         }
     }
     
